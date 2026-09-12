@@ -1,0 +1,129 @@
+{
+  "index": 7,
+  "arm": "video",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 2378,
+    "end": 2386,
+    "reference_ids": [
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-193"
+    ],
+    "types": [
+      "three_point_made"
+    ]
+  },
+  "started_at": "2026-09-12T23:02:42.261536+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w7-continuous.mp4",
+      "sha256": "e92e90a398d4337dd510b609801e7f0476cabe68d275b914b27913904e4cb3d6",
+      "source_start": 2376.0,
+      "source_end": 2388.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 2376.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [2378, 2386] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "0a6e0ab613267b87c09d131435bbea8fe4992cba47406db6f929f719a6fa4d63",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 13766,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 470
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "reserved_usd": 0.053625625,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:02:44.497078+05:30",
+      "reservation_usd": 0.053625625,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"two_point_made\",\"time_seconds\":2385.5,\"confidence\":0.85,\"evidence\":\"Player in white drives to the basket and scores a two-point shot.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPFeR5E9BKK30OajxOVL9w1D0J8CeChUZBlXH9t66DApYDA7GkIrZ9OS04SOqO8lGgeI2ObGWwmlIUg095w60ogtyQoNENMsXk8HZLFV465Bb9PACbRkD2eCMCOA5YPmJj"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13142,
+      "candidatesTokenCount": 48,
+      "totalTokenCount": 13190,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 470
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "vYylaqalJbnRg8UPieqzgAc"
+  },
+  "latency_seconds": 12.004502458992647,
+  "ended_at": "2026-09-12T23:02:56.501949+05:30",
+  "estimated_cost_usd": 0.0100365,
+  "usage": {
+    "promptTokenCount": 13142,
+    "candidatesTokenCount": 48,
+    "totalTokenCount": 13190,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 470
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"two_point_made\",\"time_seconds\":2385.5,\"confidence\":0.85,\"evidence\":\"Player in white drives to the basket and scores a two-point shot.\"}]}",
+  "events": [
+    {
+      "label": "two_point_made",
+      "time_seconds": 2385.5,
+      "confidence": 0.85,
+      "evidence": "Player in white drives to the basket and scores a two-point shot.",
+      "game_id": "unlimited-vs-campus"
+    }
+  ],
+  "context_events": []
+}

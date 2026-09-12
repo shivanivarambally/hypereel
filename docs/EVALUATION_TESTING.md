@@ -1,3 +1,7 @@
+## Current funded checkpoint
+
+All12category development comparison and transcript test complete. See ../evals/iterations/gemini-funded-summary/results.md. New evaluation cap$2fromfixedbaseline$7.192294875;demo reserve$3. Currentcap policy supersedes historical$8andquota-blockednotes below.400tests pass,4skipped,1holdoutexcluded.
+
 # Evaluation testing and continuation
 
 Start with `../evals/AGENT_HANDOFF.md`. Timestamped observations are in

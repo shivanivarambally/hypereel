@@ -100,3 +100,7 @@ Latest: [state017 results](state-pilot-017/results.md), [plan](state-pilot-017/p
 ### 2026-09-12T22:51:12.553566+05:30 — Gemini broader partial
 
 023confirmationinterrupted503;024/027validvideo0–5,8references8types,TP3/FP4/FN5,F1.40. Dailyfreequota20exhausted;video6/7andimage2/6missing.025transcript/026image recovery preparednotrun. See gemini-development-summary/results.md;thirdsealed.
+
+### 2026-09-12T23:08:05.527570+05:30 — Funded Gemini completion
+
+028video6/7,026images2/6and025all8transcriptscomplete. Full12type directF1.37037,transcript.34783. Newspend$0.208809of$2cap. See gemini-funded-summary/results.md;thirdsealed.

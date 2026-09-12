@@ -1,0 +1,86 @@
+{
+  "index": 2,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [754.0, 754.25, 754.5, 754.75, 755.0, 755.25, 755.5, 755.75, 756.0, 756.25, 756.5, 756.75, 757.0, 757.25, 757.5, 757.75, 758.0, 758.25, 758.5, 758.75, 759.0, 759.25, 759.5, 759.75, 760.0, 760.25, 760.5, 760.75, 761.0, 761.25, 761.5, 761.75, 762.0, 762.25, 762.5, 762.75, 763.0, 763.25, 763.5, 763.75, 764.0, 764.25, 764.5, 764.75, 765.0, 765.25, 765.5, 765.75, 766.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time754.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:04:28.416953+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:04:30.123508+05:30",
+      "reserve_usd": 0.0539790625,
+      "status": "received",
+      "latency_seconds": 6.857701667002402
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 14143,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 577
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"observations\": [\n  {\n   \"observation\": \"A player in black dribbles the ball up the court.\",\n   \"time_seconds\": 754.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in black passes the basketball toward a teammate.\",\n   \"time_seconds\": 759.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in blue steals the ball by deflecting it, gaining control and dribbling ahead.\",\n   \"time_seconds\": 760.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in blue throws a long pass forward toward a teammate.\",\n   \"time_seconds\": 762.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The basketball travels in the air downcourt toward a player in blue.\",\n   \"time_seconds\": 763.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in blue catches the pass near the baseline.\",\n   \"time_seconds\": 764.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in blue attempts a layup near the basket.\",\n   \"time_seconds\": 765.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The ball hits the backboard and rim.\",\n   \"time_seconds\": 765.5,\n   \"visibility\": \"clear\"\n  }\n ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPPsKVMZ8JSou2Hk4Jb+sYnbgKVRsWE9mmoU3590OPrx1kpbz9NheAp3jsbsz7y5vyH2f7pbgBd2rB9FUe3v+IemotSPpX/HHx7qT1PtLZbuxjIu4KMuAvR2P3Y5r5Q5pE"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13249,
+      "candidatesTokenCount": 384,
+      "totalTokenCount": 13633,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 577
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "J42larD8EL-7g8UPxaug0QI"
+  },
+  "ended_at": "2026-09-12T23:04:36.984139+05:30",
+  "usage": {
+    "promptTokenCount": 13249,
+    "candidatesTokenCount": 384,
+    "totalTokenCount": 13633,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 577
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.01137675,
+  "raw_text": "{\n \"observations\": [\n  {\n   \"observation\": \"A player in black dribbles the ball up the court.\",\n   \"time_seconds\": 754.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in black passes the basketball toward a teammate.\",\n   \"time_seconds\": 759.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in blue steals the ball by deflecting it, gaining control and dribbling ahead.\",\n   \"time_seconds\": 760.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in blue throws a long pass forward toward a teammate.\",\n   \"time_seconds\": 762.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The basketball travels in the air downcourt toward a player in blue.\",\n   \"time_seconds\": 763.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in blue catches the pass near the baseline.\",\n   \"time_seconds\": 764.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The player in blue attempts a layup near the basket.\",\n   \"time_seconds\": 765.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The ball hits the backboard and rim.\",\n   \"time_seconds\": 765.5,\n   \"visibility\": \"clear\"\n  }\n ]\n}"
+}

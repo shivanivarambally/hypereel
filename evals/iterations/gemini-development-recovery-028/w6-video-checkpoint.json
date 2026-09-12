@@ -1,0 +1,173 @@
+{
+  "index": 6,
+  "arm": "video",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 1316,
+    "end": 1324,
+    "reference_ids": [
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+    ],
+    "types": [
+      "defensive_rebound",
+      "offensive_rebound",
+      "three_point_miss",
+      "turnover",
+      "two_point_miss"
+    ]
+  },
+  "started_at": "2026-09-12T23:02:35.799584+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w6-continuous.mp4",
+      "sha256": "44466259647da29c14773bf45c77e0832682513d972b7f2ec0d0621c209f9d1f",
+      "source_start": 1314.0,
+      "source_end": 1326.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 1314.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [1316, 1324] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "75b410d4ee2472ba02d83a122d88d2fff2b7c3a6991a7b21d2763d474f570ce2",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 13766,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 470
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "reserved_usd": 0.053625625,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:02:37.584831+05:30",
+      "reservation_usd": 0.053625625,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":1317.0,\"confidence\":0.85,\"evidence\":\"Defender steals the ball around 00:03.000 (1317.0s)\"},{\"label\":\"turnover\",\"time_seconds\":1317.0,\"confidence\":0.85,\"evidence\":\"Ball-handler loses possession via steal around 00:03.000 (1317.0s)\"},{\"label\":\"two_point_miss\",\"time_seconds\":1319.75,\"confidence\":0.9,\"evidence\":\"A player attempts a layup in transition around 00:05.750 (1319.75s) and misses\"},{\"label\":\"offensive_rebound\",\"time_seconds\":1321.75,\"confidence\":0.8,\"evidence\":\"Shooting team player secures the offensive rebound around 00:07.750 (1321.75s)\"},{\"label\":\"two_point_miss\",\"time_seconds\":1322.5,\"confidence\":0.85,\"evidence\":\"Follow-up shot attempt around 00:08.500 (1322.5s) misses\"},{\"label\":\"defensive_rebound\",\"time_seconds\":1324.5,\"confidence\":0.8,\"evidence\":\"Defending team secures the rebound around 00:10.500 (1324.5s)\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPfKHQUYjVSwlbyqS5MefrIDSuFZqZDAzr7K7YDgL0LC+BzOZTevADDl7ttY4ZU8sFqXY0tsVej6eOJq1AEfkiDTbzCDXJYYRbddmPRtb4E8/t3liyt7Xum5gDcREj2x32"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13142,
+      "candidatesTokenCount": 330,
+      "totalTokenCount": 13472,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 470
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "toylao7fOLOjqfkPs-a2mQE"
+  },
+  "latency_seconds": 4.644846457988024,
+  "ended_at": "2026-09-12T23:02:42.229772+05:30",
+  "estimated_cost_usd": 0.011094,
+  "usage": {
+    "promptTokenCount": 13142,
+    "candidatesTokenCount": 330,
+    "totalTokenCount": 13472,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 470
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":1317.0,\"confidence\":0.85,\"evidence\":\"Defender steals the ball around 00:03.000 (1317.0s)\"},{\"label\":\"turnover\",\"time_seconds\":1317.0,\"confidence\":0.85,\"evidence\":\"Ball-handler loses possession via steal around 00:03.000 (1317.0s)\"},{\"label\":\"two_point_miss\",\"time_seconds\":1319.75,\"confidence\":0.9,\"evidence\":\"A player attempts a layup in transition around 00:05.750 (1319.75s) and misses\"},{\"label\":\"offensive_rebound\",\"time_seconds\":1321.75,\"confidence\":0.8,\"evidence\":\"Shooting team player secures the offensive rebound around 00:07.750 (1321.75s)\"},{\"label\":\"two_point_miss\",\"time_seconds\":1322.5,\"confidence\":0.85,\"evidence\":\"Follow-up shot attempt around 00:08.500 (1322.5s) misses\"},{\"label\":\"defensive_rebound\",\"time_seconds\":1324.5,\"confidence\":0.8,\"evidence\":\"Defending team secures the rebound around 00:10.500 (1324.5s)\"}]}",
+  "events": [
+    {
+      "label": "steal",
+      "time_seconds": 1317.0,
+      "confidence": 0.85,
+      "evidence": "Defender steals the ball around 00:03.000 (1317.0s)",
+      "game_id": "unlimited-vs-campus"
+    },
+    {
+      "label": "turnover",
+      "time_seconds": 1317.0,
+      "confidence": 0.85,
+      "evidence": "Ball-handler loses possession via steal around 00:03.000 (1317.0s)",
+      "game_id": "unlimited-vs-campus"
+    },
+    {
+      "label": "two_point_miss",
+      "time_seconds": 1319.75,
+      "confidence": 0.9,
+      "evidence": "A player attempts a layup in transition around 00:05.750 (1319.75s) and misses",
+      "game_id": "unlimited-vs-campus"
+    },
+    {
+      "label": "offensive_rebound",
+      "time_seconds": 1321.75,
+      "confidence": 0.8,
+      "evidence": "Shooting team player secures the offensive rebound around 00:07.750 (1321.75s)",
+      "game_id": "unlimited-vs-campus"
+    },
+    {
+      "label": "two_point_miss",
+      "time_seconds": 1322.5,
+      "confidence": 0.85,
+      "evidence": "Follow-up shot attempt around 00:08.500 (1322.5s) misses",
+      "game_id": "unlimited-vs-campus"
+    }
+  ],
+  "context_events": [
+    {
+      "label": "defensive_rebound",
+      "time_seconds": 1324.5,
+      "confidence": 0.8,
+      "evidence": "Defending team secures the rebound around 00:10.500 (1324.5s)",
+      "game_id": "unlimited-vs-campus"
+    }
+  ]
+}

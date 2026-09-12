@@ -1,18 +1,37 @@
 {
-  "status": "prepared_not_run_daily_quota",
+  "iteration": "025",
+  "started_at": "2026-09-12T23:04:00.218382+05:30",
   "model": "gemini-3.8-flash",
-  "planned_calls": 16,
-  "windows": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "control_required": "Full valid eightwindow directvideo report; currently6valid",
-  "hypothesis": "Observable temporal transcript plusvideo verification improves recognition over directvideo",
-  "holdout_used": false
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "rates": {
+    "input_per_million": 0.75,
+    "output_including_thinking_per_million": 3.75
+  },
+  "max_calls": 16,
+  "max_transient_retries": 2,
+  "hypothesis": "Explicit chronological observations with citation-linked extraction increase event recall or precision over direct video recognition.",
+  "control": "Cached024 directvideo; same8clips,4fps,HIGHresolution,core windows,model/config/scorer. Experimental arm adds a fresh Gemini visual transcript and more explicit extraction contract; extra reasoning/prompt/cost differ, so not isolated benefit of prose alone.",
+  "references": "14references,12types,2unannotated windows not verified negatives",
+  "source_report_sha256": "f2934eef9a52be548a5035ed5dd0a576bd0e28986eb90af4f6c309ef3a314fbf",
+  "budget": "Funded Gemini budget policy in gemini-funded-budget.json, reserve before each request, unknownusage retains reserve; no schema retries or posthoc repairs",
+  "holdout_used": false,
+  "funded_budget": {
+    "created_at": "2026-09-12T23:02:02.797304+05:30",
+    "scope": "All further evaluation requests using the shared ledger, starting with funded Gemini continuation",
+    "google_balance_added_usd": 5,
+    "new_evaluation_cap_usd": 2,
+    "demo_reserved_usd": 3,
+    "baseline_cumulative_ledger_usd": 7.192294875000001,
+    "cumulative_ceiling_usd": 9.192294875000002,
+    "authorization": "User added$5 to Google API and requested cautious use with$2evaluationcap and remainder for demo.",
+    "accounting": "Existing historical ledger retained. Per-call reservations and unknownusage count against newcap. This is a local evaluator cap,not a Google account-wide spending limit. No budget reset between runs."
+  }
 }

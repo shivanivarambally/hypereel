@@ -1,0 +1,86 @@
+{
+  "index": 1,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [221.0, 221.25, 221.5, 221.75, 222.0, 222.25, 222.5, 222.75, 223.0, 223.25, 223.5, 223.75, 224.0, 224.25, 224.5, 224.75, 225.0, 225.25, 225.5, 225.75, 226.0, 226.25, 226.5, 226.75, 227.0, 227.25, 227.5, 227.75, 228.0, 228.25, 228.5, 228.75, 229.0, 229.25, 229.5, 229.75, 230.0, 230.25, 230.5, 230.75, 231.0, 231.25, 231.5, 231.75, 232.0, 232.25, 232.5, 232.75, 233.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time221.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:04:15.136273+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:04:16.951041+05:30",
+      "reserve_usd": 0.0539790625,
+      "status": "received",
+      "latency_seconds": 4.36026870898786
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 14143,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 577
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"observations\": [\n    {\"time_seconds\": 221.0, \"observation\": \"The referee holds the ball near the free throw line with players lined up for a free throw.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 223.25, \"observation\": \"The referee passes the ball to player #3 in blue at the free throw line.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 227.0, \"observation\": \"Player #3 in blue shoots the free throw.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 228.25, \"observation\": \"The ball hits the backboard/rim and misses; player #24 in black collects the defensive rebound.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 229.25, \"observation\": \"Player #24 in black dribbles the ball up the court.\", \"visibility\": \"clear\"}\n  ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPECvDjpB+VHM2CECwTU0Oy5VMMSd3yNwKs+2FaK05JjMOKaS5OM/swc4zbcJ8hdLuj2fZwKBGeyzlR9WOXLYOa/tvjdB/1iHUNWqGtkqgSv6hEVnk7pUdZJLHiSojtKco"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13249,
+      "candidatesTokenCount": 217,
+      "totalTokenCount": 13466,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 577
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "Go2las6QCfb1g8UP2ovz0AM"
+  },
+  "ended_at": "2026-09-12T23:04:21.314648+05:30",
+  "usage": {
+    "promptTokenCount": 13249,
+    "candidatesTokenCount": 217,
+    "totalTokenCount": 13466,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 577
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.0107505,
+  "raw_text": "{\n  \"observations\": [\n    {\"time_seconds\": 221.0, \"observation\": \"The referee holds the ball near the free throw line with players lined up for a free throw.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 223.25, \"observation\": \"The referee passes the ball to player #3 in blue at the free throw line.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 227.0, \"observation\": \"Player #3 in blue shoots the free throw.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 228.25, \"observation\": \"The ball hits the backboard/rim and misses; player #24 in black collects the defensive rebound.\", \"visibility\": \"clear\"},\n    {\"time_seconds\": 229.25, \"observation\": \"Player #24 in black dribbles the ball up the court.\", \"visibility\": \"clear\"}\n  ]\n}"
+}

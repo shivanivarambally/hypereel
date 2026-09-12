@@ -1,0 +1,177 @@
+{
+  "index": 2,
+  "arm": "images",
+  "window": {
+    "game_id": "east-bay-elite-vs-spartans",
+    "start": 756,
+    "end": 764,
+    "reference_ids": [
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+    ],
+    "types": [
+      "assist",
+      "steal",
+      "turnover",
+      "two_point_made"
+    ]
+  },
+  "started_at": "2026-09-12T23:03:33.514366+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse0.jpg",
+      "sha256": "79ea47b1e9f4c985f135e27abe4b3a04eb516a74611733ecd1c5961482d66d9e",
+      "width": 768,
+      "height": 431,
+      "time": 754.0,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse1.jpg",
+      "sha256": "6e76fb54de828ca57de025f315aa594a7f473a9d9d4dc6ae4bf41cb494cb7d25",
+      "width": 768,
+      "height": 431,
+      "time": 756.4,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse2.jpg",
+      "sha256": "b50326abfa408daeb7d267bef171faf0697bc96a572a48bdd3568ae5df7c1aed",
+      "width": 768,
+      "height": 431,
+      "time": 758.8,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse3.jpg",
+      "sha256": "dd96a798f48541201ea035b17bcc2c0742bbfa4aebc5579cee6ee85faf05c5f6",
+      "width": 768,
+      "height": 431,
+      "time": 761.2,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse4.jpg",
+      "sha256": "1670fa56b37ce6b11fe145426e15e825f2036a611c73290ec2f540dfcce8b263",
+      "width": 768,
+      "height": 431,
+      "time": 763.6,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w2-sparse5.jpg",
+      "sha256": "ce79a8b9022897d4489356fcb2eacd882edb9931d0fc169d2cedd8aa1bd7a00f",
+      "width": 768,
+      "height": 431,
+      "time": 766.0,
+      "view": "wide"
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [754.0, 756.4, 758.8, 761.2, 763.6, 766.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [756, 764] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 754.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 756.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 758.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 761.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 763.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 766.0, \"view\": \"wide\"}]",
+  "prompt_sha256": "d3000de5fbaaf683934402b925f0aa5e3f64bfa9607fd6521c5dbede9e0f24af",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 7216,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 616
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      }
+    ]
+  },
+  "reserved_usd": 0.047485,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:03:34.416615+05:30",
+      "reservation_usd": 0.047485,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":758.8,\"confidence\":0.7,\"evidence\":\"EBE defender actively strips or recovers the loose ball from Spartan ball handler near midcourt\"},{\"label\":\"turnover\",\"time_seconds\":758.8,\"confidence\":0.7,\"evidence\":\"Spartan ball handler loses possession in the midcourt backcourt transition\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPLClh5UysAV4azB0SGcoh4b7OSTENl6X6Tx8lPEvHqjFqtfqpq9XWzcCEZj6glXlx8E8nvScbTugjbcT9sgZAJHUjwZZVn4DpERELSogDrsv53DZ6sbo3/SOKRelLfz+m"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 7216,
+      "candidatesTokenCount": 81,
+      "totalTokenCount": 7297,
+      "promptTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 6600
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 616
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "74ylao3mEZ7Cg8UPvNnJ6AY"
+  },
+  "latency_seconds": 5.370592208986636,
+  "ended_at": "2026-09-12T23:03:39.787327+05:30",
+  "estimated_cost_usd": 0.00571575,
+  "usage": {
+    "promptTokenCount": 7216,
+    "candidatesTokenCount": 81,
+    "totalTokenCount": 7297,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 616
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":758.8,\"confidence\":0.7,\"evidence\":\"EBE defender actively strips or recovers the loose ball from Spartan ball handler near midcourt\"},{\"label\":\"turnover\",\"time_seconds\":758.8,\"confidence\":0.7,\"evidence\":\"Spartan ball handler loses possession in the midcourt backcourt transition\"}]}",
+  "events": [
+    {
+      "label": "steal",
+      "time_seconds": 758.8,
+      "confidence": 0.7,
+      "evidence": "EBE defender actively strips or recovers the loose ball from Spartan ball handler near midcourt",
+      "game_id": "east-bay-elite-vs-spartans"
+    },
+    {
+      "label": "turnover",
+      "time_seconds": 758.8,
+      "confidence": 0.7,
+      "evidence": "Spartan ball handler loses possession in the midcourt backcourt transition",
+      "game_id": "east-bay-elite-vs-spartans"
+    }
+  ],
+  "context_events": []
+}

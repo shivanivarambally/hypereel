@@ -1,3 +1,15 @@
+## Latest checkpoint — Funded Gemini tests complete 2026-09-12T23:08:05.527570+05:30
+
+Read evals/iterations/gemini-funded-summary/results.md,confirmation.json,and latest IMPLEMENTATION_NOTES. All8developmentwindows14references12types complete via successful024/027/028video calls. DirectGeminiTP5/FP8/FN9,F1.37037 vs MiniCPMTP3/FP31/FN11,F1.125.025transcript8/8valid,TP4/FP5/FN10,F1.34783;moreprecision,lessrecall.026missingimage2/6valid;staged3windowconfirmationcomplete. NoYOLOadded,noholdoutused. Newfundedspend$0.208809of$2cap,remaining$1.791191;reserve$3ofuserreported$5creditfordemo. Historicalledger$7.401104;neverreset.400tests pass,4skip,1holdouttestdeselected. No inference running/scheduled. Keep directGeminibaseline;defertranscript/genericYOLO. Nextrecommended experiment audits longercontext/shotoutcomevisibility with frozen scoring. Olderquota/partialstatuses below superseded.
+
+---
+
+## Funded continuation — 2026-09-12T23:02:35.564073+05:30
+
+User reports$5Google funding; cap newevaluationat$2,reserve$3for demo. Policy:evals/iterations/gemini-funded-budget.json; fixed baseline$7.192294875,cumulativeceiling$9.192294875,noreset. Budget enforced before everyrequest/retry. Twelve focused checks pass.028video6/7and026images2/6next;025transcriptprepared. Older dailyquota/$8notes below are historical; paidgeneration availability still toverify by nextauthorizedcall.
+
+---
+
 ## Latest checkpoint — Gemini quota blocked 2026-09-12T22:51:12.553566+05:30
 
 Read evals/iterations/gemini-development-summary/results.md and report.json, then latest IMPLEMENTATION_NOTES.023confirmationpartial;024/027combined strict-valid video0–5cover8references8types:GeminiTP3/FP4/FN5,P42.86%,R37.5%,F1.40;matched historicalMiniCPMTP1/FP25/FN7,F1.05882. Video6/7missing,so all12categoryevaluationNOTcomplete. Image2/6confirmationmissing. GoogleHTTP429dailyquota20/model/project exhausted; do not retryshortRetryInfo or change keys toreset. Need paidquotaor dailyreset(midnightPacific;Sep13 12:30PMIST). No inference running/scheduled. Ledger$7.192295/$8includesunknownusage reservations.025transcriptscript/planprepared,unrun;026missing-imageplanprepared,unrun. New retryhandler stopsdailyquota. GenericYOLOdeferred based020fragmentedballtracks. Third dataset remains sealed. Earlier statuses below are historical.

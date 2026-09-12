@@ -1,0 +1,86 @@
+{
+  "index": 6,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [1314.0, 1314.25, 1314.5, 1314.75, 1315.0, 1315.25, 1315.5, 1315.75, 1316.0, 1316.25, 1316.5, 1316.75, 1317.0, 1317.25, 1317.5, 1317.75, 1318.0, 1318.25, 1318.5, 1318.75, 1319.0, 1319.25, 1319.5, 1319.75, 1320.0, 1320.25, 1320.5, 1320.75, 1321.0, 1321.25, 1321.5, 1321.75, 1322.0, 1322.25, 1322.5, 1322.75, 1323.0, 1323.25, 1323.5, 1323.75, 1324.0, 1324.25, 1324.5, 1324.75, 1325.0, 1325.25, 1325.5, 1325.75, 1326.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time1314.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:05:30.166094+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:05:32.115553+05:30",
+      "reserve_usd": 0.0537728125,
+      "status": "received",
+      "latency_seconds": 5.985658624995267
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 13923,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"observations\": [\n    {\n      \"time_seconds\": 1314.0,\n      \"observation\": \"A player in yellow (#10) controls the basketball on the left side of the court.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1315.75,\n      \"observation\": \"Player #10 in yellow loses control under defensive pressure from white players, and the ball bounces loose.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1316.5,\n      \"observation\": \"A player in white recovers the loose ball and begins moving up the court.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1318.5,\n      \"observation\": \"A player in white passes ahead in transition, and a teammate catches and attempts a layup.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1320.0,\n      \"observation\": \"The ball hits the rim and bounces off, missing the layup.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1321.75,\n      \"observation\": \"A player in yellow grabs the defensive rebound under the basket.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1322.25,\n      \"observation\": \"The yellow player passes the ball upcourt towards a teammate.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1324.75,\n      \"observation\": \"The ball moves out toward the perimeter as players transition to the other side of the court.\",\n      \"visibility\": \"uncertain\"\n    }\n  ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPJRp0Rry0ovo/FUh/BJ837yh+jjrvo2BfJ2pllfiZtZYdHRLutVEWT5ZnxJrKtB39yjTuoW7aJxE/WBJyMFEGQwpmpk+tRVjXDPd/wpchU2B1uwaCP1t/8+gRGiq/225O"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13299,
+      "candidatesTokenCount": 424,
+      "totalTokenCount": 13723,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 627
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "ZY2laqzkG_qlqfkP2PPRuAc"
+  },
+  "ended_at": "2026-09-12T23:05:38.105998+05:30",
+  "usage": {
+    "promptTokenCount": 13299,
+    "candidatesTokenCount": 424,
+    "totalTokenCount": 13723,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.01156425,
+  "raw_text": "{\n  \"observations\": [\n    {\n      \"time_seconds\": 1314.0,\n      \"observation\": \"A player in yellow (#10) controls the basketball on the left side of the court.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1315.75,\n      \"observation\": \"Player #10 in yellow loses control under defensive pressure from white players, and the ball bounces loose.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1316.5,\n      \"observation\": \"A player in white recovers the loose ball and begins moving up the court.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1318.5,\n      \"observation\": \"A player in white passes ahead in transition, and a teammate catches and attempts a layup.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1320.0,\n      \"observation\": \"The ball hits the rim and bounces off, missing the layup.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1321.75,\n      \"observation\": \"A player in yellow grabs the defensive rebound under the basket.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1322.25,\n      \"observation\": \"The yellow player passes the ball upcourt towards a teammate.\",\n      \"visibility\": \"clear\"\n    },\n    {\n      \"time_seconds\": 1324.75,\n      \"observation\": \"The ball moves out toward the perimeter as players transition to the other side of the court.\",\n      \"visibility\": \"uncertain\"\n    }\n  ]\n}"
+}

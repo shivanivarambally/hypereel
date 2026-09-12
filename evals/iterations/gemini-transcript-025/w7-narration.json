@@ -1,0 +1,86 @@
+{
+  "index": 7,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [2376.0, 2376.25, 2376.5, 2376.75, 2377.0, 2377.25, 2377.5, 2377.75, 2378.0, 2378.25, 2378.5, 2378.75, 2379.0, 2379.25, 2379.5, 2379.75, 2380.0, 2380.25, 2380.5, 2380.75, 2381.0, 2381.25, 2381.5, 2381.75, 2382.0, 2382.25, 2382.5, 2382.75, 2383.0, 2383.25, 2383.5, 2383.75, 2384.0, 2384.25, 2384.5, 2384.75, 2385.0, 2385.25, 2385.5, 2385.75, 2386.0, 2386.25, 2386.5, 2386.75, 2387.0, 2387.25, 2387.5, 2387.75, 2388.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time2376.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:05:46.656273+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:05:48.462197+05:30",
+      "reserve_usd": 0.0537728125,
+      "status": "received",
+      "latency_seconds": 5.54003787500551
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 13923,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"observations\": [\n  {\n   \"observation\": \"A player in white passes the basketball back out toward the perimeter.\",\n   \"time_seconds\": 2376.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white receives the basketball near the three-point arc.\",\n   \"time_seconds\": 2377.25,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white drives right past a defender in yellow.\",\n   \"time_seconds\": 2377.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white passes the ball into the paint toward teammates.\",\n   \"time_seconds\": 2379.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A teammate in white collects the ball in traffic near the rim.\",\n   \"time_seconds\": 2380.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in white attempts a close-range shot, obscured by defenders.\",\n   \"time_seconds\": 2384.0,\n   \"visibility\": \"uncertain\"\n  },\n  {\n   \"observation\": \"The ball falls through the net, scoring for the white team.\",\n   \"time_seconds\": 2386.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in yellow retrieves the ball under the basket to inbound it.\",\n   \"time_seconds\": 2387.0,\n   \"visibility\": \"clear\"\n  }\n ]\n}",
+              "thoughtSignature": "EmcKZQERTTIP5LVAcalkUvWPRk0DhqJLRxdeDLac4jDbeN6QNZpwKPPl1SdhEXa+koiV83ewdQbsrTeJYFM4BuSXkF7tiJhrDcGgwLG3QykEHSITtwMocIf+c5pafbng9yON5HUsCjij"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13299,
+      "candidatesTokenCount": 406,
+      "totalTokenCount": 13705,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 627
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "dY2lavnJLe20g8UPr5uUyAU"
+  },
+  "ended_at": "2026-09-12T23:05:54.007251+05:30",
+  "usage": {
+    "promptTokenCount": 13299,
+    "candidatesTokenCount": 406,
+    "totalTokenCount": 13705,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.01149675,
+  "raw_text": "{\n \"observations\": [\n  {\n   \"observation\": \"A player in white passes the basketball back out toward the perimeter.\",\n   \"time_seconds\": 2376.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white receives the basketball near the three-point arc.\",\n   \"time_seconds\": 2377.25,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white drives right past a defender in yellow.\",\n   \"time_seconds\": 2377.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Player #10 in white passes the ball into the paint toward teammates.\",\n   \"time_seconds\": 2379.5,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A teammate in white collects the ball in traffic near the rim.\",\n   \"time_seconds\": 2380.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in white attempts a close-range shot, obscured by defenders.\",\n   \"time_seconds\": 2384.0,\n   \"visibility\": \"uncertain\"\n  },\n  {\n   \"observation\": \"The ball falls through the net, scoring for the white team.\",\n   \"time_seconds\": 2386.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A player in yellow retrieves the ball under the basket to inbound it.\",\n   \"time_seconds\": 2387.0,\n   \"visibility\": \"clear\"\n  }\n ]\n}"
+}

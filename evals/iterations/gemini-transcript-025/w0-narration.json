@@ -1,0 +1,86 @@
+{
+  "index": 0,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [18.0, 18.25, 18.5, 18.75, 19.0, 19.25, 19.5, 19.75, 20.0, 20.25, 20.5, 20.75, 21.0, 21.25, 21.5, 21.75, 22.0, 22.25, 22.5, 22.75, 23.0, 23.25, 23.5, 23.75, 24.0, 24.25, 24.5, 24.75, 25.0, 25.25, 25.5, 25.75, 26.0, 26.25, 26.5, 26.75, 27.0, 27.25, 27.5, 27.75, 28.0, 28.25, 28.5, 28.75, 29.0, 29.25, 29.5, 29.75, 30.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time18.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:04:00.233740+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:04:02.078527+05:30",
+      "reserve_usd": 0.0539321875,
+      "status": "received",
+      "latency_seconds": 5.2738759579951875
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 14093,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 527
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"observations\": [\n  {\n   \"observation\": \"The ball rolls loose across the court toward the referee as players run downcourt.\",\n   \"time_seconds\": 18.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee picks up the loose ball in the backcourt near the three-point arc.\",\n   \"time_seconds\": 20.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee holds the ball and prepares to initiate the inbound or restart play.\",\n   \"time_seconds\": 23.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee bounces the ball toward the player in light blue along the sideline.\",\n   \"time_seconds\": 28.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The ball bounces toward the light blue player near the sideline.\",\n   \"time_seconds\": 29.5,\n   \"visibility\": \"clear\"\n  }\n ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPTOHvLPmeNi3DXQXomUoAOtRMyoNDkJwIzOoLpj3kLu0OgG1F/gPI6AfZQ6IgKsodVb9ZeBfPD52LCyakpemRYqPC19k6xunhv7gRLDzyi3TrraWczLFq0IDM9vBbD889"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13199,
+      "candidatesTokenCount": 252,
+      "totalTokenCount": 13451,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 527
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "C42laueIEMDnqfkPgpmBwAI"
+  },
+  "ended_at": "2026-09-12T23:04:07.353746+05:30",
+  "usage": {
+    "promptTokenCount": 13199,
+    "candidatesTokenCount": 252,
+    "totalTokenCount": 13451,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 527
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.01084425,
+  "raw_text": "{\n \"observations\": [\n  {\n   \"observation\": \"The ball rolls loose across the court toward the referee as players run downcourt.\",\n   \"time_seconds\": 18.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee picks up the loose ball in the backcourt near the three-point arc.\",\n   \"time_seconds\": 20.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee holds the ball and prepares to initiate the inbound or restart play.\",\n   \"time_seconds\": 23.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee bounces the ball toward the player in light blue along the sideline.\",\n   \"time_seconds\": 28.75,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The ball bounces toward the light blue player near the sideline.\",\n   \"time_seconds\": 29.5,\n   \"visibility\": \"clear\"\n  }\n ]\n}"
+}

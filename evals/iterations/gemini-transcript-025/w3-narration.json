@@ -1,0 +1,86 @@
+{
+  "index": 3,
+  "stage": "narration",
+  "prompt": "Describe observable basketball action changes in this continuous video. Allowed source timestamps in seconds: [18.0, 18.25, 18.5, 18.75, 19.0, 19.25, 19.5, 19.75, 20.0, 20.25, 20.5, 20.75, 21.0, 21.25, 21.5, 21.75, 22.0, 22.25, 22.5, 22.75, 23.0, 23.25, 23.5, 23.75, 24.0, 24.25, 24.5, 24.75, 25.0, 25.25, 25.5, 25.75, 26.0, 26.25, 26.5, 26.75, 27.0, 27.25, 27.5, 27.75, 28.0, 28.25, 28.5, 28.75, 29.0, 29.25, 29.5, 29.75, 30.0]. Write a short running visual transcript, not a list of basketball statistics. Describe ball location, visible control by team color, release/contact with rim, and control afterward only when visible. Player number must be unknown if unreadable. Do not infer motion or outcomes hidden from the video, from a scoreboard, or from player stance. Distinguish seeing a ball in the air from seeing a made or missed shot. Do not create a new action for every frame. State uncertainty explicitly. Return JSON with exactly one key, observations, containing at most 12 entries. Each entry has exactly time_seconds (one supplied timestamp), observation (1-400 characters), and visibility (clear or uncertain). Entries must be chronological. An empty list is allowed if nothing can be described. No event labels or invented jersey numbers. Video00:00 is source time18.0. Use source time_seconds from the supplied grid, including context.",
+  "started_at": "2026-09-12T23:04:42.855249+05:30",
+  "status": "completed",
+  "attempts": [
+    {
+      "started_at": "2026-09-12T23:04:44.551724+05:30",
+      "reserve_usd": 0.0536790625,
+      "status": "received",
+      "latency_seconds": 6.455605499999365
+    }
+  ],
+  "token_preflight": {
+    "totalTokens": 13823,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 527
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"observations\": [\n  {\n   \"observation\": \"Play is paused before the game starts. A referee stands near the center circle holding the basketball while players from Campus in yellow gather nearby.\",\n   \"time_seconds\": 18.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee continues holding the ball at center court as players move into position.\",\n   \"time_seconds\": 23.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A second referee walks toward the center circle while the first referee holds the basketball.\",\n   \"time_seconds\": 26.25,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Both referees meet near the center circle with the ball still held as the teams prepare to start.\",\n   \"time_seconds\": 29.75,\n   \"visibility\": \"clear\"\n  }\n ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPoJHj/0NTsgydtix3/l0AvjuD084KfrLqt132ogZA2K2S4d03ntj6+gtqAUW3XtEsSzSSfcGyfB6XokssQr4Q4VEAw6ZkE9fU56XwBe6ZWBSabpgNVG1mpak9LWP6yPiV"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13199,
+      "candidatesTokenCount": 221,
+      "totalTokenCount": 13420,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 527
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "NY2laqm5NaO1g8UPj7zO6Q8"
+  },
+  "ended_at": "2026-09-12T23:04:51.011766+05:30",
+  "usage": {
+    "promptTokenCount": 13199,
+    "candidatesTokenCount": 221,
+    "totalTokenCount": 13420,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 527
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "estimated_cost_usd": 0.010728,
+  "raw_text": "{\n \"observations\": [\n  {\n   \"observation\": \"Play is paused before the game starts. A referee stands near the center circle holding the basketball while players from Campus in yellow gather nearby.\",\n   \"time_seconds\": 18.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"The referee continues holding the ball at center court as players move into position.\",\n   \"time_seconds\": 23.0,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"A second referee walks toward the center circle while the first referee holds the basketball.\",\n   \"time_seconds\": 26.25,\n   \"visibility\": \"clear\"\n  },\n  {\n   \"observation\": \"Both referees meet near the center circle with the ball still held as the teams prepare to start.\",\n   \"time_seconds\": 29.75,\n   \"visibility\": \"clear\"\n  }\n ]\n}"
+}

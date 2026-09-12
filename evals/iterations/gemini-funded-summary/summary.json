@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-12T23:08:05.527570+05:30",
+  "status": "completed_bounded_comparisons",
+  "holdout_used": false,
+  "new_estimated_spend_usd": 0.20880900000000224,
+  "new_cap_usd": 2,
+  "remaining_allowance_usd": 1.7911909999999978,
+  "metrics": {
+    "MiniCPM direct historical": {
+      "tp": 3,
+      "fp": 31,
+      "fn": 11,
+      "micro_precision": 0.08823529411764706,
+      "micro_recall": 0.21428571428571427,
+      "micro_f1": 0.125
+    },
+    "Gemini direct video": {
+      "tp": 5,
+      "fp": 8,
+      "fn": 9,
+      "micro_precision": 0.38461538461538464,
+      "micro_recall": 0.35714285714285715,
+      "micro_f1": 0.37037037037037035
+    },
+    "Gemini video + transcript": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 10,
+      "micro_precision": 0.4444444444444444,
+      "micro_recall": 0.2857142857142857,
+      "micro_f1": 0.34782608695652173
+    }
+  }
+}
