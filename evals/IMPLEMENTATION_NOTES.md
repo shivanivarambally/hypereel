@@ -158,3 +158,22 @@ brev login
 ```
 
 After authentication, the Cosmos-Reason2-2B benchmark can begin without sharing account credentials.
+
+---
+
+## 2026-09-12 13:09:05 IST — Qwen on Nebius capability test
+
+The owner reported no Brev credits and requested testing Qwen using existing Nebius credits. This supersedes the immediate Brev provisioning plan; do not allocate GPU capacity based on the earlier entry.
+
+The account model list includes `Qwen/Qwen3.5-397B-A17B`. Two bounded requests tested its actual endpoint capabilities, with automatic retries disabled and output capped at 128 tokens:
+
+- A synthetic red PNG sent as `image_url` was rejected with HTTP 400: `This model does not support image input`.
+- A one-second synthetic red MP4 sent as `video_url` was rejected with HTTP 400: `This model does not support video input`.
+
+The listing therefore does not establish visual-input support on this hosted endpoint. The current Nebius Qwen endpoint cannot replace the basketball classifier. No basketball quality benchmark ran, so precision/recall/F1 are unavailable, not zero. No development or holdout video was submitted.
+
+Both rejected requests returned no token usage. Recorded incremental estimated spend is $0.00 and the cumulative ledger remains $2.53027; actual provider billing for rejected requests was not independently checked.
+
+Evidence: [`iterations/qwen-nebius-capability-20260912.json`](iterations/qwen-nebius-capability-20260912.json).
+
+Next step: use a hosted endpoint that explicitly accepts Qwen video inputs, or ask Nebius whether visual inputs can be enabled for this account. A model change alone in the current endpoint is insufficient. Keep the original $5 cumulative ceiling until the owner changes it; prior references to a separate new $5 compute allowance were a proposal, not a user-approved budget increase.

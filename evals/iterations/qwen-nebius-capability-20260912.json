@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "provider_capability_probe",
+  "created_at": "2026-09-12T13:09:05+05:30",
+  "provider": "nebius",
+  "model": "Qwen/Qwen3.5-397B-A17B",
+  "model_listed_in_account": true,
+  "max_output_tokens_per_request": 128,
+  "automatic_retries": 0,
+  "probes": [
+    {
+      "input": "Synthetic red 128x128 PNG, base64 image_url",
+      "http_status": 400,
+      "provider_detail": "This model does not support image input",
+      "status": "rejected"
+    },
+    {
+      "input": "Synthetic red 128x128 H.264 MP4, one second at 4 FPS, base64 video_url",
+      "http_status": 400,
+      "provider_detail": "This model does not support video input",
+      "status": "rejected"
+    }
+  ],
+  "attempted_requests": 2,
+  "reported_token_usage": null,
+  "recorded_incremental_estimated_spend_usd": 0.0,
+  "cumulative_estimated_spend_usd": 2.53027,
+  "billing_note": "Rejected requests returned no usage. No inference cost was recorded; provider billing was not independently checked.",
+  "quality_benchmark_executed": false,
+  "quality_metrics": null,
+  "decision": "Endpoint cannot be used as the basketball visual classifier. No golden or holdout video submitted."
+}

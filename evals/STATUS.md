@@ -6,6 +6,8 @@ For the dated, append-only implementation narrative and ordered next steps, see 
 
 ## Current decision
 
+Latest update (2026-09-12 13:09 IST): the account lists `Qwen/Qwen3.5-397B-A17B`, but direct tests returned HTTP 400 for both image and video input. No quality benchmark could run on that endpoint. See the [capability test record](iterations/qwen-nebius-capability-20260912.json). Recorded cumulative estimated spend remains $2.53027. Brev benchmarking is pending credits, which the owner reports are unavailable.
+
 The development release gate is **not yet met**, so neither the full first-video run nor the sealed holdout has been executed.
 
 The best tuned development slice was iteration 18:
@@ -70,4 +72,4 @@ More prompt tuning against known timestamps would overfit the development set. T
 
 ## Next action
 
-Authenticate the locally installed Brev CLI with `brev login`. After authentication, select the cheapest available GPU with at least 24 GB VRAM, enforce a $5 compute ceiling and automatic shutdown, deploy Cosmos-Reason2-2B, and run the same development slices without opening the holdout.
+Obtain access to a hosted endpoint with confirmed visual inputs (or ask Nebius to enable them), then run a bounded development comparison. The original $5 cumulative ceiling still applies. Brev/Cosmos is deferred because Brev credits are unavailable; the holdout remains sealed.
