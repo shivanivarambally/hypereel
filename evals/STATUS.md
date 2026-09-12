@@ -1,6 +1,8 @@
 # Evaluation status
 
-Last updated: 2026-09-11
+Last updated: 2026-09-12
+
+For the dated, append-only implementation narrative and ordered next steps, see [`IMPLEMENTATION_NOTES.md`](IMPLEMENTATION_NOTES.md).
 
 ## Current decision
 
