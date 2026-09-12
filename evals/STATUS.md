@@ -1,3 +1,41 @@
+## Commit/push checkpoint — 2026-09-13T00:56:24.665196+05:30
+
+User authorized committing and pushing all pending project changes. Full pre-push suite:411 passed,4 skipped,1 final-holdout test deselected; one legacy Gemini SDK warning. Demo integration029, live UI030, failed three-clip031, successful six-clip032 and subsequent user render/approval feedback fixes included. User's own later render output verified89.5seconds; no claim its Chrome gate2 was visually inspected. Provider spend ledger $8.982478125; funded use $1.790183 of$2, remaining $0.209817. This is insufficient for another similar ~$0.53 full inference run within the current cap. No paid calls made for commit validation; do not reset ledger.
+
+Code, recipes, tests, raw response/usage records and timestamped notes are included. Credentials, local source/render media, preview cache, runtime lock and working scratch remain excluded. Live server remains running; pushing does not redeploy/restart it. Existing historical “uncommitted” entries describe their original checkpoint and are superseded by this commit preparation.
+
+---
+
+## Latest: six-clip live demo 032 — 2026-09-13T00:24:02.826138+05:30
+
+Fresh both-teams Gemini run on a continuous ten-minute development excerpt selected six non-overlapping clips and rendered an87-second reel in469.46s (~$0.534). Full app/agent diagram and both HITL video review gates restored at ?demo=full-flow; root and old live-demo URL route there. No saved classifications in live mode. 411 tests pass, actual six-player UI/MP4 checks pass. 031 only produced three clips; preserved. Read multiclip-live-032/results.md for evidence, scope, budget and launch state. Full-game accuracy remains unproven; holdout untouched.
+
+---
+
+## Latest: Live HITL demo 030 verified — 2026-09-12T23:59:15.148085+05:30
+
+Fresh live Gemini analysis through actual UI selected a clip, paused for human video review, then rendered and displayed/downloaded the reel after approval. New /?demo=live-demo and root use fixed real 40-second source and dedicated recipe; advanced form at ?demo=live. Not a replay; not full-game accuracy validation. 31.99 seconds, $0.023884 incremental, funded use $0.320506/$2. See live-hitl-030/results.md and latest IMPLEMENTATION_NOTES. No holdout or sharing.
+
+---
+
+## Demo recovery — 2026-09-12T23:53:02.562026+05:30
+
+Use ?demo=verified (also ?demo=recording) for explicitly labelled replay of the real 029 Gemini result with preview, approval and saved reel download; no inference. Generic live run again produced zero clips with different settings. Live recognition reliability is not resolved. See latest IMPLEMENTATION_NOTES.
+
+---
+
+## Approval UI update — 2026-09-12T23:45:39.646237+05:30
+
+Gate 1 now includes per-clip source video previews and Keep controls; Gate 2 includes the final reel player and download. Empty selections and missing source/output block the corresponding approval. 38 focused UI tests pass; no additional inference or holdout access. See latest IMPLEMENTATION_NOTES and demo-integration-029/results.md. Running app reload required for the updated UI.
+
+---
+
+## Latest checkpoint — Demo 029 ready — 2026-09-12T23:43:06.544495+05:30
+
+Live app now uses opt-in Gemini native video with a prefilled real 40-second East Bay excerpt. Production graph generated and verified a real 11.5-second MP4, score 0.66. Dedicated recipe retains minimum score 0.50. This known-action demo is not a new benchmark result; no holdout, YOLO or transcript used. 405 tests passed, 4 skipped, 1 holdout deselected; additional UI smoke passed and live form verified. Ledger $7.428182; funded usage $0.235887/$2. See evals/iterations/demo-integration-029/results.md and latest IMPLEMENTATION_NOTES for evidence and runtime requirements. App running at http://127.0.0.1:8501/?demo=ready; no automated evaluation scheduled.
+
+---
+
 ## Latest checkpoint — Funded Gemini tests complete 2026-09-12T23:08:05.527570+05:30
 
 Read evals/iterations/gemini-funded-summary/results.md,confirmation.json,and latest IMPLEMENTATION_NOTES. All8developmentwindows14references12types complete via successful024/027/028video calls. DirectGeminiTP5/FP8/FN9,F1.37037 vs MiniCPMTP3/FP31/FN11,F1.125.025transcript8/8valid,TP4/FP5/FN10,F1.34783;moreprecision,lessrecall.026missingimage2/6valid;staged3windowconfirmationcomplete. NoYOLOadded,noholdoutused. Newfundedspend$0.208809of$2cap,remaining$1.791191;reserve$3ofuserreported$5creditfordemo. Historicalledger$7.401104;neverreset.400tests pass,4skip,1holdouttestdeselected. No inference running/scheduled. Keep directGeminibaseline;defertranscript/genericYOLO. Nextrecommended experiment audits longercontext/shotoutcomevisibility with frozen scoring. Olderquota/partialstatuses below superseded.

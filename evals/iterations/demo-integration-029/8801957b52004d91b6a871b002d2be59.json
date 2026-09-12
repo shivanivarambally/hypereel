@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T18:20:49.967352+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0143396875,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nYou are the QUALITY JUDGE for a highlight-reel agent \u2014 the last check before a human reviews the reel. Judge whether the selected clips form a compelling, on-theme reel for the recipe 'Basketball \u2014 Generic (describe the subject in the prompt)' (basketball).\n\nAcceptance criteria the reel should satisfy:\n  - every clip shows a player from the team described in the prompt making the play\n  - no clip's highlighted play is made by the opposing team\n  - clips show real basketball plays (basket, three, layup/dunk, block, steal, rebound), not padding\n  - plays are spread across the whole game and not clustered in one segment\n  - no clip shows a timeout, bench sequence, dead-ball standing around, warm-ups, or shaky camera work\n\nReel under review: 0 clip(s), 0s of a 50s budget (0% filled). 0 clip(s) have a confirmed moment type; 0 are UNCLASSIFIED (the vision scorer saw the subject but could not confirm a specific play).\nClips:\n  (no clips selected)\n\nJudge on TWO axes:\n1) Quality: a strong sports reel is built from real, varied plays (for basketball: made baskets, threes, dunks/layups, blocks, steals, rebounds), not padded with UNCLASSIFIED windows where nothing clearly happens.\n2) Length: a good reel shows SEVERAL plays and uses a meaningful share of the budget. A reel of only 1-3 clips, or well under ~40% of the budget, is too thin if the game surely had more real plays to show.\n\nChoose ONE action:\n- 'require_confirmed_moments' \u2014 if more than about a third of the clips are UNCLASSIFIED (drops padding).\n- 'raise_threshold' \u2014 if the clips are mostly confirmed but low-scoring/weak.\n- 'broaden' \u2014 if the reel is too short/thin (too few clips, well under budget) and should include more real plays.\n- 'none' \u2014 if the reel is already a good length and quality; then verdict 'accept'.\n\nRespond with STRICT JSON only, no prose or markdown fences, exactly:\n{\"quality_score\": <number 0..1>, \"verdict\": \"accept\"|\"revise\", \"action\": \"none\"|\"require_confirmed_moments\"|\"raise_threshold\"|\"broaden\", \"issues\": [<short strings>], \"feedback\": <one short sentence>}"
+  ],
+  "token_preflight": {
+    "totalTokens": 533,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 533
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"quality_score\": 0.0, \"verdict\": \"revise\", \"action\": \"broaden\", \"issues\": [\"reel is empty\", \"0% of budget used\"], \"feedback\": \"The reel contains no clips and needs to be broadened to include plays from the game.\"}",
+              "thoughtSignature": "EmcKZQERTTIPTm3nJGLK+QdKK0kMANwKjabHsRTJxKKUeWpGPNink6nxNmr6WEF65m82m1IQjdkRRefC+kF2lhdnPNUnylts8A/jvgQVOov9Fhqe5GxkzOtf0bL1Esq3q5ix3NhTXwdq"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 533,
+      "candidatesTokenCount": 61,
+      "totalTokenCount": 594,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 533
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "ApilauziFJKzg8UP_pGvuQI"
+  },
+  "estimated_cost_usd": 0.0006285,
+  "elapsed_seconds": 2.1926033749768976
+}

@@ -47,6 +47,9 @@ def _get_vision_provider(settings: Settings) -> VisionProvider:
 
     try:
         if provider == "gemini":
+            if settings.gemini_native_video:
+                from .gemini_video import GeminiVideoVisionProvider
+                return GeminiVideoVisionProvider(settings)
             from .gemini import GeminiVisionProvider
 
             return GeminiVisionProvider(settings)
@@ -95,6 +98,9 @@ def _get_llm_provider(settings: Settings) -> LLMProvider:
 
     try:
         if provider == "gemini":
+            if settings.gemini_native_video:
+                from .gemini_video import GeminiVideoLLMProvider
+                return GeminiVideoLLMProvider(settings)
             from .gemini import GeminiLLMProvider
 
             return GeminiLLMProvider(settings)

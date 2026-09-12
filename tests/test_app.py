@@ -175,12 +175,13 @@ def test_funnel_pins_the_subject_gate_as_the_collapse_point():
     assert (f["n_cand"], f["n_cls"], f["n_present"], f["n_scored"], f["n_sel"]) == (207, 207, 0, 0, 0)
 
 
-def test_diagnosis_blames_the_subject_filter_when_nothing_is_present():
+def test_diagnosis_distinguishes_subject_rejection_from_absence():
     head, steps = app._diagnosis(_ebe_like_state())
     assert "did not confirm your subject" in head
     joined = " ".join(steps).lower()
-    # Actionable, control-specific guidance — not "redo everything".
-    assert "team" in joined and ("hd" in joined or "color" in joined)
+    # Explain uncertainty and coverage instead of blaming the user’s prompt.
+    assert "does not prove the team is absent" in joined
+    assert "quick-test cap" in joined
     html = app._diagnosis_html(_ebe_like_state())
     assert '<div class="hr-fstep drop">' in html  # the subject-seen box is flagged red
     assert "subject seen" in html and "207" in html

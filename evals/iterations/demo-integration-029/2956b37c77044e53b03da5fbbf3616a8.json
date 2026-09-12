@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T18:51:50.282177+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0140096875,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'Basketball \u2014 both teams live highlights' (basketball). 6 clip(s) totaling 87.0s were selected:\n- steal (9.0-22.5s, score 0.66)\n- steal (89.8-105.8s, score 0.67)\n- steal (290.5-306.5s, score 0.64)\n- rebound (364.0-373.5s, score 0.64)\n- steal (378.5-394.5s, score 0.64)\n- steal (479.0-495.0s, score 0.66)"
+  ],
+  "token_preflight": {
+    "totalTokens": 181,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 181
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here's a short, upbeat highlight-reel summary:\n\n**Defense Sparks the Offense! \ud83c\udfc0\u26a1**\n\nGet ready for 87 seconds of relentless hustle and game-changing stops! Both teams came ready to battle, turning high-pressure defense into pure highlight fuel. \n\nThis reel features five jaw-dropping steals fueled by lightning-fast hands and incredible court awareness, paired with a clutch, sky-walking rebound to lock down the paint. From pickpocketing the ball at the perimeter to diving into transition, these 6 action-packed clips capture every ounce of energy and intensity from the floor!",
+              "thoughtSignature": "EmcKZQERTTIPXcj7rFbRi7KDgI+XISeUxQ3cNyRmej+KJ3Mg6unVazKkcWkvw1HcLTzWsQez1uAqvaUYOZQFy5OACu/r4roEViX+DNM0nHYCkjZqiORmKmz45CkIxhw/BQRGR2CSKDCh"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 181,
+      "candidatesTokenCount": 126,
+      "totalTokenCount": 307,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 181
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "Rp-lauiRLc3yg8UP_ta2sQg"
+  },
+  "estimated_cost_usd": 0.00060825,
+  "elapsed_seconds": 1.8283847499988042
+}

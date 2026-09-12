@@ -1,0 +1,1367 @@
+{
+  "source": "/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-750-1350.mp4",
+  "recipe": {
+    "id": "basketball_both_teams_live_v1",
+    "name": "Basketball \u2014 both teams live highlights",
+    "domain": "basketball",
+    "highlight_model": "event_based",
+    "description": "A short real-game preview using continuous-video classification. This demo recipe prioritizes model evidence over noisy audio/motion proposal strength.",
+    "moment_types": [
+      {
+        "name": "made_basket",
+        "description": "A player on either team makes a two-point basket. Require visible made outcome; exclude misses and free throws.",
+        "weight": 1.0,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "three_pointer",
+        "description": "A player on either team makes a shot from beyond the three-point arc; require visible made outcome and clear shooting position.",
+        "weight": 1.3,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "layup_or_dunk",
+        "description": "A player on either team completes a made layup or dunk; require the made outcome.",
+        "weight": 1.1,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "steal",
+        "description": "Either team clearly takes the ball from the opponent through an interception or strip and establishes control.",
+        "weight": 0.9,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "rebound",
+        "description": "After a visibly missed shot, a player on either team clearly secures control of the ball. Identify the team.",
+        "weight": 0.7,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "block",
+        "description": "A defender on either team visibly contacts and deflects an attempted shot.",
+        "weight": 1.0,
+        "ideal_len": 8.0
+      }
+    ],
+    "scoring_rubric": null,
+    "signals": [
+      {
+        "type": "audio_peak",
+        "role": "proposer",
+        "weight": 0.1,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {
+          "min_peak_db": -12
+        }
+      },
+      {
+        "type": "motion_intensity",
+        "role": "proposer",
+        "weight": 0.1,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {
+          "window_seconds": 6
+        }
+      },
+      {
+        "type": "vision_classify",
+        "role": "scorer",
+        "weight": 0.8,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {
+          "min_video_seconds": 12
+        }
+      }
+    ],
+    "subject_selector": {
+      "type": "none",
+      "value": null,
+      "team_color": null,
+      "audience": "team",
+      "description": "Highlights from BOTH teams: light-blue and black jerseys. Identify which team makes each play in your reason. Include only clearly completed basketball events."
+    },
+    "selection": {
+      "max_duration": 90.0,
+      "min_clip": 4.0,
+      "max_clip": 16.0,
+      "lead_in": 2.0,
+      "lead_out": 5.0,
+      "min_score": 0.5,
+      "ordering": "chronological",
+      "coverage": "spread across the whole game, not clustered in one segment",
+      "dedup_overlap": true,
+      "min_gap_seconds": 0.0
+    },
+    "style": {
+      "transitions": "hard_cut",
+      "audio": "keep_original",
+      "overlays": [
+        "player_name",
+        "score"
+      ],
+      "format": "16:9",
+      "platform": "local"
+    },
+    "guardrails": {
+      "never_include": [
+        "timeouts",
+        "bench_sequences",
+        "shaky_camera",
+        "dead_ball_standing_around",
+        "warm_ups"
+      ],
+      "privacy": "never center or identify non-subject minors; keep the focus on the subject's live action",
+      "grounding": "Only label visually supported completed events. Do not invent an outcome or a player identity."
+    },
+    "acceptance": [
+      "Each clip shows a clearly completed basketball play by either team.",
+      "No duplicate clips or dead-ball padding.",
+      "Prefer distinct plays spread across the source; do not fabricate clips to fill the duration."
+    ]
+  },
+  "max_duration": 90,
+  "audience": null,
+  "max_candidates": 80,
+  "candidate_sampling": "chronological",
+  "evaluation_start_seconds": null,
+  "evaluation_end_seconds": null,
+  "evaluation_reference_events": [],
+  "video_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-750-1350.mp4",
+  "video_duration": 600.0,
+  "has_commentary": false,
+  "strategy": "event_based",
+  "active_signals": [
+    "audio_peak",
+    "motion_intensity"
+  ],
+  "candidates": [
+    {
+      "start": 3.0,
+      "end": 4.5,
+      "signal_scores": {
+        "motion_intensity": 0.8502202206352464
+      }
+    },
+    {
+      "start": 11.0,
+      "end": 17.5,
+      "signal_scores": {
+        "motion_intensity": 0.8557863890620673
+      }
+    },
+    {
+      "start": 19.0,
+      "end": 23.5,
+      "signal_scores": {
+        "motion_intensity": 0.8360468662070494
+      }
+    },
+    {
+      "start": 25.5,
+      "end": 29.0,
+      "signal_scores": {
+        "motion_intensity": 0.5483008924164676
+      }
+    },
+    {
+      "start": 30.5,
+      "end": 39.5,
+      "signal_scores": {
+        "motion_intensity": 0.7729022950007973
+      }
+    },
+    {
+      "start": 43.5,
+      "end": 44.5,
+      "signal_scores": {
+        "motion_intensity": 0.7219385474345947
+      }
+    },
+    {
+      "start": 47.5,
+      "end": 49.5,
+      "signal_scores": {
+        "motion_intensity": 0.739835529582942
+      }
+    },
+    {
+      "start": 53.5,
+      "end": 58.5,
+      "signal_scores": {
+        "motion_intensity": 0.7647475037112056
+      }
+    },
+    {
+      "start": 71.5,
+      "end": 80.0,
+      "signal_scores": {
+        "motion_intensity": 0.8986299961529968
+      }
+    },
+    {
+      "start": 92.0,
+      "end": 103.5,
+      "signal_scores": {
+        "motion_intensity": 0.7857999165002546
+      }
+    },
+    {
+      "start": 113.5,
+      "end": 114.5,
+      "signal_scores": {
+        "motion_intensity": 0.8169991610253305
+      }
+    },
+    {
+      "start": 123.5,
+      "end": 125.0,
+      "signal_scores": {
+        "motion_intensity": 0.7155497763033868
+      }
+    },
+    {
+      "start": 151.0,
+      "end": 155.0,
+      "signal_scores": {
+        "motion_intensity": 0.9463044225498999
+      }
+    },
+    {
+      "start": 157.5,
+      "end": 162.5,
+      "signal_scores": {
+        "motion_intensity": 0.7940222932224913
+      }
+    },
+    {
+      "start": 165.0,
+      "end": 167.0,
+      "signal_scores": {
+        "motion_intensity": 0.784177757151947
+      }
+    },
+    {
+      "start": 172.5,
+      "end": 176.5,
+      "signal_scores": {
+        "motion_intensity": 0.6946997384353859
+      }
+    },
+    {
+      "start": 182.0,
+      "end": 184.5,
+      "signal_scores": {
+        "motion_intensity": 0.6436707209390675
+      }
+    },
+    {
+      "start": 191.0,
+      "end": 194.5,
+      "signal_scores": {
+        "motion_intensity": 0.7720960915025579
+      }
+    },
+    {
+      "start": 196.0,
+      "end": 197.0,
+      "signal_scores": {
+        "motion_intensity": 0.6084581929480471
+      }
+    },
+    {
+      "start": 198.5,
+      "end": 205.0,
+      "signal_scores": {
+        "motion_intensity": 0.7689610372841126
+      }
+    },
+    {
+      "start": 211.0,
+      "end": 212.0,
+      "signal_scores": {
+        "motion_intensity": 0.6658129726655743
+      }
+    },
+    {
+      "start": 215.5,
+      "end": 219.5,
+      "signal_scores": {
+        "motion_intensity": 0.8587817776161949
+      }
+    },
+    {
+      "start": 222.5,
+      "end": 227.5,
+      "signal_scores": {
+        "motion_intensity": 1.0
+      }
+    },
+    {
+      "start": 230.0,
+      "end": 237.5,
+      "signal_scores": {
+        "motion_intensity": 0.7415195537105873
+      }
+    },
+    {
+      "start": 258.0,
+      "end": 261.5,
+      "signal_scores": {
+        "motion_intensity": 0.8218718773064788
+      }
+    },
+    {
+      "start": 264.0,
+      "end": 269.5,
+      "signal_scores": {
+        "motion_intensity": 0.9500445856822289
+      }
+    },
+    {
+      "start": 272.5,
+      "end": 278.0,
+      "signal_scores": {
+        "motion_intensity": 0.9945807433983523
+      }
+    },
+    {
+      "start": 280.0,
+      "end": 281.5,
+      "signal_scores": {
+        "motion_intensity": 0.8791000126562643
+      }
+    },
+    {
+      "start": 286.0,
+      "end": 287.0,
+      "signal_scores": {
+        "motion_intensity": 0.8151828263590487
+      }
+    },
+    {
+      "start": 290.5,
+      "end": 295.5,
+      "signal_scores": {
+        "motion_intensity": 0.9113372561033514
+      }
+    },
+    {
+      "start": 299.0,
+      "end": 303.5,
+      "signal_scores": {
+        "motion_intensity": 0.7955492445550413
+      }
+    },
+    {
+      "start": 340.0,
+      "end": 341.0,
+      "signal_scores": {
+        "motion_intensity": 0.9409742991750217
+      }
+    },
+    {
+      "start": 343.0,
+      "end": 347.0,
+      "signal_scores": {
+        "motion_intensity": 0.7307102975627782
+      }
+    },
+    {
+      "start": 362.5,
+      "end": 364.5,
+      "signal_scores": {
+        "motion_intensity": 0.6105879649331579
+      }
+    },
+    {
+      "start": 366.0,
+      "end": 368.5,
+      "signal_scores": {
+        "motion_intensity": 0.7732153237015328
+      }
+    },
+    {
+      "start": 374.0,
+      "end": 378.5,
+      "signal_scores": {
+        "motion_intensity": 0.8138484158720997
+      }
+    },
+    {
+      "start": 380.0,
+      "end": 385.0,
+      "signal_scores": {
+        "motion_intensity": 0.7612379918719867
+      }
+    },
+    {
+      "start": 386.5,
+      "end": 390.0,
+      "signal_scores": {
+        "motion_intensity": 0.9645095027406559
+      }
+    },
+    {
+      "start": 401.0,
+      "end": 409.0,
+      "signal_scores": {
+        "motion_intensity": 0.8060918365351102
+      }
+    },
+    {
+      "start": 409.0,
+      "end": 417.0,
+      "signal_scores": {
+        "motion_intensity": 0.8060918365351102
+      }
+    },
+    {
+      "start": 419.0,
+      "end": 425.0,
+      "signal_scores": {
+        "motion_intensity": 0.8209691854557892
+      }
+    },
+    {
+      "start": 426.5,
+      "end": 427.5,
+      "signal_scores": {
+        "motion_intensity": 0.7563764989678033
+      }
+    },
+    {
+      "start": 458.5,
+      "end": 464.0,
+      "signal_scores": {
+        "motion_intensity": 0.6827041549976689
+      }
+    },
+    {
+      "start": 470.5,
+      "end": 471.5,
+      "signal_scores": {
+        "motion_intensity": 0.5090612696679465
+      }
+    },
+    {
+      "start": 478.0,
+      "end": 479.5,
+      "signal_scores": {
+        "motion_intensity": 0.703944940727766
+      }
+    },
+    {
+      "start": 481.0,
+      "end": 490.0,
+      "signal_scores": {
+        "motion_intensity": 0.9548662791841172
+      }
+    },
+    {
+      "start": 494.0,
+      "end": 495.0,
+      "signal_scores": {
+        "motion_intensity": 0.6364932351640168
+      }
+    },
+    {
+      "start": 498.5,
+      "end": 503.0,
+      "signal_scores": {
+        "motion_intensity": 0.6903666432083558
+      }
+    },
+    {
+      "start": 510.0,
+      "end": 513.0,
+      "signal_scores": {
+        "motion_intensity": 0.5878237147449076
+      }
+    },
+    {
+      "start": 530.5,
+      "end": 531.5,
+      "signal_scores": {
+        "motion_intensity": 0.5753202190171187
+      }
+    },
+    {
+      "start": 562.0,
+      "end": 563.0,
+      "signal_scores": {
+        "motion_intensity": 0.6487870008450766
+      }
+    }
+  ],
+  "uncapped_candidates": [
+    {
+      "start": 3.0,
+      "end": 4.5,
+      "signal_scores": {
+        "motion_intensity": 0.8502202206352464
+      }
+    },
+    {
+      "start": 11.0,
+      "end": 17.5,
+      "signal_scores": {
+        "motion_intensity": 0.8557863890620673
+      }
+    },
+    {
+      "start": 19.0,
+      "end": 23.5,
+      "signal_scores": {
+        "motion_intensity": 0.8360468662070494
+      }
+    },
+    {
+      "start": 25.5,
+      "end": 29.0,
+      "signal_scores": {
+        "motion_intensity": 0.5483008924164676
+      }
+    },
+    {
+      "start": 30.5,
+      "end": 39.5,
+      "signal_scores": {
+        "motion_intensity": 0.7729022950007973
+      }
+    },
+    {
+      "start": 43.5,
+      "end": 44.5,
+      "signal_scores": {
+        "motion_intensity": 0.7219385474345947
+      }
+    },
+    {
+      "start": 47.5,
+      "end": 49.5,
+      "signal_scores": {
+        "motion_intensity": 0.739835529582942
+      }
+    },
+    {
+      "start": 53.5,
+      "end": 58.5,
+      "signal_scores": {
+        "motion_intensity": 0.7647475037112056
+      }
+    },
+    {
+      "start": 71.5,
+      "end": 80.0,
+      "signal_scores": {
+        "motion_intensity": 0.8986299961529968
+      }
+    },
+    {
+      "start": 92.0,
+      "end": 103.5,
+      "signal_scores": {
+        "motion_intensity": 0.7857999165002546
+      }
+    },
+    {
+      "start": 113.5,
+      "end": 114.5,
+      "signal_scores": {
+        "motion_intensity": 0.8169991610253305
+      }
+    },
+    {
+      "start": 123.5,
+      "end": 125.0,
+      "signal_scores": {
+        "motion_intensity": 0.7155497763033868
+      }
+    },
+    {
+      "start": 151.0,
+      "end": 155.0,
+      "signal_scores": {
+        "motion_intensity": 0.9463044225498999
+      }
+    },
+    {
+      "start": 157.5,
+      "end": 162.5,
+      "signal_scores": {
+        "motion_intensity": 0.7940222932224913
+      }
+    },
+    {
+      "start": 165.0,
+      "end": 167.0,
+      "signal_scores": {
+        "motion_intensity": 0.784177757151947
+      }
+    },
+    {
+      "start": 172.5,
+      "end": 176.5,
+      "signal_scores": {
+        "motion_intensity": 0.6946997384353859
+      }
+    },
+    {
+      "start": 182.0,
+      "end": 184.5,
+      "signal_scores": {
+        "motion_intensity": 0.6436707209390675
+      }
+    },
+    {
+      "start": 191.0,
+      "end": 194.5,
+      "signal_scores": {
+        "motion_intensity": 0.7720960915025579
+      }
+    },
+    {
+      "start": 196.0,
+      "end": 197.0,
+      "signal_scores": {
+        "motion_intensity": 0.6084581929480471
+      }
+    },
+    {
+      "start": 198.5,
+      "end": 205.0,
+      "signal_scores": {
+        "motion_intensity": 0.7689610372841126
+      }
+    },
+    {
+      "start": 211.0,
+      "end": 212.0,
+      "signal_scores": {
+        "motion_intensity": 0.6658129726655743
+      }
+    },
+    {
+      "start": 215.5,
+      "end": 219.5,
+      "signal_scores": {
+        "motion_intensity": 0.8587817776161949
+      }
+    },
+    {
+      "start": 222.5,
+      "end": 227.5,
+      "signal_scores": {
+        "motion_intensity": 1.0
+      }
+    },
+    {
+      "start": 230.0,
+      "end": 237.5,
+      "signal_scores": {
+        "motion_intensity": 0.7415195537105873
+      }
+    },
+    {
+      "start": 258.0,
+      "end": 261.5,
+      "signal_scores": {
+        "motion_intensity": 0.8218718773064788
+      }
+    },
+    {
+      "start": 264.0,
+      "end": 269.5,
+      "signal_scores": {
+        "motion_intensity": 0.9500445856822289
+      }
+    },
+    {
+      "start": 272.5,
+      "end": 278.0,
+      "signal_scores": {
+        "motion_intensity": 0.9945807433983523
+      }
+    },
+    {
+      "start": 280.0,
+      "end": 281.5,
+      "signal_scores": {
+        "motion_intensity": 0.8791000126562643
+      }
+    },
+    {
+      "start": 286.0,
+      "end": 287.0,
+      "signal_scores": {
+        "motion_intensity": 0.8151828263590487
+      }
+    },
+    {
+      "start": 290.5,
+      "end": 295.5,
+      "signal_scores": {
+        "motion_intensity": 0.9113372561033514
+      }
+    },
+    {
+      "start": 299.0,
+      "end": 303.5,
+      "signal_scores": {
+        "motion_intensity": 0.7955492445550413
+      }
+    },
+    {
+      "start": 340.0,
+      "end": 341.0,
+      "signal_scores": {
+        "motion_intensity": 0.9409742991750217
+      }
+    },
+    {
+      "start": 343.0,
+      "end": 347.0,
+      "signal_scores": {
+        "motion_intensity": 0.7307102975627782
+      }
+    },
+    {
+      "start": 362.5,
+      "end": 364.5,
+      "signal_scores": {
+        "motion_intensity": 0.6105879649331579
+      }
+    },
+    {
+      "start": 366.0,
+      "end": 368.5,
+      "signal_scores": {
+        "motion_intensity": 0.7732153237015328
+      }
+    },
+    {
+      "start": 374.0,
+      "end": 378.5,
+      "signal_scores": {
+        "motion_intensity": 0.8138484158720997
+      }
+    },
+    {
+      "start": 380.0,
+      "end": 385.0,
+      "signal_scores": {
+        "motion_intensity": 0.7612379918719867
+      }
+    },
+    {
+      "start": 386.5,
+      "end": 390.0,
+      "signal_scores": {
+        "motion_intensity": 0.9645095027406559
+      }
+    },
+    {
+      "start": 401.0,
+      "end": 409.0,
+      "signal_scores": {
+        "motion_intensity": 0.8060918365351102
+      }
+    },
+    {
+      "start": 409.0,
+      "end": 417.0,
+      "signal_scores": {
+        "motion_intensity": 0.8060918365351102
+      }
+    },
+    {
+      "start": 419.0,
+      "end": 425.0,
+      "signal_scores": {
+        "motion_intensity": 0.8209691854557892
+      }
+    },
+    {
+      "start": 426.5,
+      "end": 427.5,
+      "signal_scores": {
+        "motion_intensity": 0.7563764989678033
+      }
+    },
+    {
+      "start": 458.5,
+      "end": 464.0,
+      "signal_scores": {
+        "motion_intensity": 0.6827041549976689
+      }
+    },
+    {
+      "start": 470.5,
+      "end": 471.5,
+      "signal_scores": {
+        "motion_intensity": 0.5090612696679465
+      }
+    },
+    {
+      "start": 478.0,
+      "end": 479.5,
+      "signal_scores": {
+        "motion_intensity": 0.703944940727766
+      }
+    },
+    {
+      "start": 481.0,
+      "end": 490.0,
+      "signal_scores": {
+        "motion_intensity": 0.9548662791841172
+      }
+    },
+    {
+      "start": 494.0,
+      "end": 495.0,
+      "signal_scores": {
+        "motion_intensity": 0.6364932351640168
+      }
+    },
+    {
+      "start": 498.5,
+      "end": 503.0,
+      "signal_scores": {
+        "motion_intensity": 0.6903666432083558
+      }
+    },
+    {
+      "start": 510.0,
+      "end": 513.0,
+      "signal_scores": {
+        "motion_intensity": 0.5878237147449076
+      }
+    },
+    {
+      "start": 530.5,
+      "end": 531.5,
+      "signal_scores": {
+        "motion_intensity": 0.5753202190171187
+      }
+    },
+    {
+      "start": 562.0,
+      "end": 563.0,
+      "signal_scores": {
+        "motion_intensity": 0.6487870008450766
+      }
+    }
+  ],
+  "classifications": [
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.65,
+      "reason": "Players transitioning down the court during candidate interval with no rubric event."
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.72,
+      "reason": "Light-blue team player intercepts the ball and breaks away."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.6,
+      "reason": "Dribbling upcourt without a completed scoring event"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "Pass and offensive setup with no completed rubric play."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Shot attempt without clear visual evidence of a made basket or completed rebound."
+    },
+    {
+      "moment_type": null,
+      "subject_present": true,
+      "confidence": 0.5,
+      "reason": "Shooter misses and players scramble for loose rebound without clear control."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Light-blue team secures the defensive rebound after a missed shot."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Light-blue team offensive rebound after missed shot"
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Player in black steals the ball from the ball handler."
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.74,
+      "reason": "Light blue jersey player intercepts black jersey's pass across halfcourt"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.7,
+      "reason": "Players standing set for a free throw during dead ball."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "Free throw attempt, which is excluded from field goal moment types."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.6,
+      "reason": "Dead ball and transition downcourt with no completed highlight action."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "Dead ball inbound setup with no scoring or defensive play occurred"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "Dead ball inbound play sequence with passing, no completed highlight event."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.65,
+      "reason": "Scramble for loose ball without a definitive steal or completed highlight play."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Player in black takes a jump shot that misses, and a player in light blue secures the defensive rebound."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Transition play with pass deflected, no completed rubric event."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "No completed rubric event is visible during the interval, only ball advancement and a pass."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.65,
+      "reason": "Dead ball whistle stopped play with no completed highlight."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "No clear completed play occurred during the interval."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.45,
+      "reason": "A pass is thrown loose towards the sideline, but clear control or completed steal is not established within the window."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "Ball thrown out of bounds resulting in a turnover/dead ball."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "The clip shows a dead ball situation with the referee handling the ball."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "A player in black secures the rebound following a missed shot."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Transition play without a completed scoring, rebound, or steal event."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "Dribbling and passing sequence without a completed highlight event."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Shot missed and play ends out of bounds or dead ball without clear completion."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "No clear completed play in the target interval."
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Light blue jersey player intercepts and steals the pass across court."
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.7,
+      "reason": "The player in light blue secures the ball off a turnover in transition."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.7,
+      "reason": "The clip shows a made free throw/basket earlier transitioning to transition play during the evaluated window without a distinct highlight action."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.6,
+      "reason": "No highlight event completed; ball poked out of bounds/dead ball."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "A player takes a shot which hits the rim and is contested for a rebound without clear completion."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.7,
+      "reason": "Black jersey secures defensive rebound after missed shot."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "No highlight event completed in the interval"
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.7,
+      "reason": "Black jersey player steals ball from light-blue ballhandler"
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Player in black jersey intercepts or strips the ball on defense"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Inbound pass and transition play with no scoring, rebound, block, or steal completed."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "A shot is missed and players contest the rebound under the rim, with possession secured."
+    },
+    {
+      "moment_type": null,
+      "subject_present": true,
+      "confidence": 0.25,
+      "reason": "unconfirmed shot outcome: Black jersey player drives and scores a basket"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Shooter misses the basket and a foul or dead ball occurs."
+    },
+    {
+      "moment_type": "rebound",
+      "subject_present": true,
+      "confidence": 0.65,
+      "reason": "Light-blue team secures the rebound after a missed shot near the basket."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "Dribbling up court, no completed rubric event"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.35,
+      "reason": "A pass goes toward the corner without a completed highlight event within the window."
+    },
+    {
+      "moment_type": "steal",
+      "subject_present": true,
+      "confidence": 0.7,
+      "reason": "The black team intercepts a pass to complete a steal and initiates a transition."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Dead ball transition after play under the basket"
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.7,
+      "reason": "Dead ball transition with players walking and coach high-fiving."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "Dead ball stoppage with player shooting around on empty court."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "Shooting practice during stoppage, no live game play."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "Dead ball practice/warm-up shot during stoppage."
+    }
+  ],
+  "scored_clips": [
+    {
+      "start": 89.75,
+      "end": 105.75,
+      "moment_type": "steal",
+      "score": 0.6706,
+      "reason": "Light blue jersey player intercepts black jersey's pass across halfcourt",
+      "subject_present": true
+    },
+    {
+      "start": 9.0,
+      "end": 22.5,
+      "moment_type": "steal",
+      "score": 0.6616,
+      "reason": "Light-blue team player intercepts the ball and breaks away.",
+      "subject_present": true
+    },
+    {
+      "start": 479.0,
+      "end": 495.0,
+      "moment_type": "steal",
+      "score": 0.6555,
+      "reason": "The black team intercepts a pass to complete a steal and initiates a transition.",
+      "subject_present": true
+    },
+    {
+      "start": 297.0,
+      "end": 308.5,
+      "moment_type": "steal",
+      "score": 0.6396,
+      "reason": "The player in light blue secures the ball off a turnover in transition.",
+      "subject_present": true
+    },
+    {
+      "start": 364.0,
+      "end": 373.5,
+      "moment_type": "rebound",
+      "score": 0.6373,
+      "reason": "Black jersey secures defensive rebound after missed shot.",
+      "subject_present": true
+    },
+    {
+      "start": 378.0,
+      "end": 390.0,
+      "moment_type": "steal",
+      "score": 0.6361,
+      "reason": "Black jersey player steals ball from light-blue ballhandler",
+      "subject_present": true
+    },
+    {
+      "start": 384.5,
+      "end": 395.0,
+      "moment_type": "steal",
+      "score": 0.6165,
+      "reason": "Player in black jersey intercepts or strips the ball on defense",
+      "subject_present": true
+    },
+    {
+      "start": 288.5,
+      "end": 300.5,
+      "moment_type": "steal",
+      "score": 0.6111,
+      "reason": "Light blue jersey player intercepts and steals the pass across court.",
+      "subject_present": true
+    },
+    {
+      "start": 69.5,
+      "end": 85.0,
+      "moment_type": "steal",
+      "score": 0.6099,
+      "reason": "Player in black steals the ball from the ball handler.",
+      "subject_present": true
+    },
+    {
+      "start": 256.0,
+      "end": 266.5,
+      "moment_type": "rebound",
+      "score": 0.6022,
+      "reason": "A player in black secures the rebound following a missed shot.",
+      "subject_present": true
+    },
+    {
+      "start": 407.0,
+      "end": 422.0,
+      "moment_type": "rebound",
+      "score": 0.6006,
+      "reason": "A shot is missed and players contest the rebound under the rim, with possession secured.",
+      "subject_present": true
+    },
+    {
+      "start": 51.5,
+      "end": 63.5,
+      "moment_type": "rebound",
+      "score": 0.5965,
+      "reason": "Light-blue team offensive rebound after missed shot",
+      "subject_present": true
+    },
+    {
+      "start": 45.5,
+      "end": 54.5,
+      "moment_type": "rebound",
+      "score": 0.594,
+      "reason": "Light-blue team secures the defensive rebound after a missed shot.",
+      "subject_present": true
+    },
+    {
+      "start": 456.5,
+      "end": 469.0,
+      "moment_type": "rebound",
+      "score": 0.5883,
+      "reason": "Light-blue team secures the rebound after a missed shot near the basket.",
+      "subject_present": true
+    },
+    {
+      "start": 180.0,
+      "end": 189.5,
+      "moment_type": "rebound",
+      "score": 0.5844,
+      "reason": "Player in black takes a jump shot that misses, and a player in light blue secures the defensive rebound.",
+      "subject_present": true
+    }
+  ],
+  "selected_clips": [
+    {
+      "start": 9.0,
+      "end": 22.5,
+      "moment_type": "steal",
+      "score": 0.6616,
+      "reason": "Light-blue team player intercepts the ball and breaks away.",
+      "subject_present": true
+    },
+    {
+      "start": 89.75,
+      "end": 105.75,
+      "moment_type": "steal",
+      "score": 0.6706,
+      "reason": "Light blue jersey player intercepts black jersey's pass across halfcourt",
+      "subject_present": true
+    },
+    {
+      "start": 290.5,
+      "end": 306.5,
+      "moment_type": "steal",
+      "score": 0.6396,
+      "reason": "The player in light blue secures the ball off a turnover in transition.",
+      "subject_present": true
+    },
+    {
+      "start": 364.0,
+      "end": 373.5,
+      "moment_type": "rebound",
+      "score": 0.6373,
+      "reason": "Black jersey secures defensive rebound after missed shot.",
+      "subject_present": true
+    },
+    {
+      "start": 378.5,
+      "end": 394.5,
+      "moment_type": "steal",
+      "score": 0.6361,
+      "reason": "Black jersey player steals ball from light-blue ballhandler",
+      "subject_present": true
+    },
+    {
+      "start": 479.0,
+      "end": 495.0,
+      "moment_type": "steal",
+      "score": 0.6555,
+      "reason": "The black team intercepts a pass to complete a steal and initiates a transition.",
+      "subject_present": true
+    }
+  ],
+  "proposed_duration": 87.0,
+  "output_path": null,
+  "summary": "",
+  "judge_verdict": {
+    "quality_score": 0.85,
+    "verdict": "accept",
+    "action": "none",
+    "issues": [],
+    "feedback": "Solid highlight reel featuring completed defensive plays and turnovers from both teams filling 97% of the budget."
+  },
+  "judge_decision": "accept",
+  "revision_count": 0,
+  "selection_overrides": {},
+  "needs_human": true,
+  "human_gate": "approve_clips",
+  "human_decision": {},
+  "approved": false,
+  "shared": false,
+  "errors": [],
+  "notes": [
+    "plan: strategy='event_based', active_signals=['audio_peak', 'motion_intensity']",
+    "ingest: resolved '/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-750-1350.mp4' -> /Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-750-1350.mp4 (600.0s)",
+    "propose: 51 candidate window(s) generated",
+    "classify: 51 window(s) judged by 'gemini' provider",
+    "select: 6 clip(s) chosen, 87.0s of 90.0s budget (ready for review)",
+    "judge[gemini]: verdict=accept score=0.85 llm_action=none -> action=none (clips=6, confirmed=6) \u2014 Solid highlight reel featuring completed defensive plays and turnovers from both teams filling 97% of the budget."
+  ],
+  "mode": "gemini"
+}

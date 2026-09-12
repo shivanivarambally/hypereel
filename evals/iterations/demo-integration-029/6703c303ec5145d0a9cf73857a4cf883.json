@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T18:28:06.162088+00:00",
+  "status": "completed",
+  "reserved_usd": 0.01390375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'Basketball \u2014 short native-video demo' (basketball). 1 clip(s) totaling 11.5s were selected:\n- layup_or_dunk (9.0-20.5s, score 0.66)"
+  ],
+  "token_preflight": {
+    "totalTokens": 68,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 68
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Get ready for pure above-the-rim energy! In this quick, high-flying highlight, the action wastes no time driving straight to the basket for an electrifying finish. Clocking in at just under 12 seconds, this rim-rocking clip delivers all the fast-paced, high-scoring excitement that makes basketball impossible to look away from!",
+              "thoughtSignature": "EmcKZQERTTIPfV8GQic5NKGA7M6IDPm1/Dfqg4kKPrDp9Rr0NWx+PCRJvpgRQEpZCd6YlNsK+LIdW2caGjI/5AQAEoLf427B5cRlgeiK/yBOKS8r4WjZToddluEVInF388fHSfmi7R1R"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 68,
+      "candidatesTokenCount": 73,
+      "totalTokenCount": 141,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 68
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "tpmlaseiI6n0g8UPle_d2QQ"
+  },
+  "estimated_cost_usd": 0.00032475,
+  "elapsed_seconds": 1.6436288339900784
+}

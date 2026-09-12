@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-09-12T18:44:16.829282+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0311809375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "kind": "native_video",
+    "window_index": 0,
+    "window": {
+      "start": 3.0,
+      "end": 4.5,
+      "signal_scores": {
+        "motion_intensity": 0.8502202206352464
+      }
+    },
+    "video_sha256": "a15875a3cba05d976942542487506361461120904869393b6bc73db5e9ddfa4f",
+    "source_start": 0,
+    "duration": 12.0,
+    "fps": 4
+  },
+  "prompt": [
+    "You are judging a short video clip (sampled frames shown in order) for a highlight-reel agent.\n\nMoment types (the rubric):\n- made_basket: A player on either team makes a two-point basket. Require visible made outcome; exclude misses and free throws.\n- three_pointer: A player on either team makes a shot from beyond the three-point arc; require visible made outcome and clear shooting position.\n- layup_or_dunk: A player on either team completes a made layup or dunk; require the made outcome.\n- steal: Either team clearly takes the ball from the opponent through an interception or strip and establishes control.\n- rebound: After a visibly missed shot, a player on either team clearly secures control of the ball. Identify the team.\n- block: A defender on either team visibly contacts and deflects an attempted shot.\n\nWho/what to look for: Highlights from BOTH teams: light-blue and black jerseys. Identify which team makes each play in your reason. Include only clearly completed basketball events.\nSet subject_present=true only when the subject described above is the one making the play in the foreground game; false otherwise.\n\nRejection rules (apply these first):\n- Judge ONLY the primary game in the foreground \u2014 the court with the referees and the two teams playing in formation. IGNORE any action on adjacent or background courts and anyone shooting on a side basket.\n- Return moment_type=null (low confidence) if the frames show a timeout, huddle, or players standing around during a dead ball; warm-ups or shoot-around; substitutions or walking to the bench; or a camera pan/zoom with motion blur and no clear play.\n- When you are not confident a real play from the rubric is happening, return null rather than guessing \u2014 a padded reel is worse than a short one.\n- Never include: timeouts, bench_sequences, shaky_camera, dead_ball_standing_around, warm_ups.\n- Grounding rule: Only label visually supported completed events. Do not invent an outcome or a player identity.\n\nLook at the frames and decide whether this window contains one of the moment types above and whether the subject is visible.\n\nBasketball temporal checks:\n- The first and last images provide before/after context. The middle images densely sample the candidate action. Classify the central action; do not label an unrelated event visible only in the outer context.\n- Treat the images as an ordered sequence, not independent pictures. Compare who controls the ball in the first and last frames.\n- A steal requires visible evidence that the defending team gains or deflects possession; a rebound after a shot is not a steal.\n- Only select event types explicitly listed in this recipe. Rebounds are allowed when the rubric includes them; do not substitute a steal or basket for a rebound.\n- Do not call a rebound a steal merely because possession changes teams. A steal requires a defender disrupting a live dribble or pass before control.\n- A made basket requires visible outcome evidence (ball through the rim/net or unmistakable immediate aftermath). A ball in the air is only an attempt.\n- A three_pointer additionally requires clear evidence that the shooter was behind the three-point line. If distance or make is unclear, do not guess.\n- Prefer null when the ordered frames do not establish the complete event.\n\nRespond with STRICT JSON only, no prose, no markdown fences, matching exactly this shape:\n{\"moment_type\": <string or null>, \"subject_present\": <true|false>, \"confidence\": <number 0..1>, \"reason\": <short string>}\nYou are receiving continuous video, not sparse still images. Clip00:00 is source0s. The candidate action interval is [3.0,4.5] source seconds. Use surrounding video to verify the complete action. Classify the central action, not every frame. For rebounds determine shooting and controlling teams; a rebound is permitted when present in the rubric."
+  ],
+  "token_preflight": {
+    "totalTokens": 14401,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 835
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"moment_type\": null, \"subject_present\": false, \"confidence\": 0.65, \"reason\": \"Players transitioning down the court during candidate interval with no rubric event.\"}",
+              "thoughtSignature": "Es0ICsoIARFNMg8tI7c7N7ecvGLkLaWd8RT9/kmrVxm2J3BfA/ilRVx2YSjop/WckdPap+qxVNoDXe0Rva1d/kVAtcelNZKQaU59y5zafYHv6ZJpzr+m1a7PFcIr2tK8c7ogJHaIJsW0uxVWMvXb6rgwiGFhU4t2w7gfBvZCtuJCHIKCb08KGxK5XiOxSu2TqifFBS/2SVkQYmzQKbbQsj/aHbeS55T3js8UkWiqDevf5uuopd7qCLbeznpFoDG4GPHloBByirO2rCfGed0VxjGtwBC9FkxTJS3fck4805B0tPCIFUJdNQbPFCqqKW3htiI4WsLTO3uxSEnGdTw9zv6FRmU38tPGXD3Lo6SgVn8geFoXbO4wOyy8bZQzAieMuDO6p2c/UaO4MEEn/jjVymVxeKqSYT70HRRYIf+7kdu1XQB1EgxIvVYDJtptZfDeQOZhg5Roa7oP0BBADqa/6QMJGo3D16grr8Z7m+CMp1oRHVPnfVb4bDE4kOhghBd7xqFf5R9LZg+9PuZHcDkBb+7uBafIzeH2AtvPvKxrWsEb9r88rIHVBd3YiJ5XhUKmLWXHyIqULIpNoc1cqIT8qSxMbarXYR0K1gwn9bSIPD7uoDOAzqbFxF81AC44Kd+AbSq4++OWVPLYyXOALf7vIZvGL/Qank5sRcrn35O4B0glRqc85SfTjK7WPO5NrZpzDJxuvlCZ30g7gZ6WOMdjFh/xkXWA7gxcNsdx9SyRnMeWcnAW4mkYNYfX8CSEAu2byz9thlWjLZCt9Qd5kjDW93MsYXH35SBG/Kv5H1LbJZyPbAx+5/htCy0yWwkFeZH5U7dv03M1YjTG+Fik2OPkCs8DnH5KJ2s7TVbHfJIgxQ772++Pngkyp3BPjV0vGfWXdiPfiG9KhkYF4gTtvH9qalo7yIEGghTIsZGwjMlE1MHlVrgVWhbKW57GHcYYt2Ln7I218S48uMWtRSeYNYfTSHGBFDZjPWUxQxhoVqIyVejowI+Ayaghl034fZbugp92VR+/ZmPOjMw7DuExwo5E0PbbkXDGdmH3PpbFIrDhlIkspWhzkBN2wLi1r4AZBJ6i4gCNObyGHg0oD9VSux5lkzieGYJCdGEvyZpJrPS4Loz3lHsGIyaQ5JdpcFxnq0ZJW1ly9LctRiOhDfc55fXnEJW9C9kX+Mxg342EH2xSNfsqwDscI/QtddW3it/Wwy2el8zbb9U1Oap9E4FY6xjLt9Y9+rOUHawb/t+VWCUCaoyETEz9V+7KyK0BwTJ75rJiDgPwhNZYXTvxM+hHXqydjvdRR/aXcQMr80d0PsgkpeoFu7p7dH6MeVhqJM/Pz7K725gD9l7a5RXA+CylPr8jMLKkjleBgjaiqqo5ALJ7YO11neRFJBx85nrxnEg/XGTysMhnyzxyELx9ORRuFNnYapnGd7Uxd+8GhKBuSQv8tO/gJNGm3mD94RWcCChOZRoe"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13507,
+      "candidatesTokenCount": 41,
+      "totalTokenCount": 13935,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 835
+        }
+      ],
+      "thoughtsTokenCount": 387,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "gp2laqHoC4HEg8UPlrzO2QI"
+  },
+  "estimated_cost_usd": 0.01173525,
+  "elapsed_seconds": 6.406306582997786
+}

@@ -1,0 +1,11 @@
+['plan']
+['ingest']
+['propose']
+['scoreboard']
+['classify']
+['select']
+['judge']
+['__interrupt__']
+CLIPS [{"start": 9.0, "end": 22.5, "moment_type": "steal", "score": 0.6616, "reason": "Light-blue team player intercepts the ball and breaks away.", "subject_present": true}, {"start": 89.75, "end": 105.75, "moment_type": "steal", "score": 0.6706, "reason": "Light blue jersey player intercepts black jersey's pass across halfcourt", "subject_present": true}, {"start": 290.5, "end": 306.5, "moment_type": "steal", "score": 0.6396, "reason": "The player in light blue secures the ball off a turnover in transition.", "subject_present": true}, {"start": 364.0, "end": 373.5, "moment_type": "rebound", "score": 0.6373, "reason": "Black jersey secures defensive rebound after missed shot.", "subject_present": true}, {"start": 378.5, "end": 394.5, "moment_type": "steal", "score": 0.6361, "reason": "Black jersey player steals ball from light-blue ballhandler", "subject_present": true}, {"start": 479.0, "end": 495.0, "moment_type": "steal", "score": 0.6555, "reason": "The black team intercepts a pass to complete a steal and initiates a transition.", "subject_present": true}]
+RENDERED /Users/shivani/code/AgentAICourse/week3/hypereel/output/multiclip-032/reel_basketball_both_teams_live_v1.mp4
+ELAPSED 469.45930528640747

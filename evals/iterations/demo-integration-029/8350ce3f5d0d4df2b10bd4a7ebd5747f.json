@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T19:05:39.741756+00:00",
+  "status": "completed",
+  "reserved_usd": 0.014007812500000001,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'Basketball \u2014 both teams live highlights' (basketball). 6 clip(s) totaling 89.5s were selected:\n- steal (9.0-22.5s, score 0.66)\n- rebound (51.5-63.5s, score 0.63)\n- steal (89.8-105.8s, score 0.65)\n- steal (290.5-306.5s, score 0.61)\n- steal (378.5-394.5s, score 0.64)\n- rebound (479.0-495.0s, score 0.62)"
+  ],
+  "token_preflight": {
+    "totalTokens": 179,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 179
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Get ready for non-stop, high-energy hoops action in this fast-paced highlight reel! Clocking in at just under 90 seconds, both teams bring relentless hustle to the floor with elite defense and pure grit on the glass. Watch the intensity ramp up with lightning-quick hands racking up four incredible steals, paired with two clutch, sky-scraping rebounds that shut down second chances. It\u2019s pure hustle, quick transitions, and electric two-way basketball from start to finish!",
+              "thoughtSignature": "EmcKZQERTTIPxHStN5ITpGEMublqJIkd5fG12dKEtLA1oNpOK0H9sFEOaEIHAp1EljuUoMPxlthhRcevoPv+HbnBlap/yZCpEu/EQRsQH7Z+PgE2rQK+3Su04RsYwUp4ACj/6dXUYg7P"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 179,
+      "candidatesTokenCount": 101,
+      "totalTokenCount": 280,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 179
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "hKKlaoLmCODdg8UP2caOgAU"
+  },
+  "estimated_cost_usd": 0.000513,
+  "elapsed_seconds": 1.657810332981171
+}

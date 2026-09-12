@@ -1,0 +1,12 @@
+['plan']
+['ingest']
+['propose']
+['scoreboard']
+['classify']
+['select']
+['judge']
+['select']
+['judge']
+['__interrupt__']
+CLIPS [{"start": 9.0, "end": 20.5, "moment_type": "steal", "score": 0.6056, "reason": "Light blue team intercepts pass and drives down court", "subject_present": true}, {"start": 91.75, "end": 103.75, "moment_type": "steal", "score": 0.5986, "reason": "Light blue defender intercepts the pass and starts a fast break.", "subject_present": true}, {"start": 456.5, "end": 467.0, "moment_type": "rebound", "score": 0.5883, "reason": "Light-blue player secures defensive rebound off miss.", "subject_present": true}]
+ELAPSED 366.4439260959625

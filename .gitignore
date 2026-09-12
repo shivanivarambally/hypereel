@@ -44,3 +44,6 @@ evals/iterations/evidence-state-019/media/
 # Local scratch, detector caches, and extracted evaluation frames
 work/
 evals/iterations/*/media/
+
+# Runtime budget lock; keep the ledger JSON tracked.
+evals/iterations/spend-ledger.lock

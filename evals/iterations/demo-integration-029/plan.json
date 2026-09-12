@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-09-12T23:36:22.760384+05:30",
+  "scope": "User urgently requests functioning live app and actual clips for demo.",
+  "source": "40-second real development-game excerpt,source750\u2013790,not full-game performance evidence",
+  "changes": [
+    "Opt-in Gemini3.8Flash continuousvideo4fps within existingfunded$2cap",
+    "Remove contradictory blanket rebound rejection from classification rubric",
+    "Dedicated demo recipe scores vision.8,audio.1,motion.1,unchangedmin_score.5",
+    "UI defaults selectable by process environment; no mock detection"
+  ],
+  "holdout_used": false,
+  "run_limit": "At most8candidatewindows for initial fullpipeline smoke,shortsource",
+  "validation": "Inspect selected live classifications and renderactualMP4,then verify app visible and ready"
+}

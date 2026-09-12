@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T18:51:20.572620+00:00",
+  "status": "completed",
+  "reserved_usd": 0.014475624999999999,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nYou are the QUALITY JUDGE for a highlight-reel agent \u2014 the last check before a human reviews the reel. Judge whether the selected clips form a compelling, on-theme reel for the recipe 'Basketball \u2014 both teams live highlights' (basketball).\n\nAcceptance criteria the reel should satisfy:\n  - Each clip shows a clearly completed basketball play by either team.\n  - No duplicate clips or dead-ball padding.\n  - Prefer distinct plays spread across the source; do not fabricate clips to fill the duration.\n\nReel under review: 6 clip(s), 87s of a 90s budget (97% filled). 6 clip(s) have a confirmed moment type; 0 are UNCLASSIFIED (the vision scorer saw the subject but could not confirm a specific play).\nClips:\n  1. steal | 9-22s | score 0.66 | Light-blue team player intercepts the ball and breaks away.\n  2. steal | 90-106s | score 0.67 | Light blue jersey player intercepts black jersey's pass across halfcourt\n  3. steal | 290-306s | score 0.64 | The player in light blue secures the ball off a turnover in transition.\n  4. rebound | 364-374s | score 0.64 | Black jersey secures defensive rebound after missed shot.\n  5. steal | 378-394s | score 0.64 | Black jersey player steals ball from light-blue ballhandler\n  6. steal | 479-495s | score 0.66 | The black team intercepts a pass to complete a steal and initiates a transition.\n\nJudge on TWO axes:\n1) Quality: a strong sports reel is built from real, varied plays (for basketball: made baskets, threes, dunks/layups, blocks, steals, rebounds), not padded with UNCLASSIFIED windows where nothing clearly happens.\n2) Length: a good reel shows SEVERAL plays and uses a meaningful share of the budget. A reel of only 1-3 clips, or well under ~40% of the budget, is too thin if the game surely had more real plays to show.\n\nChoose ONE action:\n- 'require_confirmed_moments' \u2014 if more than about a third of the clips are UNCLASSIFIED (drops padding).\n- 'raise_threshold' \u2014 if the clips are mostly confirmed but low-scoring/weak.\n- 'broaden' \u2014 if the reel is too short/thin (too few clips, well under budget) and should include more real plays.\n- 'none' \u2014 if the reel is already a good length and quality; then verdict 'accept'.\n\nRespond with STRICT JSON only, no prose or markdown fences, exactly:\n{\"quality_score\": <number 0..1>, \"verdict\": \"accept\"|\"revise\", \"action\": \"none\"|\"require_confirmed_moments\"|\"raise_threshold\"|\"broaden\", \"issues\": [<short strings>], \"feedback\": <one short sentence>}"
+  ],
+  "token_preflight": {
+    "totalTokens": 678,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 678
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"quality_score\": 0.85, \"verdict\": \"accept\", \"action\": \"none\", \"issues\": [], \"feedback\": \"Solid highlight reel featuring completed defensive plays and turnovers from both teams filling 97% of the budget.\"}",
+              "thoughtSignature": "EmcKZQERTTIP3Z4B2Gf1dzI4ATKuN3Isij7szonk0u3h/OiRux6BfE1AwzixOeSFzDvrqJSHCBFJcI/Cjjwy3Q96C5pchvE7y6Izx+yqt5MSX+DV2uUWYKAldpwLctGgUUvfLbscY+JO"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 678,
+      "candidatesTokenCount": 54,
+      "totalTokenCount": 732,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 678
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "KJ-lauHOOrLlg8UPjcbr0QQ"
+  },
+  "estimated_cost_usd": 0.000711,
+  "elapsed_seconds": 1.2976679579878692
+}

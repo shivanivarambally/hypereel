@@ -43,6 +43,7 @@ class Settings:
     vision_provider: str = "mock"
     llm_provider: str = "mock"
 
+    gemini_native_video: bool = False
     gemini_api_key: str = ""
     gemini_model: str = "gemini-2.0-flash"
 
@@ -102,6 +103,7 @@ def get_settings() -> Settings:
     return Settings(
         vision_provider=_get("HYPEREEL_VISION_PROVIDER", "mock") or "mock",
         llm_provider=_get("HYPEREEL_LLM_PROVIDER", "mock") or "mock",
+        gemini_native_video=_get("GEMINI_NATIVE_VIDEO", "false").lower() == "true",
         gemini_api_key=_get("GEMINI_API_KEY"),
         gemini_model=_get("GEMINI_MODEL", "gemini-2.0-flash"),
         groq_api_key=_get("GROQ_API_KEY"),

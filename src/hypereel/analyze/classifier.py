@@ -82,6 +82,12 @@ def classify_candidates(
     results: list[Classification] = []
     for i, window in enumerate(candidates):
         try:
+            video_classifier = getattr(provider, "classify_video_window", None)
+            if callable(video_classifier) and video_path:
+                classification = video_classifier(video_path, window, recipe, window_index=i)
+                checkpoint_classification(i, window, classification)
+                results.append(classification)
+                continue
             context = max(0.0, settings.classification_context_seconds)
             if context > 0 and settings.frames_per_candidate >= 5:
                 frame_paths = []

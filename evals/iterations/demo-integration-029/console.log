@@ -1,0 +1,2 @@
+Selected: [{'start': 9.0, 'end': 20.5, 'moment_type': 'layup_or_dunk', 'score': 0.66, 'reason': 'Light blue player steals ball, passes ahead to teammate who makes a fastbreak layup.', 'subject_present': True}]
+Verified real MP4: /Users/shivani/code/AgentAICourse/week3/hypereel/output/demo-verified/reel_basketball_demo_video_v1.mp4 11.500000

@@ -1,0 +1,13 @@
+{
+  "changes": [
+    "both teams instead of light-blue only",
+    "minimum native video context 12 seconds",
+    "selection lead_out 5 seconds, max_clip16"
+  ],
+  "source": "same continuous 600-second excerpt",
+  "max_candidates": 80,
+  "max_duration": 90,
+  "min_score": 0.5,
+  "holdout_used": false,
+  "target": ">=5 distinct clips without duplicates or injected classifications"
+}

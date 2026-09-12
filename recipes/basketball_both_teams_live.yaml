@@ -1,0 +1,93 @@
+id: basketball_both_teams_live_v1
+name: "Basketball \u2014 both teams live highlights"
+domain: basketball
+highlight_model: event_based
+description: A short real-game preview using continuous-video classification. This
+  demo recipe prioritizes model evidence over noisy audio/motion proposal strength.
+moment_types:
+- name: made_basket
+  description: A player on either team makes a two-point basket. Require visible made
+    outcome; exclude misses and free throws.
+  weight: 1
+  ideal_len: 8
+- name: three_pointer
+  description: A player on either team makes a shot from beyond the three-point arc;
+    require visible made outcome and clear shooting position.
+  weight: 1.3
+  ideal_len: 8
+- name: layup_or_dunk
+  description: A player on either team completes a made layup or dunk; require the
+    made outcome.
+  weight: 1.1
+  ideal_len: 8
+- name: steal
+  description: Either team clearly takes the ball from the opponent through an interception
+    or strip and establishes control.
+  weight: 0.9
+  ideal_len: 8
+- name: rebound
+  description: After a visibly missed shot, a player on either team clearly secures
+    control of the ball. Identify the team.
+  weight: 0.7
+  ideal_len: 8
+- name: block
+  description: A defender on either team visibly contacts and deflects an attempted
+    shot.
+  weight: 1
+  ideal_len: 8
+signals:
+- type: audio_peak
+  role: proposer
+  weight: 0.1
+  params:
+    min_peak_db: -12
+- type: motion_intensity
+  role: proposer
+  weight: 0.1
+  params:
+    window_seconds: 6
+- type: vision_classify
+  role: scorer
+  weight: 0.8
+  params:
+    min_video_seconds: 12
+subject_selector:
+  type: none
+  audience: team
+  description: 'Highlights from BOTH teams: light-blue and black jerseys. Identify
+    which team makes each play in your reason. Include only clearly completed basketball
+    events.'
+selection:
+  max_duration: 90
+  min_clip: 4
+  max_clip: 16
+  lead_in: 2
+  lead_out: 5
+  min_score: 0.5
+  ordering: chronological
+  coverage: spread across the whole game, not clustered in one segment
+  dedup_overlap: true
+style:
+  transitions: hard_cut
+  audio: keep_original
+  overlays:
+  - player_name
+  - score
+  format: '16:9'
+  platform: local
+guardrails:
+  never_include:
+  - timeouts
+  - bench_sequences
+  - shaky_camera
+  - dead_ball_standing_around
+  - warm_ups
+  privacy: never center or identify non-subject minors; keep the focus on the subject's
+    live action
+  grounding: Only label visually supported completed events. Do not invent an outcome
+    or a player identity.
+acceptance:
+- Each clip shows a clearly completed basketball play by either team.
+- No duplicate clips or dead-ball padding.
+- Prefer distinct plays spread across the source; do not fabricate clips to fill the
+  duration.

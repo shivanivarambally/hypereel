@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-09-12T18:41:18.708276+00:00",
+  "status": "completed",
+  "reserved_usd": 0.024364375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "kind": "native_video",
+    "window_index": 27,
+    "window": {
+      "start": 280.0,
+      "end": 281.5,
+      "signal_scores": {
+        "motion_intensity": 0.8791000126562643
+      }
+    },
+    "video_sha256": "007318335c7ee3feac99ff1e452c4b6bd6c98d84d5377f5ae27c49c805730406",
+    "source_start": 278.0,
+    "duration": 5.5,
+    "fps": 4
+  },
+  "prompt": [
+    "You are judging a short video clip (sampled frames shown in order) for a highlight-reel agent.\n\nMoment types (the rubric):\n- made_basket: The subject (a player on the team described in the prompt) makes a two-point field goal: the ball passes through the hoop right after their shot, jumper, or putback. Do NOT count free throws, misses, or any basket made by the opposing team.\n\n- three_pointer: The subject (a player on the team described in the prompt) makes a shot from behind the three-point line \u2014 look for the shot arc and the reaction at the make. Exclude misses and any shot by the opposing team.\n\n- layup_or_dunk: The subject finishes at the rim with a driving layup, fast-break finish, or dunk. Exclude missed attempts and any finish by the opposing team.\n\n- block: The subject blocks or clearly alters an opposing player's shot with their hand \u2014 deflected or swatted away, not merely contested from a distance.\n\n- steal: The subject takes the ball from an opposing player \u2014 a pick-off or a strip \u2014 forcing a change of possession.\n\n- rebound: The subject grabs a missed shot out of the air, especially a contested board or an offensive rebound that keeps the possession alive.\n\n\nWho/what to look for: Highlights for the team in light-blue jerseys; exclude the team in black. Only clearly visible live plays.\nSet subject_present=true only when the subject described above is the one making the play in the foreground game; false otherwise.\nAdditional structured cues: type=team_color, value=the subject described in the runtime prompt, team_color=Identify the subject team from the jersey/scoreboard description in the prompt. Set subject_present=true only when a player on that team is making the play; set it false for any player on the opposing team, so the opponent's plays are never included.\n\n\nRejection rules (apply these first):\n- Judge ONLY the primary game in the foreground \u2014 the court with the referees and the two teams playing in formation. IGNORE any action on adjacent or background courts and anyone shooting on a side basket.\n- Return moment_type=null (low confidence) if the frames show a timeout, huddle, or players standing around during a dead ball; warm-ups or shoot-around; substitutions or walking to the bench; or a camera pan/zoom with motion blur and no clear play.\n- When you are not confident a real play from the rubric is happening, return null rather than guessing \u2014 a padded reel is worse than a short one.\n- Never include: timeouts, bench_sequences, shaky_camera, dead_ball_standing_around, warm_ups.\n- Grounding rule: never label a moment_type the vision scorer isn't confident about \u2014 degrade to a lower score rather than fabricate a play; when it is unclear whether a subject-team player made the play, mark subject_present=false.\n\n\nLook at the frames and decide whether this window contains one of the moment types above and whether the subject is visible.\n\nBasketball temporal checks:\n- The first and last images provide before/after context. The middle images densely sample the candidate action. Classify the central action; do not label an unrelated event visible only in the outer context.\n- Treat the images as an ordered sequence, not independent pictures. Compare who controls the ball in the first and last frames.\n- A steal requires visible evidence that the defending team gains or deflects possession; a rebound after a shot is not a steal.\n- Only select event types explicitly listed in this recipe. Rebounds are allowed when the rubric includes them; do not substitute a steal or basket for a rebound.\n- Do not call a rebound a steal merely because possession changes teams. A steal requires a defender disrupting a live dribble or pass before control.\n- A made basket requires visible outcome evidence (ball through the rim/net or unmistakable immediate aftermath). A ball in the air is only an attempt.\n- A three_pointer additionally requires clear evidence that the shooter was behind the three-point line. If distance or make is unclear, do not guess.\n- Prefer null when the ordered frames do not establish the complete event.\n\nRespond with STRICT JSON only, no prose, no markdown fences, matching exactly this shape:\n{\"moment_type\": <string or null>, \"subject_present\": <true|false>, \"confidence\": <number 0..1>, \"reason\": <short string>}\nYou are receiving continuous video, not sparse still images. Clip00:00 is source278.0s. The candidate action interval is [280.0,281.5] source seconds. Use surrounding video to verify the complete action. Classify the central action, not every frame. For rebounds determine shooting and controlling teams; a rebound is permitted when present in the rubric."
+  ],
+  "token_preflight": {
+    "totalTokens": 7130,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1036
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 5918
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 176
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"moment_type\": null, \"subject_present\": true, \"confidence\": 0.65, \"reason\": \"A shot is taken by the light blue team but it misses and rebounds off the rim without a make.\"}",
+              "thoughtSignature": "EmcKZQERTTIPzbDVhtFfv/HcWuflEXIECOjOZ07v66K+VwTE5lTzscOOTJ1Soul9FBuC6BPItelImHtiXekwqviKJI4LR6j+N/4RbHV/jaZCU+ySuynIo0vJmYMxvxL4VeG72eBLOeKW"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 6844,
+      "candidatesTokenCount": 49,
+      "totalTokenCount": 6893,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 5808
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 1036
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "z5ylavOJNbulg8UP0cT1qQg"
+  },
+  "estimated_cost_usd": 0.00531675,
+  "elapsed_seconds": 3.3298929579905234
+}

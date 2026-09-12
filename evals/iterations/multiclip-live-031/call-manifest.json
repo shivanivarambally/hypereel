@@ -1,0 +1,267 @@
+[
+  {
+    "file": "evals/iterations/demo-integration-029/5dfa5d0670084063a19991a03ad717a9.json",
+    "cost_usd": 0.001317,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/033cf0e544ea478d8d56acb00fb4d1ac.json",
+    "cost_usd": 0.00487575,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/117610b67c3743baa675ffb84c48968f.json",
+    "cost_usd": 0.006897,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/bbb78a20aad644f6817c6b2cd3daa9d5.json",
+    "cost_usd": 0.0068445,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/e0f76a885f6a4538b119d2edc60d76de.json",
+    "cost_usd": 0.00490725,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/b6a0c9773097489b95ce2ddb430104a6.json",
+    "cost_usd": 0.007248,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/d7b79c9d0ae04acfa9d72d3183337441.json",
+    "cost_usd": 0.010806,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/7e318b62e385428285febaf18c8c1d61.json",
+    "cost_usd": 0.011232,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/ef21a04ed219431cab5f856e2135065a.json",
+    "cost_usd": 0.00486825,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/669a765769154acf8517451e8b77c85d.json",
+    "cost_usd": 0.0088545,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/7d8fe0c46f0b45f8885a79f5a3adba4a.json",
+    "cost_usd": 0.00767175,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a9f35d346786424ca0efa6a1909f766b.json",
+    "cost_usd": 0.007248,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/0ad2b85e37ac4307b252373738bf41d8.json",
+    "cost_usd": 0.0092325,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a5f440894f234064931cf1e91cf770d0.json",
+    "cost_usd": 0.007233,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/3edde98ce44c4b23a6667e625e13fc00.json",
+    "cost_usd": 0.0080475,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/39a9e4a918fc4ce59b07e1dbf8c83fad.json",
+    "cost_usd": 0.011208,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/43ae556fa4ef47bc8a42cf6cc6a613d0.json",
+    "cost_usd": 0.00487575,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/1a8ea4924ad34159be59992d40cb3c9a.json",
+    "cost_usd": 0.00490575,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/394b03807bb6403aaccfe7b05c79b630.json",
+    "cost_usd": 0.0069135,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a5246168ee1a4b5d9d4ccff003535596.json",
+    "cost_usd": 0.006456,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/cf8dab33971d40adb443cc0d708bdc0c.json",
+    "cost_usd": 0.00843975,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/67542ad9a51e4a34ab1f202540794d4f.json",
+    "cost_usd": 0.00486075,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/942fa03e01b0481293b91024debbdf1b.json",
+    "cost_usd": 0.00528675,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/025e5764939840d8804e74f41d127e05.json",
+    "cost_usd": 0.01000875,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/304756451ccc4b4ab9086a9b09083a94.json",
+    "cost_usd": 0.0060525,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/b48a6c1253b640709753c634932e477e.json",
+    "cost_usd": 0.006882,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a6c8090ac3d14f11a9567932022d15ec.json",
+    "cost_usd": 0.01320525,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/0446177788b3475ab9e9a0ba64b7c5f9.json",
+    "cost_usd": 0.0092355,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/36b33bfcff4540dc80a3e8985971dadf.json",
+    "cost_usd": 0.008451,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a8c736c24f304d82bc2f7d2e029f5372.json",
+    "cost_usd": 0.00488325,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/d562daac1d254c1a8b99516d56218678.json",
+    "cost_usd": 0.00566175,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/47f353befe4f4e2eb5aa6f770f744d85.json",
+    "cost_usd": 0.006105,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/548978d94b4f409caf7b6ddfa7ea4387.json",
+    "cost_usd": 0.0076365,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/6fc056cee967452d9faa48804b1f8ce5.json",
+    "cost_usd": 0.005256,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/d9eb3c52e3ac4be98ca22c2d20d52c51.json",
+    "cost_usd": 0.00531675,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/2bba16584b374217ad76684caa48cf12.json",
+    "cost_usd": 0.01042725,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/f4286a19ca40470bb0d0b191241a4e7e.json",
+    "cost_usd": 0.00486075,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/a2d3752cb4ae4880867fc82176c65a95.json",
+    "cost_usd": 0.004887,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/737fae132eaa472b9abba3e7fc9cdae3.json",
+    "cost_usd": 0.007659,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/b207a8268ff24845975b75a2b91c6705.json",
+    "cost_usd": 0.00805275,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/d1902aaa6062466c9f5521f280fdfb57.json",
+    "cost_usd": 0.00725175,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/cb60d2b7931f4874a235759f84da98f7.json",
+    "cost_usd": 0.00844725,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/412381dd15e64358a4d2e97624e73be0.json",
+    "cost_usd": 0.0056715,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/3819eb39f75149c3b0671f1e8db4e7f1.json",
+    "cost_usd": 0.00802875,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/d9bf26fdf0ab472b8831f2ef1b0a4670.json",
+    "cost_usd": 0.00529425,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/5ed54597e683402489075c3dbd3993ec.json",
+    "cost_usd": 0.00566025,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/ec6be0dc670944b29b3ea00c35b94ed6.json",
+    "cost_usd": 0.00803625,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/2c282205418040d49859932963ade6c9.json",
+    "cost_usd": 0.0080475,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/2838631c55ad4403ad109e25e9d269f7.json",
+    "cost_usd": 0.0048495,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/38d030af17aa44d082839219fd28bfc7.json",
+    "cost_usd": 0.01043475,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/fc867b5ec3ea45a49663c2f82bb7550a.json",
+    "cost_usd": 0.004872,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/ff8e53fe5a8d45d0b853daacf541ffd5.json",
+    "cost_usd": 0.0076515,
+    "status": "completed"
+  },
+  {
+    "file": "evals/iterations/demo-integration-029/41369b2e48954cc28d6268e4581eda31.json",
+    "cost_usd": 0.0007545,
+    "status": "completed"
+  }
+]

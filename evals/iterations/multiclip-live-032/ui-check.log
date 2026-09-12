@@ -1,0 +1,5 @@
+2026-09-13 00:22:03.261 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+gate1 players 6
+2026-09-13 00:22:07.546 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+gate2 players 1
+Verified 6 nonoverlapping clips and stitched reel duration 87.0

@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-12T18:07:23.183329+00:00",
+  "status": "completed",
+  "reserved_usd": 0.01390375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'Basketball \u2014 short native-video demo' (basketball). 1 clip(s) totaling 11.5s were selected:\n- layup_or_dunk (9.0-20.5s, score 0.66)"
+  ],
+  "token_preflight": {
+    "totalTokens": 68,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 68
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Get ready for pure above-the-rim energy! This quick-hitting, 11-second highlight wastes no time getting straight to the action, serving up a high-flying, crowd-pleasing finish at the rack. Short, sweet, and packed with momentum, it\u2019s instant-replay material that brings the heat! \ud83c\udfc0\ud83d\udd25",
+              "thoughtSignature": "EmcKZQERTTIPqoq81ep9FU1R95B1xHEW1/idjyMNpK7YSpPrlsTlW0ZRQZtS1BquE4EvuqJEQAxpky48wf3rRy1Ls1WPnXtH9LTN5QGAu3yRZVZihwu4/kvdlP7T2a+/UEOEg2Wy9Jyh"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 68,
+      "candidatesTokenCount": 71,
+      "totalTokenCount": 139,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 68
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "25SlaoWmJdulg8UP7vbhsQY"
+  },
+  "estimated_cost_usd": 0.00031725,
+  "elapsed_seconds": 1.5665073330164887
+}

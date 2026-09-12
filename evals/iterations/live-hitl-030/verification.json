@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-09-12T23:58:07.887554+05:30",
+  "elapsed_seconds": 31.987694263458252,
+  "output": "output/reel_basketball_demo_video_v1.mp4",
+  "probe": {
+    "format": {
+      "filename": "output/reel_basketball_demo_video_v1.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "11.500000",
+      "size": "8368011",
+      "bit_rate": "5821225",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf61.7.100"
+      }
+    }
+  },
+  "fresh_inference": true,
+  "approval_clicked_by_test": true,
+  "share_clicked": false,
+  "holdout_used": false
+}

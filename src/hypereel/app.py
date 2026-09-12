@@ -17,6 +17,10 @@ Run with::
 
 from __future__ import annotations
 
+import math
+import json
+import hashlib
+import subprocess
 import os
 import sys
 import time
@@ -485,12 +489,10 @@ def _diagnosis(current: dict | None) -> tuple[str, list[str]] | None:
         steps = [
             "Your recipe filters to one team (SUBJECT FILTER = ON), so windows where the model "
             "reports <b>subject_present = false</b> are all dropped — that's every window here.",
-            "The most likely cause: the <b>“Describe who/what to capture”</b> brief didn't match "
-            "what the model sees. Lead with the reliable cue — <b>jersey COLORS</b>, not numbers "
-            "(numbers are unreadable at low resolution).",
-            'Add <b>“use HD if available”</b> to that brief so plays are easier to read.',
-            'Or set the <b>Audience override</b> to <b>“team”</b> to keep both teams (turns the '
-            "one-team filter off).",
+            "This does not prove the team is absent. The model may have rejected the action, "
+            "missed the team, or received a window without a complete play.",
+            "Check the actual source, sampled time range and classification reasons before changing the subject description. "
+            "A quick-test cap covers only the first candidate windows, not the whole game.",
         ]
     elif stalled == "scored":
         extra = (
@@ -501,8 +503,8 @@ def _diagnosis(current: dict | None) -> tuple[str, list[str]] | None:
         head = f"Windows were found, but none cleared the score bar (min_score {f['min_score']:.2f})."
         steps = [
             f"{extra}, but the blended audio/motion/vision-confidence score stayed under "
-            f"{f['min_score']:.2f} — often low model confidence at low resolution.",
-            'Add <b>“use HD if available”</b> to the describe box to raise vision confidence.',
+            f"{f['min_score']:.2f}. Check the classification reasons and candidate coverage.",
+            'Higher-resolution source video may help, but a quality preference cannot add detail to an existing local file.',
             "Lower <b>min_score</b> in the recipe, or pick a recipe tuned for this footage.",
         ]
     elif stalled == "selected":
@@ -877,7 +879,7 @@ def _preflight(
                 "don't slip into the reel.",
             ))
 
-    if brief and parse_video_quality(brief) is None:
+    if brief and parse_video_quality(brief) is None and not Path(source).is_file():
         checks.append((
             "warn",
             "No output-quality preference detected — add “use HD if available” so the model "
@@ -948,7 +950,10 @@ def _render_sidebar(
             "(catches an exhausted budget / bad key the badge can't see).",
         ):
             st.session_state.pop("provider_health", None)
-        recipe_name = st.selectbox("Recipe", [p.name for p in recipe_files])
+        recipe_names = [p.name for p in recipe_files]
+        full_demo = st.query_params.get("demo") == "full-flow"
+        preferred = "basketball_both_teams_live.yaml" if full_demo else os.environ.get("HYPEREEL_DEFAULT_RECIPE", "")
+        recipe_name = st.selectbox("Recipe", recipe_names, index=recipe_names.index(preferred) if preferred in recipe_names else 0)
 
         # Load the selected recipe up front so the "Describe" field can flag
         # itself required, and so the pre-flight checker below can validate the
@@ -964,7 +969,7 @@ def _render_sidebar(
 
         source = st.text_input(
             "Source (YouTube URL or local path)",
-            value="demo://aau_basketball_game.mp4",
+            value=str(_REPO_ROOT / "downloads/east-bay-demo-750-1350.mp4") if full_demo else os.environ.get("HYPEREEL_DEFAULT_SOURCE", "demo://aau_basketball_game.mp4"),
             help="A YouTube URL (downloaded via yt-dlp, up to 1080p), a local video "
             "path, or a demo:// placeholder for offline mock runs.",
         )
@@ -972,7 +977,7 @@ def _render_sidebar(
         subject_description = st.text_area(
             "Describe who/what to capture"
             + (" — required for this recipe" if describe_required else " (optional)"),
-            value="",
+            value=(recipe.subject_selector.description or "") if recipe is not None else "",
             height=120,
             placeholder=(
                 "No reference photo? Describe the subject and the visual cues to look "
@@ -1000,7 +1005,7 @@ def _render_sidebar(
         max_candidates_raw = st.number_input(
             "Quick test: limit to first N candidate windows (0 = all)",
             min_value=0,
-            value=0,
+            value=80 if full_demo else 0,
             step=5,
             help="Caps how many candidate windows get a (paid) vision call, so you can "
             "validate a prompt/recipe change in ~1 minute instead of a full pass. "
@@ -1026,9 +1031,8 @@ def _render_sidebar(
         if max_candidates:
             checks.append((
                 "warn",
-                f"Quick-test cap is ON — only the first {max_candidates} candidate window(s) "
-                "will be classified. Expect a PARTIAL preview, not the full reel. Set it to 0 "
-                "for a complete run.",
+                f"Budget guard: classify at most {max_candidates} candidate windows. "
+                "Coverage is partial only if the source produces more candidates than this limit.",
             ))
 
         blockers = [msg for lvl, msg in checks if lvl == "error"]
@@ -1109,10 +1113,31 @@ def _start_run(
     st.session_state.stage = "gate1"
 
 
+def _clip_preview(source: str, start: float, end: float) -> Path:
+    """Cache a small playable review clip without sending the full game to each player."""
+    path = Path(source).resolve()
+    identity = f"{path}:{path.stat().st_mtime_ns}:{start}:{end}"
+    folder = _REPO_ROOT / "work/clip-previews"
+    folder.mkdir(parents=True, exist_ok=True)
+    target = folder / (hashlib.sha256(identity.encode()).hexdigest() + ".mp4")
+    if not target.is_file():
+        temp = folder / (uuid.uuid4().hex + ".mp4")
+        try:
+            subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start),
+                            "-i", str(path), "-t", str(end - start), "-c:v", "libx264",
+                            "-preset", "ultrafast", "-crf", "23", "-c:a", "aac",
+                            "-movflags", "+faststart", "-y", str(temp)],
+                           check=True, capture_output=True, timeout=60)
+            temp.replace(target)
+        finally:
+            temp.unlink(missing_ok=True)
+    return target
+
+
 def _render_gate1(st, diagram_ph=None) -> None:
     """Gate 1 — human approves/edits the proposed clip list before render."""
     st.markdown("## Gate 1 — Approve the clip list")
-    st.caption("Reads are autonomous; this is the first write-adjacent step (render), so it's gated.")
+    st.caption("Watch each proposed clip, uncheck anything you don’t want, then approve the clips to build your reel.")
 
     current = st.session_state.current
     recipe: Recipe = st.session_state.recipe
@@ -1136,6 +1161,10 @@ def _render_gate1(st, diagram_ph=None) -> None:
     if not clips:
         st.info("No candidate clips met the recipe's threshold — adjust the settings above and Start over.")
 
+    source = current.get("video_path")
+    preview_available = bool(source and Path(source).is_file())
+    if clips and not preview_available:
+        st.error("The source video is unavailable for preview. Restore the source file or start over before approving.")
     keep_flags: list[bool] = []
     for i, clip in enumerate(clips):
         cols = st.columns([1, 2, 3, 2, 4])
@@ -1144,17 +1173,27 @@ def _render_gate1(st, diagram_ph=None) -> None:
         cols[2].write(f"{clip.start:.1f}s – {clip.end:.1f}s ({clip.duration:.1f}s)")
         cols[3].write(f"score {clip.score:.2f}")
         cols[4].caption(clip.reason)
+        if preview_available:
+            try:
+                preview = _clip_preview(str(source), clip.start, clip.end)
+                st.video(str(preview))
+                st.caption("Preview of this proposed clip. The event description is an AI suggestion—check it against the video.")
+            except (OSError, subprocess.SubprocessError):
+                st.warning("Could not prepare a small preview; showing the source at this clip’s time range instead.")
+                st.video(str(source), start_time=math.floor(clip.start), end_time=math.ceil(clip.end))
 
     col_a, col_b = st.columns(2)
-    if col_a.button("Approve & Render", type="primary", disabled=not clips):
+    if clips and not any(keep_flags):
+        st.info("Keep at least one clip to build a reel.")
+    if col_a.button("Approve & Render", type="primary", disabled=not any(keep_flags) or not preview_available):
         edited = [c for c, keep in zip(clips, keep_flags) if keep]
         app = st.session_state.app
         config = st.session_state.config
         app.update_state(config, {"selected_clips": edited, "approved": True, "needs_human": False})
-        if diagram_ph is not None:
-            st.session_state.current = _stream_pipeline(st, app, config, None, diagram_ph)
-        else:
-            with st.spinner("Rendering..."):
+        with st.spinner("Approval received — stitching your clips and preparing the finished reel. Please wait…"):
+            if diagram_ph is not None:
+                st.session_state.current = _stream_pipeline(st, app, config, None, diagram_ph)
+            else:
                 st.session_state.current = _values(app.invoke(None, config))
         st.session_state.stage = "gate2"
         st.rerun()
@@ -1171,12 +1210,21 @@ def _render_gate2(st, diagram_ph=None) -> None:
     current = st.session_state.current
     st.success(f"Reel rendered: {current.get('output_path') or '(no output path)'}")
     st.write(f"Total duration: {current.get('proposed_duration', 0.0):.1f}s")
+    output = current.get("output_path")
+    playable = bool(output and Path(output).is_file())
+    if playable:
+        st.video(str(output))
+        st.caption("Watch the finished reel before approving delivery.")
+        with Path(output).open("rb") as reel_file:
+            st.download_button("Download reel", data=reel_file, file_name=Path(output).name, mime="video/mp4")
+    else:
+        st.error("The rendered reel is unavailable. Start over to render it again before sharing.")
 
     for clip in current.get("selected_clips", []):
         st.write(f"- {clip.moment_type or 'unclassified'}: {clip.start:.1f}s–{clip.end:.1f}s (score {clip.score:.2f})")
 
     col_a, col_b = st.columns(2)
-    if col_a.button("Approve & Share", type="primary"):
+    if col_a.button("Approve & Share", type="primary", disabled=not playable):
         app = st.session_state.app
         config = st.session_state.config
         app.update_state(config, {"shared": True, "needs_human": False})
@@ -1197,6 +1245,9 @@ def _render_done(st) -> None:
     st.markdown("## Done")
     st.success("Reel approved and shared.")
     st.write(f"Output: {current.get('output_path') or '(no output path)'}")
+    output = current.get("output_path")
+    if output and Path(output).is_file():
+        st.video(str(output))
     if current.get("summary"):
         st.markdown("### Summary")
         st.markdown(current["summary"])
@@ -1205,9 +1256,92 @@ def _render_done(st) -> None:
         st.rerun()
 
 
+def _render_verified_demo(st) -> None:
+    """Replay a recorded real inference result without pretending to run inference."""
+    st.info("Recorded Gemini run · real game footage · no new AI calls. This replays the verified demo result, not a new analysis of your form inputs.")
+    record = _REPO_ROOT / "evals/iterations/demo-integration-029/render-verification.json"
+    source = _REPO_ROOT / "downloads/east-bay-demo-excerpt-750-790.mp4"
+    if not record.is_file():
+        st.error("The verified demo record is unavailable.")
+        return
+    data = json.loads(record.read_text())
+    output = Path(data["output"])
+    if not source.is_file() or not output.is_file():
+        st.error("The verified demo media is unavailable.")
+        return
+    st.subheader("Review the proposed clip")
+    st.caption("Selected from a 40-second excerpt of the East Bay game. Watch the play before keeping it.")
+    flags = []
+    for i, clip in enumerate(data["clips"]):
+        st.write(f"**{clip['moment_type'].replace('_', ' ').title()}** · {clip['start']:.1f}–{clip['end']:.1f}s · score {clip['score']:.2f}")
+        st.caption("Gemini’s description: " + clip["reason"])
+        st.video(str(source), start_time=math.floor(clip["start"]), end_time=math.ceil(clip["end"]))
+        flags.append(st.checkbox("Keep this clip", value=True, key=f"verified_keep_{i}"))
+    if st.button("Approve selection & view saved reel", type="primary", disabled=not all(flags)):
+        st.session_state.verified_show_reel = True
+    if st.session_state.get("verified_show_reel") and all(flags):
+        st.subheader("Finished reel")
+        st.caption("Previously rendered from this exact selection · 11.5 seconds. Nothing has been shared.")
+        st.video(str(output))
+        with output.open("rb") as media:
+            st.download_button("Download reel", data=media, file_name=output.name, mime="video/mp4")
+    st.link_button("Open live analysis form", "/?demo=live")
+
+
+def _render_live_demo(st) -> None:
+    """Bounded live analysis through the same graph and human approval gates."""
+    _init_session_state(st)
+    st.caption("Live Gemini analysis of a selected 40-second game excerpt. Review the proposed clips before rendering. This demonstrates the workflow on a short excerpt, not full-game accuracy.")
+    source = _REPO_ROOT / "downloads/east-bay-demo-excerpt-750-790.mp4"
+    recipe = load_recipe(_RECIPES_DIR / "basketball_demo_video.yaml")
+    settings = get_settings()
+    ready = (source.is_file() and settings.vision_provider == "gemini"
+             and settings.llm_provider == "gemini" and settings.gemini_native_video
+             and not settings.tracing_enabled)
+    if not ready:
+        st.error("Live demo requires the local game excerpt and Gemini native-video configuration. No analysis has started.")
+        return
+    # Keep this workflow separate from stale generic-form graph state.
+    if not st.session_state.get("live_demo_initialized"):
+        _reset(st)
+        st.session_state.live_demo_initialized = True
+    st.write("**Subject:** light-blue team · **Source:** East Bay game, 12:30–13:10 · **Model:** Gemini")
+    if st.session_state.stage == "input":
+        st.video(str(source))
+        st.caption("Starting analysis makes new, budget-capped API calls. The clip selection is not loaded from the saved demo.")
+        if st.button("Analyze game excerpt", type="primary"):
+            with st.spinner("Analyzing the game excerpt with Gemini…"):
+                _start_run(st, recipe, str(source), 30, None, None, 8)
+            st.rerun()
+    elif st.session_state.stage == "gate1":
+        _render_gate1(st)
+    elif st.session_state.stage == "gate2":
+        _render_gate2(st)
+    else:
+        _render_done(st)
+    with st.expander("Run details"):
+        for note in (st.session_state.current or {}).get("notes", []):
+            st.write(note)
+    st.link_button("Open advanced full-video form", "/?demo=live")
+
+
 def _run_app(st) -> None:
     st.set_page_config(page_title="HypeReel", page_icon=":basketball:", layout="wide")
     st.title("HypeReel")
+    if st.query_params.get("demo", "live-demo") == "live-demo":
+        st.query_params["demo"] = "full-flow"
+    if st.query_params.get("demo") == "full-flow" and not st.session_state.get("full_flow_v32"):
+        _reset(st)
+        st.session_state.full_flow_v32 = True
+    if st.query_params.get("demo") in {"recording", "verified"}:
+        _render_verified_demo(st)
+        return
+    if st.query_params.get("demo") == "short-live":
+        _render_live_demo(st)
+        return
+    st.link_button("Open verified demo replay (no API calls)", "/?demo=verified")
+    if st.query_params.get("demo") == "full-flow":
+        st.info("Live full workflow · both teams · continuous 10-minute East Bay game excerpt (12:30–22:30) · fresh Gemini analysis. Review every proposed clip before rendering; clip count depends on what the model finds.")
     st.caption(
         "Recipe-driven highlight reels, with a human approving the clip list "
         "and the share step. Full design: design/HypeReel-Design.html"

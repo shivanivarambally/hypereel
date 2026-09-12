@@ -1,0 +1,285 @@
+{
+  "source": "/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-excerpt-750-790.mp4",
+  "recipe": {
+    "id": "basketball_demo_video_v1",
+    "name": "Basketball \u2014 short native-video demo",
+    "domain": "basketball",
+    "highlight_model": "event_based",
+    "description": "A short real-game preview using continuous-video classification. This demo recipe prioritizes model evidence over noisy audio/motion proposal strength.",
+    "moment_types": [
+      {
+        "name": "made_basket",
+        "description": "The subject (a player on the team described in the prompt) makes a two-point field goal: the ball passes through the hoop right after their shot, jumper, or putback. Do NOT count free throws, misses, or any basket made by the opposing team.\n",
+        "weight": 1.0,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "three_pointer",
+        "description": "The subject (a player on the team described in the prompt) makes a shot from behind the three-point line \u2014 look for the shot arc and the reaction at the make. Exclude misses and any shot by the opposing team.\n",
+        "weight": 1.3,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "layup_or_dunk",
+        "description": "The subject finishes at the rim with a driving layup, fast-break finish, or dunk. Exclude missed attempts and any finish by the opposing team.\n",
+        "weight": 1.1,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "block",
+        "description": "The subject blocks or clearly alters an opposing player's shot with their hand \u2014 deflected or swatted away, not merely contested from a distance.\n",
+        "weight": 1.0,
+        "ideal_len": 6.0
+      },
+      {
+        "name": "steal",
+        "description": "The subject takes the ball from an opposing player \u2014 a pick-off or a strip \u2014 forcing a change of possession.\n",
+        "weight": 0.9,
+        "ideal_len": 8.0
+      },
+      {
+        "name": "rebound",
+        "description": "The subject grabs a missed shot out of the air, especially a contested board or an offensive rebound that keeps the possession alive.\n",
+        "weight": 0.7,
+        "ideal_len": 6.0
+      }
+    ],
+    "scoring_rubric": null,
+    "signals": [
+      {
+        "type": "audio_peak",
+        "role": "proposer",
+        "weight": 0.1,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {
+          "min_peak_db": -12
+        }
+      },
+      {
+        "type": "motion_intensity",
+        "role": "proposer",
+        "weight": 0.1,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {
+          "window_seconds": 6
+        }
+      },
+      {
+        "type": "vision_classify",
+        "role": "scorer",
+        "weight": 0.8,
+        "enabled": true,
+        "enabled_if": null,
+        "params": {}
+      }
+    ],
+    "subject_selector": {
+      "type": "team_color",
+      "value": "the subject described in the runtime prompt",
+      "team_color": "Identify the subject team from the jersey/scoreboard description in the prompt. Set subject_present=true only when a player on that team is making the play; set it false for any player on the opposing team, so the opponent's plays are never included.\n",
+      "audience": "individual",
+      "description": "Highlights for the team in light-blue jerseys; exclude the team in black. Only clearly visible live plays."
+    },
+    "selection": {
+      "max_duration": 30.0,
+      "min_clip": 4.0,
+      "max_clip": 12.0,
+      "lead_in": 2.0,
+      "lead_out": 3.0,
+      "min_score": 0.5,
+      "ordering": "chronological",
+      "coverage": "spread across the whole game, not clustered in one segment",
+      "dedup_overlap": true,
+      "min_gap_seconds": 0.0
+    },
+    "style": {
+      "transitions": "hard_cut",
+      "audio": "keep_original",
+      "overlays": [
+        "player_name",
+        "score"
+      ],
+      "format": "16:9",
+      "platform": "local"
+    },
+    "guardrails": {
+      "never_include": [
+        "timeouts",
+        "bench_sequences",
+        "shaky_camera",
+        "dead_ball_standing_around",
+        "warm_ups"
+      ],
+      "privacy": "never center or identify non-subject minors; keep the focus on the subject's live action",
+      "grounding": "never label a moment_type the vision scorer isn't confident about \u2014 degrade to a lower score rather than fabricate a play; when it is unclear whether a subject-team player made the play, mark subject_present=false.\n"
+    },
+    "acceptance": [
+      "every clip shows a player from the team described in the prompt making the play",
+      "no clip's highlighted play is made by the opposing team",
+      "clips show real basketball plays (basket, three, layup/dunk, block, steal, rebound), not padding",
+      "plays are spread across the whole game and not clustered in one segment",
+      "no clip shows a timeout, bench sequence, dead-ball standing around, warm-ups, or shaky camera work"
+    ]
+  },
+  "max_duration": 30,
+  "audience": null,
+  "max_candidates": 8,
+  "candidate_sampling": "chronological",
+  "evaluation_start_seconds": null,
+  "evaluation_end_seconds": null,
+  "evaluation_reference_events": [],
+  "video_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-excerpt-750-790.mp4",
+  "video_duration": 40.0,
+  "has_commentary": false,
+  "strategy": "event_based",
+  "active_signals": [
+    "audio_peak",
+    "motion_intensity"
+  ],
+  "candidates": [
+    {
+      "start": 3.0,
+      "end": 5.0,
+      "signal_scores": {
+        "motion_intensity": 0.990921853983358
+      }
+    },
+    {
+      "start": 11.0,
+      "end": 17.5,
+      "signal_scores": {
+        "motion_intensity": 1.0
+      }
+    },
+    {
+      "start": 19.0,
+      "end": 23.0,
+      "signal_scores": {
+        "motion_intensity": 0.9736034520268348
+      }
+    },
+    {
+      "start": 25.0,
+      "end": 39.5,
+      "signal_scores": {
+        "motion_intensity": 0.9028395397335783
+      }
+    }
+  ],
+  "uncapped_candidates": [
+    {
+      "start": 3.0,
+      "end": 5.0,
+      "signal_scores": {
+        "motion_intensity": 0.990921853983358
+      }
+    },
+    {
+      "start": 11.0,
+      "end": 17.5,
+      "signal_scores": {
+        "motion_intensity": 1.0
+      }
+    },
+    {
+      "start": 19.0,
+      "end": 23.0,
+      "signal_scores": {
+        "motion_intensity": 0.9736034520268348
+      }
+    },
+    {
+      "start": 25.0,
+      "end": 39.5,
+      "signal_scores": {
+        "motion_intensity": 0.9028395397335783
+      }
+    }
+  ],
+  "classifications": [
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.5,
+      "reason": "Transition play with no scoring or defensive event in the window"
+    },
+    {
+      "moment_type": "layup_or_dunk",
+      "subject_present": true,
+      "confidence": 0.7,
+      "reason": "Light blue player steals ball, passes ahead to teammate who makes a fastbreak layup."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.3,
+      "reason": "No highlight play completed by light-blue team."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.0,
+      "reason": "gemini error: ValueError"
+    }
+  ],
+  "scored_clips": [
+    {
+      "start": 9.0,
+      "end": 20.5,
+      "moment_type": "layup_or_dunk",
+      "score": 0.66,
+      "reason": "Light blue player steals ball, passes ahead to teammate who makes a fastbreak layup.",
+      "subject_present": true
+    }
+  ],
+  "selected_clips": [
+    {
+      "start": 9.0,
+      "end": 20.5,
+      "moment_type": "layup_or_dunk",
+      "score": 0.66,
+      "reason": "Light blue player steals ball, passes ahead to teammate who makes a fastbreak layup.",
+      "subject_present": true
+    }
+  ],
+  "proposed_duration": 11.5,
+  "output_path": null,
+  "summary": "",
+  "judge_verdict": {
+    "quality_score": 0.4,
+    "verdict": "revise",
+    "action": "broaden",
+    "issues": [
+      "reel has only 1 clip",
+      "severely under budget at 38% filled"
+    ],
+    "feedback": "Include more confirmed basketball plays to fill out the reel."
+  },
+  "judge_decision": "accept",
+  "revision_count": 1,
+  "selection_overrides": {
+    "require_moment": false,
+    "broadened": true,
+    "min_score": 0.4
+  },
+  "needs_human": true,
+  "human_gate": "underfilled",
+  "human_decision": {},
+  "approved": false,
+  "shared": false,
+  "errors": [],
+  "notes": [
+    "plan: strategy='event_based', active_signals=['audio_peak', 'motion_intensity']",
+    "ingest: resolved '/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-excerpt-750-790.mp4' -> /Users/shivani/code/AgentAICourse/week3/hypereel/downloads/east-bay-demo-excerpt-750-790.mp4 (40.0s)",
+    "propose: 4 candidate window(s) generated",
+    "classify: 4 window(s) judged by 'gemini' provider",
+    "select: 1 clip(s) chosen, 11.5s of 30.0s budget (underfilled)",
+    "judge[gemini]: verdict=revise score=0.5 llm_action=broaden -> action=broaden (clips=1, confirmed=1) \u2014 Broaden selection criteria to include more confirmed basketball plays across the game to fill the budget.",
+    "judge: requesting revision #1 (broaden) with overrides={'require_moment': False, 'broadened': True, 'min_score': 0.4}",
+    "select: 1 clip(s) chosen, 11.5s of 30.0s budget (underfilled) [judge overrides applied: {'require_moment': False, 'broadened': True, 'min_score': 0.4}]",
+    "judge[gemini]: verdict=revise score=0.4 llm_action=broaden -> action=none (clips=1, confirmed=1) \u2014 Include more confirmed basketball plays to fill out the reel."
+  ],
+  "mode": "gemini"
+}
