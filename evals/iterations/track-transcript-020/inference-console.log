@@ -1,0 +1,4 @@
+1 [('visual_transcript', 'completed'), ('track_augmented_transcript', 'completed')]
+2 [('visual_transcript', 'completed'), ('track_augmented_transcript', 'completed')]
+6 [('visual_transcript', 'completed'), ('track_augmented_transcript', 'completed')]
+{"name": "track-transcript-020", "status": "completed", "started_at": "2026-09-12T21:48:15.523107+05:30", "ended_at": "2026-09-12T21:48:36.355351+05:30", "elapsed_seconds": 20.83217879102449, "attempted_calls": 9, "estimated_spend_usd": 0.28511, "common_completed_indices": [1, 2, 6], "paired_metrics": {"visual_transcript": {"tp": 3, "fp": 6, "fn": 7, "micro_precision": 0.3333333333333333, "micro_recall": 0.3, "micro_f1": 0.3157894736842105, "macro_f1": 0.2222222222222222}, "track_augmented_transcript": {"tp": 3, "fp": 4, "fn": 7, "micro_precision": 0.42857142857142855, "micro_recall": 0.3, "micro_f1": 0.35294117647058826, "macro_f1": 0.24074074074074073}}}

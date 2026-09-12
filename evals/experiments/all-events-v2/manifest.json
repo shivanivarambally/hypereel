@@ -1,0 +1,99 @@
+{
+  "version": "basketball-all-events-development-v2",
+  "split": "development",
+  "purpose": "all-event recognition, independent of highlight selection",
+  "classes": [
+    "assist",
+    "block",
+    "defensive_rebound",
+    "free_throw_made",
+    "free_throw_miss",
+    "offensive_rebound",
+    "steal",
+    "three_point_made",
+    "three_point_miss",
+    "turnover",
+    "two_point_made",
+    "two_point_miss"
+  ],
+  "event_count": 462,
+  "counts_by_type": {
+    "assist": 21,
+    "block": 5,
+    "defensive_rebound": 47,
+    "free_throw_made": 13,
+    "free_throw_miss": 26,
+    "offensive_rebound": 43,
+    "steal": 45,
+    "three_point_made": 9,
+    "three_point_miss": 31,
+    "turnover": 95,
+    "two_point_made": 41,
+    "two_point_miss": 86
+  },
+  "games": [
+    {
+      "game_id": "east-bay-elite-vs-spartans",
+      "source_sha256": "da5583db353608008bcf55a425b21bcec5f6bb48240ca85cd710acba72e353cc",
+      "event_count": 244,
+      "counts_by_type": {
+        "assist": 7,
+        "block": 3,
+        "defensive_rebound": 18,
+        "free_throw_made": 5,
+        "free_throw_miss": 17,
+        "offensive_rebound": 26,
+        "steal": 28,
+        "three_point_made": 0,
+        "three_point_miss": 2,
+        "turnover": 63,
+        "two_point_made": 20,
+        "two_point_miss": 55
+      }
+    },
+    {
+      "game_id": "unlimited-vs-campus",
+      "source_sha256": "d2c6f5e63e4f6b094940313d71c6f40b1a94eb798e3211b733e04a94966ac571",
+      "event_count": 218,
+      "counts_by_type": {
+        "assist": 14,
+        "block": 2,
+        "defensive_rebound": 29,
+        "free_throw_made": 8,
+        "free_throw_miss": 9,
+        "offensive_rebound": 17,
+        "steal": 17,
+        "three_point_made": 9,
+        "three_point_miss": 29,
+        "turnover": 32,
+        "two_point_made": 21,
+        "two_point_miss": 31
+      }
+    }
+  ],
+  "status": "reference_inventory_ready; multi-event_detector_and_timing_audit_required",
+  "scoring_plan": {
+    "primary": "unweighted macro F1 across supported event types",
+    "also_report": [
+      "per-type TP/FP/FN, precision, recall, F1 and support",
+      "micro precision/recall/F1",
+      "worst-type recall",
+      "duplicate rate",
+      "background false positives per observed minute",
+      "proposal recall and detection recall before highlight selection"
+    ],
+    "zero_predictions_with_positive_support": "precision undefined; recall 0; F1 0",
+    "no_reference_support": "not measured for recall/F1; never a passing class",
+    "release_gate": "macro F1 >=0.7 AND per-type precision and recall >=0.7 with adequate support; otherwise fail or insufficient evidence",
+    "matching": "one-to-one, same-label temporal match; tolerance/IoU policy frozen after timing audit",
+    "paired_events": "a possession change may contain both steal and turnover; retain each reference separately",
+    "confidence": "per-prediction model confidence is separate from evaluation quality and statistical uncertainty"
+  },
+  "sampling_plan": {
+    "diagnostic": "freeze examples stratified by all 12 types across both games; declare label-informed sampling",
+    "validation": "freeze continuous source-time intervals; score every reference inside, including repeated events and negatives; source-driven proposals",
+    "rare_types": "report available support and insufficient evidence; never infer reliability from one example"
+  },
+  "holdout_used": false,
+  "ledger_sha256": "40f3eb6064c33b7171b6325835bba1233bd0ca3c233c829a1e01285b7c771534"
+}

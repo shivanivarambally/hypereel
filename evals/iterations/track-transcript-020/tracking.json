@@ -1,0 +1,560 @@
+{
+  "status": "completed",
+  "started_at": "2026-09-12T21:45:38.125232+05:30",
+  "plan": {
+    "created_at": "2026-09-12T21:45:38.088146+05:30",
+    "indices": [
+      1,
+      2,
+      6
+    ],
+    "sampling": "Every native frame, source30/25fps,12seconds including2s context each side",
+    "detector": "YOLO11n COCO,1280 input,CPU4threads,conf0.10,classes person0/sportsball32",
+    "tracker": "Separate ByteTrack instance per class;high0.25,low0.10,new0.25,match0.8,buffer15 at30fps,fuse_score true; no ID sharing across classes/windows",
+    "transcript": "One observational row per0.5second bin. Pick the longest consecutive observed ball-track run in that bin, confidence tie-break. Preserve no-ball bins. Nearest person is pixel-box proximity, never possession or team identity. Stable proximity requires0.3s consecutive observed same ball/person IDs. No interpolation, no labels or event-target coordinates.",
+    "limits": "No basketball-specific fine-tuning, camera-motion compensation, jersey/team recognition or court calibration. Track IDs are local algorithm IDs, not verified player identities.",
+    "source_sha256": {
+      "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+      "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+    },
+    "weights_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+  },
+  "windows": [
+    {
+      "index": 1,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "stats": {
+        "frames": 361,
+        "detected_ball_frames": 44,
+        "tracked_ball_frames": 0,
+        "unique_ball_track_ids": 0,
+        "longest_observed_ball_run_seconds": 0.0,
+        "longest_same_ball_person_proximity_seconds": 0.0,
+        "suspect_large_track_jumps": 0,
+        "elapsed_seconds": 43.37257995901746,
+        "person_track_frames": 361,
+        "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."
+      },
+      "observations": [
+        {
+          "observation_id": "t1",
+          "time_seconds": 221.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t2",
+          "time_seconds": 221.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t3",
+          "time_seconds": 222.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t4",
+          "time_seconds": 222.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t5",
+          "time_seconds": 223.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t6",
+          "time_seconds": 223.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t7",
+          "time_seconds": 224.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t8",
+          "time_seconds": 224.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t9",
+          "time_seconds": 225.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t10",
+          "time_seconds": 225.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t11",
+          "time_seconds": 226.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t12",
+          "time_seconds": 226.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t13",
+          "time_seconds": 227.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t14",
+          "time_seconds": 227.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t15",
+          "time_seconds": 228.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t16",
+          "time_seconds": 228.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t17",
+          "time_seconds": 229.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t18",
+          "time_seconds": 229.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t19",
+          "time_seconds": 230.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t20",
+          "time_seconds": 230.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t21",
+          "time_seconds": 231.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t22",
+          "time_seconds": 231.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t23",
+          "time_seconds": 232.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t24",
+          "time_seconds": 232.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        }
+      ],
+      "raw_tracks_sha256": "f0164e0305487b504ebc00929ad402176d6a5510173916ee86296e9dfc47bf04"
+    },
+    {
+      "index": 2,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 756,
+        "end": 764,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+        ],
+        "types": [
+          "assist",
+          "steal",
+          "turnover",
+          "two_point_made"
+        ]
+      },
+      "stats": {
+        "frames": 361,
+        "detected_ball_frames": 120,
+        "tracked_ball_frames": 8,
+        "unique_ball_track_ids": 3,
+        "longest_observed_ball_run_seconds": 0.13333333333333333,
+        "longest_same_ball_person_proximity_seconds": 0.13333333333333333,
+        "suspect_large_track_jumps": 0,
+        "elapsed_seconds": 44.92097987499437,
+        "person_track_frames": 361,
+        "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."
+      },
+      "observations": [
+        {
+          "observation_id": "t1",
+          "time_seconds": 754.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t2",
+          "time_seconds": 754.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t3",
+          "time_seconds": 755.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t4",
+          "time_seconds": 755.7666666666667,
+          "observation": "Candidate ball track 32:98 at image pixel center (1030,372); continuously observed 0.00s. Nearest person track 0:11 box 1038,290,1080,374; proximity observed 0.00s. Proximity is not possession; team, jersey, shot outcome and event cause unverified.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t5",
+          "time_seconds": 756.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t6",
+          "time_seconds": 756.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t7",
+          "time_seconds": 757.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t8",
+          "time_seconds": 757.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t9",
+          "time_seconds": 758.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t10",
+          "time_seconds": 758.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t11",
+          "time_seconds": 759.4666666666667,
+          "observation": "Candidate ball track 32:184 at image pixel center (684,380); continuously observed 0.03s. Nearest person track 0:11 box 613,328,684,460; proximity observed 0.03s. Proximity is not possession; team, jersey, shot outcome and event cause unverified.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t12",
+          "time_seconds": 759.5666666666667,
+          "observation": "Candidate ball track 32:184 at image pixel center (688,364); continuously observed 0.13s. Nearest person track 0:11 box 614,321,687,461; proximity observed 0.13s. Proximity is not possession; team, jersey, shot outcome and event cause unverified.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t13",
+          "time_seconds": 760.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t14",
+          "time_seconds": 760.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t15",
+          "time_seconds": 761.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t16",
+          "time_seconds": 761.9,
+          "observation": "Candidate ball track 32:307 at image pixel center (567,566); continuously observed 0.03s. Nearest person track 0:69 box 537,413,622,557; proximity observed 0.03s. Proximity is not possession; team, jersey, shot outcome and event cause unverified.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t17",
+          "time_seconds": 762.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t18",
+          "time_seconds": 762.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t19",
+          "time_seconds": 763.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t20",
+          "time_seconds": 763.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t21",
+          "time_seconds": 764.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t22",
+          "time_seconds": 764.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t23",
+          "time_seconds": 765.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t24",
+          "time_seconds": 765.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        }
+      ],
+      "raw_tracks_sha256": "8bf684275d83b17ae29e16388f3f745bda16cdb54932f6f03b394fff5535d3f3"
+    },
+    {
+      "index": 6,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 1316,
+        "end": 1324,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+        ],
+        "types": [
+          "defensive_rebound",
+          "offensive_rebound",
+          "three_point_miss",
+          "turnover",
+          "two_point_miss"
+        ]
+      },
+      "stats": {
+        "frames": 301,
+        "detected_ball_frames": 3,
+        "tracked_ball_frames": 0,
+        "unique_ball_track_ids": 0,
+        "longest_observed_ball_run_seconds": 0.0,
+        "longest_same_ball_person_proximity_seconds": 0.0,
+        "suspect_large_track_jumps": 0,
+        "elapsed_seconds": 37.7124775830016,
+        "person_track_frames": 301,
+        "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."
+      },
+      "observations": [
+        {
+          "observation_id": "t1",
+          "time_seconds": 1314.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t2",
+          "time_seconds": 1314.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t3",
+          "time_seconds": 1315.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t4",
+          "time_seconds": 1315.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t5",
+          "time_seconds": 1316.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t6",
+          "time_seconds": 1316.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t7",
+          "time_seconds": 1317.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t8",
+          "time_seconds": 1317.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t9",
+          "time_seconds": 1318.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t10",
+          "time_seconds": 1318.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t11",
+          "time_seconds": 1319.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t12",
+          "time_seconds": 1319.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t13",
+          "time_seconds": 1320.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t14",
+          "time_seconds": 1320.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t15",
+          "time_seconds": 1321.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t16",
+          "time_seconds": 1321.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t17",
+          "time_seconds": 1322.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t18",
+          "time_seconds": 1322.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t19",
+          "time_seconds": 1323.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t20",
+          "time_seconds": 1323.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t21",
+          "time_seconds": 1324.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t22",
+          "time_seconds": 1324.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t23",
+          "time_seconds": 1325.0,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        },
+        {
+          "observation_id": "t24",
+          "time_seconds": 1325.5,
+          "observation": "No observed ball track in this half-second interval. Ball location, possession, and event outcome unknown.",
+          "visibility": "uncertain"
+        }
+      ],
+      "raw_tracks_sha256": "5cddd3a0f4b8720c6e002d604e118837f665a40d3967b8595449892e5cac803f"
+    }
+  ],
+  "ended_at": "2026-09-12T21:47:44.453655+05:30",
+  "elapsed_seconds": 126.3280312079878,
+  "peak_sampled_rss_gib": 0.4453887939453125
+}

@@ -1,0 +1,654 @@
+{
+  "schema_version": 1,
+  "metric_version": "selection-v6",
+  "mode": "pipeline",
+  "evaluation_run_id": "1142ccc7-c1e7-47a4-ba1b-4b011d09f40a",
+  "created_at": "2026-09-12T11:25:09.511773+00:00",
+  "dataset_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/experiments/game-2-ollama-local.pipeline.jsonl",
+  "dataset_sha256": "01e8ec644eeb4a6c3607dd7bc7edf6f63f08020165efb9aaf0f8afa5e6ba36ed",
+  "code_revision": "dae74b11044484c9fcc0a9e721c3b86f8fd06ed0",
+  "working_tree_dirty": true,
+  "case_count": 1,
+  "failed_count": 0,
+  "degraded_count": 0,
+  "operational_success_rate": 1.0,
+  "cases": [
+    {
+      "case_id": "development-game-2-ollama-local",
+      "synthetic": false,
+      "status": "success",
+      "recipe_sha256": "9568acbca4a1b8f39c11d08f0554c60de11f7f76e2adf2d28e01d99c01e94adf",
+      "metrics": {
+        "clip_count": 0,
+        "selected_duration_seconds": 0,
+        "budget_compliance": true,
+        "budget_utilization": 0.0,
+        "invalid_boundary_count": 0,
+        "overlap_rate": null,
+        "matched_event_count": 0,
+        "reference_event_count": 2,
+        "relevant_clip_precision": null,
+        "selected_event_recall": 0.0,
+        "selection_f1": null,
+        "micro_f1": null,
+        "macro_f1": null,
+        "balanced_accuracy": 0.0,
+        "mean_event_time_error_seconds": null,
+        "mean_boundary_error_seconds": null,
+        "mean_temporal_iou": null,
+        "event_recall_at_iou_0_1": 0.0,
+        "event_recall_at_iou_0_3": 0.0,
+        "event_recall_at_iou_0_5": 0.0,
+        "duplicate_event_count": 0,
+        "duplicate_event_rate": 0.0,
+        "false_positives_per_video_minute": 0.0,
+        "near_miss_count": 0,
+        "action_completeness": null,
+        "distinct_moment_types": 0,
+        "confusion_counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "per_moment_type": {
+          "steal": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null
+          }
+        },
+        "confusion_matrix": {
+          "steal": {
+            "__miss__": 2
+          }
+        },
+        "candidate_recall": 1.0,
+        "candidate_recall_at_iou_0_1": 1.0,
+        "candidate_recall_at_iou_0_3": 1.0,
+        "candidate_recall_at_iou_0_5": 1.0,
+        "processed_slice_clip_count": 0,
+        "processed_slice_selected_duration_seconds": 0,
+        "processed_slice_budget_compliance": true,
+        "processed_slice_budget_utilization": 0.0,
+        "processed_slice_invalid_boundary_count": 0,
+        "processed_slice_overlap_rate": null,
+        "processed_slice_matched_event_count": 0,
+        "processed_slice_reference_event_count": 2,
+        "processed_slice_relevant_clip_precision": null,
+        "processed_slice_selected_event_recall": 0.0,
+        "processed_slice_selection_f1": null,
+        "processed_slice_micro_f1": null,
+        "processed_slice_macro_f1": null,
+        "processed_slice_balanced_accuracy": 0.0,
+        "processed_slice_mean_event_time_error_seconds": null,
+        "processed_slice_mean_boundary_error_seconds": null,
+        "processed_slice_mean_temporal_iou": null,
+        "processed_slice_event_recall_at_iou_0_1": 0.0,
+        "processed_slice_event_recall_at_iou_0_3": 0.0,
+        "processed_slice_event_recall_at_iou_0_5": 0.0,
+        "processed_slice_duplicate_event_count": 0,
+        "processed_slice_duplicate_event_rate": 0.0,
+        "processed_slice_false_positives_per_video_minute": 0.0,
+        "processed_slice_near_miss_count": 0,
+        "processed_slice_action_completeness": null,
+        "processed_slice_distinct_moment_types": 0,
+        "processed_slice_confusion_counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "processed_slice_per_moment_type": {
+          "steal": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null
+          }
+        },
+        "processed_slice_confusion_matrix": {
+          "steal": {
+            "__miss__": 2
+          }
+        },
+        "processed_slice_candidate_recall": 1.0,
+        "classification_schema_pass_rate": 1.0,
+        "classification_provider_error_rate": 0.0,
+        "candidate_classification_accuracy": 0.3333333333333333,
+        "negative_window_specificity": 1.0,
+        "negative_window_count": 1,
+        "classification_calibration_error": 0.3333333333333333,
+        "candidate_event_average_precision": 0.8333333333333333,
+        "classification_event_recall": 0.0,
+        "classification_detected_event_count": 0,
+        "selection_survival_rate": null,
+        "candidate_threshold_sweep": {
+          "0.25": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0
+          },
+          "0.5": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0
+          },
+          "0.75": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0
+          },
+          "0.9": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0
+          }
+        },
+        "cost_per_true_positive_usd": null
+      },
+      "matches": [],
+      "clips": [],
+      "degradation_reasons": [],
+      "budget_seconds": 45.0,
+      "video_duration": 2828.840635,
+      "artifact_status": "paused_before_render",
+      "stop_node": "approve_clips",
+      "candidate_count": 3,
+      "uncapped_candidate_count": 195,
+      "evaluation_horizon_end_seconds": 225.0,
+      "evaluation_horizon_start_seconds": 165.0,
+      "scored_count": 0,
+      "candidates": [
+        {
+          "start": 175.65333333333334,
+          "end": 188.89999999999998,
+          "signal_scores": {
+            "motion_intensity": 0.9665322113135836
+          }
+        },
+        {
+          "start": 188.89999999999998,
+          "end": 202.14666666666665,
+          "signal_scores": {
+            "motion_intensity": 0.9665322113135836
+          }
+        },
+        {
+          "start": 202.14666666666665,
+          "end": 215.39333333333332,
+          "signal_scores": {
+            "motion_intensity": 0.9665322113135836
+          }
+        }
+      ],
+      "classifications": [
+        {
+          "moment_type": null,
+          "subject_present": false,
+          "confidence": 0.0,
+          "reason": "No clear highlight event (made_basket, three_pointer, block, steal) is evident across frames; players are in transition or non-attacking positions."
+        },
+        {
+          "moment_type": null,
+          "subject_present": false,
+          "confidence": 0.0,
+          "reason": "No clear play from rubric events; players are moving or standing, no visible basket, block, steal, or three-pointer."
+        },
+        {
+          "moment_type": null,
+          "subject_present": false,
+          "confidence": 0.0,
+          "reason": "No clear highlight event (made basket, three pointer, block, steal) occurs across frames; players are in transition or moving without clear possession change or outcome."
+        }
+      ],
+      "revision_count": 1,
+      "judge_verdict": {
+        "quality_score": 0.0,
+        "verdict": "revise",
+        "action": "broaden",
+        "issues": [
+          "no clips selected",
+          "0% budget used"
+        ],
+        "feedback": "No plays selected; reel is too thin and lacks required basketball action."
+      },
+      "notes": [
+        "plan: strategy='event_based', active_signals=['audio_peak', 'motion_intensity']",
+        "ingest: resolved '/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/rHSdABRoBeE.mp4' -> /Users/shivani/code/AgentAICourse/week3/hypereel/downloads/rHSdABRoBeE.mp4 (2828.8s)",
+        "propose: 195 candidate window(s) generated",
+        "propose: evaluation slice [165.0, 225.0) kept 5 window(s)",
+        "propose: quick-test cap ON \u2014 kept 3 of 5 windows using reference_stratified sampling",
+        "classify: 3 window(s) judged by 'ollama' provider",
+        "select: 0 clip(s) chosen, 0.0s of 45.0s budget (underfilled)",
+        "judge[ollama]: verdict=revise score=0.0 llm_action=broaden -> action=broaden (clips=0, confirmed=0) \u2014 No plays selected; reel is too thin and lacks required basketball action.",
+        "judge: requesting revision #1 (broaden) with overrides={'require_moment': False, 'broadened': True, 'min_score': 0.35}",
+        "select: 0 clip(s) chosen, 0.0s of 45.0s budget (underfilled) [judge overrides applied: {'require_moment': False, 'broadened': True, 'min_score': 0.35}]",
+        "judge[ollama]: verdict=revise score=0.0 llm_action=broaden -> action=none (clips=0, confirmed=0) \u2014 No plays selected; reel is too thin and lacks required basketball action."
+      ],
+      "pipeline_errors": [],
+      "requested_vision_provider": "ollama",
+      "requested_llm_provider": "ollama",
+      "actual_vision_provider": "ollama",
+      "inference_configuration": {
+        "frames_per_candidate": 5,
+        "classification_context_seconds": 0.0,
+        "verify_with_core_frames": false,
+        "motion_sample_fps": 2,
+        "max_provider_calls": 6,
+        "ollama": {
+          "model": "qwen3-vl:4b-instruct",
+          "num_ctx": 8192,
+          "num_predict": 256,
+          "num_batch": 128,
+          "image_max_edge": 640,
+          "timeout_seconds": 180.0,
+          "temperature": 0,
+          "seed": 0,
+          "input_mode": "ordered_sampled_images",
+          "frame_timestamps_supplied": false
+        }
+      },
+      "trace_execution_id": null,
+      "provider_checkpoint_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/ollama-development-008-game2.checkpoints/calls-e332128730ef4b06911abaa48def708d.jsonl",
+      "provider_usage": [
+        {
+          "provider": "ollama",
+          "model": "qwen3-vl:4b-instruct",
+          "operation": "vision_classification",
+          "status": "success",
+          "reserved_cost_usd": 0.0,
+          "local": true,
+          "prompt_tokens": 6013,
+          "completion_tokens": 58,
+          "total_tokens": 6071,
+          "estimated_cost_usd": 0.0,
+          "latency_seconds": 90.75503395800479,
+          "total_duration_ns": 90751402292,
+          "load_duration_ns": 3341042,
+          "prompt_eval_duration_ns": 84336264000,
+          "eval_duration_ns": 6261591000,
+          "server_duration_seconds": 90.751402292
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3-vl:4b-instruct",
+          "operation": "vision_classification",
+          "status": "success",
+          "reserved_cost_usd": 0.0,
+          "local": true,
+          "prompt_tokens": 6013,
+          "completion_tokens": 52,
+          "total_tokens": 6065,
+          "estimated_cost_usd": 0.0,
+          "latency_seconds": 91.52973258297425,
+          "total_duration_ns": 91527036958,
+          "load_duration_ns": 4850791,
+          "prompt_eval_duration_ns": 85825205000,
+          "eval_duration_ns": 5187400000,
+          "server_duration_seconds": 91.527036958
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3-vl:4b-instruct",
+          "operation": "vision_classification",
+          "status": "success",
+          "reserved_cost_usd": 0.0,
+          "local": true,
+          "prompt_tokens": 6013,
+          "completion_tokens": 58,
+          "total_tokens": 6071,
+          "estimated_cost_usd": 0.0,
+          "latency_seconds": 90.184933291981,
+          "total_duration_ns": 90179911792,
+          "load_duration_ns": 4189417,
+          "prompt_eval_duration_ns": 83770913000,
+          "eval_duration_ns": 5890467000,
+          "server_duration_seconds": 90.179911792
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3-vl:4b-instruct",
+          "operation": "quality_judge",
+          "status": "success",
+          "reserved_cost_usd": 0.0,
+          "local": true,
+          "prompt_tokens": 455,
+          "completion_tokens": 59,
+          "total_tokens": 514,
+          "estimated_cost_usd": 0.0,
+          "latency_seconds": 5.106143541983329,
+          "total_duration_ns": 5103330000,
+          "load_duration_ns": 3164417,
+          "prompt_eval_duration_ns": 98833000,
+          "eval_duration_ns": 4570468000,
+          "server_duration_seconds": 5.10333
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3-vl:4b-instruct",
+          "operation": "quality_judge",
+          "status": "success",
+          "reserved_cost_usd": 0.0,
+          "local": true,
+          "prompt_tokens": 455,
+          "completion_tokens": 59,
+          "total_tokens": 514,
+          "estimated_cost_usd": 0.0,
+          "latency_seconds": 4.725852083007339,
+          "total_duration_ns": 4724466667,
+          "load_duration_ns": 1119208,
+          "prompt_eval_duration_ns": 79147000,
+          "eval_duration_ns": 4640257000,
+          "server_duration_seconds": 4.724466667
+        }
+      ],
+      "provider_attempted_calls": 5,
+      "estimated_provider_spend_usd": 0.0,
+      "estimated_provider_spend_before_run_usd": 2.5302700000000002,
+      "estimated_provider_cumulative_spend_usd": 2.5302700000000002,
+      "provider_spend_cap_usd": 0.0,
+      "elapsed_seconds": 301.6722972499847
+    }
+  ],
+  "aggregates": {
+    "synthetic": {
+      "case_count": 0,
+      "failed_count": 0,
+      "degraded_count": 0,
+      "operational_success_rate": null,
+      "metrics": {}
+    },
+    "non_synthetic": {
+      "case_count": 1,
+      "failed_count": 0,
+      "degraded_count": 0,
+      "operational_success_rate": 1.0,
+      "metrics": {
+        "action_completeness": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "balanced_accuracy": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "budget_compliance": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "budget_utilization": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "candidate_classification_accuracy": {
+          "macro_mean": 0.3333333333333333,
+          "applicable_cases": 1
+        },
+        "candidate_event_average_precision": {
+          "macro_mean": 0.8333333333333333,
+          "applicable_cases": 1
+        },
+        "candidate_recall": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "candidate_recall_at_iou_0_1": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "candidate_recall_at_iou_0_3": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "candidate_recall_at_iou_0_5": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "classification_calibration_error": {
+          "macro_mean": 0.3333333333333333,
+          "applicable_cases": 1
+        },
+        "classification_detected_event_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "classification_event_recall": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "classification_provider_error_rate": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "classification_schema_pass_rate": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "clip_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "cost_per_true_positive_usd": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "distinct_moment_types": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "duplicate_event_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "duplicate_event_rate": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "event_recall_at_iou_0_1": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "event_recall_at_iou_0_3": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "event_recall_at_iou_0_5": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "false_positives_per_video_minute": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "invalid_boundary_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "macro_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "matched_event_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "mean_boundary_error_seconds": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "mean_event_time_error_seconds": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "mean_temporal_iou": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "micro_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "near_miss_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "negative_window_count": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "negative_window_specificity": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "overlap_rate": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_action_completeness": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_balanced_accuracy": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_budget_compliance": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_budget_utilization": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_candidate_recall": {
+          "macro_mean": 1.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_clip_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_distinct_moment_types": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_duplicate_event_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_duplicate_event_rate": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_event_recall_at_iou_0_1": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_event_recall_at_iou_0_3": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_event_recall_at_iou_0_5": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_false_positives_per_video_minute": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_invalid_boundary_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_macro_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_matched_event_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_mean_boundary_error_seconds": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_mean_event_time_error_seconds": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_mean_temporal_iou": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_micro_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_near_miss_count": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_overlap_rate": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_reference_event_count": {
+          "macro_mean": 2.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_relevant_clip_precision": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "processed_slice_selected_duration_seconds": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_selected_event_recall": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "processed_slice_selection_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "reference_event_count": {
+          "macro_mean": 2.0,
+          "applicable_cases": 1
+        },
+        "relevant_clip_precision": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "selected_duration_seconds": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "selected_event_recall": {
+          "macro_mean": 0.0,
+          "applicable_cases": 1
+        },
+        "selection_f1": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        },
+        "selection_survival_rate": {
+          "macro_mean": null,
+          "applicable_cases": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "index": 4,
+  "arm": "video",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 94,
+    "end": 102,
+    "reference_ids": [
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-002"
+    ],
+    "types": [
+      "free_throw_miss"
+    ]
+  },
+  "started_at": "2026-09-12T22:46:42.709562+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w4-continuous.mp4",
+      "sha256": "80403a717e273882cbc1deffcbc06bd1e1cf1ea9043cd5c6ffc1bfa4bbef82d4",
+      "source_start": 92.0,
+      "source_end": 104.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 92.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [94, 102] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "0990587d72454acfd8461b546985ecf7b57706cda785e63d79c8cdcbe90b3c5d",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 13761,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 465
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "reserved_usd": 0.0536209375,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T22:46:44.712514+05:30",
+      "reservation_usd": 0.0536209375,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"free_throw_made\",\"time_seconds\":99.0,\"confidence\":0.7,\"evidence\":\"White jersey shooter takes and makes a free throw shot.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPfJKZBPUeUyLHPAFlN2gD5ZA3gacy3LjuOXD5x9ceK9HOItLnCvDVjgtDuDyyP2YykaZdfifze8dRVape/vN3b4inK0KLeI9TIlmFoXruVIq0g+OoPpX97eQfzRKhtelr"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13137,
+      "candidatesTokenCount": 40,
+      "totalTokenCount": 13177,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 465
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "_YilavylO4SFjuMP4bXAsAY"
+  },
+  "latency_seconds": 10.34891199998674,
+  "ended_at": "2026-09-12T22:46:55.061609+05:30",
+  "estimated_cost_usd": 0.01000275,
+  "usage": {
+    "promptTokenCount": 13137,
+    "candidatesTokenCount": 40,
+    "totalTokenCount": 13177,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 465
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"free_throw_made\",\"time_seconds\":99.0,\"confidence\":0.7,\"evidence\":\"White jersey shooter takes and makes a free throw shot.\"}]}",
+  "events": [
+    {
+      "label": "free_throw_made",
+      "time_seconds": 99.0,
+      "confidence": 0.7,
+      "evidence": "White jersey shooter takes and makes a free throw shot.",
+      "game_id": "unlimited-vs-campus"
+    }
+  ],
+  "context_events": []
+}

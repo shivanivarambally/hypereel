@@ -12,6 +12,7 @@ from __future__ import annotations
 import os
 
 from ..config import Settings
+from ..observability import checkpoint_classification
 from ..models import CandidateWindow, Classification, Recipe
 from ..providers.base import VisionProvider
 
@@ -131,5 +132,6 @@ def classify_candidates(
                     )
         except Exception:
             classification = Classification(confidence=0.0, reason="classification error")
+        checkpoint_classification(i, window, classification)
         results.append(classification)
     return results

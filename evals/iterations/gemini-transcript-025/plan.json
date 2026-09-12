@@ -1,0 +1,18 @@
+{
+  "status": "prepared_not_run_daily_quota",
+  "model": "gemini-3.8-flash",
+  "planned_calls": 16,
+  "windows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "control_required": "Full valid eightwindow directvideo report; currently6valid",
+  "hypothesis": "Observable temporal transcript plusvideo verification improves recognition over directvideo",
+  "holdout_used": false
+}

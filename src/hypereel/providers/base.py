@@ -56,5 +56,10 @@ class LLMProvider(ABC):
 
     @abstractmethod
     def generate(self, prompt: str, *, system: str = "", max_tokens: int = 800) -> str:
-        """Return generated text for ``prompt`` (never raises; returns '' on error)."""
+        """Return generated text for ``prompt``.
+
+        Legacy cloud adapters return '' on errors. Local Ollama raises so callers
+        can distinguish provider failures from a successful empty response;
+        orchestration callers must handle either outcome explicitly.
+        """
         raise NotImplementedError

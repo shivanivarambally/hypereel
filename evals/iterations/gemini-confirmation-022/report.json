@@ -1,0 +1,1380 @@
+{
+  "status": "stopped",
+  "started_at": "2026-09-12T22:33:42.305663+05:30",
+  "plan": {
+    "iteration": "022",
+    "created_at": "2026-09-12T22:20:28.754710+05:30",
+    "status": "frozen_before_inference",
+    "authorized_by": "User: Lets try that. Tell me what you need to test with Gemini. Also make sure you are making a note of all of this in our notes.",
+    "model": "gemini-3.8-flash",
+    "windows": [
+      1,
+      2,
+      6
+    ],
+    "planned_inference_requests": 6,
+    "arms": [
+      "same six sparse images and direct event prompt as historical MiniCPM control",
+      "same Gemini model with muted continuous 12-second clip; target explicit 4fps, verified API settings"
+    ],
+    "references": 10,
+    "supported_event_types": 9,
+    "event_contract_types": 12,
+    "unsupported_types": [
+      "block",
+      "free_throw_miss",
+      "three_point_made"
+    ],
+    "historical_control": "evidence-pilot-013; rescore only same windows with identical boundary handling",
+    "scoring": "same-type/game one-to-one matching, five-second tolerance; symmetric core filtering; malformed outputs reported separately",
+    "budget": {
+      "cumulative_ceiling_usd": 8,
+      "existing_estimated_spend_usd": 6.6463,
+      "remaining_usd": 1.3537,
+      "rule": "Verify model rates and reserve capped input/output/thinking cost before each request; no automatic retries or exceeding ceiling"
+    },
+    "holdout": "Third golden dataset remains sealed; do not inspect or evaluate",
+    "prerequisites": {
+      "gemini_api_key_present": true,
+      "google_genai_installed": false,
+      "existing_configured_model": "gemini-2.0-flash"
+    },
+    "record": [
+      "exact prompts and media hashes",
+      "model version and generation settings",
+      "FPS and resolution",
+      "raw responses and schema failures",
+      "per-call timestamps, usage, estimated cost and checkpoints",
+      "per-type precision recall F1, paired coverage and qualitative evidence audit"
+    ],
+    "interpretation": "Development diagnostic only. No Gemini quality result exists yet. No YOLO or generated transcript in this initial isolation test; combinations may be considered after measured gain.",
+    "credential_check": {
+      "timestamp": "2026-09-12T22:28:18.664203+05:30",
+      "models_list": "accepted",
+      "inference_quota": "not yet verified"
+    },
+    "generation_config": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "LOW"
+      },
+      "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+      "responseMimeType": "application/json"
+    },
+    "rates": {
+      "input_per_million": 0.75,
+      "output_including_thinking_per_million": 3.75
+    },
+    "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+    "api_source": "https://ai.google.dev/api/generate-content",
+    "implementation": "Standard-library REST generateContent; no SDK installation needed. Documented videoMetadata.fps=4 (deprecated compatibility field).",
+    "comparison_caveats": "Identical image bytes and prompt, but provider decoding differs: Gemini LOW thinking and8192 total output cap vs MiniCPM1536. Native video also changes resolution and sampling, so video effect is combined evidence change, not FPS alone.",
+    "failure_policy": "No retries; provider error stops. Invalid schema remains invalid. Reservation retained if usage unknown.",
+    "started_at": "2026-09-12T22:33:42.304089+05:30",
+    "reason": "021 all six responses wrapped otherwise valid JSON in Markdown; strict parser rejects. Confirm with responseMimeType application/json; identical model, prompts, inputs, scoring and other generation settings. No semantic prompt or label tuning. Six fresh calls; previous strict and post-hoc results retained."
+  },
+  "calls": [
+    {
+      "index": 1,
+      "arm": "images",
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "started_at": "2026-09-12T22:33:42.308944+05:30",
+      "status": "completed",
+      "manifest": [
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse0.jpg",
+          "sha256": "32bb3bf47513ef3cc92b031014847317fa3c76f36f1e949513fa12edab942809",
+          "width": 768,
+          "height": 431,
+          "time": 221.0,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse1.jpg",
+          "sha256": "dda13188f7cda72a2180bbee0590ea63593057108f6dfb21cbcdb344148325d9",
+          "width": 768,
+          "height": 431,
+          "time": 223.4,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse2.jpg",
+          "sha256": "1599e1488903978ac6cf80e6f9d9df3aa815d41b86ebc5dd92cde51f5f0b9689",
+          "width": 768,
+          "height": 431,
+          "time": 225.8,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse3.jpg",
+          "sha256": "0e34772979f0a94513b1e89f8e8b03ca0ee8fc5e3acc2fbdfb16db00f59973ed",
+          "width": 768,
+          "height": 431,
+          "time": 228.2,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse4.jpg",
+          "sha256": "6a4fa513f95b00d61e9ba4a82b27be9315164ff5832e6cfcdf28b81e651769af",
+          "width": 768,
+          "height": 431,
+          "time": 230.6,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse5.jpg",
+          "sha256": "758252c35be790873a72b0daec06ac9af0d88497b47b2c5bb2b49f51fbd354f8",
+          "width": 768,
+          "height": 431,
+          "time": 233.0,
+          "view": "wide"
+        }
+      ],
+      "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [221.0, 223.4, 225.8, 228.2, 230.6, 233.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [223, 231] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 221.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 223.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 225.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 228.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 230.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 233.0, \"view\": \"wide\"}]",
+      "prompt_sha256": "0813c7c133d175c8318df41b6bbd455245b4f9bce126d77be7aa5d1e269184a7",
+      "generation_config": {
+        "temperature": 0,
+        "maxOutputTokens": 8192,
+        "thinkingConfig": {
+          "thinkingLevel": "LOW"
+        },
+        "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+        "responseMimeType": "application/json"
+      },
+      "token_preflight": {
+        "totalTokens": 7216,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 616
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 6600
+          }
+        ]
+      },
+      "reserved_usd": 0.047485,
+      "raw_response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"events\": []}",
+                  "thoughtSignature": "EmcKZQERTTIPCvKC1TQLHup0lrPLXm02Y1xpoVMIRIHWzXNc5ozxVU+RbcAhoomiF4qsYrfasQYY0ZYNNYW9nKru15v/AhDHvHXeczC6Dcvkv+4PPcOBERmTXJbbeQQcf9ollJ53Gwzs"
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 7216,
+          "candidatesTokenCount": 5,
+          "totalTokenCount": 7221,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 616
+            },
+            {
+              "modality": "IMAGE",
+              "tokenCount": 6600
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "8IWlarKEEPfGg8UPwYq_wQU"
+      },
+      "latency_seconds": 35.93718491701293,
+      "ended_at": "2026-09-12T22:34:19.041711+05:30",
+      "estimated_cost_usd": 0.00543075,
+      "usage": {
+        "promptTokenCount": 7216,
+        "candidatesTokenCount": 5,
+        "totalTokenCount": 7221,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 616
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 6600
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "raw_text": "{\"events\": []}",
+      "events": [],
+      "context_events": []
+    },
+    {
+      "index": 1,
+      "arm": "video",
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "started_at": "2026-09-12T22:34:19.064785+05:30",
+      "status": "reserved",
+      "manifest": [
+        {
+          "path": "evals/iterations/evidence-state-018/media/w1-continuous.mp4",
+          "sha256": "75d23ea4566f7fbc658560f877113ebc31e405f5354138bba5ad8360f745026b",
+          "source_start": 221.0,
+          "source_end": 233.0,
+          "fps_requested": 4,
+          "audio": "muted",
+          "source_width": 1280
+        }
+      ],
+      "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 221.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [223, 231] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+      "prompt_sha256": "25ec6121e6f97daf2a8af9c9c629701b403ef0bb0fdf104de15e33fec1690785",
+      "generation_config": {
+        "temperature": 0,
+        "maxOutputTokens": 8192,
+        "thinkingConfig": {
+          "thinkingLevel": "LOW"
+        },
+        "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+        "responseMimeType": "application/json"
+      },
+      "token_preflight": {
+        "totalTokens": 14033,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 467
+          },
+          {
+            "modality": "VIDEO",
+            "tokenCount": 13181
+          },
+          {
+            "modality": "AUDIO",
+            "tokenCount": 385
+          }
+        ]
+      },
+      "reserved_usd": 0.0538759375
+    }
+  ],
+  "scored_references": [
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": 3,
+      "label": "free_throw_made",
+      "player_name": "Jacob J",
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018",
+      "source_event_type": "FT",
+      "source_outcome": "made",
+      "source_timestamp_seconds": 225,
+      "split": "development",
+      "team": "East Bay Elite 11U 2025 26",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 225
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": null,
+      "label": "steal",
+      "player_name": null,
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+      "source_event_type": "STL",
+      "source_outcome": null,
+      "source_timestamp_seconds": 758,
+      "split": "development",
+      "team": "East Bay Elite 11U 2025 26",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 758
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": 34,
+      "label": "turnover",
+      "player_name": null,
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+      "source_event_type": "TOV",
+      "source_outcome": null,
+      "source_timestamp_seconds": 758,
+      "split": "development",
+      "team": "Spartans",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 758
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": null,
+      "label": "assist",
+      "player_name": null,
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+      "source_event_type": "AST",
+      "source_outcome": null,
+      "source_timestamp_seconds": 761,
+      "split": "development",
+      "team": "East Bay Elite 11U 2025 26",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 761
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": 23,
+      "label": "two_point_made",
+      "player_name": "Lucky N",
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067",
+      "source_event_type": "2PT",
+      "source_outcome": "made",
+      "source_timestamp_seconds": 762,
+      "split": "development",
+      "team": "East Bay Elite 11U 2025 26",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 762
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 23,
+      "label": "three_point_miss",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+      "source_event_type": "3PT",
+      "source_outcome": "miss",
+      "source_timestamp_seconds": 1318,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1318
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 25,
+      "label": "offensive_rebound",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+      "source_event_type": "OR",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1319,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1319
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 25,
+      "label": "two_point_miss",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+      "source_event_type": "2PT",
+      "source_outcome": "miss",
+      "source_timestamp_seconds": 1320,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1320
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 14,
+      "label": "defensive_rebound",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "source_event_type": "DR",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1321,
+      "split": "development",
+      "team": "Unlimited",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1321
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 14,
+      "label": "turnover",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108",
+      "source_event_type": "TOV",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1323,
+      "split": "development",
+      "team": "Unlimited",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1323
+    }
+  ],
+  "historical_control": [
+    {
+      "arm": "wide6_context",
+      "index": 1,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "status": "completed",
+      "manifest": [
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse0.jpg",
+          "sha256": "32bb3bf47513ef3cc92b031014847317fa3c76f36f1e949513fa12edab942809",
+          "width": 768,
+          "height": 431,
+          "time": 221.0,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse1.jpg",
+          "sha256": "dda13188f7cda72a2180bbee0590ea63593057108f6dfb21cbcdb344148325d9",
+          "width": 768,
+          "height": 431,
+          "time": 223.4,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse2.jpg",
+          "sha256": "1599e1488903978ac6cf80e6f9d9df3aa815d41b86ebc5dd92cde51f5f0b9689",
+          "width": 768,
+          "height": 431,
+          "time": 225.8,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse3.jpg",
+          "sha256": "0e34772979f0a94513b1e89f8e8b03ca0ee8fc5e3acc2fbdfb16db00f59973ed",
+          "width": 768,
+          "height": 431,
+          "time": 228.2,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse4.jpg",
+          "sha256": "6a4fa513f95b00d61e9ba4a82b27be9315164ff5832e6cfcdf28b81e651769af",
+          "width": 768,
+          "height": 431,
+          "time": 230.6,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w1-sparse5.jpg",
+          "sha256": "758252c35be790873a72b0daec06ac9af0d88497b47b2c5bb2b49f51fbd354f8",
+          "width": 768,
+          "height": 431,
+          "time": 233.0,
+          "view": "wide"
+        }
+      ],
+      "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [221.0, 223.4, 225.8, 228.2, 230.6, 233.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [223, 231] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 221.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 223.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 225.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 228.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 230.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 233.0, \"view\": \"wide\"}]",
+      "prompt_sha256": "0813c7c133d175c8318df41b6bbd455245b4f9bce126d77be7aa5d1e269184a7",
+      "raw_completion": {
+        "id": "chatcmpl-97926a705c839c32",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 223.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the second image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 223.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the second image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 225.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the third image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 225.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the third image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 228.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fourth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 228.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fourth image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 230.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fifth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 230.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fifth image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 233.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the sixth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 233.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the sixth image, and the defending team gains control of the ball.\"\n    }\n  ]\n}",
+              "refusal": null,
+              "role": "assistant",
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "created": 1789220091,
+        "model": "openbmb/MiniCPM-V-4_5",
+        "object": "chat.completion",
+        "metadata": null,
+        "moderation": null,
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "completion_tokens": 645,
+          "prompt_tokens": 1810,
+          "total_tokens": 2455,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "latency_seconds": 4.997217291005654,
+      "raw": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 223.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the second image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 223.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the second image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 225.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the third image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 225.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the third image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 228.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fourth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 228.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fourth image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 230.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fifth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 230.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the fifth image, and the defending team gains control of the ball.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 233.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the sixth image.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 233.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"the ball is seen in the air and does not reach the basket in the sixth image, and the defending team gains control of the ball.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "label": "two_point_miss",
+          "time_seconds": 223.4,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the second image.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 223.4,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the second image, and the defending team gains control of the ball.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "two_point_miss",
+          "time_seconds": 225.8,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the third image.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 225.8,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the third image, and the defending team gains control of the ball.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "two_point_miss",
+          "time_seconds": 228.2,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the fourth image.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 228.2,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the fourth image, and the defending team gains control of the ball.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "two_point_miss",
+          "time_seconds": 230.6,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the fifth image.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 230.6,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the fifth image, and the defending team gains control of the ball.",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ],
+      "context_events": [
+        {
+          "label": "two_point_miss",
+          "time_seconds": 233.0,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the sixth image.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 233.0,
+          "confidence": 0.8,
+          "evidence": "the ball is seen in the air and does not reach the basket in the sixth image, and the defending team gains control of the ball.",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ]
+    },
+    {
+      "arm": "wide6_context",
+      "index": 2,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 756,
+        "end": 764,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+        ],
+        "types": [
+          "assist",
+          "steal",
+          "turnover",
+          "two_point_made"
+        ]
+      },
+      "status": "completed",
+      "manifest": [
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse0.jpg",
+          "sha256": "79ea47b1e9f4c985f135e27abe4b3a04eb516a74611733ecd1c5961482d66d9e",
+          "width": 768,
+          "height": 431,
+          "time": 754.0,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse1.jpg",
+          "sha256": "6e76fb54de828ca57de025f315aa594a7f473a9d9d4dc6ae4bf41cb494cb7d25",
+          "width": 768,
+          "height": 431,
+          "time": 756.4,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse2.jpg",
+          "sha256": "b50326abfa408daeb7d267bef171faf0697bc96a572a48bdd3568ae5df7c1aed",
+          "width": 768,
+          "height": 431,
+          "time": 758.8,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse3.jpg",
+          "sha256": "dd96a798f48541201ea035b17bcc2c0742bbfa4aebc5579cee6ee85faf05c5f6",
+          "width": 768,
+          "height": 431,
+          "time": 761.2,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse4.jpg",
+          "sha256": "1670fa56b37ce6b11fe145426e15e825f2036a611c73290ec2f540dfcce8b263",
+          "width": 768,
+          "height": 431,
+          "time": 763.6,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w2-sparse5.jpg",
+          "sha256": "ce79a8b9022897d4489356fcb2eacd882edb9931d0fc169d2cedd8aa1bd7a00f",
+          "width": 768,
+          "height": 431,
+          "time": 766.0,
+          "view": "wide"
+        }
+      ],
+      "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [754.0, 756.4, 758.8, 761.2, 763.6, 766.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [756, 764] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 754.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 756.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 758.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 761.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 763.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 766.0, \"view\": \"wide\"}]",
+      "prompt_sha256": "d3000de5fbaaf683934402b925f0aa5e3f64bfa9607fd6521c5dbede9e0f24af",
+      "raw_completion": {
+        "id": "chatcmpl-a215d04a7e347a45",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 756.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:33, indicating a two-point field goal was made.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 758.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 761.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:41, indicating another two-point field goal was made by EBE.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 763.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 766.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:45, indicating another two-point field goal was made by EBE.\"\n    }\n  ]\n}",
+              "refusal": null,
+              "role": "assistant",
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "created": 1789220096,
+        "model": "openbmb/MiniCPM-V-4_5",
+        "object": "chat.completion",
+        "metadata": null,
+        "moderation": null,
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "completion_tokens": 363,
+          "prompt_tokens": 1810,
+          "total_tokens": 2173,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "latency_seconds": 2.8768182499916293,
+      "raw": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 756.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:33, indicating a two-point field goal was made.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 758.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 761.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:41, indicating another two-point field goal was made by EBE.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 763.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 766.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"Scoreboard shows EBE 7, Spartan 0 at 12:45, indicating another two-point field goal was made by EBE.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "label": "two_point_made",
+          "time_seconds": 756.4,
+          "confidence": 0.8,
+          "evidence": "Scoreboard shows EBE 7, Spartan 0 at 12:33, indicating a two-point field goal was made.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 758.8,
+          "confidence": 0.8,
+          "evidence": "The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "two_point_made",
+          "time_seconds": 761.2,
+          "confidence": 0.8,
+          "evidence": "Scoreboard shows EBE 7, Spartan 0 at 12:41, indicating another two-point field goal was made by EBE.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 763.6,
+          "confidence": 0.8,
+          "evidence": "The ball is in play, and the defending team (Spartan) is seen moving to gain control after a missed shot by EBE.",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ],
+      "context_events": [
+        {
+          "label": "two_point_made",
+          "time_seconds": 766.0,
+          "confidence": 0.8,
+          "evidence": "Scoreboard shows EBE 7, Spartan 0 at 12:45, indicating another two-point field goal was made by EBE.",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ]
+    },
+    {
+      "arm": "wide6_context",
+      "index": 6,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 1316,
+        "end": 1324,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+        ],
+        "types": [
+          "defensive_rebound",
+          "offensive_rebound",
+          "three_point_miss",
+          "turnover",
+          "two_point_miss"
+        ]
+      },
+      "status": "completed",
+      "manifest": [
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse0.jpg",
+          "sha256": "967f7cbca57125cdac23c1f786f8c501d1a8893db710bbbe164ea04959d51f31",
+          "width": 768,
+          "height": 432,
+          "time": 1314.0,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse1.jpg",
+          "sha256": "f730f16cba01844a315b3b1851bc6e52fdeace822ed064ffb73536db9bf74177",
+          "width": 768,
+          "height": 432,
+          "time": 1316.4,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse2.jpg",
+          "sha256": "d3e968b6b873ac1f4273cdce7a67b5e37fc83cb65c706ee6793f1d4a0e9e1187",
+          "width": 768,
+          "height": 432,
+          "time": 1318.8,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse3.jpg",
+          "sha256": "3e1804045fa8d6176ede4d4feb9952547e024e98ea61c9a0470cb940d73f5ebd",
+          "width": 768,
+          "height": 432,
+          "time": 1321.2,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse4.jpg",
+          "sha256": "6671420aa9b01f1278bf97eea18148f34c59c91e69ff85852ec6259b9e7820f6",
+          "width": 768,
+          "height": 432,
+          "time": 1323.6,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/evidence-pilot-013/media/w6-sparse5.jpg",
+          "sha256": "8996552a0b6c685317daf8c93a4043d1439647a15d05f684ab9c651962e289dc",
+          "width": 768,
+          "height": 432,
+          "time": 1326.0,
+          "view": "wide"
+        }
+      ],
+      "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [1314.0, 1316.4, 1318.8, 1321.2, 1323.6, 1326.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [1316, 1324] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 1314.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 1316.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 1318.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 1321.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 1323.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 1326.0, \"view\": \"wide\"}]",
+      "prompt_sha256": "bba810d964da43825660c0a9fe48d352d7ac8a06fd80dbe72d6a2f0c3f98e39a",
+      "raw_completion": {
+        "id": "chatcmpl-8f39f761b72c2e4f",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 1316.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"The scoreboard shows Unl leading 20-12, and the ball is in play with players from both teams in position to attempt a shot.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 1318.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is seen in mid-air, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 1321.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 1323.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is seen in mid-air again, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 1326.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.\"\n    }\n  ]\n}",
+              "refusal": null,
+              "role": "assistant",
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "created": 1789220106,
+        "model": "openbmb/MiniCPM-V-4_5",
+        "object": "chat.completion",
+        "metadata": null,
+        "moderation": null,
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "completion_tokens": 365,
+          "prompt_tokens": 1824,
+          "total_tokens": 2189,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "latency_seconds": 2.957984040986048,
+      "raw": "{\n  \"events\": [\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 1316.4,\n      \"confidence\": 0.8,\n      \"evidence\": \"The scoreboard shows Unl leading 20-12, and the ball is in play with players from both teams in position to attempt a shot.\"\n    },\n    {\n      \"label\": \"two_point_miss\",\n      \"time_seconds\": 1318.8,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is seen in mid-air, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 1321.2,\n      \"confidence\": 0.8,\n      \"evidence\": \"Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.\"\n    },\n    {\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 1323.6,\n      \"confidence\": 0.8,\n      \"evidence\": \"The ball is seen in mid-air again, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.\"\n    },\n    {\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 1326.0,\n      \"confidence\": 0.8,\n      \"evidence\": \"Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "label": "two_point_made",
+          "time_seconds": 1316.4,
+          "confidence": 0.8,
+          "evidence": "The scoreboard shows Unl leading 20-12, and the ball is in play with players from both teams in position to attempt a shot.",
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "label": "two_point_miss",
+          "time_seconds": 1318.8,
+          "confidence": 0.8,
+          "evidence": "The ball is seen in mid-air, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.",
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 1321.2,
+          "confidence": 0.8,
+          "evidence": "Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.",
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "label": "two_point_made",
+          "time_seconds": 1323.6,
+          "confidence": 0.8,
+          "evidence": "The ball is seen in mid-air again, and players are reacting as if a shot has just been taken, with the scoreboard still showing the same score, indicating no immediate change.",
+          "game_id": "unlimited-vs-campus"
+        }
+      ],
+      "context_events": [
+        {
+          "label": "defensive_rebound",
+          "time_seconds": 1326.0,
+          "confidence": 0.8,
+          "evidence": "Players from the opposing team are seen moving towards the ball, suggesting they have gained control after a missed shot.",
+          "game_id": "unlimited-vs-campus"
+        }
+      ]
+    }
+  ],
+  "spend_before_usd": 6.6937765,
+  "holdout_used": false,
+  "error": "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+  "common_completed_indices": [],
+  "paired_metrics": {
+    "historical_minicpm": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "micro_precision": null,
+      "micro_recall": null,
+      "micro_f1": null,
+      "macro_f1": null,
+      "worst_type_recall": null,
+      "measured_types": 0,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "images": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "micro_precision": null,
+      "micro_recall": null,
+      "micro_f1": null,
+      "macro_f1": null,
+      "worst_type_recall": null,
+      "measured_types": 0,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "video": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "micro_precision": null,
+      "micro_recall": null,
+      "micro_f1": null,
+      "macro_f1": null,
+      "worst_type_recall": null,
+      "measured_types": 0,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    }
+  },
+  "ended_at": "2026-09-12T22:34:25.698863+05:30",
+  "elapsed_seconds": 43.39243699997314,
+  "peak_client_rss_gib": 0.05859375,
+  "spend_after_usd": 6.753083187500001,
+  "incremental_estimated_spend_usd": 0.059306687500000344
+}

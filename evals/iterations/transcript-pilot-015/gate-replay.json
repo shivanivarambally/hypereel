@@ -1,0 +1,169 @@
+{
+  "created_at": "2026-09-12T20:49:00.076618+05:30",
+  "kind": "post_run_offline_replay",
+  "inference_calls": 0,
+  "primary_report_unchanged": true,
+  "replays": "transcript-pilot-015 extraction output through the opt-in entailment gate",
+  "method": "Re-parse retained raw extraction text under the shared boundary policy, apply screen_extracted_events, compare the gate decision with the auditor verdicts already recorded in entailment-audit.json. No inference, no reference change, no report modified.",
+  "caveat": "The gate is a deliberately over-permissive lexical screen, not a correctness test. Surviving an event proves only that outcome/control language is present somewhere in its cited or prior text. This replay measures the gate, on eight events from three windows, which is far too small to set a threshold or claim generalisation.",
+  "events": [
+    {
+      "window_index": 1,
+      "label": "two_point_miss",
+      "time_seconds": 228.2,
+      "observation_ids": [
+        "o4"
+      ],
+      "kept_by_gate": true,
+      "missing_elements": [],
+      "cited_hedging": [],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "entailed"
+    },
+    {
+      "window_index": 1,
+      "label": "offensive_rebound",
+      "time_seconds": 233.0,
+      "observation_ids": [
+        "o6"
+      ],
+      "kept_by_gate": true,
+      "missing_elements": [],
+      "cited_hedging": [
+        "possibly"
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 2,
+      "label": "two_point_miss",
+      "time_seconds": 758.8,
+      "observation_ids": [
+        "o3"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "shot_outcome"
+      ],
+      "cited_hedging": [
+        "possibly"
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 2,
+      "label": "offensive_rebound",
+      "time_seconds": 761.2,
+      "observation_ids": [
+        "o4"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "prior_miss",
+        "control_after"
+      ],
+      "cited_hedging": [
+        "uncertain"
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 2,
+      "label": "defensive_rebound",
+      "time_seconds": 763.6,
+      "observation_ids": [
+        "o5",
+        "o6"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "prior_miss",
+        "control_after"
+      ],
+      "cited_hedging": [
+        "uncertain"
+      ],
+      "cited_visibility": [
+        "clear",
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 6,
+      "label": "two_point_miss",
+      "time_seconds": 1316.4,
+      "observation_ids": [
+        "o2"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "cited_hedging": [],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 6,
+      "label": "offensive_rebound",
+      "time_seconds": 1323.6,
+      "observation_ids": [
+        "o5"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "prior_miss",
+        "control_after"
+      ],
+      "cited_hedging": [],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    },
+    {
+      "window_index": 6,
+      "label": "defensive_rebound",
+      "time_seconds": 1323.6,
+      "observation_ids": [
+        "o5"
+      ],
+      "kept_by_gate": false,
+      "missing_elements": [
+        "prior_miss",
+        "control_after"
+      ],
+      "cited_hedging": [],
+      "cited_visibility": [
+        "clear"
+      ],
+      "auditor_verdict": "unsupported"
+    }
+  ],
+  "summary": {
+    "events": 8,
+    "kept": 2,
+    "dropped": 6,
+    "auditor_entailed": 1,
+    "gate_kept_and_entailed": 1,
+    "gate_kept_but_unsupported": 1,
+    "gate_dropped_but_entailed": 0,
+    "gate_precision": 0.5,
+    "gate_recall": 1.0
+  }
+}

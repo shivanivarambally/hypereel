@@ -1,0 +1,31 @@
+{
+  "name": "evidence-state-018",
+  "created_at": "2026-09-12T21:32:17.713432+05:30",
+  "indices": [
+    1,
+    2,
+    6
+  ],
+  "model": "openbmb/MiniCPM-V-4_5",
+  "max_calls": 54,
+  "cumulative_ceiling_usd": 8,
+  "reserve_per_call": 0.3,
+  "arms": [
+    "sparse_wide",
+    "dense_rim"
+  ],
+  "hypothesis": "Quarter-second sampling with optional native rim crops improves primitive recovery and event recognition over six wide frames, using corrected v2 state semantics in BOTH arms.",
+  "evidence": "Same12second source spans/core intervals. Baseline six wide frames from013; dense49times at4fps and optional320native rim crops. Up to3timestamps per dense request,6attachments maximum. Combined input/batching change, not separate density/crop causal estimates.",
+  "semantic_changes": "Explicit shot versus pass releases, release-only shooter zone, explicit missed state allowing airballs, explicit interception rather than inferred steal, unknown-gap reset. No court homography implemented; model release-zone errors remain possible. Assist requires explicit pass and distinct known players; provisional8s linkage heuristic.",
+  "continuity": "Combine chronological primitive rows before deriving events across all batches. No state is summarized by another model. Batch-boundary rederivation test required. Invalid batch invalidates window; two consecutive invalid batches stop that window. Independent windows continue, transport or budget failure stops entire run.",
+  "parsing": "Predeclared frames-array or timestamp-keyed rows accepted; exact times/fields/vocabulary required, no post-hoc repair.",
+  "evaluation": "Same HoopIQ references,all12definitions,five-second one-to-one matcher. Only common fully valid windows paired; failed coverage and supported types explicit. Frames outside core supply context only; both arms use identical boundary derivation.",
+  "quality_audit": "Pre-inference crop QA rejected20campus false matches on advertising. Prepared manifests preserve rejected candidates. Subsequent model-state spot audit is qualitative, not independently labeled full-frame benchmark.",
+  "holdout_used": false,
+  "prepared_sha256": "338126f49ef0f978c246f8180bc8e6ccc254949ab23e97000e57c2b43a404af4",
+  "reference_sha256": "40f3eb6064c33b7171b6325835bba1233bd0ca3c233c829a1e01285b7c771534",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  }
+}

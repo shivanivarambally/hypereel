@@ -160,3 +160,18 @@ def test_final_holdout_is_complete_and_isolated_from_development():
     assert case.exhaustive is True
     assert case.case_id not in {item.case_id for item in development_cases}
     assert case.source not in {item.source for item in development_cases}
+
+
+@pytest.mark.parametrize("filename", [
+    "development.pipeline.jsonl",
+    "east-bay-elite-vs-spartans.pipeline.jsonl",
+    "unlimited-vs-campus.pipeline.jsonl",
+])
+def test_development_case_recipes_resolve(filename):
+    from hypereel.recipe import load_recipe
+
+    dataset = GOLDEN / "cases" / filename
+    for case in load_dataset(dataset, PipelineCase):
+        recipe_path = (dataset.parent / case.recipe_path).resolve()
+        assert recipe_path == GOLDEN.parents[1] / "recipes" / "basketball_team_evaluation.yaml"
+        assert load_recipe(recipe_path) is not None

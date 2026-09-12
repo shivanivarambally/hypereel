@@ -1,0 +1,22 @@
+[
+  {
+    "arm": "wide12_context",
+    "window": 0,
+    "error_type": "ValueError",
+    "http_status": null,
+    "model_output_received": true,
+    "finish_reason": "stop",
+    "event_count": 20,
+    "validation_detail": "Too many events for one bounded window"
+  },
+  {
+    "arm": "wide12_ball_crops",
+    "window": 3,
+    "error_type": "ValueError",
+    "http_status": null,
+    "model_output_received": true,
+    "finish_reason": "stop",
+    "event_count": 20,
+    "validation_detail": "Too many events for one bounded window"
+  }
+]

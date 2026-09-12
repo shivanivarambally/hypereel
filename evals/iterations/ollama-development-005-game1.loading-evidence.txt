@@ -1,0 +1,11 @@
+time=2026-09-12T15:47:57.951+05:30 level=INFO source=sched.go:613 msg="system memory" total="16.0 GiB" free="4.3 GiB" free_swap="0 B"
+srv    load_model: [mtmd] estimated worst-case memory usage of mmproj is 1388.20 MiB (took 279.45 ms)
+common_memory_breakdown_print: | memory breakdown [MiB] | total    free    self   model   context   compute    unaccounted |
+load_tensors:   CPU_Mapped model buffer size =   304.28 MiB
+load_tensors:  MTL0_Mapped model buffer size =  2374.62 MiB
+llama_kv_cache:       MTL0 KV buffer size =   576.00 MiB
+sched_reserve:       MTL0 compute buffer size =    49.77 MiB
+sched_reserve:        CPU compute buffer size =     7.25 MiB
+load_hparams: model size:         3382.35 MiB
+time=2026-09-12T15:48:02.230+05:30 level=WARN source=llama_server.go:1301 msg="client connection closed before llama-server finished loading, aborting load"
+time=2026-09-12T15:48:02.230+05:30 level=INFO source=sched.go:641 msg="Load failed" model=/Users/shivani/.ollama/models/blobs/sha256-16b83be682148a4d8201dbf720ea7eace5de98b69f63f05e0c908b4d7977ecb5 error="timed out waiting for llama-server to start: context canceled"

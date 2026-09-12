@@ -1,0 +1,12 @@
+{
+  "baseline": "011",
+  "window_index": 0,
+  "transport_succeeded": true,
+  "finish_reason": "stop",
+  "required_observations": 6,
+  "actual_observations": 1,
+  "validation_error": "One observation required for every image",
+  "events_not_scored": true,
+  "remaining_calls_not_attempted": 1,
+  "response_retained_in": "report.json and checkpoint journal"
+}

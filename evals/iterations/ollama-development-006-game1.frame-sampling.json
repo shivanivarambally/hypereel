@@ -1,0 +1,94 @@
+{
+  "method": "Reconstructed from unchanged extract_frames evenly-spaced sampler and recorded candidates; three central frames, no context",
+  "source_time_origin": 0,
+  "nominal_horizon": [
+    295,
+    340
+  ],
+  "sampling": [
+    {
+      "window_index": 0,
+      "start": 289.0,
+      "end": 301.6666666666667,
+      "sampled_source_seconds": [
+        289.0,
+        295.33333333333337,
+        301.6666666666667
+      ],
+      "frame_indices_30fps": [
+        8670,
+        8860,
+        9050
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play event occurs; players are stationary or in transition, no shot, block, or steal is evident."
+      }
+    },
+    {
+      "window_index": 1,
+      "start": 301.6666666666667,
+      "end": 314.3333333333333,
+      "sampled_source_seconds": [
+        301.6666666666667,
+        308.0,
+        314.3333333333333
+      ],
+      "frame_indices_30fps": [
+        9050,
+        9240,
+        9430
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event (made basket, three pointer, block, steal) is evident across frames; players are in transition or non-attacking positions."
+      }
+    },
+    {
+      "window_index": 2,
+      "start": 327.0,
+      "end": 339.6666666666667,
+      "sampled_source_seconds": [
+        327.0,
+        333.33333333333337,
+        339.6666666666667
+      ],
+      "frame_indices_30fps": [
+        9810,
+        10000,
+        10190
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; ball not in play, no shot attempt or defensive action visible across frames."
+      }
+    },
+    {
+      "window_index": 3,
+      "start": 339.6666666666667,
+      "end": 352.3333333333333,
+      "sampled_source_seconds": [
+        339.6666666666667,
+        346.0,
+        352.3333333333333
+      ],
+      "frame_indices_30fps": [
+        10190,
+        10380,
+        10570
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; players are in transition or standing, no visible shot, block, or steal."
+      }
+    }
+  ]
+}

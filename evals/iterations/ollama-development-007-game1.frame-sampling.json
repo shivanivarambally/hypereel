@@ -1,0 +1,88 @@
+{
+  "source_time_origin": 0,
+  "candidate_equality_with_006": true,
+  "frames_per_candidate": 3,
+  "image_max_edge": 640,
+  "sampling": [
+    {
+      "window": {
+        "start": 289.0,
+        "end": 301.6666666666667,
+        "signal_scores": {
+          "motion_intensity": 0.7800327745836114
+        }
+      },
+      "source_seconds": [
+        289.0,
+        295.33333333333337,
+        301.6666666666667
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play event occurs; players are stationary or in transition, no ball possession change or shot attempt visible."
+      }
+    },
+    {
+      "window": {
+        "start": 301.6666666666667,
+        "end": 314.3333333333333,
+        "signal_scores": {
+          "motion_intensity": 0.7800327745836114
+        }
+      },
+      "source_seconds": [
+        301.6666666666667,
+        308.0,
+        314.3333333333333
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event (made basket, three pointer, block, steal) is evident across frames; players are in transition or non-attacking positions."
+      }
+    },
+    {
+      "window": {
+        "start": 327.0,
+        "end": 339.6666666666667,
+        "signal_scores": {
+          "motion_intensity": 0.7800327745836114
+        }
+      },
+      "source_seconds": [
+        327.0,
+        333.33333333333337,
+        339.6666666666667
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; ball not in play, no shot attempt or defensive action visible across frames."
+      }
+    },
+    {
+      "window": {
+        "start": 339.6666666666667,
+        "end": 352.3333333333333,
+        "signal_scores": {
+          "motion_intensity": 0.7800327745836114
+        }
+      },
+      "source_seconds": [
+        339.6666666666667,
+        346.0,
+        352.3333333333333
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; players are in motion but no definitive basket, block, or steal is visible across frames."
+      }
+    }
+  ]
+}

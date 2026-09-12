@@ -1,0 +1,261 @@
+{
+  "note": "Reconstructed with identical source/extraction/encoding settings; no model calls. Source seek floors timestamp*fps, so nominal time differs by less than one frame.",
+  "frames": [
+    {
+      "window": 0,
+      "image": 0,
+      "nominal_time": 20.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "dfde5204359a1db5d20f12580a6196df44b5010c8edc2fd78975994c447c100a"
+    },
+    {
+      "window": 0,
+      "image": 1,
+      "nominal_time": 22.666666666666668,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "ede3905682f578c11d3d6d397a81b8356d69e41af7db4821d8e96d75df70a9fb"
+    },
+    {
+      "window": 0,
+      "image": 2,
+      "nominal_time": 25.333333333333332,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "02e2d55a96ba492d0bfeacfe0a4293651a55f4e70bfe2ed311392fc075df60b7"
+    },
+    {
+      "window": 0,
+      "image": 3,
+      "nominal_time": 28.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "ff5ab65822975a1964444a3e483bd04422b14b4c485988d7d00eb88105ff9961"
+    },
+    {
+      "window": 1,
+      "image": 0,
+      "nominal_time": 223.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "6b16f986ebe0637d6192f42a51bc101c6a89bc61f74a45ca36e5bb2445fddf8a"
+    },
+    {
+      "window": 1,
+      "image": 1,
+      "nominal_time": 225.66666666666666,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "f2ee49d6f791988a933185133cc14c712eb597bdf712a1c7baf2241ced31f6b1"
+    },
+    {
+      "window": 1,
+      "image": 2,
+      "nominal_time": 228.33333333333334,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "1b0c91984379b2c93ce5ca63524a407b3bc10e5c0764c89370a1f98eb2a46f7b"
+    },
+    {
+      "window": 1,
+      "image": 3,
+      "nominal_time": 231.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "22d09ee8ecd5ad4dc819a1e4ad0bbaf72368928fdc509510104f3c8cf083f305"
+    },
+    {
+      "window": 2,
+      "image": 0,
+      "nominal_time": 756.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "d2841f36ae61cdfd1b1d8a7c85c89fa653efe02fdb0996080aea21e1a64d3941"
+    },
+    {
+      "window": 2,
+      "image": 1,
+      "nominal_time": 758.6666666666666,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "fdf2b62854e1058d7c281f5d84ecaeb0ad52a75b2e3cbea860c2dcce77d6fdb9"
+    },
+    {
+      "window": 2,
+      "image": 2,
+      "nominal_time": 761.3333333333334,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "d02cda9169a4ccea3032f5289eb3a74d30e574e88e93017e9efa5202ec9a4770"
+    },
+    {
+      "window": 2,
+      "image": 3,
+      "nominal_time": 764.0,
+      "width": 768,
+      "height": 431,
+      "encoded_jpeg_sha256": "c5b1bf33e0b7ed8305fbd87a4dc09a8bbc1fe71d4ca18c7a59c8451cd3c5eb84"
+    },
+    {
+      "window": 3,
+      "image": 0,
+      "nominal_time": 20.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "917c88f57b0e6d814d5a26d9630fb5a842aa59eb242b4499c230b8d64ab9dbf0"
+    },
+    {
+      "window": 3,
+      "image": 1,
+      "nominal_time": 22.666666666666668,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "d6e4383ff3c5ce8993d724ca0b9b0425cda9e43daa59d467b46007ee15d5387f"
+    },
+    {
+      "window": 3,
+      "image": 2,
+      "nominal_time": 25.333333333333332,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "9ea5c47be9f39d5cc9dd47e546b06a7a44505146d62a5773c252428a10c9cd8b"
+    },
+    {
+      "window": 3,
+      "image": 3,
+      "nominal_time": 28.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "e8d2ad1d382b50539ba998a19fd6528aa65b518e8aa9e2c69e6ff827c616dd6c"
+    },
+    {
+      "window": 4,
+      "image": 0,
+      "nominal_time": 94.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "73d3585051fc561ca0ab2ee157f459140b16d645436b28abb74914bbbf66696d"
+    },
+    {
+      "window": 4,
+      "image": 1,
+      "nominal_time": 96.66666666666667,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "f9c69cf8e12434435848c9c06aba5aaa9b29306233f4ed6cd44580579c2c3f9e"
+    },
+    {
+      "window": 4,
+      "image": 2,
+      "nominal_time": 99.33333333333333,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "55f44d6fad91ac0a305b23d1a939770243e2edc35375920a9e6c1f7f17abf4f1"
+    },
+    {
+      "window": 4,
+      "image": 3,
+      "nominal_time": 102.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "09c70418ed2376efdc1c4725b6e5216c07b234211a4896b4b667899486749f20"
+    },
+    {
+      "window": 5,
+      "image": 0,
+      "nominal_time": 976.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "a53fc4ddca6d68d69bf2de27130f6bdbf3efff3e1162d2cecdb9c62276a16359"
+    },
+    {
+      "window": 5,
+      "image": 1,
+      "nominal_time": 978.6666666666666,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "4df9f7095806378d04f10453dd561547121bf39f46f30cbea7fd153df0eba45f"
+    },
+    {
+      "window": 5,
+      "image": 2,
+      "nominal_time": 981.3333333333334,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "d36307988ab4fcf2548f3ccce9d857ef482c92bc8b17c47999205ff57897c772"
+    },
+    {
+      "window": 5,
+      "image": 3,
+      "nominal_time": 984.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "17c41e087283247232743a6e53d3cf2da767b40e1c243daf4b50bd0a21eeb245"
+    },
+    {
+      "window": 6,
+      "image": 0,
+      "nominal_time": 1316.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "c040645c54cde5b6263af0f01187c7d98b0ec6560f7e60a0665df207da0a8ad9"
+    },
+    {
+      "window": 6,
+      "image": 1,
+      "nominal_time": 1318.6666666666667,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "b84752fe8af4d2c46519dd98c5d8be53deac79652c9146a9f904051b35ee2ce5"
+    },
+    {
+      "window": 6,
+      "image": 2,
+      "nominal_time": 1321.3333333333333,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "8695bc5ba9b91490992e576daeab0a979bdea415013457a368702d3c605f776e"
+    },
+    {
+      "window": 6,
+      "image": 3,
+      "nominal_time": 1324.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "535b4dafc3408fd6b91816906916375f36b639a9ac7eedeb9ae459cc62f1f2a0"
+    },
+    {
+      "window": 7,
+      "image": 0,
+      "nominal_time": 2378.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "3d891d7c9aecb85ed86429cd57f222e5fe874d366fd90c7ce819dfd8207fa432"
+    },
+    {
+      "window": 7,
+      "image": 1,
+      "nominal_time": 2380.6666666666665,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "bffbb0b939657d37287d4f8fb0729644c86f1a12e7b4ed7b6cf1552ebb8b6eed"
+    },
+    {
+      "window": 7,
+      "image": 2,
+      "nominal_time": 2383.3333333333335,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "21cec6dad686e0a6e309144a81c8b86511d45d12b1564b400f51e2f1021a8d8d"
+    },
+    {
+      "window": 7,
+      "image": 3,
+      "nominal_time": 2386.0,
+      "width": 768,
+      "height": 432,
+      "encoded_jpeg_sha256": "f7da72d8cca03504a02a71684e43fffb1aecee1d0f822de80e1865ea0f41fdb6"
+    }
+  ]
+}

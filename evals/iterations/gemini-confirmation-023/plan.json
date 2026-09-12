@@ -1,0 +1,39 @@
+{
+  "iteration": "gemini-confirmation-023",
+  "status": "frozen_before_inference",
+  "indices": [
+    1,
+    2,
+    6
+  ],
+  "arms": [
+    "images",
+    "video"
+  ],
+  "planned_inference_calls": 6,
+  "user_authorization": "Finish confirmation and test all12categories across broader development set; assess additions.",
+  "holdout_used": false,
+  "scope": "Two development games only; 02310references9types,02414references12types plus2unannotated windows (not verified negatives).",
+  "budget": "Cumulative$8 ceiling preserved; initial ledger6.7530831875. Maximum2transient retries per run, each separately reserved, no content/schema retries.",
+  "comparison": "024fresh full8video run after023; no prompt tuning between runs.",
+  "model": "gemini-3.8-flash",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "rates": {
+    "input_per_million": 0.75,
+    "output_including_thinking_per_million": 3.75
+  },
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "api_source": "https://ai.google.dev/api/generate-content",
+  "implementation": "Standard-library REST generateContent; no SDK installation needed. Documented videoMetadata.fps=4 (deprecated compatibility field).",
+  "comparison_caveats": "Identical image bytes and prompt, but provider decoding differs: Gemini LOW thinking and8192 total output cap vs MiniCPM1536. Native video also changes resolution and sampling, so video effect is combined evidence change, not FPS alone.",
+  "failure_policy": "At most one retry per transient503/429 request, maximum2 retries per run,20sbackoff; reserve each attempt. Other provider errors stop. Invalid schema not retried. Unknown usage reservation retained.",
+  "started_at": "2026-09-12T22:39:32.120982+05:30"
+}

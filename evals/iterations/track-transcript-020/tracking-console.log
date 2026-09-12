@@ -1,0 +1,17 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/Users/shivani/code/AgentAICourse/week3/hypereel/work/ultralytics-track-020/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+1 0 / 361
+1 120 / 361
+1 240 / 361
+1 360 / 361
+{"frames": 361, "detected_ball_frames": 44, "tracked_ball_frames": 0, "unique_ball_track_ids": 0, "longest_observed_ball_run_seconds": 0.0, "longest_same_ball_person_proximity_seconds": 0.0, "suspect_large_track_jumps": 0, "elapsed_seconds": 43.37257995901746, "person_track_frames": 361, "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."}
+2 0 / 361
+2 120 / 361
+2 240 / 361
+2 360 / 361
+{"frames": 361, "detected_ball_frames": 120, "tracked_ball_frames": 8, "unique_ball_track_ids": 3, "longest_observed_ball_run_seconds": 0.13333333333333333, "longest_same_ball_person_proximity_seconds": 0.13333333333333333, "suspect_large_track_jumps": 0, "elapsed_seconds": 44.92097987499437, "person_track_frames": 361, "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."}
+6 0 / 301
+6 120 / 301
+6 240 / 301
+{"frames": 301, "detected_ball_frames": 3, "tracked_ball_frames": 0, "unique_ball_track_ids": 0, "longest_observed_ball_run_seconds": 0.0, "longest_same_ball_person_proximity_seconds": 0.0, "suspect_large_track_jumps": 0, "elapsed_seconds": 37.7124775830016, "person_track_frames": 301, "note": "Availability/continuity, not ball recall, identity accuracy, or possession accuracy; no box ground truth."}

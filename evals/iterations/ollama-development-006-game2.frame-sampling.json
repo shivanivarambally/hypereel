@@ -1,0 +1,67 @@
+{
+  "method": "Reconstructed from unchanged evenly spaced sampler and recorded candidate bounds; actual3 candidates, despite cap4",
+  "source_time_origin": 0,
+  "nominal_horizon": [
+    165,
+    225
+  ],
+  "sampling": [
+    {
+      "window_index": 0,
+      "sampled_source_seconds": [
+        175.65333333333334,
+        182.27666666666664,
+        188.89999999999998
+      ],
+      "frame_indices_25fps": [
+        4391,
+        4556,
+        4722
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event (made basket, three pointer, block, steal) is evident across frames; players are in motion but no definitive outcome or action meeting rubric criteria is visible."
+      }
+    },
+    {
+      "window_index": 1,
+      "sampled_source_seconds": [
+        188.89999999999998,
+        195.5233333333333,
+        202.14666666666665
+      ],
+      "frame_indices_25fps": [
+        4722,
+        4888,
+        5053
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; motion blur and lack of decisive action"
+      }
+    },
+    {
+      "window_index": 2,
+      "sampled_source_seconds": [
+        202.14666666666665,
+        208.76999999999998,
+        215.39333333333332
+      ],
+      "frame_indices_25fps": [
+        5053,
+        5219,
+        5384
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event detected; players are in motion but no definitive made basket, three-pointer, block, or steal is visible across frames."
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from collections import Counter
 from pathlib import Path
 
@@ -57,6 +58,10 @@ def main() -> None:
         raw = json.loads(raw_src.read_text())
         cases = [json.loads(line) for line in case_src.read_text().splitlines() if line.strip()]
         team_case = next(case for case in cases if case["exhaustive"])
+
+        team_case["recipe_path"] = os.path.relpath(
+            (case_src.parent / team_case["recipe_path"]).resolve(), cases_dir
+        )
 
         raw_dest = source_dir / f"{game['id']}.external-labels.json"
         raw_dest.write_text(json.dumps(raw, indent=2) + "\n")

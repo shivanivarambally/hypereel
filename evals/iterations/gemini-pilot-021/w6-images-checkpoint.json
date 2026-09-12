@@ -1,0 +1,155 @@
+{
+  "index": 6,
+  "arm": "images",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 1316,
+    "end": 1324,
+    "reference_ids": [
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+    ],
+    "types": [
+      "defensive_rebound",
+      "offensive_rebound",
+      "three_point_miss",
+      "turnover",
+      "two_point_miss"
+    ]
+  },
+  "started_at": "2026-09-12T22:31:36.693644+05:30",
+  "status": "invalid",
+  "manifest": [
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse0.jpg",
+      "sha256": "967f7cbca57125cdac23c1f786f8c501d1a8893db710bbbe164ea04959d51f31",
+      "width": 768,
+      "height": 432,
+      "time": 1314.0,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse1.jpg",
+      "sha256": "f730f16cba01844a315b3b1851bc6e52fdeace822ed064ffb73536db9bf74177",
+      "width": 768,
+      "height": 432,
+      "time": 1316.4,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse2.jpg",
+      "sha256": "d3e968b6b873ac1f4273cdce7a67b5e37fc83cb65c706ee6793f1d4a0e9e1187",
+      "width": 768,
+      "height": 432,
+      "time": 1318.8,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse3.jpg",
+      "sha256": "3e1804045fa8d6176ede4d4feb9952547e024e98ea61c9a0470cb940d73f5ebd",
+      "width": 768,
+      "height": 432,
+      "time": 1321.2,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse4.jpg",
+      "sha256": "6671420aa9b01f1278bf97eea18148f34c59c91e69ff85852ec6259b9e7820f6",
+      "width": 768,
+      "height": 432,
+      "time": 1323.6,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w6-sparse5.jpg",
+      "sha256": "8996552a0b6c685317daf8c93a4043d1439647a15d05f684ab9c651962e289dc",
+      "width": 768,
+      "height": 432,
+      "time": 1326.0,
+      "view": "wide"
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [1314.0, 1316.4, 1318.8, 1321.2, 1323.6, 1326.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [1316, 1324] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 1314.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 1316.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 1318.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 1321.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 1323.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 1326.0, \"view\": \"wide\"}]",
+  "prompt_sha256": "bba810d964da43825660c0a9fe48d352d7ac8a06fd80dbe72d6a2f0c3f98e39a",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 7230,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      }
+    ]
+  },
+  "reserved_usd": 0.047498125,
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "```json\n{\"events\":[]}\n```",
+              "thoughtSignature": "EmcKZQERTTIPgITI97K/N05mYN64d11x5IklKCHvU9UlajRr+4EKkQDtm/aCYpL3AixEaGzEx7CJ+Axpms9Ql1pX0KkEmvdaQU95J0RrvsjOQ6hhDRbnxFZnqG6vkeYjZlGcXc1uFNRL"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 7230,
+      "candidatesTokenCount": 9,
+      "totalTokenCount": 7239,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 630
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 6600
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "coWlat-vELu14-EPzpOp8AU"
+  },
+  "latency_seconds": 34.1501494589902,
+  "ended_at": "2026-09-12T22:32:11.558584+05:30",
+  "estimated_cost_usd": 0.00545625,
+  "usage": {
+    "promptTokenCount": 7230,
+    "candidatesTokenCount": 9,
+    "totalTokenCount": 7239,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "```json\n{\"events\":[]}\n```",
+  "error": "Expecting value: line 1 column 1 (char 0)"
+}

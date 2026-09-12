@@ -32,3 +32,15 @@ hypereel_memory.json
 
 # Local evaluation artifacts
 evals/results/
+
+# Isolated bounded detector pilot
+.venv-detector-pilot/
+work/yolo11n.pt
+evals/iterations/evidence-pilot-013/media/
+evals/iterations/evidence-pilot-014/media/
+evals/iterations/evidence-state-018/media/
+evals/iterations/evidence-state-019/media/
+
+# Local scratch, detector caches, and extracted evaluation frames
+work/
+evals/iterations/*/media/

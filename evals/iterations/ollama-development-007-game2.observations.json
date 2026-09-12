@@ -1,0 +1,77 @@
+{
+  "attempt": "ollama-development-007-game2",
+  "status": "success",
+  "elapsed_seconds": 228.0543498749903,
+  "wrapper_seconds": 228.73,
+  "confusion": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  "precision": null,
+  "recall": 0.0,
+  "f1": null,
+  "candidate_recall_at_iou_0_3": 1.0,
+  "selected_recall_at_iou_0_3": 0.0,
+  "schema_pass": 1.0,
+  "provider_error_rate": 0.0,
+  "specificity": 1.0,
+  "attempted_calls": 5,
+  "completed_calls": 5,
+  "total_tokens": 12770,
+  "vision_latencies_seconds": [
+    64.20735350000905,
+    68.28387995899539,
+    63.826578208012506
+  ],
+  "peak_sampled_llama_rss_gib": 4.657806396484375,
+  "pressure_sample_counts": {
+    "2": 216
+  },
+  "judge_verdict": {
+    "quality_score": 0.0,
+    "verdict": "revise",
+    "action": "broaden",
+    "issues": [
+      "no clips selected",
+      "0% budget used"
+    ],
+    "feedback": "No plays selected; reel is too thin and lacks required basketball action."
+  },
+  "notes": [
+    "plan: strategy='event_based', active_signals=['audio_peak', 'motion_intensity']",
+    "ingest: resolved '/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/rHSdABRoBeE.mp4' -> /Users/shivani/code/AgentAICourse/week3/hypereel/downloads/rHSdABRoBeE.mp4 (2828.8s)",
+    "propose: 195 candidate window(s) generated",
+    "propose: evaluation slice [165.0, 225.0) kept 5 window(s)",
+    "propose: quick-test cap ON \u2014 kept 3 of 5 windows using reference_stratified sampling",
+    "classify: 3 window(s) judged by 'ollama' provider",
+    "select: 0 clip(s) chosen, 0.0s of 45.0s budget (underfilled)",
+    "judge[ollama]: verdict=revise score=0.0 llm_action=broaden -> action=broaden (clips=0, confirmed=0) \u2014 No plays selected; reel is too thin and lacks required basketball action.",
+    "judge: requesting revision #1 (broaden) with overrides={'require_moment': False, 'broadened': True, 'min_score': 0.35}",
+    "select: 0 clip(s) chosen, 0.0s of 45.0s budget (underfilled) [judge overrides applied: {'require_moment': False, 'broadened': True, 'min_score': 0.35}]",
+    "judge[ollama]: verdict=revise score=0.0 llm_action=broaden -> action=none (clips=0, confirmed=0) \u2014 No plays selected; reel is too thin and lacks required basketball action."
+  ],
+  "pipeline_errors": [],
+  "classifications": [
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.0,
+      "reason": "No clear highlight event (made basket, three pointer, block, steal) is evident across frames; players are in transition or non-attacking positions."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.0,
+      "reason": "No clear play from rubric events; players are moving without a decisive action like a shot, block, or steal."
+    },
+    {
+      "moment_type": null,
+      "subject_present": false,
+      "confidence": 0.0,
+      "reason": "No clear play from rubric events; players are in motion but no definitive outcome or event like a made basket, block, or steal is visible across frames."
+    }
+  ],
+  "checkpoint_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/ollama-development-007-game2.checkpoints/calls-abc19332df7048e085e0f9c7b783c3ed.jsonl",
+  "quality_gates_pass": false
+}

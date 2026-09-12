@@ -1,0 +1,118 @@
+{
+  "index": 3,
+  "arm": "video",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 20,
+    "end": 28,
+    "reference_ids": [],
+    "types": [],
+    "annotation_empty_not_human_verified": true
+  },
+  "started_at": "2026-09-12T22:46:33.447858+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w3-continuous.mp4",
+      "sha256": "6501224232c640342167dfa8d35e16d98d423721dace3e3241e374a1fc68c092",
+      "source_start": 18.0,
+      "source_end": 30.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 18.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [20, 28] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "cf4bb774450ffc584b3ce3735014d9e1bc32393586864870230adcc2c4f85618",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 13760,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 464
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "reserved_usd": 0.05362,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T22:46:35.304762+05:30",
+      "reservation_usd": 0.05362,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[]}",
+              "thoughtSignature": "EmcKZQERTTIPcGUE1sVDUL8NZ7A/JHxhq8izJp1KYCVaEe8B00ZCmfVuPnPJ+GeNpoAw0UVTvEifDxoNzHFQkjAxgE1BMoCwx9QQ1jU2toatvh9aO1EatiXVmODv2/gZxv12KLMDl2SO"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13136,
+      "candidatesTokenCount": 4,
+      "totalTokenCount": 13140,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 464
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "9Iilau-hIOapg8UP36-o8AI"
+  },
+  "latency_seconds": 7.366019625012996,
+  "ended_at": "2026-09-12T22:46:42.670916+05:30",
+  "estimated_cost_usd": 0.009867,
+  "usage": {
+    "promptTokenCount": 13136,
+    "candidatesTokenCount": 4,
+    "totalTokenCount": 13140,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 464
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[]}",
+  "events": [],
+  "context_events": []
+}

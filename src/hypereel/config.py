@@ -57,6 +57,14 @@ class Settings:
     fireworks_base_url: str = "https://api.fireworks.ai/inference/v1"
     fireworks_model: str = "accounts/fireworks/models/llama-v3p2-90b-vision-instruct"
 
+    ollama_base_url: str = "http://127.0.0.1:11434"
+    ollama_model: str = "qwen3-vl:4b-instruct"
+    ollama_timeout_seconds: float = 180.0
+    ollama_num_ctx: int = 4096
+    ollama_num_batch: int = 0  # zero preserves the server default
+    ollama_num_predict: int = 256
+    ollama_image_max_edge: int = 448
+
     frames_per_candidate: int = 3
     classification_context_seconds: float = 0.0
     verify_with_core_frames: bool = False
@@ -64,6 +72,7 @@ class Settings:
     max_provider_calls: int = 0
     max_provider_spend_usd: float = 0.0
     provider_call_reserve_usd: float = 0.25
+    provider_checkpoint_dir: str = ""
     provider_spend_ledger_path: str = "evals/iterations/spend-ledger.json"
     nebius_input_cost_per_million_usd: float = 10.0
     nebius_output_cost_per_million_usd: float = 30.0
@@ -106,6 +115,13 @@ def get_settings() -> Settings:
             "FIREWORKS_MODEL",
             "accounts/fireworks/models/llama-v3p2-90b-vision-instruct",
         ),
+        ollama_base_url=_get("OLLAMA_BASE_URL", "http://127.0.0.1:11434"),
+        ollama_model=_get("OLLAMA_MODEL", "qwen3-vl:4b-instruct"),
+        ollama_timeout_seconds=_get_float("OLLAMA_TIMEOUT_SECONDS", 180.0),
+        ollama_num_ctx=_get_int("OLLAMA_NUM_CTX", 4096),
+        ollama_num_batch=_get_int("OLLAMA_NUM_BATCH", 0),
+        ollama_num_predict=_get_int("OLLAMA_NUM_PREDICT", 256),
+        ollama_image_max_edge=_get_int("OLLAMA_IMAGE_MAX_EDGE", 448),
         frames_per_candidate=_get_int("HYPEREEL_FRAMES_PER_CANDIDATE", 3),
         classification_context_seconds=_get_float(
             "HYPEREEL_CLASSIFICATION_CONTEXT_SECONDS", 0.0
@@ -117,6 +133,7 @@ def get_settings() -> Settings:
         max_provider_calls=_get_int("HYPEREEL_MAX_PROVIDER_CALLS", 0),
         max_provider_spend_usd=_get_float("HYPEREEL_MAX_PROVIDER_SPEND_USD", 0.0),
         provider_call_reserve_usd=_get_float("HYPEREEL_PROVIDER_CALL_RESERVE_USD", 0.25),
+        provider_checkpoint_dir=_get("HYPEREEL_PROVIDER_CHECKPOINT_DIR", ""),
         provider_spend_ledger_path=_get(
             "HYPEREEL_PROVIDER_SPEND_LEDGER_PATH", "evals/iterations/spend-ledger.json"
         ),

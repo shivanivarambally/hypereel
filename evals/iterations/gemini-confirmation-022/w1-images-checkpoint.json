@@ -1,0 +1,149 @@
+{
+  "index": 1,
+  "arm": "images",
+  "window": {
+    "game_id": "east-bay-elite-vs-spartans",
+    "start": 223,
+    "end": 231,
+    "reference_ids": [
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+    ],
+    "types": [
+      "free_throw_made"
+    ]
+  },
+  "started_at": "2026-09-12T22:33:42.308944+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse0.jpg",
+      "sha256": "32bb3bf47513ef3cc92b031014847317fa3c76f36f1e949513fa12edab942809",
+      "width": 768,
+      "height": 431,
+      "time": 221.0,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse1.jpg",
+      "sha256": "dda13188f7cda72a2180bbee0590ea63593057108f6dfb21cbcdb344148325d9",
+      "width": 768,
+      "height": 431,
+      "time": 223.4,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse2.jpg",
+      "sha256": "1599e1488903978ac6cf80e6f9d9df3aa815d41b86ebc5dd92cde51f5f0b9689",
+      "width": 768,
+      "height": 431,
+      "time": 225.8,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse3.jpg",
+      "sha256": "0e34772979f0a94513b1e89f8e8b03ca0ee8fc5e3acc2fbdfb16db00f59973ed",
+      "width": 768,
+      "height": 431,
+      "time": 228.2,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse4.jpg",
+      "sha256": "6a4fa513f95b00d61e9ba4a82b27be9315164ff5832e6cfcdf28b81e651769af",
+      "width": 768,
+      "height": 431,
+      "time": 230.6,
+      "view": "wide"
+    },
+    {
+      "path": "evals/iterations/evidence-pilot-013/media/w1-sparse5.jpg",
+      "sha256": "758252c35be790873a72b0daec06ac9af0d88497b47b2c5bb2b49f51fbd354f8",
+      "width": 768,
+      "height": 431,
+      "time": 233.0,
+      "view": "wide"
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in these chronological images, not just highlights. Image source times in seconds: [221.0, 223.4, 225.8, 228.2, 230.6, 233.0].\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden between images. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [223, 231] seconds. Images outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per image; only distinct supported actions. Ordered image manifest: [{\"image\": 1, \"time\": 221.0, \"view\": \"wide\"}, {\"image\": 2, \"time\": 223.4, \"view\": \"wide\"}, {\"image\": 3, \"time\": 225.8, \"view\": \"wide\"}, {\"image\": 4, \"time\": 228.2, \"view\": \"wide\"}, {\"image\": 5, \"time\": 230.6, \"view\": \"wide\"}, {\"image\": 6, \"time\": 233.0, \"view\": \"wide\"}]",
+  "prompt_sha256": "0813c7c133d175c8318df41b6bbd455245b4f9bce126d77be7aa5d1e269184a7",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "token_preflight": {
+    "totalTokens": 7216,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 616
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      }
+    ]
+  },
+  "reserved_usd": 0.047485,
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\": []}",
+              "thoughtSignature": "EmcKZQERTTIPCvKC1TQLHup0lrPLXm02Y1xpoVMIRIHWzXNc5ozxVU+RbcAhoomiF4qsYrfasQYY0ZYNNYW9nKru15v/AhDHvHXeczC6Dcvkv+4PPcOBERmTXJbbeQQcf9ollJ53Gwzs"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 7216,
+      "candidatesTokenCount": 5,
+      "totalTokenCount": 7221,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 616
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 6600
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "8IWlarKEEPfGg8UPwYq_wQU"
+  },
+  "latency_seconds": 35.93718491701293,
+  "ended_at": "2026-09-12T22:34:19.041711+05:30",
+  "estimated_cost_usd": 0.00543075,
+  "usage": {
+    "promptTokenCount": 7216,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 7221,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 616
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 6600
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\": []}",
+  "events": [],
+  "context_events": []
+}

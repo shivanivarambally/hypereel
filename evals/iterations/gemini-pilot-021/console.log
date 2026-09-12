@@ -1,0 +1,7 @@
+1 images invalid None
+1 video invalid None
+2 images invalid None
+2 video invalid None
+6 images invalid None
+6 video invalid None
+{"status": "completed_with_invalid_windows", "elapsed_seconds": 85.46142208398669, "peak_client_rss_gib": 0.0726470947265625, "spend_after_usd": 6.6937765, "incremental_estimated_spend_usd": 0.047476500000000144, "common_completed_indices": [], "metrics": {"historical_minicpm": {"tp": 0, "fp": 0, "fn": 0, "micro_precision": null, "micro_recall": null, "micro_f1": null}, "images": {"tp": 0, "fp": 0, "fn": 0, "micro_precision": null, "micro_recall": null, "micro_f1": null}, "video": {"tp": 0, "fp": 0, "fn": 0, "micro_precision": null, "micro_recall": null, "micro_f1": null}}}

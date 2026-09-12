@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-09-12T07:56:59.443969+00:00",
+  "model": "qwen3-vl:4b",
+  "provider": "ollama",
+  "scope": "synthetic capability check; not quality evidence",
+  "passed": false,
+  "error": "ValueError: Ollama output was truncated at the generation limit",
+  "provider_usage": {
+    "calls": [
+      {
+        "provider": "ollama",
+        "model": "qwen3-vl:4b",
+        "operation": "text_smoke",
+        "status": "truncated",
+        "reserved_cost_usd": 0.0,
+        "local": true,
+        "prompt_tokens": 13,
+        "completion_tokens": 256,
+        "total_tokens": 269,
+        "estimated_cost_usd": 0.0,
+        "latency_seconds": 20.405886708002072,
+        "total_duration_ns": 20397483750,
+        "load_duration_ns": 2779709,
+        "prompt_eval_duration_ns": 119552000,
+        "eval_duration_ns": 20269054000,
+        "server_duration_seconds": 20.39748375
+      }
+    ],
+    "attempted_calls": 1,
+    "estimated_spend_usd": 0.0,
+    "estimated_spend_before_run_usd": 2.5302700000000002,
+    "ledger_path": "evals/iterations/spend-ledger.json",
+    "max_calls": 2,
+    "max_spend_usd": 0.0,
+    "reserve_usd": 0.25,
+    "input_rate": 10.0,
+    "output_rate": 30.0
+  }
+}

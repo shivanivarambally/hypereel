@@ -1,0 +1,19 @@
+........................................................................ [ 18%]
+........................................................................ [ 36%]
+........................................................................ [ 55%]
+.................................sss.........s.......................... [ 73%]
+........................................................................ [ 91%]
+................................                                         [100%]
+=============================== warnings summary ===============================
+tests/test_providers.py::test_gemini_construction_without_sdk_raises_importerror
+  /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: FutureWarning: 
+  
+  All support for the `google.generativeai` package has ended. It will no longer be receiving 
+  updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+  See README for more details:
+  
+  https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+  
+    return _bootstrap._gcd_import(name[level:], package, level)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

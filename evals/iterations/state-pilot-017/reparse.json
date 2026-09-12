@@ -1,0 +1,884 @@
+{
+  "created_at": "2026-09-12T21:11:06.530140+05:30",
+  "kind": "post_run_offline_reparse",
+  "inference_calls": 0,
+  "primary_report_unchanged": true,
+  "reparses": "state-pilot-017",
+  "change": "parse_states now also accepts the timestamp-keyed object the model actually returned. Serialisation shape only; vocabulary, court-zone, per-image and timestamp validation are unchanged. The assist rule was removed as unsound: consecutive held frames by one team are continued possession, not an observed pass.",
+  "honesty": "Post-hoc after observing outputs. The original strict result (4 of 8 windows invalid, 0 events, recall 0) stands in report.json and is not replaced. No semantic validation was relaxed to admit any event.",
+  "windows_reparsed": 8,
+  "windows_originally_valid": 4,
+  "state_distribution": {
+    "held": 24,
+    "in_flight": 3,
+    "through_net": 1,
+    "loose": 20
+  },
+  "zone_distribution": {
+    "unknown": 13,
+    "inside_arc": 11,
+    "beyond_arc": 18,
+    "free_throw_line": 6
+  },
+  "team_known": 15,
+  "frames": 48,
+  "derivation": {
+    "events": 1,
+    "notes": 2,
+    "contradictory_pairs": 0,
+    "note": "Notes record every point where no event was emitted because the evidence did not support one."
+  },
+  "metrics": {
+    "references": 14,
+    "derived_017": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 1,
+      "fn": 14,
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "worst_type_recall": 0.0,
+      "measured_types": 12,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "dense_016_direct": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 15,
+          "fn": 0,
+          "support": 1,
+          "predictions": 16,
+          "precision": 0.0625,
+          "recall": 1.0,
+          "f1": 0.11764705882352941
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 1,
+          "support": 1,
+          "predictions": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "support": 2,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 9,
+          "fn": 0,
+          "support": 1,
+          "predictions": 10,
+          "precision": 0.1,
+          "recall": 1.0,
+          "f1": 0.18181818181818182
+        },
+        "two_point_miss": {
+          "tp": 2,
+          "fp": 14,
+          "fn": 0,
+          "support": 2,
+          "predictions": 16,
+          "precision": 0.125,
+          "recall": 1.0,
+          "f1": 0.2222222222222222
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 11,
+          "prediction_index": 38
+        },
+        {
+          "reference_index": 4,
+          "prediction_index": 15
+        },
+        {
+          "reference_index": 6,
+          "prediction_index": 30
+        },
+        {
+          "reference_index": 10,
+          "prediction_index": 37
+        }
+      ],
+      "tp": 4,
+      "fp": 45,
+      "fn": 10,
+      "micro_precision": 0.08163265306122448,
+      "micro_recall": 0.2857142857142857,
+      "micro_f1": 0.12698412698412698,
+      "macro_f1": 0.04347395523866112,
+      "worst_type_recall": 0.0,
+      "measured_types": 12,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "sparse_013_direct": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 12,
+          "fn": 0,
+          "support": 1,
+          "predictions": 13,
+          "precision": 0.07692307692307693,
+          "recall": 1.0,
+          "f1": 0.14285714285714285
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 1,
+          "support": 1,
+          "predictions": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 8,
+          "fn": 0,
+          "support": 1,
+          "predictions": 9,
+          "precision": 0.1111111111111111,
+          "recall": 1.0,
+          "f1": 0.2
+        },
+        "two_point_miss": {
+          "tp": 1,
+          "fp": 6,
+          "fn": 1,
+          "support": 2,
+          "predictions": 7,
+          "precision": 0.14285714285714285,
+          "recall": 0.5,
+          "f1": 0.2222222222222222
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 11,
+          "prediction_index": 28
+        },
+        {
+          "reference_index": 4,
+          "prediction_index": 14
+        },
+        {
+          "reference_index": 10,
+          "prediction_index": 27
+        }
+      ],
+      "tp": 3,
+      "fp": 31,
+      "fn": 11,
+      "micro_precision": 0.08823529411764706,
+      "micro_recall": 0.21428571428571427,
+      "micro_f1": 0.125,
+      "macro_f1": 0.04708994708994709,
+      "worst_type_recall": 0.0,
+      "measured_types": 12,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    }
+  },
+  "windows": [
+    {
+      "index": 0,
+      "game_id": "east-bay-elite-vs-spartans",
+      "reference_ids": [],
+      "states": [
+        {
+          "time_seconds": 20.0,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 21.6,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 23.2,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 24.8,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 26.4,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 28.0,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "unknown"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [],
+      "originally": "completed"
+    },
+    {
+      "index": 1,
+      "game_id": "east-bay-elite-vs-spartans",
+      "reference_ids": [
+        "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+      ],
+      "states": [
+        {
+          "time_seconds": 223.0,
+          "ball_state": "held",
+          "team": "blue",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 224.6,
+          "ball_state": "held",
+          "team": "blue",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 226.2,
+          "ball_state": "held",
+          "team": "blue",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 227.8,
+          "ball_state": "in_flight",
+          "team": "blue",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 229.4,
+          "ball_state": "through_net",
+          "team": "blue",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 231.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        }
+      ],
+      "events": [
+        {
+          "label": "three_point_made",
+          "time_seconds": 229.4,
+          "confidence": 1.0,
+          "evidence": "Observed through_net at 229.4 after release from beyond_arc",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ],
+      "derivation_notes": [],
+      "originally": "invalid"
+    },
+    {
+      "index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "reference_ids": [
+        "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+        "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+        "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+        "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+      ],
+      "states": [
+        {
+          "time_seconds": 756.0,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 757.6,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 759.2,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 760.8,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 762.4,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 764.0,
+          "ball_state": "held",
+          "team": "black",
+          "court_zone": "beyond_arc"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [],
+      "originally": "invalid"
+    },
+    {
+      "index": 3,
+      "game_id": "unlimited-vs-campus",
+      "reference_ids": [],
+      "states": [
+        {
+          "time_seconds": 20.0,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        },
+        {
+          "time_seconds": 21.6,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        },
+        {
+          "time_seconds": 23.2,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        },
+        {
+          "time_seconds": 24.8,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        },
+        {
+          "time_seconds": 26.4,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        },
+        {
+          "time_seconds": 28.0,
+          "ball_state": "held",
+          "team": "unknown",
+          "court_zone": "free_throw_line"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [],
+      "originally": "completed"
+    },
+    {
+      "index": 4,
+      "game_id": "unlimited-vs-campus",
+      "reference_ids": [
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-002"
+      ],
+      "states": [
+        {
+          "time_seconds": 94.0,
+          "ball_state": "held",
+          "team": "white",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 95.6,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 97.2,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 98.8,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 100.4,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 102.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "inside_arc"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [],
+      "originally": "invalid"
+    },
+    {
+      "index": 5,
+      "game_id": "unlimited-vs-campus",
+      "reference_ids": [
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-075",
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-076"
+      ],
+      "states": [
+        {
+          "time_seconds": 976.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 977.6,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 979.2,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 980.8,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 982.4,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        },
+        {
+          "time_seconds": 984.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "unknown"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [],
+      "originally": "invalid"
+    },
+    {
+      "index": 6,
+      "game_id": "unlimited-vs-campus",
+      "reference_ids": [
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+      ],
+      "states": [
+        {
+          "time_seconds": 1316.0,
+          "ball_state": "held",
+          "team": "yellow",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 1317.6,
+          "ball_state": "in_flight",
+          "team": "white",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 1319.2,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 1320.8,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 1322.4,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 1324.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [
+        "Flight ended loose at 1319.2 without observed rim contact or net; no shot outcome emitted"
+      ],
+      "originally": "completed"
+    },
+    {
+      "index": 7,
+      "game_id": "unlimited-vs-campus",
+      "reference_ids": [
+        "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-193"
+      ],
+      "states": [
+        {
+          "time_seconds": 2378.0,
+          "ball_state": "held",
+          "team": "white",
+          "court_zone": "inside_arc"
+        },
+        {
+          "time_seconds": 2379.6,
+          "ball_state": "in_flight",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 2381.2,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 2382.8,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 2384.4,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        },
+        {
+          "time_seconds": 2386.0,
+          "ball_state": "loose",
+          "team": "unknown",
+          "court_zone": "beyond_arc"
+        }
+      ],
+      "events": [],
+      "derivation_notes": [
+        "Flight ended loose at 2381.2 without observed rim contact or net; no shot outcome emitted"
+      ],
+      "originally": "completed"
+    }
+  ],
+  "finding": "The model reported through_net or rim_contact in almost no frame. Constrained to report only what it can see, it does not report shot outcomes at all, which is why the derivation emits almost nothing. The outcomes the earlier pilots scored were asserted, not observed."
+}

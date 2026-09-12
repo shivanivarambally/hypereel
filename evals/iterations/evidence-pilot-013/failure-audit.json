@@ -1,0 +1,16 @@
+[
+  {
+    "arm": "wide12_context",
+    "window": 0,
+    "error_type": "BadRequestError",
+    "http_status": null,
+    "model_output_received": false
+  },
+  {
+    "arm": "wide12_ball_crops",
+    "window": 0,
+    "error_type": "BadRequestError",
+    "http_status": null,
+    "model_output_received": false
+  }
+]

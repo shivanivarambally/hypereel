@@ -1,0 +1,12 @@
+0 video completed []
+1 video completed [{'label': 'free_throw_miss', 'time_seconds': 228.2, 'confidence': 0.95, 'evidence': 'The shooter misses the free throw attempt as the ball bounces off the rim.', 'game_id': 'east-bay-elite-vs-spartans'}, {'label': 'offensive_rebound', 'time_seconds': 229.2, 'confidence': 0.85, 'evidence': 'A player in black (#24) secures the offensive rebound near the baseline.', 'game_id': 'east-bay-elite-vs-spartans'}]
+2 video completed [{'label': 'steal', 'time_seconds': 760.75, 'confidence': 0.9, 'evidence': 'Blue jersey player intercepts the pass near midcourt.', 'game_id': 'east-bay-elite-vs-spartans'}, {'label': 'turnover', 'time_seconds': 760.75, 'confidence': 0.9, 'evidence': 'Black team loses possession due to the intercepted pass.', 'game_id': 'east-bay-elite-vs-spartans'}]
+HTTP 503: {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+{"status": "stopped", "elapsed_seconds": 182.26549324998632, "peak_client_rss_gib": 0.089111328125, "spend_after_usd": 7.054963375000002, "incremental_estimated_spend_usd": 0.19129893750000093, "common_completed_indices": [0, 1, 2], "metrics": {"historical_minicpm": {"tp": 1, "fp": 15, "fn": 4, "micro_precision": 0.0625, "micro_recall": 0.2, "micro_f1": 0.09523809523809523}, "video": {"tp": 2, "fp": 2, "fn": 3, "micro_precision": 0.5, "micro_recall": 0.4, "micro_f1": 0.4444444444444444}}}

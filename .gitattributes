@@ -1,0 +1,3 @@
+
+# Preserve tool-emitted whitespace in immutable evaluation console records.
+evals/iterations/**/*.log -whitespace

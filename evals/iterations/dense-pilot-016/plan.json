@@ -1,0 +1,37 @@
+{
+  "name": "dense-pilot-016",
+  "created_at": "2026-09-12T20:52:23.868917+05:30",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "model": "openbmb/MiniCPM-V-4_5",
+  "hypothesis": "Sparse evidence, not the output representation, is the binding constraint. Six frames1.6s apart across the8s core should improve event recognition over six frames2.4s apart across12s, in BOTH the direct and transcript arms.",
+  "declared_change": "Frame timestamps only. Same6 images, same768px/JPEG85 decode path, same prompts, model, temperature0, seed0, output cap1536, references, definitions and five-second one-to-one matcher.",
+  "known_confound": "At the6-image provider limit found in013, density and span cannot be varied independently. The dense arm gains temporal resolution and loses the2s outer context either side. A difference cannot be attributed to density alone.",
+  "boundary_policy": "Identical for both arms from the outset via parse_window_events and parse_window_extracted_events. For the dense arm the context span equals the core window, so no context events are possible by construction.",
+  "entailment": "Recorded inline as a flag via screen_extracted_events. NEVER filters. The screen is over-permissive and is not a correctness test; gate-replay.json measured it at precision0.50 on eight015 events.",
+  "controls": "013 wide6_context direct across all8 windows (same model/prompt/output cap) and015 direct plus transcript across windows1,2,6.",
+  "budget": {
+    "max_calls": 24,
+    "cumulative_ceiling": 8,
+    "reserve_per_call": 0.3
+  },
+  "output_limit": 1536,
+  "temperature": 0,
+  "seed": 0,
+  "failures": "No retries. Record the failed window/stage; skip dependent extraction if narration is invalid; continue independent windows unless transport or budget failure.",
+  "holdout_used": false,
+  "reference_sha256": "40f3eb6064c33b7171b6325835bba1233bd0ca3c233c829a1e01285b7c771534",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  },
+  "prepared_sha256": "7247e1f481f6f661571e620d4174b3f02bfcd651260e727fc1add551790531bd"
+}

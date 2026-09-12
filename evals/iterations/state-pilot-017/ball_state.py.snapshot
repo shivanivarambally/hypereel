@@ -1,0 +1,214 @@
+"""Grounded event derivation: the model reports ball state, code derives events.
+
+Pilots 009-016 all failed the same way. The model was asked "what events happened" and
+answered by asserting outcomes and possession its own evidence did not contain: a static
+scoreboard read as repeated baskets, a ball in flight scored as a miss, made and miss emitted
+for one shot so that whichever landed scored a true positive.
+
+This module removes the model's opportunity to do that. It is asked only what is visible in
+each frame, from a closed vocabulary, and events are derived here from state transitions.
+Three properties follow structurally rather than by instruction:
+
+  * An outcome must be SEEN. No `through_net` and no `rim_contact` then possession means no
+    shot event, however obvious the shot looked.
+  * Mutually exclusive labels are impossible. One flight yields at most one outcome.
+  * A scoreboard cannot produce an event. It is not in the vocabulary.
+
+The cost is recall: an unobservable outcome yields nothing rather than a guess. That is the
+intended trade and `derivation_notes` records every place it bites.
+"""
+from __future__ import annotations
+import json
+from math import isfinite
+from .basketball_events import LABELS
+
+BALL_STATES = ('held', 'in_flight', 'rim_contact', 'through_net', 'deflected', 'loose', 'not_visible')
+COURT_ZONES = ('free_throw_line', 'inside_arc', 'beyond_arc', 'unknown')
+SHOT_LABELS = {'free_throw_line': ('free_throw_made', 'free_throw_miss'),
+               'beyond_arc': ('three_point_made', 'three_point_miss'),
+               'inside_arc': ('two_point_made', 'two_point_miss')}
+
+
+def state_prompt(times: list[float]) -> str:
+    return (
+        'Report only what is VISIBLE in each of these ordered basketball images. '
+        'Do not name events, do not read the scoreboard, do not infer anything hidden between images. '
+        f'Image timestamps in seconds: {json.dumps(times)}. '
+        'Return JSON with exactly one key, frames, containing exactly one entry per image in order.\n'
+        'Each entry has exactly time_seconds (the supplied timestamp), ball_state, team and court_zone.\n'
+        'ball_state is exactly one of: '
+        'held (a player is holding or dribbling the ball), '
+        'in_flight (the ball is in the air after a shot or pass, untouched), '
+        'rim_contact (the ball is visibly touching the rim or backboard), '
+        'through_net (the ball is visibly passing down through the net), '
+        'deflected (a defender visibly touches the ball during a shot), '
+        'loose (the ball is free and no player controls it), '
+        'not_visible (you cannot locate the ball).\n'
+        'team is the jersey colour of the team controlling or last touching the ball, lowercase, '
+        'or unknown if you cannot tell.\n'
+        'court_zone is where the ball is: free_throw_line, inside_arc, beyond_arc, or unknown.\n'
+        'Use through_net ONLY if you can see the ball pass down through the net. '
+        'Use rim_contact ONLY if you can see the ball touch the rim or backboard. '
+        'If unsure between two states, choose not_visible or loose. '
+        'Guessing is worse than unknown.'
+    )
+
+
+def parse_states(raw: str, times: list[float]) -> list[dict]:
+    obj = json.loads(raw)
+    if not isinstance(obj, dict) or set(obj) != {'frames'}:
+        raise ValueError('Expected frames only')
+    rows = obj['frames']
+    if not isinstance(rows, list) or len(rows) != len(times):
+        raise ValueError('One frame entry required for every image')
+    result = []
+    for row, expected in zip(rows, times):
+        if not isinstance(row, dict) or set(row) != {'time_seconds', 'ball_state', 'team', 'court_zone'}:
+            raise ValueError('Invalid frame fields')
+        t = row['time_seconds']
+        if isinstance(t, bool) or not isinstance(t, (float, int)) or not isfinite(t) or abs(t - expected) > .05:
+            raise ValueError('Frame timestamps must match image order')
+        if row['ball_state'] not in BALL_STATES:
+            raise ValueError('Unknown ball state')
+        if row['court_zone'] not in COURT_ZONES:
+            raise ValueError('Unknown court zone')
+        if not isinstance(row['team'], str) or not 1 <= len(row['team']) <= 40:
+            raise ValueError('Invalid team')
+        result.append(dict(row, team=row['team'].strip().lower()))
+    return result
+
+
+def _known(team):
+    return bool(team) and team not in ('', 'unknown')
+
+
+def derive_events(states: list[dict], core_start: float, core_end: float) -> tuple[list[dict], list[str]]:
+    """Derive events from observed state transitions. Deterministic; no model involved.
+
+    Returns (events, notes). Notes record every point where an event was NOT emitted because
+    the evidence did not support one, so lost recall stays visible instead of silent.
+    """
+    events, notes = [], []
+    holder = None          # team last seen in control
+    shooter = None         # team that released the live flight
+    zone = 'unknown'       # court zone at release
+    flight = False         # a shot or pass is airborne
+    rim = None             # timestamp of rim contact during the live flight
+    awaiting_rebound = None  # shooting team, after a confirmed miss
+    passed_by = None       # team that completed a pass immediately before a flight
+    pass_time = None
+    shot_since_hold = False  # a flight occurred since the last observed possession
+
+    def emit(label, time, evidence):
+        if label not in LABELS:
+            raise ValueError(f'Derived unknown label {label}')
+        if core_start <= time <= core_end:
+            events.append(dict(label=label, time_seconds=time, confidence=1.0, evidence=evidence))
+        else:
+            notes.append(f'{label} derived at {time} lies outside the core window; not emitted')
+
+    def finish_shot(made, time):
+        nonlocal flight, rim, awaiting_rebound, shooter, passed_by
+        if zone == 'unknown':
+            notes.append(f'Shot outcome observed at {time} but court zone unknown; no typed shot event emitted')
+        else:
+            made_label, miss_label = SHOT_LABELS[zone]
+            emit(made_label if made else miss_label, time,
+                 f'Observed {"through_net" if made else "rim_contact then loss of the ball"} at {time} after release from {zone}')
+            if made and passed_by is not None and passed_by == shooter:
+                emit('assist', pass_time, f'Pass within {passed_by} observed at {pass_time} immediately before the made shot at {time}')
+        awaiting_rebound = None if made else shooter
+        flight = False
+        rim = None
+        passed_by = None
+
+    for i, row in enumerate(states):
+        state, team, t = row['ball_state'], row['team'], row['time_seconds']
+        if state == 'held':
+            rebounded = False
+            if flight and rim is not None:
+                finish_shot(False, rim)
+            elif flight:
+                notes.append(f'Flight from {t} ended in possession without observed rim contact or net; no shot outcome emitted')
+                flight = False
+                passed_by = None
+            if awaiting_rebound is not None and _known(team):
+                emit('offensive_rebound' if team == awaiting_rebound else 'defensive_rebound', t,
+                     f'{team} observed in control at {t} after the miss by {awaiting_rebound}')
+                awaiting_rebound = None
+                rebounded = True
+            elif awaiting_rebound is not None:
+                notes.append(f'Control regained at {t} but team unknown; no rebound emitted')
+                awaiting_rebound = None
+                rebounded = True
+            # A possession change is a turnover ONLY with no shot in between. A rebound, or any
+            # change following a flight, is a different event and must not also score a turnover.
+            if rebounded or shot_since_hold:
+                if _known(team) and _known(holder) and team != holder:
+                    notes.append(f'Possession changed to {team} at {t} after a shot; not a turnover')
+            elif _known(team) and _known(holder) and team != holder:
+                emit('turnover', t, f'{holder} observed in control, then {team} in control at {t}, with no shot in between')
+                emit('steal', t, f'{team} observed taking control at {t} from {holder} with no shot in between')
+                passed_by = None
+            elif _known(team) and team == holder and i and states[i - 1]['ball_state'] == 'held':
+                passed_by, pass_time = team, t
+            if _known(team):
+                holder = team
+            if row['court_zone'] != 'unknown':
+                zone = row['court_zone']
+            shot_since_hold = False
+        elif state == 'in_flight':
+            shot_since_hold = True
+            if not flight:
+                flight, shooter = True, holder
+                if row['court_zone'] != 'unknown':
+                    zone = row['court_zone']
+                if shooter is None:
+                    notes.append(f'Flight observed at {t} with no prior observed holder; shooting team unknown')
+        elif state == 'rim_contact':
+            if flight:
+                rim = t
+            else:
+                notes.append(f'Rim contact at {t} with no observed release; no shot event emitted')
+        elif state == 'through_net':
+            if flight:
+                finish_shot(True, t)
+            else:
+                notes.append(f'Ball through net at {t} with no observed release; no shot event emitted')
+        elif state == 'deflected':
+            if flight and _known(team) and _known(shooter) and team != shooter:
+                emit('block', t, f'{team} observed deflecting the shot released by {shooter}, at {t}')
+                awaiting_rebound = shooter
+                flight, rim, passed_by = False, None, None
+            else:
+                notes.append(f'Deflection at {t} without a live flight from a known opposing shooter; no block emitted')
+        elif state == 'loose':
+            if flight and rim is not None:
+                finish_shot(False, rim)
+            elif flight:
+                notes.append(f'Flight ended loose at {t} without observed rim contact or net; no shot outcome emitted')
+                flight, passed_by = False, None
+        elif state == 'not_visible':
+            if flight:
+                notes.append(f'Ball lost from view at {t} during a live flight; outcome unobserved, no shot event emitted')
+                flight, rim, passed_by = False, None, None
+            if awaiting_rebound is not None:
+                notes.append(f'Ball lost from view at {t} before control was regained; no rebound emitted')
+                awaiting_rebound = None
+    if flight:
+        notes.append('Sequence ended with the ball still airborne; no shot outcome emitted')
+    if awaiting_rebound is not None:
+        notes.append('Sequence ended after a miss with no observed rebound; none emitted')
+    return events, notes
+
+
+def contradictory_pairs(events: list[dict]) -> list[tuple[str, str]]:
+    """Derived output must never contain mutually exclusive labels for one action."""
+    exclusive = [{'two_point_made', 'two_point_miss'}, {'three_point_made', 'three_point_miss'},
+                 {'free_throw_made', 'free_throw_miss'}, {'offensive_rebound', 'defensive_rebound'}]
+    found = []
+    for i, a in enumerate(events):
+        for b in events[i + 1:]:
+            if {a['label'], b['label']} in exclusive and abs(a['time_seconds'] - b['time_seconds']) <= 5.0:
+                found.append((a['label'], b['label']))
+    return found

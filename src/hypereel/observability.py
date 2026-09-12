@@ -18,6 +18,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 
 from .config import Settings
+from .checkpoints import CallJournal
 
 _log = logging.getLogger(__name__)
 _T = TypeVar("_T")
@@ -30,7 +31,7 @@ class ProviderBudgetExceeded(RuntimeError):
 
 
 @contextmanager
-def provider_budget_scope(settings: Settings):
+def provider_budget_scope(settings: Settings, *, checkpoint_context: dict | None = None):
     """Track provider usage and enforce request/spend caps for one evaluation case."""
     ledger_path = settings.provider_spend_ledger_path
     spent_before = 0.0
@@ -51,23 +52,41 @@ def provider_budget_scope(settings: Settings):
         "input_rate": settings.nebius_input_cost_per_million_usd,
         "output_rate": settings.nebius_output_cost_per_million_usd,
     }
+    journal = (CallJournal(settings.provider_checkpoint_dir, checkpoint_context)
+               if settings.provider_checkpoint_dir else None)
+    state["journal"] = journal
+    state["checkpoint_path"] = str(journal.path) if journal else None
     token = _provider_budget.set(state)
     try:
         yield state
+    except BaseException as exc:
+        if journal and not journal.failed:
+            journal.append("scope_interrupted", error_type=type(exc).__name__,
+                           calls=state["calls"], attempted_calls=state["attempted_calls"])
+        raise
+    else:
+        if journal:
+            journal.append("scope_finished", calls=state["calls"],
+                           attempted_calls=state["attempted_calls"])
     finally:
         _provider_budget.reset(token)
+        if journal:
+            journal.close()
 
 
-def authorize_provider_call(*, provider: str, model: str, operation: str) -> None:
+def authorize_provider_call(*, provider: str, model: str, operation: str, local: bool = False) -> None:
+    """Authorize one request; local inference uses the call cap, not cloud credit."""
     state = _provider_budget.get()
     if state is None:
         return
     if state["max_calls"] > 0 and state["attempted_calls"] >= state["max_calls"]:
+        _checkpoint(state, "request_denied", reason="call_cap")
         raise ProviderBudgetExceeded("provider request cap reached")
-    if (state["max_spend_usd"] > 0
+    if (not local and state["max_spend_usd"] > 0
             and state["estimated_spend_before_run_usd"]
             + state["estimated_spend_usd"] + state["reserve_usd"]
             > state["max_spend_usd"]):
+        _checkpoint(state, "request_denied", reason="spend_cap")
         raise ProviderBudgetExceeded("provider spend cap reached")
     state["attempted_calls"] += 1
     state["calls"].append({
@@ -75,14 +94,18 @@ def authorize_provider_call(*, provider: str, model: str, operation: str) -> Non
         "model": model,
         "operation": operation,
         "status": "started",
-        "reserved_cost_usd": state["reserve_usd"],
+        "reserved_cost_usd": 0.0 if local else state["reserve_usd"],
+        **({"local": True} if local else {}),
     })
 
+    _checkpoint(state, "call_started", call_index=len(state["calls"]) - 1, call=state["calls"][-1])
 
 def record_provider_usage(completion, *, status: str = "success") -> None:
     state = _provider_budget.get()
     if state is None or not state["calls"]:
         return
+    if state["calls"][-1].get("local"):
+        raise ValueError("Local usage must use record_local_provider_usage")
     usage = getattr(completion, "usage", None)
     prompt = int(getattr(usage, "prompt_tokens", 0) or 0)
     output = int(getattr(usage, "completion_tokens", 0) or 0)
@@ -106,6 +129,55 @@ def record_provider_usage(completion, *, status: str = "success") -> None:
         temporary = path.with_suffix(path.suffix + ".tmp")
         temporary.write_text(json.dumps({"estimated_spend_usd": total}, indent=2) + "\n")
         os.replace(temporary, path)
+    _checkpoint(state, "call_finished", call_index=len(state["calls"]) - 1, call=call)
+
+
+def record_local_provider_usage(response: dict, *, elapsed_seconds: float,
+                                status: str = "success") -> None:
+    """Record Ollama's measured usage without charging or rewriting a cloud ledger.
+
+    Zero cost here means zero provider API charge, not zero hardware/energy cost.
+    Ollama reports server durations in nanoseconds; wall latency also includes
+    request transport and response decoding. Missing usage is left unknown.
+    """
+    state = _provider_budget.get()
+    if state is None or not state["calls"]:
+        return
+    call = state["calls"][-1]
+    if not call.get("local") or call["status"] != "started":
+        return
+    prompt = response.get("prompt_eval_count")
+    output = response.get("eval_count")
+    call.update({
+        "status": status,
+        "prompt_tokens": prompt,
+        "completion_tokens": output,
+        "total_tokens": prompt + output if prompt is not None and output is not None else None,
+        "estimated_cost_usd": 0.0,
+        "latency_seconds": elapsed_seconds,
+    })
+    for field in ("total_duration", "load_duration", "prompt_eval_duration", "eval_duration"):
+        if response.get(field) is not None:
+            call[field + "_ns"] = response[field]
+    if response.get("total_duration") is not None:
+        call["server_duration_seconds"] = response["total_duration"] / 1_000_000_000
+
+    _checkpoint(state, "call_finished", call_index=len(state["calls"]) - 1, call=call)
+
+def record_local_provider_failure(error: Exception, *, elapsed_seconds: float) -> None:
+    """Finalize an authorized local request; retain only the safe exception type."""
+    state = _provider_budget.get()
+    if state is not None and state["calls"]:
+        call = state["calls"][-1]
+        if call.get("local") and call["status"] == "started":
+            call.update({
+                "status": "error",
+                "error_type": type(error).__name__,
+                "latency_seconds": elapsed_seconds,
+                "estimated_cost_usd": 0.0,
+            })
+            _checkpoint(state, "call_finished", call_index=len(state["calls"]) - 1, call=call)
+    record_provider_failure(error)
 
 
 def record_provider_failure(error: Exception) -> None:
@@ -227,3 +299,22 @@ def with_tracing(config: dict, settings: Settings, *, recipe_id: str, entrypoint
         # Don't log exception text: client errors can include endpoint credentials.
         _log.warning("HypeReel tracing unavailable; continuing without its callback.")
         return config
+
+
+def _checkpoint(state, event, **fields):
+    journal = state.get("journal")
+    if journal:
+        journal.append(event, **fields)
+
+
+def checkpoint_classification(window_index, window, classification):
+    """Persist the final per-window result, with no reference labels or images."""
+    state = _provider_budget.get()
+    if state is not None:
+        result = classification.model_dump(mode="json")
+        if result["reason"].startswith(("ollama error:", "ollama verification error:", "parse error:")):
+            result["reason"] = result["reason"].split(":", 1)[0] + ": details omitted"
+        _checkpoint(state, "classification", window_index=window_index,
+                    window={"start": window.start, "end": window.end},
+                    classification=result,
+                    last_call_index=len(state["calls"]) - 1)

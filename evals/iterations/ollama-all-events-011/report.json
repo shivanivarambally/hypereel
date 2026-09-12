@@ -1,0 +1,1115 @@
+{
+  "name": "ollama-all-events-011",
+  "started_at": "2026-09-12T17:48:05.252927+05:30",
+  "status": "completed",
+  "fixture_sha256": "7cf6a1a6da4d5173fb3d18421a07da5099d250306e4e5a0aa38972d22d13b575",
+  "references_sha256": "40f3eb6064c33b7171b6325835bba1233bd0ca3c233c829a1e01285b7c771534",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  },
+  "model": "qwen3-vl:4b-instruct",
+  "model_digest": "ee4b975b58c17ce268cd19d40db35d5edc64603035d2ffc1fee1968eb0947f7b",
+  "settings": {
+    "frames": 6,
+    "edge": 768,
+    "context": 8192,
+    "output_limit": 768,
+    "batch": 128,
+    "timeout": 180,
+    "temperature": 0,
+    "seed": 0,
+    "prompt_variant": "observations"
+  },
+  "code_sha256": {
+    "scripts/eval_all_events_local.py": "b08b867454a97613b6a7451e211d00d4f7823221dd6971447c3cd3ef1ebd556f",
+    "src/hypereel/evaluation/basketball_events.py": "81c3a6cdd9b00df0aeb7e7b533bab3629c7b08d684d8b9d9f797a2778e398d1d",
+    "src/hypereel/providers/ollama.py": "ad6f2bd681b3316c543f3e7a462501d19f26baa290d608b25978f8fd721e000a"
+  },
+  "windows": [
+    {
+      "index": 0,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "frame_times": [
+        223.0,
+        224.6,
+        226.2,
+        227.8,
+        229.4,
+        231.0
+      ],
+      "events": [],
+      "raw": "{\n  \"observations\": [\n    {\n      \"time_seconds\": 223.0,\n      \"observation\": \"Two teams, EBE (black jerseys) and Spartan (light blue jerseys), are in a pre-game or stoppage position. The ball is not in play. Players are standing in the key area, with the EBE team holding the ball. The scoreboard shows 0-0 with 3:42 remaining in the first quarter.\"\n    },\n    {\n      \"time_seconds\": 224.6,\n      \"observation\": \"The EBE team (black jerseys) is in possession. A player in a black jersey with number 32 is holding the ball, preparing to pass or shoot. The Spartan team (light blue jerseys) is in a defensive stance. The ball is in the hands of an EBE player.\"\n    },\n    {\n      \"time_seconds\": 226.2,\n      \"observation\": \"The EBE team (black jerseys) is in possession. A player in a black jersey with number 32 is holding the ball, preparing to pass or shoot. The Spartan team (light blue jerseys) is in a defensive stance. The ball is in the hands of an EBE player.\"\n    },\n    {\n      \"time_seconds\": 227.8,\n      \"observation\": \"The EBE team (black jerseys) is in possession. A player in a black jersey with number 32 is holding the ball, preparing to pass or shoot. The Spartan team (light blue jerseys) is in a defensive stance. The ball is in the hands of an EBE player.\"\n    },\n    {\n      \"time_seconds\": 229.4,\n      \"observation\": \"The EBE team (black jerseys) is in possession. A player in a black jersey with number 32 is holding the ball, preparing to pass or shoot. The Spartan team (light blue jerseys) is in a defensive stance. The ball is in the hands of an EBE player.\"\n    },\n    {\n      \"time_seconds\": 231.0,\n      \"observation\": \"The EBE team (black jerseys) is in possession. A player in a black jersey with number 32 is holding the ball, preparing to pass or shoot. The Spartan team (light blue jerseys) is in a defensive stance. The ball is in the hands of an EBE player.\"\n    }\n  ],\n  \"events\": []\n}"
+    },
+    {
+      "index": 1,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 1316,
+        "end": 1324,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+        ],
+        "types": [
+          "defensive_rebound",
+          "offensive_rebound",
+          "three_point_miss",
+          "turnover",
+          "two_point_miss"
+        ]
+      },
+      "frame_times": [
+        1316.0,
+        1317.6,
+        1319.2,
+        1320.8,
+        1322.4,
+        1324.0
+      ],
+      "events": [],
+      "raw": "{\n  \"observations\": [\n    {\n      \"time_seconds\": 1316.0,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 21:55 remaining. Players in yellow and white jerseys are on the court. A player in a white jersey (number 22) is near the basket, while a player in a yellow jersey (number 5) is in the key. The ball is in possession of the white team, who appears to be setting up for a play.\"\n    },\n    {\n      \"time_seconds\": 1317.6,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 21:57 remaining. The white team is in possession. A player in a white jersey (number 22) is dribbling the ball near the basket, while a yellow jersey player (number 5) is defending. The ball is being handled by the white team.\"\n    },\n    {\n      \"time_seconds\": 1319.2,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 21:59 remaining. The white team is still in possession. A player in a white jersey (number 22) is moving towards the basket, while a yellow jersey player (number 5) is actively defending. The ball is being handled by the white team.\"\n    },\n    {\n      \"time_seconds\": 1320.8,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 22:00 remaining. The white team is in possession. A player in a white jersey (number 22) is moving towards the basket, while a yellow jersey player (number 5) is actively defending. The ball is being handled by the white team.\"\n    },\n    {\n      \"time_seconds\": 1322.4,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 22:02 remaining. The white team is in possession. A player in a white jersey (number 22) is moving towards the basket, while a yellow jersey player (number 5) is actively defending. The ball is being handled by the white team.\"\n    },\n    {\n      \"time_seconds\": 1324.0,\n      \"observation\": \"The scoreboard shows UNI 20 - CAMPUS 12 with 22:03 remaining. The white team is in possession. A player in a white jersey (number 22) is moving towards the basket, while a yellow jersey player (number 5) is actively defending. The ball is being handled by the white team.\"\n    }\n  ],\n  \"events\": []\n}"
+    }
+  ],
+  "memory_samples": [
+    {
+      "at": "2026-09-12T17:48:05.291340+05:30",
+      "elapsed_seconds": 0.037114207982085645,
+      "llama_rss_kib": 4694928,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12293.19M  free = 1018.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:07.345590+05:30",
+      "elapsed_seconds": 2.0913944159983657,
+      "llama_rss_kib": 6002688,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12214.81M  free = 1097.19M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:09.404828+05:30",
+      "elapsed_seconds": 4.150568707991624,
+      "llama_rss_kib": 5951920,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 11967.69M  free = 1344.31M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:11.443705+05:30",
+      "elapsed_seconds": 6.189399249997223,
+      "llama_rss_kib": 5546480,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12227.31M  free = 1084.69M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:13.498929+05:30",
+      "elapsed_seconds": 8.24460458298563,
+      "llama_rss_kib": 4713248,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12301.38M  free = 1010.62M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:15.541018+05:30",
+      "elapsed_seconds": 10.286629665992223,
+      "llama_rss_kib": 4713456,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12293.38M  free = 1018.62M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:17.599098+05:30",
+      "elapsed_seconds": 12.34467362498981,
+      "llama_rss_kib": 4713632,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12221.38M  free = 1090.62M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:19.672918+05:30",
+      "elapsed_seconds": 14.41845933298464,
+      "llama_rss_kib": 4713840,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12149.38M  free = 1162.62M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:21.824140+05:30",
+      "elapsed_seconds": 16.569660290988395,
+      "llama_rss_kib": 4711552,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12142.75M  free = 1169.25M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:23.905250+05:30",
+      "elapsed_seconds": 18.65073866597959,
+      "llama_rss_kib": 4706416,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12223.19M  free = 1088.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:25.985602+05:30",
+      "elapsed_seconds": 20.731029916001717,
+      "llama_rss_kib": 4706160,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12969.12M  free = 342.88M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:28.068278+05:30",
+      "elapsed_seconds": 22.81368012499297,
+      "llama_rss_kib": 4706112,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12960.94M  free = 351.06M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:30.119355+05:30",
+      "elapsed_seconds": 24.8647100829985,
+      "llama_rss_kib": 4706160,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 12898.31M  free = 413.69M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:32.238748+05:30",
+      "elapsed_seconds": 26.98414870799752,
+      "llama_rss_kib": 4705872,
+      "pressure": 2,
+      "swap": "total = 13312.00M  used = 13061.00M  free = 251.00M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:34.429263+05:30",
+      "elapsed_seconds": 29.174597374978475,
+      "llama_rss_kib": 4705296,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13098.69M  free = 1237.31M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:36.493647+05:30",
+      "elapsed_seconds": 31.2389023329888,
+      "llama_rss_kib": 4705536,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13279.00M  free = 1057.00M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:38.553720+05:30",
+      "elapsed_seconds": 33.29891383298673,
+      "llama_rss_kib": 4705696,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13313.75M  free = 1022.25M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:40.611181+05:30",
+      "elapsed_seconds": 35.35635216598166,
+      "llama_rss_kib": 4705792,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13520.25M  free = 815.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:42.668374+05:30",
+      "elapsed_seconds": 37.41349408298265,
+      "llama_rss_kib": 4705824,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13536.25M  free = 799.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:44.722912+05:30",
+      "elapsed_seconds": 39.467996332998155,
+      "llama_rss_kib": 4707024,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13536.25M  free = 799.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:46.778341+05:30",
+      "elapsed_seconds": 41.52338708299794,
+      "llama_rss_kib": 4707136,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13536.25M  free = 799.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:48.833262+05:30",
+      "elapsed_seconds": 43.57827612498659,
+      "llama_rss_kib": 4707136,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13520.25M  free = 815.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:50.883280+05:30",
+      "elapsed_seconds": 45.62823766598012,
+      "llama_rss_kib": 4707136,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13520.25M  free = 815.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:52.924983+05:30",
+      "elapsed_seconds": 47.669921624998096,
+      "llama_rss_kib": 4707168,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13512.25M  free = 823.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:54.968755+05:30",
+      "elapsed_seconds": 49.713645749987336,
+      "llama_rss_kib": 4707200,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 13504.25M  free = 831.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:57.020043+05:30",
+      "elapsed_seconds": 51.76490974999615,
+      "llama_rss_kib": 4707200,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13504.25M  free = 831.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:48:59.073894+05:30",
+      "elapsed_seconds": 53.818751082988456,
+      "llama_rss_kib": 4707248,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13504.25M  free = 831.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:01.138273+05:30",
+      "elapsed_seconds": 55.88305874998332,
+      "llama_rss_kib": 4707248,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13496.25M  free = 839.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:03.188149+05:30",
+      "elapsed_seconds": 57.93289845797699,
+      "llama_rss_kib": 4707248,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13496.25M  free = 839.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:05.238105+05:30",
+      "elapsed_seconds": 59.98281141597545,
+      "llama_rss_kib": 4707248,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13488.25M  free = 847.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:07.295436+05:30",
+      "elapsed_seconds": 62.04012749998947,
+      "llama_rss_kib": 4707280,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13480.25M  free = 855.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:09.345842+05:30",
+      "elapsed_seconds": 64.09048737498233,
+      "llama_rss_kib": 4707376,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13480.25M  free = 855.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:11.404200+05:30",
+      "elapsed_seconds": 66.14896508297534,
+      "llama_rss_kib": 5852064,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 13416.25M  free = 919.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:13.454798+05:30",
+      "elapsed_seconds": 68.19935958299902,
+      "llama_rss_kib": 6710944,
+      "pressure": 1,
+      "swap": "total = 14336.00M  used = 12952.25M  free = 1383.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:15.524855+05:30",
+      "elapsed_seconds": 70.26941245800117,
+      "llama_rss_kib": 6081216,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12944.25M  free = 1391.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:17.580716+05:30",
+      "elapsed_seconds": 72.32520049999584,
+      "llama_rss_kib": 5463424,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12936.25M  free = 1399.75M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:19.639589+05:30",
+      "elapsed_seconds": 74.38404695800273,
+      "llama_rss_kib": 4718448,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12912.19M  free = 1423.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:21.691285+05:30",
+      "elapsed_seconds": 76.43570499998168,
+      "llama_rss_kib": 4718736,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:23.745003+05:30",
+      "elapsed_seconds": 78.4893823750026,
+      "llama_rss_kib": 4718864,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:25.795137+05:30",
+      "elapsed_seconds": 80.53947849999531,
+      "llama_rss_kib": 4718944,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:27.851448+05:30",
+      "elapsed_seconds": 82.59573887498118,
+      "llama_rss_kib": 4719056,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:29.901933+05:30",
+      "elapsed_seconds": 84.64619283299544,
+      "llama_rss_kib": 4719072,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:31.944276+05:30",
+      "elapsed_seconds": 86.68849816598231,
+      "llama_rss_kib": 4719072,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12888.19M  free = 1447.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:33.983492+05:30",
+      "elapsed_seconds": 88.72768308297964,
+      "llama_rss_kib": 4719120,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12872.19M  free = 1463.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:36.036425+05:30",
+      "elapsed_seconds": 90.78057695800089,
+      "llama_rss_kib": 4719168,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12872.19M  free = 1463.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:38.097813+05:30",
+      "elapsed_seconds": 92.84193391600274,
+      "llama_rss_kib": 4719264,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12872.19M  free = 1463.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:40.142862+05:30",
+      "elapsed_seconds": 94.8869301249797,
+      "llama_rss_kib": 4719264,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12864.19M  free = 1471.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:42.189831+05:30",
+      "elapsed_seconds": 96.9338638749905,
+      "llama_rss_kib": 4719280,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12856.19M  free = 1479.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:44.240203+05:30",
+      "elapsed_seconds": 98.9842023329984,
+      "llama_rss_kib": 4719312,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12856.19M  free = 1479.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:46.287723+05:30",
+      "elapsed_seconds": 101.03168112499407,
+      "llama_rss_kib": 4719424,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12856.19M  free = 1479.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:48.328580+05:30",
+      "elapsed_seconds": 103.0724994999764,
+      "llama_rss_kib": 4719424,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12856.19M  free = 1479.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:50.371090+05:30",
+      "elapsed_seconds": 105.11497549997875,
+      "llama_rss_kib": 4719424,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12808.19M  free = 1527.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:52.415617+05:30",
+      "elapsed_seconds": 107.15946020800038,
+      "llama_rss_kib": 4719440,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12808.19M  free = 1527.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:54.458093+05:30",
+      "elapsed_seconds": 109.2019020409789,
+      "llama_rss_kib": 4719456,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12800.19M  free = 1535.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:56.499348+05:30",
+      "elapsed_seconds": 111.24312341600307,
+      "llama_rss_kib": 4719456,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12800.19M  free = 1535.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:49:58.544247+05:30",
+      "elapsed_seconds": 113.28797458298504,
+      "llama_rss_kib": 4719456,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12800.19M  free = 1535.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:00.585298+05:30",
+      "elapsed_seconds": 115.32899479099433,
+      "llama_rss_kib": 4710720,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:02.635425+05:30",
+      "elapsed_seconds": 117.379088665999,
+      "llama_rss_kib": 4710768,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:04.680267+05:30",
+      "elapsed_seconds": 119.42388954097987,
+      "llama_rss_kib": 4710768,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:06.720601+05:30",
+      "elapsed_seconds": 121.46418474998791,
+      "llama_rss_kib": 4710768,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:08.772711+05:30",
+      "elapsed_seconds": 123.51626012497582,
+      "llama_rss_kib": 4710928,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:10.817287+05:30",
+      "elapsed_seconds": 125.56080233299872,
+      "llama_rss_kib": 4708416,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:12.858739+05:30",
+      "elapsed_seconds": 127.60221254097996,
+      "llama_rss_kib": 4708416,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:14.905171+05:30",
+      "elapsed_seconds": 129.6486240410013,
+      "llama_rss_kib": 4708416,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    },
+    {
+      "at": "2026-09-12T17:50:16.954082+05:30",
+      "elapsed_seconds": 131.6974799579766,
+      "llama_rss_kib": 4708432,
+      "pressure": 2,
+      "swap": "total = 14336.00M  used = 12792.19M  free = 1543.81M  (encrypted)"
+    }
+  ],
+  "holdout_used": false,
+  "sampling_note": "label-informed greedy type coverage; fixed before inference; not representative prevalence or source-driven proposal evaluation; 011 post-result explanatory subset: original windows1 and6, one per game; not a whole-batch comparison",
+  "reference_timing": "provisional clip timestamps; 5s point tolerance; no action IoU claim",
+  "checkpoint_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/ollama-all-events-011/checkpoints/calls-57439a66cde141679a621c726f18a1cd.jsonl",
+  "provider_usage": [
+    {
+      "provider": "ollama",
+      "model": "qwen3-vl:4b-instruct",
+      "operation": "basketball_event_detection_v2",
+      "status": "success",
+      "reserved_cost_usd": 0.0,
+      "local": true,
+      "prompt_tokens": 6651,
+      "completion_tokens": 510,
+      "total_tokens": 7161,
+      "estimated_cost_usd": 0.0,
+      "latency_seconds": 63.98387245798949,
+      "total_duration_ns": 63965224833,
+      "load_duration_ns": 20888833,
+      "prompt_eval_duration_ns": 1545498000,
+      "eval_duration_ns": 57114922000,
+      "server_duration_seconds": 63.965224833
+    },
+    {
+      "provider": "ollama",
+      "model": "qwen3-vl:4b-instruct",
+      "operation": "basketball_event_detection_v2",
+      "status": "success",
+      "reserved_cost_usd": 0.0,
+      "local": true,
+      "prompt_tokens": 6657,
+      "completion_tokens": 604,
+      "total_tokens": 7261,
+      "estimated_cost_usd": 0.0,
+      "latency_seconds": 68.01035395800136,
+      "total_duration_ns": 68000619375,
+      "load_duration_ns": 19599333,
+      "prompt_eval_duration_ns": 1499569000,
+      "eval_duration_ns": 63443929000,
+      "server_duration_seconds": 68.000619375
+    }
+  ],
+  "elapsed_seconds": 133.19093837498804,
+  "ended_at": "2026-09-12T17:50:18.447607+05:30",
+  "attempted_calls": 2,
+  "scored_references": [
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "jersey_number": 3,
+      "label": "free_throw_made",
+      "player_name": "Jacob J",
+      "reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018",
+      "source_event_type": "FT",
+      "source_outcome": "made",
+      "source_timestamp_seconds": 225,
+      "split": "development",
+      "team": "East Bay Elite 11U 2025 26",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 225
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 23,
+      "label": "three_point_miss",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+      "source_event_type": "3PT",
+      "source_outcome": "miss",
+      "source_timestamp_seconds": 1318,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1318
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 25,
+      "label": "offensive_rebound",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+      "source_event_type": "OR",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1319,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1319
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 25,
+      "label": "two_point_miss",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+      "source_event_type": "2PT",
+      "source_outcome": "miss",
+      "source_timestamp_seconds": 1320,
+      "split": "development",
+      "team": "campus",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1320
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 14,
+      "label": "defensive_rebound",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "source_event_type": "DR",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1321,
+      "split": "development",
+      "team": "Unlimited",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1321
+    },
+    {
+      "action_end_seconds": null,
+      "action_start_seconds": null,
+      "dataset_version": "basketball-all-events-development-v2",
+      "game_id": "unlimited-vs-campus",
+      "jersey_number": 14,
+      "label": "turnover",
+      "player_name": null,
+      "reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108",
+      "source_event_type": "TOV",
+      "source_outcome": null,
+      "source_timestamp_seconds": 1323,
+      "split": "development",
+      "team": "Unlimited",
+      "timestamp_semantics": "external_clip_timestamp_unverified",
+      "time_seconds": 1323
+    }
+  ],
+  "metrics": {
+    "metric_version": "basketball-events-point-v2-provisional",
+    "tolerance_seconds": 5.0,
+    "per_type": {
+      "assist": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "block": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "defensive_rebound": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "free_throw_made": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "free_throw_miss": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "offensive_rebound": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "steal": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "three_point_made": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "three_point_miss": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "turnover": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "two_point_made": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predictions": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "two_point_miss": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predictions": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "matches": [],
+    "tp": 0,
+    "fp": 0,
+    "fn": 6,
+    "micro_precision": null,
+    "micro_recall": 0.0,
+    "micro_f1": 0.0,
+    "macro_f1": 0.0,
+    "worst_type_recall": 0.0,
+    "measured_types": 6,
+    "total_required_types": 12,
+    "release_gate_pass": false,
+    "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+  },
+  "per_game_metrics": {
+    "east-bay-elite-vs-spartans": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "micro_precision": null,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "worst_type_recall": 0.0,
+      "measured_types": 1,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "unlimited-vs-campus": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "matches": [],
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "micro_precision": null,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "worst_type_recall": 0.0,
+      "measured_types": 5,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    }
+  },
+  "completed_windows": 2,
+  "planned_windows": 2,
+  "peak_sampled_llama_rss_gib": 6.400054931640625
+}

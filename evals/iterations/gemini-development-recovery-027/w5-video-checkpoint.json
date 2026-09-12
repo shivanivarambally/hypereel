@@ -1,0 +1,138 @@
+{
+  "index": 5,
+  "arm": "video",
+  "window": {
+    "game_id": "unlimited-vs-campus",
+    "start": 976,
+    "end": 984,
+    "reference_ids": [
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-075",
+      "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-076"
+    ],
+    "types": [
+      "block",
+      "two_point_miss"
+    ]
+  },
+  "started_at": "2026-09-12T22:46:55.088769+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w5-continuous.mp4",
+      "sha256": "e9f4ba912798f1ffffd0c98cd66b894a09b1f9d57cc28316d07e612fc810a9ba",
+      "source_start": 974.0,
+      "source_end": 986.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 974.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [976, 984] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "1b0183bef506f4d9be5dfe97dc207eebe0f2a8d68aecb1ddaa12caebbabc1df0",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 13763,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 467
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "reserved_usd": 0.0536228125,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T22:46:56.794419+05:30",
+      "reservation_usd": 0.0536228125,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"two_point_miss\",\"time_seconds\":979.0,\"confidence\":0.7,\"evidence\":\"A player in white drives to the basket and misses the layup attempt around 00:05.000.\"},{\"label\":\"defensive_rebound\",\"time_seconds\":979.8,\"confidence\":0.65,\"evidence\":\"Defending player gains possession of the rebound under the rim.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPBo5DodMzg1ZJ/6pK/7XomhR3aeoBD+A1g+0fZD+IBryplLidF5Xox8+uAfGN4xyRICNvqynkiWgSpyA5/l65QBer8wx6/OjOmRBc6FpDFQ41zF6NWzs/2gNUgjvoV79J"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13139,
+      "candidatesTokenCount": 95,
+      "totalTokenCount": 13234,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 467
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "ComlavaTA5Kzg8UP_pGvuQI"
+  },
+  "latency_seconds": 14.853492208989337,
+  "ended_at": "2026-09-12T22:47:11.648174+05:30",
+  "estimated_cost_usd": 0.0102105,
+  "usage": {
+    "promptTokenCount": 13139,
+    "candidatesTokenCount": 95,
+    "totalTokenCount": 13234,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 467
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"two_point_miss\",\"time_seconds\":979.0,\"confidence\":0.7,\"evidence\":\"A player in white drives to the basket and misses the layup attempt around 00:05.000.\"},{\"label\":\"defensive_rebound\",\"time_seconds\":979.8,\"confidence\":0.65,\"evidence\":\"Defending player gains possession of the rebound under the rim.\"}]}",
+  "events": [
+    {
+      "label": "two_point_miss",
+      "time_seconds": 979.0,
+      "confidence": 0.7,
+      "evidence": "A player in white drives to the basket and misses the layup attempt around 00:05.000.",
+      "game_id": "unlimited-vs-campus"
+    },
+    {
+      "label": "defensive_rebound",
+      "time_seconds": 979.8,
+      "confidence": 0.65,
+      "evidence": "Defending player gains possession of the rebound under the rim.",
+      "game_id": "unlimited-vs-campus"
+    }
+  ],
+  "context_events": []
+}

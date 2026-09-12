@@ -189,7 +189,7 @@ def propose_node(state: ReelState, settings=None) -> dict:
             ordered = sorted((chosen + negatives[:max(0, cap - len(chosen))])[:cap],
                              key=lambda w: w.start)
         notes.append(
-            f"propose: quick-test cap ON — kept {cap} of {len(candidates)} windows "
+            f"propose: quick-test cap ON — kept {len(ordered)} of {len(candidates)} windows "
             f"using {state.get('candidate_sampling', 'chronological')} sampling"
         )
         candidates = ordered

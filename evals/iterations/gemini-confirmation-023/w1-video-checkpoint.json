@@ -1,0 +1,136 @@
+{
+  "index": 1,
+  "arm": "video",
+  "window": {
+    "game_id": "east-bay-elite-vs-spartans",
+    "start": 223,
+    "end": 231,
+    "reference_ids": [
+      "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+    ],
+    "types": [
+      "free_throw_made"
+    ]
+  },
+  "started_at": "2026-09-12T22:40:00.147855+05:30",
+  "status": "completed",
+  "manifest": [
+    {
+      "path": "evals/iterations/gemini-development-media/w1-continuous.mp4",
+      "sha256": "75d23ea4566f7fbc658560f877113ebc31e405f5354138bba5ad8360f745026b",
+      "source_start": 221.0,
+      "source_end": 233.0,
+      "fps_requested": 4,
+      "audio": "muted",
+      "source_width": 1280
+    }
+  ],
+  "prompt": "Analyze ALL basketball events in this continuous video, not just highlights. Video 00:00 corresponds to source time 221.0 seconds. Return numeric SOURCE time_seconds by adding this offset to clip time.\n\ntwo_point_made: A two-point field-goal attempt visibly scores.\ntwo_point_miss: A two-point field-goal attempt visibly misses.\nthree_point_made: A shot from beyond the three-point arc visibly scores.\nthree_point_miss: A shot from beyond the three-point arc visibly misses.\nfree_throw_made: A free-throw attempt visibly scores.\nfree_throw_miss: A free-throw attempt visibly misses.\noffensive_rebound: The shooting team gains control after its missed shot.\ndefensive_rebound: The defending team gains control after an opponent missed shot.\nsteal: A defender intercepts or disrupts opponent possession and gains team control.\nturnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\nblock: A defender visibly deflects an opponent shot attempt.\nassist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\nReturn every supported event, including multiple different events in the same sequence. A steal and opponent turnover may coexist; a missed shot and a rebound may coexist. Do not infer a basket from a scoreboard. Do not invent an event hidden outside the visible video. Do not treat an uncertain event as a confirmed one. Use the nearest supported action time. Return only JSON: {\"events\":[{\"label\":\"one exact label above\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"brief visible evidence\"}]}. If no event is supported, return {\"events\":[]}.\nEvaluation interval: [223, 231] seconds. Video portions outside that interval provide context only; report events occurring inside it. Return at most12events. Multiple views at the same timestamp are the SAME instant,not separate events. A ball-candidate crop is an unverified detector suggestion,not proof of ball presence or an event. Do not emit one event per frame; only distinct supported actions.",
+  "prompt_sha256": "25ec6121e6f97daf2a8af9c9c629701b403ef0bb0fdf104de15e33fec1690785",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "token_preflight": {
+    "totalTokens": 14033,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 467
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "reserved_usd": 0.0538759375,
+  "attempts": [
+    {
+      "started_at": "2026-09-12T22:40:02.052068+05:30",
+      "reservation_usd": 0.0538759375,
+      "status": "received"
+    }
+  ],
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"free_throw_miss\",\"time_seconds\":227.0,\"confidence\":0.95,\"evidence\":\"Player #3 in blue shoots a free throw that hits the rim and misses\"},{\"label\":\"defensive_rebound\",\"time_seconds\":228.8,\"confidence\":0.9,\"evidence\":\"Player #24 in black collects the rebound after the missed free throw\"}]}",
+              "thoughtSignature": "EmcKZQERTTIP9cjOnXiBeL1Hcl8EpwVpB6M8xRSnbFb5RHF8ofT8kcGRrMFTgwpuu64ph6pV4eQvEz2XhxPtbDzf0fSUIB7B6J6+EH+J4L/TWGv93ryHsv52WaEe75zSDDFJXtmZX5Az"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13139,
+      "candidatesTokenCount": 88,
+      "totalTokenCount": 13227,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 467
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "a4elaofBDK23g8UPpfnqyA8"
+  },
+  "latency_seconds": 11.700832167000044,
+  "ended_at": "2026-09-12T22:40:13.752789+05:30",
+  "estimated_cost_usd": 0.01018425,
+  "usage": {
+    "promptTokenCount": 13139,
+    "candidatesTokenCount": 88,
+    "totalTokenCount": 13227,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12672
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 467
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "raw_text": "{\"events\":[{\"label\":\"free_throw_miss\",\"time_seconds\":227.0,\"confidence\":0.95,\"evidence\":\"Player #3 in blue shoots a free throw that hits the rim and misses\"},{\"label\":\"defensive_rebound\",\"time_seconds\":228.8,\"confidence\":0.9,\"evidence\":\"Player #24 in black collects the rebound after the missed free throw\"}]}",
+  "events": [
+    {
+      "label": "free_throw_miss",
+      "time_seconds": 227.0,
+      "confidence": 0.95,
+      "evidence": "Player #3 in blue shoots a free throw that hits the rim and misses",
+      "game_id": "east-bay-elite-vs-spartans"
+    },
+    {
+      "label": "defensive_rebound",
+      "time_seconds": 228.8,
+      "confidence": 0.9,
+      "evidence": "Player #24 in black collects the rebound after the missed free throw",
+      "game_id": "east-bay-elite-vs-spartans"
+    }
+  ],
+  "context_events": []
+}

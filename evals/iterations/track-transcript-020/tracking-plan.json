@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-09-12T21:45:38.088146+05:30",
+  "indices": [
+    1,
+    2,
+    6
+  ],
+  "sampling": "Every native frame, source30/25fps,12seconds including2s context each side",
+  "detector": "YOLO11n COCO,1280 input,CPU4threads,conf0.10,classes person0/sportsball32",
+  "tracker": "Separate ByteTrack instance per class;high0.25,low0.10,new0.25,match0.8,buffer15 at30fps,fuse_score true; no ID sharing across classes/windows",
+  "transcript": "One observational row per0.5second bin. Pick the longest consecutive observed ball-track run in that bin, confidence tie-break. Preserve no-ball bins. Nearest person is pixel-box proximity, never possession or team identity. Stable proximity requires0.3s consecutive observed same ball/person IDs. No interpolation, no labels or event-target coordinates.",
+  "limits": "No basketball-specific fine-tuning, camera-motion compensation, jersey/team recognition or court calibration. Track IDs are local algorithm IDs, not verified player identities.",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  },
+  "weights_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+}

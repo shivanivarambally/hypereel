@@ -1,0 +1,73 @@
+{
+  "iteration": "022",
+  "created_at": "2026-09-12T22:20:28.754710+05:30",
+  "status": "frozen_before_inference",
+  "authorized_by": "User: Lets try that. Tell me what you need to test with Gemini. Also make sure you are making a note of all of this in our notes.",
+  "model": "gemini-3.8-flash",
+  "windows": [
+    1,
+    2,
+    6
+  ],
+  "planned_inference_requests": 6,
+  "arms": [
+    "same six sparse images and direct event prompt as historical MiniCPM control",
+    "same Gemini model with muted continuous 12-second clip; target explicit 4fps, verified API settings"
+  ],
+  "references": 10,
+  "supported_event_types": 9,
+  "event_contract_types": 12,
+  "unsupported_types": [
+    "block",
+    "free_throw_miss",
+    "three_point_made"
+  ],
+  "historical_control": "evidence-pilot-013; rescore only same windows with identical boundary handling",
+  "scoring": "same-type/game one-to-one matching, five-second tolerance; symmetric core filtering; malformed outputs reported separately",
+  "budget": {
+    "cumulative_ceiling_usd": 8,
+    "existing_estimated_spend_usd": 6.6463,
+    "remaining_usd": 1.3537,
+    "rule": "Verify model rates and reserve capped input/output/thinking cost before each request; no automatic retries or exceeding ceiling"
+  },
+  "holdout": "Third golden dataset remains sealed; do not inspect or evaluate",
+  "prerequisites": {
+    "gemini_api_key_present": true,
+    "google_genai_installed": false,
+    "existing_configured_model": "gemini-2.0-flash"
+  },
+  "record": [
+    "exact prompts and media hashes",
+    "model version and generation settings",
+    "FPS and resolution",
+    "raw responses and schema failures",
+    "per-call timestamps, usage, estimated cost and checkpoints",
+    "per-type precision recall F1, paired coverage and qualitative evidence audit"
+  ],
+  "interpretation": "Development diagnostic only. No Gemini quality result exists yet. No YOLO or generated transcript in this initial isolation test; combinations may be considered after measured gain.",
+  "credential_check": {
+    "timestamp": "2026-09-12T22:28:18.664203+05:30",
+    "models_list": "accepted",
+    "inference_quota": "not yet verified"
+  },
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "rates": {
+    "input_per_million": 0.75,
+    "output_including_thinking_per_million": 3.75
+  },
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "api_source": "https://ai.google.dev/api/generate-content",
+  "implementation": "Standard-library REST generateContent; no SDK installation needed. Documented videoMetadata.fps=4 (deprecated compatibility field).",
+  "comparison_caveats": "Identical image bytes and prompt, but provider decoding differs: Gemini LOW thinking and8192 total output cap vs MiniCPM1536. Native video also changes resolution and sampling, so video effect is combined evidence change, not FPS alone.",
+  "failure_policy": "No retries; provider error stops. Invalid schema remains invalid. Reservation retained if usage unknown.",
+  "started_at": "2026-09-12T22:33:42.304089+05:30",
+  "reason": "021 all six responses wrapped otherwise valid JSON in Markdown; strict parser rejects. Confirm with responseMimeType application/json; identical model, prompts, inputs, scoring and other generation settings. No semantic prompt or label tuning. Six fresh calls; previous strict and post-hoc results retained."
+}

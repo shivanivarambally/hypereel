@@ -1,0 +1,63 @@
+{
+  "video_id": "rHSdABRoBeE",
+  "source": "Owner manually completed YouTube Studio Download",
+  "at": "2026-09-12T17:18:13.365760+05:30",
+  "path": "/Users/shivani/code/AgentAICourse/week3/hypereel/downloads/rHSdABRoBeE.studio-720p.mp4",
+  "sha256": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "25/1",
+        "start_time": "0.000000",
+        "duration": "2828.720000"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "start_time": "0.000000",
+        "duration": "2828.724535"
+      }
+    ],
+    "format": {
+      "start_time": "0.000000",
+      "duration": "2828.724535",
+      "size": "754448114"
+    }
+  },
+  "baseline_cache_preserved": true,
+  "alignment_status": "Four sampled frame correlations checked over +/-0.4s; not exhaustive alignment or action-label validation",
+  "alignment_samples": [
+    {
+      "source_seconds": 50,
+      "best_offset_seconds": 0.0,
+      "correlation": 0.9877165168713292,
+      "zero_offset_correlation": 0.9877165168713292
+    },
+    {
+      "source_seconds": 300,
+      "best_offset_seconds": 0.0,
+      "correlation": 0.9861103214377442,
+      "zero_offset_correlation": 0.9861103214377442
+    },
+    {
+      "source_seconds": 900,
+      "best_offset_seconds": 0.0,
+      "correlation": 0.9859383643836227,
+      "zero_offset_correlation": 0.9859383643836227
+    },
+    {
+      "source_seconds": 1800,
+      "best_offset_seconds": 0.0,
+      "correlation": 0.9908282282358146,
+      "zero_offset_correlation": 0.9908282282358146
+    }
+  ],
+  "holdout_used": false
+}

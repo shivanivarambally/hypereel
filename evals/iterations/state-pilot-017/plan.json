@@ -1,0 +1,32 @@
+{
+  "name": "state-pilot-017",
+  "created_at": "2026-09-12T21:08:21.544404+05:30",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "model": "openbmb/MiniCPM-V-4_5",
+  "hypothesis": "The binding failure is assertion under uncertainty, not evidence sparsity. Asking only for per-frame ball state and deriving events in code should raise precision substantially and eliminate contradictory labels, at a cost in recall.",
+  "declared_change": "Output contract only. Identical dense frames from016 (same JPEG bytes), same model, temperature0, seed0, output cap1536, references, definitions and five-second one-to-one matcher. The model no longer names events.",
+  "derivation": "Deterministic transitions in src/hypereel/evaluation/ball_state.py. A shot outcome requires an observed through_net, or observed rim_contact followed by observed possession. An unknown court zone yields no typed shot. A possession change is a turnover only with no shot in between. Every non-emission is recorded as a derivation note.",
+  "structural_properties": "Mutually exclusive labels are impossible by construction. A scoreboard cannot produce an event because it is not in the vocabulary.",
+  "expected_cost": "Recall is expected to fall. That is the declared trade and will be reported as a loss, not reframed.",
+  "controls": "016 dense direct and transcript arms on the identical images; 013 sparse direct across the same eight windows.",
+  "budget": {
+    "max_calls": 8,
+    "cumulative_ceiling": 8,
+    "reserve_per_call": 0.3
+  },
+  "output_limit": 1536,
+  "temperature": 0,
+  "seed": 0,
+  "failures": "No retries. Record the failed window; continue independent windows unless transport or budget failure.",
+  "holdout_used": false,
+  "prepared_sha256": "7247e1f481f6f661571e620d4174b3f02bfcd651260e727fc1add551790531bd"
+}

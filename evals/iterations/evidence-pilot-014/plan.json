@@ -1,0 +1,37 @@
+{
+  "iteration": "014",
+  "created_at": "2026-09-12T18:59:52.352261+05:30",
+  "status": "planned",
+  "authorization": "User authorized bounded pilot and notes; supersedes analysis-only pause for this pilot",
+  "fixture": "evals/experiments/all-events-v2/diagnostic-009.json",
+  "arms": [
+    "wide12_context",
+    "wide12_ball_crops"
+  ],
+  "context_seconds": 2,
+  "scored_interval": "original eight windows; all original references unchanged",
+  "boundary_policy": "Model may see surrounding frames; only predictions in original closed interval scored; context predictions retained separately; references use frozen original IDs",
+  "model": "openbmb/MiniCPM-V-4_5",
+  "temperature": 0,
+  "seed": 0,
+  "output_limit": 1536,
+  "max_events_per_window": 12,
+  "max_cloud_calls": 10,
+  "max_cumulative_estimated_usd": 5,
+  "reserve_per_call_usd": 0.3,
+  "price_estimate_note": "Historical conservative10/30 USD per million,not invoice rates",
+  "detector": "YOLO11n COCO, ultralytics8.3.200 torch2.8.0 torchvision0.23.0",
+  "detection": "CPU serial,1280 input,classes person0 andsportsball32,confidence0.20; highest confidence ball per frame gives512px square native-source crop,clamped to image; no ball=no crop; no label-derived ROI",
+  "preserved": "same12categorydefinitions,pointmatcher5s,all14referenceevents,wideimageedge768 JPEG85,no confidence threshold",
+  "prompt_change": "Identical instructions acrossarms; add core/context scope and max12events to shareddirectprompt; image manifest maps timestamp/view to each image. This is a newcontext-controlledbaseline,not a purecomparisonwith012. Outputcap1536 in allarms allows largerimage evidence responses.",
+  "hypotheses": [
+    "12frames recover transient evidence missing from6",
+    "ballcrops improve ball visibility over same12wideframes"
+  ],
+  "failure_policy": "Stop an arm on actual transport/schema/truncation failure,no retries; independent arms may still run. Spend failure stops wholepilot. Save raw before validation. Memorypressure observed only.",
+  "holdout_used": false,
+  "compatibility_change": "six image sheets;each contains two timestamped rows;wide768x432 left,optional native512crop right;eachrow1280x552;canvas1280x1104 identical acrossarms",
+  "reuse_policy": "For six windows with no crops,identical dense-arm prompt/imagehash outputs are reused explicitly;only2cropwindows generate fresh calls. Not independent repeats.",
+  "comparison": "Dense sheets vs crop sheets controls canvas and rowpositions;013wide6 baseline is historical input-strategy comparison,not a pure frame-count ablation.",
+  "failure_evidence": "013dense12 andcrop16 attachments rejected withBadRequestError; exact serverreason notretained,so imagemaxnotestablished.014uses6attachments alreadyaccepted,with improved safeerror capture."
+}

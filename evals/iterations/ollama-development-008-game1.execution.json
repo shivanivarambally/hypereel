@@ -1,0 +1,4307 @@
+{
+  "attempt_id": "ollama-development-008-game1",
+  "started_at": "2026-09-12T16:42:45.862120+05:30",
+  "status": "completed",
+  "command": [
+    "bash",
+    "scripts/run_local.sh",
+    "eval",
+    "--dataset",
+    "evals/experiments/game-1-ollama-local.pipeline.jsonl",
+    "--output",
+    "evals/results/iterations/ollama-development-008-game1",
+    "--change-note",
+    "Local 008 game1: 5 central frames, zero outer context, 8192 context, output256, batch128,640px native360p (not HD); controlled against prior iteration; 4 diagnostic candidates; durable per-call checkpoints; 1s memory sampling; pressure warnings recorded only per owner; not comparable to five-frame baseline"
+  ],
+  "environment_overrides": {
+    "HYPEREEL_MAX_PROVIDER_CALLS": "6",
+    "OLLAMA_MODEL": "qwen3-vl:4b-instruct",
+    "OLLAMA_NUM_BATCH": "128",
+    "OLLAMA_NUM_CTX": "8192",
+    "OLLAMA_NUM_PREDICT": "256",
+    "OLLAMA_IMAGE_MAX_EDGE": "640",
+    "HYPEREEL_FRAMES_PER_CANDIDATE": "5",
+    "HYPEREEL_CLASSIFICATION_CONTEXT_SECONDS": "0",
+    "HYPEREEL_VERIFY_WITH_CORE_FRAMES": "false",
+    "HYPEREEL_PROVIDER_CHECKPOINT_DIR": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/ollama-development-008-game1.checkpoints",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "change_note": "Local 008 game1: 5 central frames, zero outer context, 8192 context, output256, batch128,640px native360p (not HD); controlled against prior iteration; 4 diagnostic candidates; durable per-call checkpoints; 1s memory sampling; pressure warnings recorded only per owner; not comparable to five-frame baseline",
+  "source_sha256": "41e0ec54c6ec0c3030365e40a36ef373a4b2da953854508bbe61db4b507b5e20",
+  "dataset_sha256": "b579c9fcef5d9c148cbde14b8da85db4fb46954d166101b6cd04a39227bfde99",
+  "recipe_sha256": "9568acbca4a1b8f39c11d08f0554c60de11f7f76e2adf2d28e01d99c01e94adf",
+  "code_revision": "dae74b11044484c9fcc0a9e721c3b86f8fd06ed0",
+  "working_tree_dirty": true,
+  "model_digest": "ee4b975b58c17ce268cd19d40db35d5edc64603035d2ffc1fee1968eb0947f7b",
+  "holdout_used": false,
+  "observations": [
+    {
+      "at": "2026-09-12T16:42:46.010401+05:30",
+      "elapsed_seconds": 0.03,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7413.38M  free = 778.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4822016,
+        "ollama_server": 17632,
+        "evaluation_python": 1920
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:47.056775+05:30",
+      "elapsed_seconds": 1.08,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7413.38M  free = 778.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4801424,
+        "ollama_server": 17680,
+        "evaluation_python": 101120
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:48.106961+05:30",
+      "elapsed_seconds": 2.13,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7413.38M  free = 778.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 196576
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:49.158975+05:30",
+      "elapsed_seconds": 3.18,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 197072
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:50.211624+05:30",
+      "elapsed_seconds": 4.23,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 197680
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:51.260470+05:30",
+      "elapsed_seconds": 5.28,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 198480
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:52.308132+05:30",
+      "elapsed_seconds": 6.33,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 198624
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:53.357378+05:30",
+      "elapsed_seconds": 7.38,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 198688
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:54.409416+05:30",
+      "elapsed_seconds": 8.43,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 198752
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:55.463535+05:30",
+      "elapsed_seconds": 9.49,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 195808
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:56.518593+05:30",
+      "elapsed_seconds": 10.54,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 195904
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:57.566467+05:30",
+      "elapsed_seconds": 11.59,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 196000
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:58.620785+05:30",
+      "elapsed_seconds": 12.64,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798784,
+        "ollama_server": 17616,
+        "evaluation_python": 195776
+      }
+    },
+    {
+      "at": "2026-09-12T16:42:59.675811+05:30",
+      "elapsed_seconds": 13.7,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4798752,
+        "ollama_server": 17616,
+        "evaluation_python": 195808
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:00.734347+05:30",
+      "elapsed_seconds": 14.76,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4774432,
+        "ollama_server": 13472,
+        "evaluation_python": 191680
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:01.790194+05:30",
+      "elapsed_seconds": 15.81,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7397.38M  free = 794.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4567520,
+        "ollama_server": 13280,
+        "evaluation_python": 166944
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:02.846816+05:30",
+      "elapsed_seconds": 16.87,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7405.38M  free = 786.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4477168,
+        "ollama_server": 13248,
+        "evaluation_python": 167248
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:03.906205+05:30",
+      "elapsed_seconds": 17.93,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7429.06M  free = 762.94M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4444864,
+        "ollama_server": 13248,
+        "evaluation_python": 167504
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:04.969301+05:30",
+      "elapsed_seconds": 18.99,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7618.88M  free = 573.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4156800,
+        "ollama_server": 13200,
+        "evaluation_python": 167520
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:06.029488+05:30",
+      "elapsed_seconds": 20.05,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7618.88M  free = 573.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4152496,
+        "ollama_server": 13200,
+        "evaluation_python": 167744
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:07.081220+05:30",
+      "elapsed_seconds": 21.1,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7618.88M  free = 573.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4152496,
+        "ollama_server": 13200,
+        "evaluation_python": 168016
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:08.130907+05:30",
+      "elapsed_seconds": 22.15,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7618.88M  free = 573.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 17056,
+        "ollama_server": 24992,
+        "evaluation_python": 180144
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:09.172936+05:30",
+      "elapsed_seconds": 23.2,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 679296,
+        "ollama_server": 25088,
+        "evaluation_python": 180144
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:10.215404+05:30",
+      "elapsed_seconds": 24.24,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 2068800,
+        "ollama_server": 25104,
+        "evaluation_python": 180144
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:11.263899+05:30",
+      "elapsed_seconds": 25.29,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 2517392,
+        "ollama_server": 25120,
+        "evaluation_python": 180144
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:12.331331+05:30",
+      "elapsed_seconds": 26.35,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830912,
+        "ollama_server": 25136,
+        "evaluation_python": 180144
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:13.385285+05:30",
+      "elapsed_seconds": 27.41,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:14.453551+05:30",
+      "elapsed_seconds": 28.48,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:15.517851+05:30",
+      "elapsed_seconds": 29.54,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:16.579771+05:30",
+      "elapsed_seconds": 30.6,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:17.647965+05:30",
+      "elapsed_seconds": 31.67,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:18.714929+05:30",
+      "elapsed_seconds": 32.74,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7610.88M  free = 581.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021696,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:19.782859+05:30",
+      "elapsed_seconds": 33.81,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7562.88M  free = 629.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098352,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:20.855035+05:30",
+      "elapsed_seconds": 34.88,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098352,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:21.924197+05:30",
+      "elapsed_seconds": 35.95,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098480,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:22.991420+05:30",
+      "elapsed_seconds": 37.01,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098480,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:24.051891+05:30",
+      "elapsed_seconds": 38.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098624,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:25.120518+05:30",
+      "elapsed_seconds": 39.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098800,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:26.179441+05:30",
+      "elapsed_seconds": 40.2,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5098912,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:27.248778+05:30",
+      "elapsed_seconds": 41.27,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099344,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:28.313973+05:30",
+      "elapsed_seconds": 42.34,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099344,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:29.383636+05:30",
+      "elapsed_seconds": 43.41,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099344,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:30.450837+05:30",
+      "elapsed_seconds": 44.47,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099344,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:31.514701+05:30",
+      "elapsed_seconds": 45.54,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099344,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:32.567675+05:30",
+      "elapsed_seconds": 46.59,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099392,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:33.638608+05:30",
+      "elapsed_seconds": 47.66,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099520,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:34.707967+05:30",
+      "elapsed_seconds": 48.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099520,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:35.775682+05:30",
+      "elapsed_seconds": 49.8,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099648,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:36.843702+05:30",
+      "elapsed_seconds": 50.87,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099664,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:37.912604+05:30",
+      "elapsed_seconds": 51.93,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099792,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:38.982349+05:30",
+      "elapsed_seconds": 53.0,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099792,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:40.053149+05:30",
+      "elapsed_seconds": 54.08,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099936,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:41.119819+05:30",
+      "elapsed_seconds": 55.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7554.88M  free = 637.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099920,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:42.184975+05:30",
+      "elapsed_seconds": 56.21,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7546.88M  free = 645.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:43.250906+05:30",
+      "elapsed_seconds": 57.27,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7538.88M  free = 653.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:44.297440+05:30",
+      "elapsed_seconds": 58.32,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7538.88M  free = 653.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:45.348730+05:30",
+      "elapsed_seconds": 59.37,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7530.88M  free = 661.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:46.396900+05:30",
+      "elapsed_seconds": 60.42,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7530.88M  free = 661.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:47.449589+05:30",
+      "elapsed_seconds": 61.47,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7530.88M  free = 661.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:48.501403+05:30",
+      "elapsed_seconds": 62.52,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:49.554622+05:30",
+      "elapsed_seconds": 63.58,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5099968,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:50.594889+05:30",
+      "elapsed_seconds": 64.62,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100112,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:51.661792+05:30",
+      "elapsed_seconds": 65.68,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100112,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:52.707535+05:30",
+      "elapsed_seconds": 66.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100112,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:53.753362+05:30",
+      "elapsed_seconds": 67.78,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100240,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:54.793093+05:30",
+      "elapsed_seconds": 68.81,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100240,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:55.833380+05:30",
+      "elapsed_seconds": 69.86,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100368,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:56.882556+05:30",
+      "elapsed_seconds": 70.9,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100368,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:57.937797+05:30",
+      "elapsed_seconds": 71.96,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100368,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:43:58.998800+05:30",
+      "elapsed_seconds": 73.02,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:00.054652+05:30",
+      "elapsed_seconds": 74.08,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:01.120664+05:30",
+      "elapsed_seconds": 75.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:02.164334+05:30",
+      "elapsed_seconds": 76.19,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:03.234513+05:30",
+      "elapsed_seconds": 77.26,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:04.296447+05:30",
+      "elapsed_seconds": 78.32,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:05.347631+05:30",
+      "elapsed_seconds": 79.37,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:06.411625+05:30",
+      "elapsed_seconds": 80.43,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:07.482047+05:30",
+      "elapsed_seconds": 81.5,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100464,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:08.549409+05:30",
+      "elapsed_seconds": 82.57,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7522.88M  free = 669.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100608,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:09.620058+05:30",
+      "elapsed_seconds": 83.64,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7514.88M  free = 677.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100624,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:10.692102+05:30",
+      "elapsed_seconds": 84.71,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100752,
+        "ollama_server": 37168,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:11.764092+05:30",
+      "elapsed_seconds": 85.79,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5100752,
+        "ollama_server": 37152,
+        "evaluation_python": 180192
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:12.841740+05:30",
+      "elapsed_seconds": 86.86,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5051968,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:13.911994+05:30",
+      "elapsed_seconds": 87.93,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5053840,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:14.978658+05:30",
+      "elapsed_seconds": 89.0,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5054160,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:16.045512+05:30",
+      "elapsed_seconds": 90.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5051712,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:17.102085+05:30",
+      "elapsed_seconds": 91.12,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5051744,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:18.169762+05:30",
+      "elapsed_seconds": 92.19,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5051680,
+        "ollama_server": 37024,
+        "evaluation_python": 176816
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:19.234880+05:30",
+      "elapsed_seconds": 93.26,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7506.88M  free = 685.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5053696,
+        "ollama_server": 36928,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:20.302416+05:30",
+      "elapsed_seconds": 94.32,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5038784,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:21.367382+05:30",
+      "elapsed_seconds": 95.39,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5038784,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:22.433410+05:30",
+      "elapsed_seconds": 96.45,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5038784,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:23.504615+05:30",
+      "elapsed_seconds": 97.53,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5038784,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:24.570778+05:30",
+      "elapsed_seconds": 98.59,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5038784,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:25.634332+05:30",
+      "elapsed_seconds": 99.66,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5020976,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:26.704233+05:30",
+      "elapsed_seconds": 100.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021024,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:27.766630+05:30",
+      "elapsed_seconds": 101.79,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5021024,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:28.838599+05:30",
+      "elapsed_seconds": 102.86,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5012112,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:29.911016+05:30",
+      "elapsed_seconds": 103.93,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5012128,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:30.975657+05:30",
+      "elapsed_seconds": 105.0,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010464,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:32.047975+05:30",
+      "elapsed_seconds": 106.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010464,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:33.118474+05:30",
+      "elapsed_seconds": 107.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010480,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:34.194824+05:30",
+      "elapsed_seconds": 108.22,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010624,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:35.264837+05:30",
+      "elapsed_seconds": 109.29,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010640,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:36.319336+05:30",
+      "elapsed_seconds": 110.34,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010672,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:37.384922+05:30",
+      "elapsed_seconds": 111.41,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010800,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:38.458140+05:30",
+      "elapsed_seconds": 112.48,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010912,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:39.529251+05:30",
+      "elapsed_seconds": 113.55,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010912,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:40.583014+05:30",
+      "elapsed_seconds": 114.6,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7498.88M  free = 693.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010912,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:41.643800+05:30",
+      "elapsed_seconds": 115.66,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7482.88M  free = 709.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010992,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:42.715362+05:30",
+      "elapsed_seconds": 116.74,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7482.88M  free = 709.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010992,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:43.784473+05:30",
+      "elapsed_seconds": 117.81,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7482.88M  free = 709.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5010992,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:44.851461+05:30",
+      "elapsed_seconds": 118.87,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7474.88M  free = 717.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5011440,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:45.922866+05:30",
+      "elapsed_seconds": 119.94,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7458.88M  free = 733.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5011504,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:47.018039+05:30",
+      "elapsed_seconds": 121.04,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7458.88M  free = 733.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5011520,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:48.076594+05:30",
+      "elapsed_seconds": 122.1,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7450.88M  free = 741.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5011632,
+        "ollama_server": 34400,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:49.144513+05:30",
+      "elapsed_seconds": 123.17,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7418.88M  free = 773.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4884000,
+        "ollama_server": 31056,
+        "evaluation_python": 176784
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:50.215168+05:30",
+      "elapsed_seconds": 124.24,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7410.88M  free = 781.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5878752,
+        "ollama_server": 25936,
+        "evaluation_python": 63776
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:51.285518+05:30",
+      "elapsed_seconds": 125.31,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7386.88M  free = 805.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5878768,
+        "ollama_server": 25936,
+        "evaluation_python": 63760
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:52.344040+05:30",
+      "elapsed_seconds": 126.36,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826608,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:53.401043+05:30",
+      "elapsed_seconds": 127.42,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826608,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:54.470388+05:30",
+      "elapsed_seconds": 128.49,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826608,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:55.537880+05:30",
+      "elapsed_seconds": 129.56,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826608,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:56.608879+05:30",
+      "elapsed_seconds": 130.63,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5827088,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:57.664069+05:30",
+      "elapsed_seconds": 131.68,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5827088,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:58.735994+05:30",
+      "elapsed_seconds": 132.76,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7378.88M  free = 813.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5827088,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:44:59.803122+05:30",
+      "elapsed_seconds": 133.82,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5827040,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:00.877083+05:30",
+      "elapsed_seconds": 134.9,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5827040,
+        "ollama_server": 25936,
+        "evaluation_python": 63552
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:01.945598+05:30",
+      "elapsed_seconds": 135.97,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826896,
+        "ollama_server": 25936,
+        "evaluation_python": 63504
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:03.012838+05:30",
+      "elapsed_seconds": 137.03,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5826848,
+        "ollama_server": 25936,
+        "evaluation_python": 63024
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:04.075791+05:30",
+      "elapsed_seconds": 138.1,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:05.146708+05:30",
+      "elapsed_seconds": 139.17,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:06.218046+05:30",
+      "elapsed_seconds": 140.24,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:07.287445+05:30",
+      "elapsed_seconds": 141.31,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:08.353168+05:30",
+      "elapsed_seconds": 142.37,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:09.416565+05:30",
+      "elapsed_seconds": 143.44,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832112,
+        "ollama_server": 11744,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:10.487167+05:30",
+      "elapsed_seconds": 144.51,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832176,
+        "ollama_server": 11792,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:11.558347+05:30",
+      "elapsed_seconds": 145.58,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832176,
+        "ollama_server": 11792,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:12.628371+05:30",
+      "elapsed_seconds": 146.65,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832176,
+        "ollama_server": 11792,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:13.699036+05:30",
+      "elapsed_seconds": 147.72,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832176,
+        "ollama_server": 20592,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:14.767693+05:30",
+      "elapsed_seconds": 148.79,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832064,
+        "ollama_server": 20656,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:15.830157+05:30",
+      "elapsed_seconds": 149.85,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832064,
+        "ollama_server": 20688,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:16.898327+05:30",
+      "elapsed_seconds": 150.92,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832272,
+        "ollama_server": 20688,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:17.967802+05:30",
+      "elapsed_seconds": 151.99,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5832272,
+        "ollama_server": 20688,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:19.035278+05:30",
+      "elapsed_seconds": 153.06,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20688,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:20.107234+05:30",
+      "elapsed_seconds": 154.13,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:21.175221+05:30",
+      "elapsed_seconds": 155.2,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:22.238157+05:30",
+      "elapsed_seconds": 156.26,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:23.307371+05:30",
+      "elapsed_seconds": 157.33,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:24.354224+05:30",
+      "elapsed_seconds": 158.37,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845184,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:25.424724+05:30",
+      "elapsed_seconds": 159.44,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845056,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:26.495553+05:30",
+      "elapsed_seconds": 160.52,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845056,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:27.549594+05:30",
+      "elapsed_seconds": 161.57,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7370.88M  free = 821.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5845072,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:28.597009+05:30",
+      "elapsed_seconds": 162.62,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7314.81M  free = 877.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5843648,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:29.655222+05:30",
+      "elapsed_seconds": 163.68,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5843200,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:30.724911+05:30",
+      "elapsed_seconds": 164.75,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5843200,
+        "ollama_server": 20704,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:31.796398+05:30",
+      "elapsed_seconds": 165.82,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5843200,
+        "ollama_server": 20560,
+        "evaluation_python": 54896
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:32.931835+05:30",
+      "elapsed_seconds": 166.95,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5762768,
+        "ollama_server": 18816,
+        "evaluation_python": 53920
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:33.987851+05:30",
+      "elapsed_seconds": 168.01,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5762560,
+        "ollama_server": 18816,
+        "evaluation_python": 53920
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:35.053230+05:30",
+      "elapsed_seconds": 169.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5816624,
+        "ollama_server": 18816,
+        "evaluation_python": 53920
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:36.123830+05:30",
+      "elapsed_seconds": 170.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5816608,
+        "ollama_server": 18816,
+        "evaluation_python": 53920
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:37.192472+05:30",
+      "elapsed_seconds": 171.21,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5807472,
+        "ollama_server": 18816,
+        "evaluation_python": 53920
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:38.261680+05:30",
+      "elapsed_seconds": 172.28,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5775776,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:39.327284+05:30",
+      "elapsed_seconds": 173.35,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5775776,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:40.387974+05:30",
+      "elapsed_seconds": 174.41,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781552,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:41.453306+05:30",
+      "elapsed_seconds": 175.47,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781600,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:42.524346+05:30",
+      "elapsed_seconds": 176.54,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781600,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:43.593163+05:30",
+      "elapsed_seconds": 177.61,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781680,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:44.663947+05:30",
+      "elapsed_seconds": 178.68,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781696,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:45.734118+05:30",
+      "elapsed_seconds": 179.75,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5781760,
+        "ollama_server": 17888,
+        "evaluation_python": 41376
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:46.799979+05:30",
+      "elapsed_seconds": 180.82,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5773040,
+        "ollama_server": 17888,
+        "evaluation_python": 41296
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:47.871484+05:30",
+      "elapsed_seconds": 181.89,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5744656,
+        "ollama_server": 17824,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:48.943565+05:30",
+      "elapsed_seconds": 182.96,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7298.81M  free = 893.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5635648,
+        "ollama_server": 17824,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:50.005329+05:30",
+      "elapsed_seconds": 184.03,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5523200,
+        "ollama_server": 17824,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:51.065791+05:30",
+      "elapsed_seconds": 185.09,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:52.134122+05:30",
+      "elapsed_seconds": 186.15,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:53.206702+05:30",
+      "elapsed_seconds": 187.23,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:54.269408+05:30",
+      "elapsed_seconds": 188.29,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:55.340518+05:30",
+      "elapsed_seconds": 189.36,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:56.408844+05:30",
+      "elapsed_seconds": 190.43,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485008,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:57.477980+05:30",
+      "elapsed_seconds": 191.5,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485184,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:58.548478+05:30",
+      "elapsed_seconds": 192.57,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485200,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:45:59.618690+05:30",
+      "elapsed_seconds": 193.64,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485280,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:00.690417+05:30",
+      "elapsed_seconds": 194.71,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485296,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:01.762680+05:30",
+      "elapsed_seconds": 195.78,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485392,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:02.829131+05:30",
+      "elapsed_seconds": 196.85,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485392,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:03.900968+05:30",
+      "elapsed_seconds": 197.92,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485424,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:04.973166+05:30",
+      "elapsed_seconds": 198.99,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5485504,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:06.046196+05:30",
+      "elapsed_seconds": 200.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487280,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:07.117328+05:30",
+      "elapsed_seconds": 201.14,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487312,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:08.181804+05:30",
+      "elapsed_seconds": 202.2,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487440,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:09.253229+05:30",
+      "elapsed_seconds": 203.27,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487520,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:10.325460+05:30",
+      "elapsed_seconds": 204.34,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487520,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:11.396469+05:30",
+      "elapsed_seconds": 205.42,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487504,
+        "ollama_server": 17856,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:12.468864+05:30",
+      "elapsed_seconds": 206.49,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487584,
+        "ollama_server": 17872,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:13.542022+05:30",
+      "elapsed_seconds": 207.56,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5487904,
+        "ollama_server": 17872,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:14.598844+05:30",
+      "elapsed_seconds": 208.62,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5488960,
+        "ollama_server": 18368,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:15.654632+05:30",
+      "elapsed_seconds": 209.67,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5489184,
+        "ollama_server": 18416,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:16.715459+05:30",
+      "elapsed_seconds": 210.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5489232,
+        "ollama_server": 18432,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:17.761766+05:30",
+      "elapsed_seconds": 211.78,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5489456,
+        "ollama_server": 18432,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:18.816673+05:30",
+      "elapsed_seconds": 212.84,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5489584,
+        "ollama_server": 18432,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:19.861819+05:30",
+      "elapsed_seconds": 213.88,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5489744,
+        "ollama_server": 18432,
+        "evaluation_python": 19968
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:20.940628+05:30",
+      "elapsed_seconds": 214.96,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5668944,
+        "ollama_server": 17680,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:22.012109+05:30",
+      "elapsed_seconds": 216.03,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5885488,
+        "ollama_server": 18224,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:23.079804+05:30",
+      "elapsed_seconds": 217.1,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5870512,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:24.147353+05:30",
+      "elapsed_seconds": 218.17,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5825056,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:25.216535+05:30",
+      "elapsed_seconds": 219.24,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5790048,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:26.285954+05:30",
+      "elapsed_seconds": 220.31,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5790048,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:27.356241+05:30",
+      "elapsed_seconds": 221.38,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5829392,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:28.425889+05:30",
+      "elapsed_seconds": 222.45,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7290.81M  free = 901.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5829472,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:29.501741+05:30",
+      "elapsed_seconds": 223.52,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5828448,
+        "ollama_server": 18080,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:30.570295+05:30",
+      "elapsed_seconds": 224.59,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5810992,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:31.642956+05:30",
+      "elapsed_seconds": 225.66,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5811056,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:32.713759+05:30",
+      "elapsed_seconds": 226.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5811072,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:33.790354+05:30",
+      "elapsed_seconds": 227.81,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5811152,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:34.864213+05:30",
+      "elapsed_seconds": 228.88,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5838624,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:35.933594+05:30",
+      "elapsed_seconds": 229.95,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7282.81M  free = 909.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5838624,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:37.008409+05:30",
+      "elapsed_seconds": 231.03,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5838512,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:38.080333+05:30",
+      "elapsed_seconds": 232.1,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5838512,
+        "ollama_server": 18048,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:39.158778+05:30",
+      "elapsed_seconds": 233.18,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5836704,
+        "ollama_server": 17696,
+        "evaluation_python": 65872
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:40.222469+05:30",
+      "elapsed_seconds": 234.24,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834400,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:41.295286+05:30",
+      "elapsed_seconds": 235.31,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834496,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:42.361165+05:30",
+      "elapsed_seconds": 236.38,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834576,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:43.426930+05:30",
+      "elapsed_seconds": 237.45,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834656,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:44.497643+05:30",
+      "elapsed_seconds": 238.52,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834656,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:45.568696+05:30",
+      "elapsed_seconds": 239.59,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834736,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:46.639813+05:30",
+      "elapsed_seconds": 240.66,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834736,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:47.709332+05:30",
+      "elapsed_seconds": 241.73,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5834800,
+        "ollama_server": 17536,
+        "evaluation_python": 34688
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:48.783011+05:30",
+      "elapsed_seconds": 242.8,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5769632,
+        "ollama_server": 14800,
+        "evaluation_python": 24240
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:49.842779+05:30",
+      "elapsed_seconds": 243.86,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5735744,
+        "ollama_server": 14800,
+        "evaluation_python": 24240
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:50.914490+05:30",
+      "elapsed_seconds": 244.93,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5735744,
+        "ollama_server": 14800,
+        "evaluation_python": 24240
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:51.979498+05:30",
+      "elapsed_seconds": 246.0,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5707104,
+        "ollama_server": 14480,
+        "evaluation_python": 24240
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:53.047887+05:30",
+      "elapsed_seconds": 247.07,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7274.81M  free = 917.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5707104,
+        "ollama_server": 14480,
+        "evaluation_python": 24240
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:54.102167+05:30",
+      "elapsed_seconds": 248.12,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7266.81M  free = 925.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5241872,
+        "ollama_server": 14400,
+        "evaluation_python": 23824
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:55.167958+05:30",
+      "elapsed_seconds": 249.19,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7266.81M  free = 925.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5111136,
+        "ollama_server": 13568,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:56.230647+05:30",
+      "elapsed_seconds": 250.25,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7266.81M  free = 925.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4884672,
+        "ollama_server": 13232,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:57.292483+05:30",
+      "elapsed_seconds": 251.31,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7266.81M  free = 925.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4884672,
+        "ollama_server": 13232,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:58.353259+05:30",
+      "elapsed_seconds": 252.37,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7266.81M  free = 925.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4884752,
+        "ollama_server": 13232,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:46:59.415182+05:30",
+      "elapsed_seconds": 253.43,
+      "memory_pressure_level": 1,
+      "swap_usage": "total = 8192.00M  used = 7234.81M  free = 957.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4849008,
+        "ollama_server": 12048,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:00.459488+05:30",
+      "elapsed_seconds": 254.48,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7226.81M  free = 965.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4848944,
+        "ollama_server": 12048,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:01.518833+05:30",
+      "elapsed_seconds": 255.54,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7218.81M  free = 973.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4848944,
+        "ollama_server": 12048,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:02.586650+05:30",
+      "elapsed_seconds": 256.61,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7210.81M  free = 981.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4837216,
+        "ollama_server": 12032,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:03.652938+05:30",
+      "elapsed_seconds": 257.67,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7210.81M  free = 981.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4837312,
+        "ollama_server": 12032,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:04.703500+05:30",
+      "elapsed_seconds": 258.72,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7210.81M  free = 981.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4842672,
+        "ollama_server": 12096,
+        "evaluation_python": 23712
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:05.753457+05:30",
+      "elapsed_seconds": 259.77,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7178.81M  free = 1013.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4803264,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:06.807359+05:30",
+      "elapsed_seconds": 260.83,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7178.81M  free = 1013.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4803264,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:07.871081+05:30",
+      "elapsed_seconds": 261.89,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7178.81M  free = 1013.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4803264,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:08.922366+05:30",
+      "elapsed_seconds": 262.94,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7170.81M  free = 1021.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800000,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:09.982696+05:30",
+      "elapsed_seconds": 264.0,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7170.81M  free = 1021.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800000,
+        "ollama_server": 11376,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:11.044243+05:30",
+      "elapsed_seconds": 265.06,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7170.81M  free = 1021.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806496,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:12.109305+05:30",
+      "elapsed_seconds": 266.13,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7170.81M  free = 1021.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806544,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:13.153223+05:30",
+      "elapsed_seconds": 267.17,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7170.81M  free = 1021.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806608,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:14.204916+05:30",
+      "elapsed_seconds": 268.22,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806624,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:15.267195+05:30",
+      "elapsed_seconds": 269.29,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806576,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:16.330741+05:30",
+      "elapsed_seconds": 270.35,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806640,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:17.389127+05:30",
+      "elapsed_seconds": 271.41,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806672,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:18.448057+05:30",
+      "elapsed_seconds": 272.47,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4806224,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:19.508485+05:30",
+      "elapsed_seconds": 273.53,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4807968,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:20.571537+05:30",
+      "elapsed_seconds": 274.59,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4807200,
+        "ollama_server": 12064,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:21.627309+05:30",
+      "elapsed_seconds": 275.65,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4845664,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:22.695224+05:30",
+      "elapsed_seconds": 276.71,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4842544,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:23.755381+05:30",
+      "elapsed_seconds": 277.77,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840688,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:24.816198+05:30",
+      "elapsed_seconds": 278.83,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840688,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:25.873463+05:30",
+      "elapsed_seconds": 279.89,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7146.81M  free = 1045.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4839424,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:26.932278+05:30",
+      "elapsed_seconds": 280.95,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4839424,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:27.993388+05:30",
+      "elapsed_seconds": 282.01,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840240,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:29.055629+05:30",
+      "elapsed_seconds": 283.07,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840288,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:30.111137+05:30",
+      "elapsed_seconds": 284.13,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840352,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:31.166983+05:30",
+      "elapsed_seconds": 285.19,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840368,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:32.220214+05:30",
+      "elapsed_seconds": 286.24,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840416,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:33.278448+05:30",
+      "elapsed_seconds": 287.3,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840368,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:34.337497+05:30",
+      "elapsed_seconds": 288.36,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840400,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:35.386123+05:30",
+      "elapsed_seconds": 289.4,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840464,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:36.453096+05:30",
+      "elapsed_seconds": 290.47,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840416,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:37.513485+05:30",
+      "elapsed_seconds": 291.53,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840416,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:38.574968+05:30",
+      "elapsed_seconds": 292.59,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840768,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:39.634975+05:30",
+      "elapsed_seconds": 293.65,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840896,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:40.694320+05:30",
+      "elapsed_seconds": 294.71,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840896,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:41.754448+05:30",
+      "elapsed_seconds": 295.77,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4840928,
+        "ollama_server": 12224,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:42.815555+05:30",
+      "elapsed_seconds": 296.83,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7138.81M  free = 1053.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4841008,
+        "ollama_server": 12256,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:43.890699+05:30",
+      "elapsed_seconds": 297.91,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7122.81M  free = 1069.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4831040,
+        "ollama_server": 12256,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:44.964031+05:30",
+      "elapsed_seconds": 298.98,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7106.81M  free = 1085.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4808208,
+        "ollama_server": 12256,
+        "evaluation_python": 23696
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:46.026292+05:30",
+      "elapsed_seconds": 300.04,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7098.81M  free = 1093.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4762064,
+        "ollama_server": 13056,
+        "evaluation_python": 23536
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:47.076765+05:30",
+      "elapsed_seconds": 301.09,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7090.81M  free = 1101.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4761200,
+        "ollama_server": 13120,
+        "evaluation_python": 23536
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:48.137182+05:30",
+      "elapsed_seconds": 302.16,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7090.81M  free = 1101.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4761360,
+        "ollama_server": 13184,
+        "evaluation_python": 23520
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:49.189756+05:30",
+      "elapsed_seconds": 303.21,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7090.81M  free = 1101.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4756176,
+        "ollama_server": 13008,
+        "evaluation_python": 23520
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:50.240612+05:30",
+      "elapsed_seconds": 304.26,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7090.81M  free = 1101.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4756288,
+        "ollama_server": 13008,
+        "evaluation_python": 23488
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:51.308920+05:30",
+      "elapsed_seconds": 305.33,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5807680,
+        "ollama_server": 23248,
+        "evaluation_python": 44224
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:52.365876+05:30",
+      "elapsed_seconds": 306.38,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5805024,
+        "ollama_server": 23184,
+        "evaluation_python": 43424
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:53.423069+05:30",
+      "elapsed_seconds": 307.44,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5804288,
+        "ollama_server": 23056,
+        "evaluation_python": 43408
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:54.483221+05:30",
+      "elapsed_seconds": 308.5,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5801504,
+        "ollama_server": 20576,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:55.544954+05:30",
+      "elapsed_seconds": 309.56,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5801312,
+        "ollama_server": 17120,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:56.602006+05:30",
+      "elapsed_seconds": 310.62,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5801312,
+        "ollama_server": 17120,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:57.658640+05:30",
+      "elapsed_seconds": 311.68,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821280,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:58.716005+05:30",
+      "elapsed_seconds": 312.73,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821408,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:47:59.772506+05:30",
+      "elapsed_seconds": 313.79,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821408,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:00.833576+05:30",
+      "elapsed_seconds": 314.85,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821536,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:01.892873+05:30",
+      "elapsed_seconds": 315.91,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821600,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:02.956302+05:30",
+      "elapsed_seconds": 316.97,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5821616,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:04.014449+05:30",
+      "elapsed_seconds": 318.03,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7082.81M  free = 1109.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5823728,
+        "ollama_server": 17328,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:05.071504+05:30",
+      "elapsed_seconds": 319.09,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5711680,
+        "ollama_server": 12480,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:06.129508+05:30",
+      "elapsed_seconds": 320.15,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5700720,
+        "ollama_server": 12480,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:07.188822+05:30",
+      "elapsed_seconds": 321.21,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5696976,
+        "ollama_server": 12480,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:08.247577+05:30",
+      "elapsed_seconds": 322.27,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5697008,
+        "ollama_server": 12480,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:09.299287+05:30",
+      "elapsed_seconds": 323.32,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5696992,
+        "ollama_server": 12480,
+        "evaluation_python": 27344
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:10.356518+05:30",
+      "elapsed_seconds": 324.38,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7066.81M  free = 1125.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5464400,
+        "ollama_server": 12480,
+        "evaluation_python": 23472
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:11.441100+05:30",
+      "elapsed_seconds": 325.46,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7282.38M  free = 909.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5154128,
+        "ollama_server": 12448,
+        "evaluation_python": 23472
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:12.503574+05:30",
+      "elapsed_seconds": 326.52,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7373.75M  free = 818.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4961056,
+        "ollama_server": 12416,
+        "evaluation_python": 23152
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:13.577651+05:30",
+      "elapsed_seconds": 327.6,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7433.81M  free = 758.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4835840,
+        "ollama_server": 12288,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:14.633298+05:30",
+      "elapsed_seconds": 328.66,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7435.88M  free = 756.12M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4833248,
+        "ollama_server": 12032,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:15.692130+05:30",
+      "elapsed_seconds": 329.71,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7437.69M  free = 754.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4790800,
+        "ollama_server": 12048,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:16.745622+05:30",
+      "elapsed_seconds": 330.77,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7437.69M  free = 754.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4765472,
+        "ollama_server": 12048,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:17.824379+05:30",
+      "elapsed_seconds": 331.85,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7437.69M  free = 754.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4774368,
+        "ollama_server": 12032,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:18.882441+05:30",
+      "elapsed_seconds": 332.91,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7437.69M  free = 754.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4772944,
+        "ollama_server": 12000,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:19.944701+05:30",
+      "elapsed_seconds": 333.97,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4822432,
+        "ollama_server": 12080,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:20.994511+05:30",
+      "elapsed_seconds": 335.02,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4822432,
+        "ollama_server": 12080,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:22.051266+05:30",
+      "elapsed_seconds": 336.07,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4822432,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:23.109923+05:30",
+      "elapsed_seconds": 337.13,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4819136,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:24.170118+05:30",
+      "elapsed_seconds": 338.19,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4819136,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:25.214298+05:30",
+      "elapsed_seconds": 339.24,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4819136,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:26.274140+05:30",
+      "elapsed_seconds": 340.3,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830096,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:27.328912+05:30",
+      "elapsed_seconds": 341.35,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830192,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:28.391191+05:30",
+      "elapsed_seconds": 342.42,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7529.75M  free = 662.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830208,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:29.448078+05:30",
+      "elapsed_seconds": 343.47,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830288,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:30.492359+05:30",
+      "elapsed_seconds": 344.52,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830288,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:31.553010+05:30",
+      "elapsed_seconds": 345.58,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830416,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:32.612572+05:30",
+      "elapsed_seconds": 346.64,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830432,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:33.672347+05:30",
+      "elapsed_seconds": 347.7,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4830496,
+        "ollama_server": 12256,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:34.742008+05:30",
+      "elapsed_seconds": 348.77,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4844320,
+        "ollama_server": 12240,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:35.795929+05:30",
+      "elapsed_seconds": 349.82,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4844272,
+        "ollama_server": 12240,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:36.853865+05:30",
+      "elapsed_seconds": 350.88,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4844272,
+        "ollama_server": 12240,
+        "evaluation_python": 23120
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:37.913101+05:30",
+      "elapsed_seconds": 351.94,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4839616,
+        "ollama_server": 12240,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:38.972352+05:30",
+      "elapsed_seconds": 353.0,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4839616,
+        "ollama_server": 12240,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:40.031177+05:30",
+      "elapsed_seconds": 354.06,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7521.75M  free = 670.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4839616,
+        "ollama_server": 12240,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:41.109386+05:30",
+      "elapsed_seconds": 355.13,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7433.75M  free = 758.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4837600,
+        "ollama_server": 12224,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:42.171458+05:30",
+      "elapsed_seconds": 356.2,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.31M  free = 773.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4837600,
+        "ollama_server": 12224,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:43.231181+05:30",
+      "elapsed_seconds": 357.26,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.31M  free = 773.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4837600,
+        "ollama_server": 12224,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:44.293826+05:30",
+      "elapsed_seconds": 358.32,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.31M  free = 773.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4799968,
+        "ollama_server": 12144,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:45.354502+05:30",
+      "elapsed_seconds": 359.38,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.31M  free = 773.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4799968,
+        "ollama_server": 12160,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:46.414856+05:30",
+      "elapsed_seconds": 360.44,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.31M  free = 773.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800048,
+        "ollama_server": 11984,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:47.474153+05:30",
+      "elapsed_seconds": 361.5,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7410.31M  free = 781.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800096,
+        "ollama_server": 11984,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:48.534264+05:30",
+      "elapsed_seconds": 362.56,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7410.31M  free = 781.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800192,
+        "ollama_server": 11984,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:49.594631+05:30",
+      "elapsed_seconds": 363.62,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7410.31M  free = 781.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4800256,
+        "ollama_server": 11984,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:50.660288+05:30",
+      "elapsed_seconds": 364.69,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7427.75M  free = 764.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4786192,
+        "ollama_server": 11984,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:51.720324+05:30",
+      "elapsed_seconds": 365.75,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7532.75M  free = 659.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4817216,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:52.768567+05:30",
+      "elapsed_seconds": 366.79,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7532.75M  free = 659.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4817200,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:53.825272+05:30",
+      "elapsed_seconds": 367.85,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7532.75M  free = 659.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4817200,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:54.886130+05:30",
+      "elapsed_seconds": 368.91,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7532.75M  free = 659.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4813904,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:55.946798+05:30",
+      "elapsed_seconds": 369.97,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7532.75M  free = 659.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4813904,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:57.008408+05:30",
+      "elapsed_seconds": 371.03,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7524.75M  free = 667.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4813904,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:58.069896+05:30",
+      "elapsed_seconds": 372.1,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7524.75M  free = 667.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825024,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:48:59.127968+05:30",
+      "elapsed_seconds": 373.15,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7524.75M  free = 667.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825056,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:00.188042+05:30",
+      "elapsed_seconds": 374.21,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825136,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:01.248867+05:30",
+      "elapsed_seconds": 375.27,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825136,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:02.309169+05:30",
+      "elapsed_seconds": 376.33,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825152,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:03.368255+05:30",
+      "elapsed_seconds": 377.39,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825216,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:04.429655+05:30",
+      "elapsed_seconds": 378.45,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825312,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:05.491894+05:30",
+      "elapsed_seconds": 379.52,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825392,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:06.552705+05:30",
+      "elapsed_seconds": 380.58,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7516.75M  free = 675.25M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825392,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:07.604403+05:30",
+      "elapsed_seconds": 381.63,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7420.69M  free = 771.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825392,
+        "ollama_server": 12208,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:08.676436+05:30",
+      "elapsed_seconds": 382.7,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7404.69M  free = 787.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4825152,
+        "ollama_server": 12192,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:09.738438+05:30",
+      "elapsed_seconds": 383.76,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7388.69M  free = 803.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4820592,
+        "ollama_server": 12192,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:10.795977+05:30",
+      "elapsed_seconds": 384.82,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7388.69M  free = 803.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4812592,
+        "ollama_server": 12176,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:11.863943+05:30",
+      "elapsed_seconds": 385.89,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7388.69M  free = 803.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4749360,
+        "ollama_server": 11952,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:12.918164+05:30",
+      "elapsed_seconds": 386.94,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7372.69M  free = 819.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4749456,
+        "ollama_server": 12016,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:13.973668+05:30",
+      "elapsed_seconds": 388.0,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7372.69M  free = 819.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4749456,
+        "ollama_server": 12016,
+        "evaluation_python": 23104
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:15.035902+05:30",
+      "elapsed_seconds": 389.06,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7418.81M  free = 773.19M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4739856,
+        "ollama_server": 12016,
+        "evaluation_python": 22512
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:16.095656+05:30",
+      "elapsed_seconds": 390.12,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7457.12M  free = 734.88M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4714688,
+        "ollama_server": 12720,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:17.151246+05:30",
+      "elapsed_seconds": 391.18,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7460.69M  free = 731.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4714896,
+        "ollama_server": 12976,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:18.200317+05:30",
+      "elapsed_seconds": 392.23,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7460.69M  free = 731.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4714992,
+        "ollama_server": 12992,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:19.252371+05:30",
+      "elapsed_seconds": 393.28,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7471.38M  free = 720.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4715216,
+        "ollama_server": 13072,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:20.299392+05:30",
+      "elapsed_seconds": 394.32,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7471.38M  free = 720.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4715328,
+        "ollama_server": 13072,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:21.342063+05:30",
+      "elapsed_seconds": 395.37,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7471.38M  free = 720.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 4715472,
+        "ollama_server": 13072,
+        "evaluation_python": 20720
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:22.447611+05:30",
+      "elapsed_seconds": 396.47,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7765.06M  free = 426.94M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5428304,
+        "ollama_server": 16224,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:23.529475+05:30",
+      "elapsed_seconds": 397.55,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7805.94M  free = 386.06M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5608912,
+        "ollama_server": 16672,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:24.588878+05:30",
+      "elapsed_seconds": 398.61,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7811.44M  free = 380.56M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5608944,
+        "ollama_server": 16672,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:25.652436+05:30",
+      "elapsed_seconds": 399.68,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7811.44M  free = 380.56M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5610016,
+        "ollama_server": 16672,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:26.706914+05:30",
+      "elapsed_seconds": 400.73,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7852.31M  free = 339.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5612480,
+        "ollama_server": 16688,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:27.764463+05:30",
+      "elapsed_seconds": 401.79,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7879.31M  free = 312.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5611856,
+        "ollama_server": 16528,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:28.815922+05:30",
+      "elapsed_seconds": 402.84,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7879.31M  free = 312.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5611872,
+        "ollama_server": 16560,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:29.868655+05:30",
+      "elapsed_seconds": 403.89,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7879.31M  free = 312.69M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5611920,
+        "ollama_server": 16592,
+        "evaluation_python": 45376
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:30.921546+05:30",
+      "elapsed_seconds": 404.95,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7879.44M  free = 312.56M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5612976,
+        "ollama_server": 17424,
+        "evaluation_python": 48480
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:31.968435+05:30",
+      "elapsed_seconds": 405.99,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7809.12M  free = 382.88M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5603440,
+        "ollama_server": 16880,
+        "evaluation_python": 46304
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:33.022585+05:30",
+      "elapsed_seconds": 407.05,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7829.38M  free = 362.62M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5446080,
+        "ollama_server": 16736,
+        "evaluation_python": 45184
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:34.076375+05:30",
+      "elapsed_seconds": 408.1,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 8192.00M  used = 7885.94M  free = 306.06M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5373264,
+        "ollama_server": 16736,
+        "evaluation_python": 45184
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:35.127280+05:30",
+      "elapsed_seconds": 409.15,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 9216.00M  used = 7940.69M  free = 1275.31M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5339968,
+        "ollama_server": 16736,
+        "evaluation_python": 45184
+      }
+    },
+    {
+      "at": "2026-09-12T16:49:36.193739+05:30",
+      "elapsed_seconds": 410.22,
+      "memory_pressure_level": 2,
+      "swap_usage": "total = 9216.00M  used = 7964.56M  free = 1251.44M  (encrypted)",
+      "rss_kib": {
+        "llama_server": 5221072,
+        "ollama_server": 16896,
+        "evaluation_python": 0
+      }
+    }
+  ],
+  "memory_metric": "RSS KiB sampled approximately every second; sampled maxima, not exact peaks or total Metal physical footprint",
+  "preflight_memory_pressure_level": 2,
+  "pid": 65825,
+  "exit_code": 0,
+  "ended_at": "2026-09-12T16:49:36.205388+05:30",
+  "elapsed_seconds": 410.23,
+  "peak_sampled_rss_kib": {
+    "llama_server": 5885488,
+    "ollama_server": 37168,
+    "evaluation_python": 198752
+  }
+}

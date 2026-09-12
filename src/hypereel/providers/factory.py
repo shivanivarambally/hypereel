@@ -35,6 +35,11 @@ def _get_vision_provider(settings: Settings) -> VisionProvider:
     if provider == "mock":
         return MockVisionProvider()
 
+    if provider == "ollama":
+        from .ollama import OllamaVisionProvider
+
+        return OllamaVisionProvider(settings)
+
     key = settings.key_for(provider)
     if not key:
         _log.warning("no API key for vision provider '%s'; using mock.", provider)
@@ -77,6 +82,11 @@ def _get_llm_provider(settings: Settings) -> LLMProvider:
 
     if provider == "mock":
         return MockLLMProvider()
+
+    if provider == "ollama":
+        from .ollama import OllamaLLMProvider
+
+        return OllamaLLMProvider(settings)
 
     key = settings.key_for(provider)
     if not key:

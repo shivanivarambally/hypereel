@@ -1,0 +1,2914 @@
+{
+  "created_at": "2026-09-12T21:26:32.450478+05:30",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  },
+  "windows": [
+    {
+      "index": 1,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "frames": [
+        {
+          "time": 221.0,
+          "actual_time": 221.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-0.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-0.jpg",
+            "sha256": "6e194002fdce86510370ee46b6bf54b0b861433f9b70fbd915c9aa8ae63960b2"
+          },
+          "frame_index": 6630,
+          "rim_match_score": 1.0,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-0.jpg",
+            "sha256": "61b51f5c40634cfb43e87a5b1ad037068330f119216964f68842bee3bd8ec5a3",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 221.25,
+          "actual_time": 221.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-1.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-1.jpg",
+            "sha256": "bd4c1ea99d99f3cd210c248341846cc9c964b2debc01e225cbf45caaf0beac2f"
+          },
+          "frame_index": 6638,
+          "rim_match_score": 0.9999563694000244,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-1.jpg",
+            "sha256": "d1640d40642004c9842160530ae59834530af63cd62c5e20df70e858d2450566",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 221.5,
+          "actual_time": 221.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-2.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-2.jpg",
+            "sha256": "7371e0c00238571573622640cb22b601f1da96eef6e89ef0ea47f18caa5b4e18"
+          },
+          "frame_index": 6645,
+          "rim_match_score": 0.9999098181724548,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-2.jpg",
+            "sha256": "16fcb5fa4b099a553212a0f388eb617204a6a5f7fc99449557317f6ef93c95fc",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 221.75,
+          "actual_time": 221.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-3.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-3.jpg",
+            "sha256": "0f9a6bb91c9801b2dd04a55c536fb967c56ad2e05f85f38b9b798dedb8d8e63f"
+          },
+          "frame_index": 6652,
+          "rim_match_score": 0.9997216463088989,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-3.jpg",
+            "sha256": "94799321da7a86f903c0992d2d6df7deab6035ddc326e7a5a739149393ed5fc6",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 222.0,
+          "actual_time": 222.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-4.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-4.jpg",
+            "sha256": "316c626c60adbba20e4e5ac193ddcde30a9258ae5b30681105902fa5e11fa11d"
+          },
+          "frame_index": 6660,
+          "rim_match_score": 0.9908042550086975,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-4.jpg",
+            "sha256": "1200ae4e0bbeda53caca2a20280dd882652405439f4cdbb215a25b330d265988",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 222.25,
+          "actual_time": 222.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-5.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-5.jpg",
+            "sha256": "3da43fff6aa816cd60c2bd0d7a4a38e3a98814fa42f1d138059654764ae7d599"
+          },
+          "frame_index": 6668,
+          "rim_match_score": 0.9913884997367859,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-5.jpg",
+            "sha256": "21b7fe39a1693faedb43060cc8e5d2149c886a240adeb90177dc6d0442e31913",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 222.5,
+          "actual_time": 222.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-6.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-6.jpg",
+            "sha256": "edde36ab37484ee9e7ee137c42933a3b9e3d0fe90daea3529637a8bdeee6c80e"
+          },
+          "frame_index": 6675,
+          "rim_match_score": 0.9912993907928467,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-6.jpg",
+            "sha256": "9b2010d3b694d65b004b108f7c1f67e4e33752c0ccb0afa9393636fcca086969",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 222.75,
+          "actual_time": 222.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-7.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-7.jpg",
+            "sha256": "583f0ca641fdb18a870f6f3f1976b48c5a925d1988ff37c0def01b080b068862"
+          },
+          "frame_index": 6682,
+          "rim_match_score": 0.9913907647132874,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-7.jpg",
+            "sha256": "491db15e2df1dc5a8e8da312f52ee5ee5d8b96af878a173f6842072fe26aca64",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 223.0,
+          "actual_time": 223.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-8.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-8.jpg",
+            "sha256": "e2f1b966b2674134602b4e94a44f2532eeef3bcb2921f6f497b113ac583437e2"
+          },
+          "frame_index": 6690,
+          "rim_match_score": 0.9916889071464539,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-8.jpg",
+            "sha256": "f81c5acd484ee34861129198c68b3210f313c28fa471d392bd7cb136469b0be6",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 223.25,
+          "actual_time": 223.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-9.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-9.jpg",
+            "sha256": "58526f8f4e9c84e6fb7c6650e40645565a4faacd0f83942e179da211915dcb7f"
+          },
+          "frame_index": 6698,
+          "rim_match_score": 0.9917405843734741,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-9.jpg",
+            "sha256": "ca1a41b01ae08b92e26424af85f91c9d1a32e7613e6e64bb0ee343ec3bc0d933",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 223.5,
+          "actual_time": 223.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-10.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-10.jpg",
+            "sha256": "941655858b0b77330f4ad3b0bf70675130ef895c9c9c606c3815f60ab481462e"
+          },
+          "frame_index": 6705,
+          "rim_match_score": 0.991722822189331,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-10.jpg",
+            "sha256": "571f2545556e0fad3940802b131c0147ce75c5784c7d66256d49e1b53e10f947",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 223.75,
+          "actual_time": 223.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-11.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-11.jpg",
+            "sha256": "42e9824a7439162a7b3f9959e0ccd26726f5d7c859c83729a0f7811f049b9100"
+          },
+          "frame_index": 6712,
+          "rim_match_score": 0.9919403195381165,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-11.jpg",
+            "sha256": "1ea4b18cdc109181a8797769f41f86ffb7142cfb3f8db4e99b5015655de22342",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 224.0,
+          "actual_time": 224.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-12.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-12.jpg",
+            "sha256": "d66f91f2be33911355533be10b9cf3d7cf08a165624f6cae8d5c79f1fa91304b"
+          },
+          "frame_index": 6720,
+          "rim_match_score": 0.9920727014541626,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-12.jpg",
+            "sha256": "923ad46f86afc33ac3fb84b992307745c21b53a304513866b2720da457c562dc",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 224.25,
+          "actual_time": 224.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-13.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-13.jpg",
+            "sha256": "b002442b4a2a541af45f408bb5135df29740b8346cadeb4afe1b06b6696e7456"
+          },
+          "frame_index": 6728,
+          "rim_match_score": 0.992145836353302,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-13.jpg",
+            "sha256": "4cfca9bb6c66af6643b7e49d7de4a463be0277ccda061e2d0cd14ef5f97c780e",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 224.5,
+          "actual_time": 224.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-14.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-14.jpg",
+            "sha256": "9f9f11fe3cdb724a020fcda1dd2649365fdd77330609b153ac40979fd5aa2c7d"
+          },
+          "frame_index": 6735,
+          "rim_match_score": 0.9921276569366455,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-14.jpg",
+            "sha256": "0bbcc405259b3a8fb5b856e3f3666ad37507a1184406e923eb58b507b86ede83",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 224.75,
+          "actual_time": 224.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-15.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-15.jpg",
+            "sha256": "0e8b17a12117a71d88840939d53850c8fdcb4fe7c21f744850e3b3ba0336a150"
+          },
+          "frame_index": 6742,
+          "rim_match_score": 0.9921388626098633,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-15.jpg",
+            "sha256": "49358fe888e9a4ac555c109828faee0344ed24e164dcaa64eb77ce1a473a3354",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 225.0,
+          "actual_time": 225.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-16.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-16.jpg",
+            "sha256": "772ba23a98094d3f8d0c74d6e7aba2ff56753ff419590210057107be0bf26690"
+          },
+          "frame_index": 6750,
+          "rim_match_score": 0.9921818375587463,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-16.jpg",
+            "sha256": "b46950ed5c9bf8a1259c077f2806dbaeef0c292526161bfcf02cd47904556af9",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 225.25,
+          "actual_time": 225.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-17.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-17.jpg",
+            "sha256": "a241284044026e9d2278cec5276eefcdfe5762d6b26543c66d047c9cc78f7f75"
+          },
+          "frame_index": 6758,
+          "rim_match_score": 0.9923579692840576,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-17.jpg",
+            "sha256": "1eab703f2c1eeb8fbdccfa47404486fd17938dfb91c653465a2b43d6608687c1",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 225.5,
+          "actual_time": 225.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-18.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-18.jpg",
+            "sha256": "45f38fad688605149d7e0b52af8594578981a7c5f79030b5836029588ad35e6a"
+          },
+          "frame_index": 6765,
+          "rim_match_score": 0.9922933578491211,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-18.jpg",
+            "sha256": "7a60983ce125200278c0271f84ee527f7d799c3e5d9f346f9d711fdb02aad927",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 225.75,
+          "actual_time": 225.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-19.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-19.jpg",
+            "sha256": "01e1d01e6048962958d117641335524ed55278f4ab3fda75fbb56f08ac0d7867"
+          },
+          "frame_index": 6772,
+          "rim_match_score": 0.992337703704834,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-19.jpg",
+            "sha256": "1e1d5cfc1d63bb14e04445a8d448eabd8d26859b7861dcfb607fe97559e982fb",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 226.0,
+          "actual_time": 226.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-20.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-20.jpg",
+            "sha256": "8d3a32d43a12119447bfbaf3811690b601909bea019b33621f581e39976f8a98"
+          },
+          "frame_index": 6780,
+          "rim_match_score": 0.9923537373542786,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-20.jpg",
+            "sha256": "2f0cd88919e664b5b05431281130bb97bdfeaa75098dc1cf69b0d31d4b6282c7",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 226.25,
+          "actual_time": 226.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-21.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-21.jpg",
+            "sha256": "b914114b3dc263a088d8915d7e409da4ae73f5a3937663b5705da1f3efd35ecb"
+          },
+          "frame_index": 6788,
+          "rim_match_score": 0.9923481941223145,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-21.jpg",
+            "sha256": "244fa095a4d19c91d69d895e9f960415d0c8a63a8876d0cb31669709788166bd",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 226.5,
+          "actual_time": 226.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-22.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-22.jpg",
+            "sha256": "33d15417c8614c0511884de372536c55be6775b70450a25e17f09ae87107f5f2"
+          },
+          "frame_index": 6795,
+          "rim_match_score": 0.9923276901245117,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-22.jpg",
+            "sha256": "ff4c3dcc1b76d82eebb3651366de850bd1ad4dc2bc9b99950bb910d583261141",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 226.75,
+          "actual_time": 226.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-23.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-23.jpg",
+            "sha256": "f3ab1f3a19d1a7879e482a5bc8ad3222ad020da4e027d6ec9497a4c65b755491"
+          },
+          "frame_index": 6802,
+          "rim_match_score": 0.9924287796020508,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-23.jpg",
+            "sha256": "a5c22b9a02e33c3cfe8b0594735880871e82b6b7ad6560c7472934478d6421f8",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 227.0,
+          "actual_time": 227.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-24.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-24.jpg",
+            "sha256": "ce6041b0fe8e0725635ca2c37a89f47e2f61d904e502accbb23bb234a1998aa6"
+          },
+          "frame_index": 6810,
+          "rim_match_score": 0.9923914670944214,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-24.jpg",
+            "sha256": "28ce7ab192dba17fc5409d0a0032b9c03589fcdabe970b4403e74197a1ef2987",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 227.25,
+          "actual_time": 227.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-25.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-25.jpg",
+            "sha256": "a54de6403c4b968e88ee5fba9ae381e4c430196a503064f76038226e31e447b9"
+          },
+          "frame_index": 6818,
+          "rim_match_score": 0.9924496412277222,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-25.jpg",
+            "sha256": "479fc68fa62cd156d0ba17100a4b2d3a1260d7bc209c03d39a748d32aecbdebb",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 227.5,
+          "actual_time": 227.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-26.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-26.jpg",
+            "sha256": "0e15636128be4f24ff7ce8b9283ccfbc94b7e2f65b6cef1e0af85207a8a7c4cd"
+          },
+          "frame_index": 6825,
+          "rim_match_score": 0.9924432039260864,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-26.jpg",
+            "sha256": "cabd2edaa325714c5ce6959a7575fc5e7f382fc5800eba7cc6809f400aded657",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 227.75,
+          "actual_time": 227.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-27.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-27.jpg",
+            "sha256": "766b8e7913586e4eb6bcc8080121c6f14979a4c8b373db9e33628c8313c551e6"
+          },
+          "frame_index": 6832,
+          "rim_match_score": 0.9924339056015015,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-27.jpg",
+            "sha256": "26f2a2a0e6030e34dfd57282dfcae98907299cc75c8be539241ae9a6f955c6fc",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 228.0,
+          "actual_time": 228.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-28.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-28.jpg",
+            "sha256": "e0834b9439551da06914809c5554e69c7d69cf49491bc2535e39b0eba53f0a91"
+          },
+          "frame_index": 6840,
+          "rim_match_score": 0.9739216566085815,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-28.jpg",
+            "sha256": "3f5963eb78c3f79507e5f48bdfc6a3668ad1df723257766687b309b9c21a781e",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 228.25,
+          "actual_time": 228.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-29.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-29.jpg",
+            "sha256": "3d5f59f927a2a267cf832b2d0ff54aa021fdec882d93c1a0af4160d62b36d9df"
+          },
+          "frame_index": 6848,
+          "rim_match_score": 0.9622485637664795,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-29.jpg",
+            "sha256": "b51045161b1f15566ab9d48d7eb03a2709f237eee4705a084487b4f520ebc050",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 228.5,
+          "actual_time": 228.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-30.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-30.jpg",
+            "sha256": "251c4c283dcd758915deeb79afcd0a2bcf7380fd9a6f8036fac53d5444f561c7"
+          },
+          "frame_index": 6855,
+          "rim_match_score": 0.9720975160598755,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-30.jpg",
+            "sha256": "de0b076f287366363cb396de234c1dbc15656924f087ebced588670c3a911525",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 228.75,
+          "actual_time": 228.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-31.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-31.jpg",
+            "sha256": "5d253a3d749bac275c343556687a94888833d53e59c3ec6503ba323000105aef"
+          },
+          "frame_index": 6862,
+          "rim_match_score": 0.9816142916679382,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-31.jpg",
+            "sha256": "3c321584ac81651d976316eae8c78cfa4fbbc8ed33e063c7e84d67d260d3c39d",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 229.0,
+          "actual_time": 229.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-32.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-32.jpg",
+            "sha256": "d36db2f33ebb2e73d52b8afeab845d2365aab80c8cc5f3f72a1d8621ae4c98f2"
+          },
+          "frame_index": 6870,
+          "rim_match_score": 0.981620728969574,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-32.jpg",
+            "sha256": "3b06cc25abb934f1457702b6d1eb013a1180df6a927866e02ac4df8bd40550a0",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 229.25,
+          "actual_time": 229.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-33.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-33.jpg",
+            "sha256": "65bf28f2e962e00518c18631a76f592115fc6e2b8943b663b571b59c43a71fb3"
+          },
+          "frame_index": 6878,
+          "rim_match_score": 0.9899134635925293,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-33.jpg",
+            "sha256": "9458c48ea18d62f75295c66ef5b5e8942d8ec50b9c1a86aee36afe4e9a1463a4",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 229.5,
+          "actual_time": 229.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-34.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-34.jpg",
+            "sha256": "eb2901e96f885c884e672e46a2ecdbc53077caa4d2233b22ff9cd0fd5e3e9a95"
+          },
+          "frame_index": 6885,
+          "rim_match_score": 0.9894133806228638,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-34.jpg",
+            "sha256": "65020583f37663b396f3f0dbb40024b62d0cce0cf5388eeeaf3fc2275f308336",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 229.75,
+          "actual_time": 229.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-35.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-35.jpg",
+            "sha256": "db7c706b126f3c910520f14a94c4b81db636444e59f56a80eb6ed67a214a8def"
+          },
+          "frame_index": 6892,
+          "rim_match_score": 0.9896448254585266,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-35.jpg",
+            "sha256": "5754bf41f89b40abac2e5a744c3915bb96ba035bf48aa25db389962492cf3c60",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 230.0,
+          "actual_time": 230.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-36.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-36.jpg",
+            "sha256": "24d811acd7344718b5525f64a96df8dbe39847b32b5008d468f772305a6420b1"
+          },
+          "frame_index": 6900,
+          "rim_match_score": 0.9894561767578125,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-36.jpg",
+            "sha256": "1bff369f9f10298e4f0045f7535b75175cecc47d824e0bd2aa3d9a7efd637053",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 230.25,
+          "actual_time": 230.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-37.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-37.jpg",
+            "sha256": "43464f106bd76b02a720bf9a9c02abadd7c6a475bad48c569e922207b968d2a6"
+          },
+          "frame_index": 6908,
+          "rim_match_score": 0.9896734952926636,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-37.jpg",
+            "sha256": "38ed8e4d5b650bb56ec2d0e532b2769f97583768f6e37424bec49902811708c8",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 230.5,
+          "actual_time": 230.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-38.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-38.jpg",
+            "sha256": "ccec5b345a216f3ad59914da128e86be40b76de9fed699a19fdb6d05a03bb46e"
+          },
+          "frame_index": 6915,
+          "rim_match_score": 0.9896347522735596,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-38.jpg",
+            "sha256": "bdebc345cfc0cd5c4235e470ee88d872e0c8c9a0e69fc69329c1990e2a362234",
+            "bounds": [
+              617,
+              0,
+              937,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 230.75,
+          "actual_time": 230.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-39.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-39.jpg",
+            "sha256": "b62eeaaec64e4f78d04603f436fc4a8d1bfc49472d4d114a9a6241f52b8856ce"
+          },
+          "frame_index": 6922,
+          "rim_match_score": 0.9704945683479309,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-39.jpg",
+            "sha256": "f5706a0ec803c580865f319e363dd5b13e037ca1b6c785507afaac9cb3c85c13",
+            "bounds": [
+              621,
+              0,
+              941,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 231.0,
+          "actual_time": 231.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-40.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-40.jpg",
+            "sha256": "416c34da79498cb77d49deeecf1bea590190d59da32a6049a3fa64764bcd08b4"
+          },
+          "frame_index": 6930,
+          "rim_match_score": 0.8224330544471741,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-40.jpg",
+            "sha256": "0c1787d58f48eb820889d05e359fe94777c5f21874bb636acd5a4924e3365bae",
+            "bounds": [
+              692,
+              0,
+              1012,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 231.25,
+          "actual_time": 231.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-41.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-41.jpg",
+            "sha256": "2d6a12805ef9c878a1028b3869d7e047bf2ed606ca8de63000b4bedb5b2ad434"
+          },
+          "frame_index": 6938,
+          "rim_match_score": 0.629330575466156,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-41.jpg",
+            "sha256": "3df6e7927ffe691a9ad3dde22e787ca694e702277bbeaab6528efb1c6bf1a054",
+            "bounds": [
+              797,
+              0,
+              1117,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 231.5,
+          "actual_time": 231.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-42.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-42.jpg",
+            "sha256": "d152e286b35cae27983feaad0af05514c5c8b1d32f8ce3f7a025b65c770e0559"
+          },
+          "frame_index": 6945,
+          "rim_match_score": 0.6421970725059509,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-42.jpg",
+            "sha256": "c024f37a860dcde410ed61833f06c7a342c0a891fbe9299219b67b541e040cce",
+            "bounds": [
+              893,
+              0,
+              1213,
+              320
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 231.75,
+          "actual_time": 231.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-43.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-43.jpg",
+            "sha256": "62a8ff2a1b1cb75c115d17b3748534915d1fcd2f7e16b4d7071555cc27146257"
+          },
+          "frame_index": 6952,
+          "rim_match_score": 0.6590313911437988,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-43.jpg",
+            "sha256": "110e447e588f8cce7ea54f81c2532e3aaf9b2323bc0b3d323d2f20b9a6f374aa",
+            "bounds": [
+              951,
+              18,
+              1271,
+              338
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 232.0,
+          "actual_time": 232.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-44.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-44.jpg",
+            "sha256": "680d26ab3b2aa1110aeee55af347988c641c480c92c6a50151bf336c7ccedc37"
+          },
+          "frame_index": 6960,
+          "rim_match_score": 0.6093058586120605,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-44.jpg",
+            "sha256": "123289a93ed621c7feff5caccdccc1212d8838e7a6b21c4dca428c3bd5b0f333",
+            "bounds": [
+              960,
+              50,
+              1280,
+              370
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 232.25,
+          "actual_time": 232.26666666666668,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-45.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-45.jpg",
+            "sha256": "39d6f865048436760199431fbd293a7073dc94daacdf7026f821bcdeccccffe5"
+          },
+          "frame_index": 6968,
+          "rim_match_score": 0.5741158723831177
+        },
+        {
+          "time": 232.5,
+          "actual_time": 232.5,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-46.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-46.jpg",
+            "sha256": "6cfd0cc19c2507e347921c045f6fc60973162f82e0ded7b4b70b29731a1a0c25"
+          },
+          "frame_index": 6975,
+          "rim_match_score": 0.5636522769927979
+        },
+        {
+          "time": 232.75,
+          "actual_time": 232.73333333333332,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-47.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-47.jpg",
+            "sha256": "a7a0954beff92158432132793551a91880a2d18f38ca58808877d367b2f2fcbc"
+          },
+          "frame_index": 6982,
+          "rim_match_score": 0.5646132230758667
+        },
+        {
+          "time": 233.0,
+          "actual_time": 233.0,
+          "native": "evals/iterations/evidence-state-018/media/w1-native-48.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w1-wide-48.jpg",
+            "sha256": "ab04d920ed1c317f335e16a536e2061cce1ee1fabb20766e812b6bbe8cd3fae8"
+          },
+          "frame_index": 6990,
+          "rim_match_score": 0.6749163866043091,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w1-rim-48.jpg",
+            "sha256": "f3002d638031b45cd3de5fde8185eeb66861b3a83c03f167c04170db3384bf92",
+            "bounds": [
+              858,
+              68,
+              1178,
+              388
+            ],
+            "width": 320,
+            "height": 320
+          }
+        }
+      ],
+      "fps": 30.0,
+      "clip": "evals/iterations/evidence-state-018/media/w1-continuous.mp4"
+    },
+    {
+      "index": 2,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 756,
+        "end": 764,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+        ],
+        "types": [
+          "assist",
+          "steal",
+          "turnover",
+          "two_point_made"
+        ]
+      },
+      "frames": [
+        {
+          "time": 754.0,
+          "actual_time": 754.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-0.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-0.jpg",
+            "sha256": "e75811371e626526c7b0c070738092ff0baabcffa4c2d1b9e33c3f282aca840a"
+          },
+          "frame_index": 22620,
+          "rim_match_score": 0.34597980976104736
+        },
+        {
+          "time": 754.25,
+          "actual_time": 754.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-1.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-1.jpg",
+            "sha256": "541265ce6b5d30c67bbfd4a3221c4780d363c683ebb2fcf5b8ba18510635c6f9"
+          },
+          "frame_index": 22628,
+          "rim_match_score": 0.35889381170272827
+        },
+        {
+          "time": 754.5,
+          "actual_time": 754.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-2.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-2.jpg",
+            "sha256": "8c7d42e03330857d8ff17e7e9d895e6fc806ad198dc7386f1b34efa38aef0c04"
+          },
+          "frame_index": 22635,
+          "rim_match_score": 0.36192646622657776
+        },
+        {
+          "time": 754.75,
+          "actual_time": 754.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-3.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-3.jpg",
+            "sha256": "650c3682edbf1435cf3133ec21aa0d5744198168fbaf8aeba98a8577549fd1b1"
+          },
+          "frame_index": 22642,
+          "rim_match_score": 0.36345374584198
+        },
+        {
+          "time": 755.0,
+          "actual_time": 755.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-4.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-4.jpg",
+            "sha256": "2af6d5f100078c2aed4b377bb9fa019ef28101c613682c6cb238488a76cdbbe4"
+          },
+          "frame_index": 22650,
+          "rim_match_score": 0.36171954870224
+        },
+        {
+          "time": 755.25,
+          "actual_time": 755.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-5.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-5.jpg",
+            "sha256": "c20b64223545aa009f8b1f2a3611667579a8de046dd7d5d376142fa749c967a8"
+          },
+          "frame_index": 22658,
+          "rim_match_score": 0.3618106245994568
+        },
+        {
+          "time": 755.5,
+          "actual_time": 755.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-6.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-6.jpg",
+            "sha256": "8bf50103a581b184edd74dabd5dcc698dccf0cc82853d04b7194bfcd032ac3e5"
+          },
+          "frame_index": 22665,
+          "rim_match_score": 0.3618573844432831
+        },
+        {
+          "time": 755.75,
+          "actual_time": 755.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-7.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-7.jpg",
+            "sha256": "658ec807123743dc1f1ee50cc76f8dd2e149fd5944bebb83173782780c34222d"
+          },
+          "frame_index": 22672,
+          "rim_match_score": 0.36140820384025574
+        },
+        {
+          "time": 756.0,
+          "actual_time": 756.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-8.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-8.jpg",
+            "sha256": "e549e4898fdce907d6d37db319e1e1bb9516cddec240e35d5632bfc2416e7e53"
+          },
+          "frame_index": 22680,
+          "rim_match_score": 0.3555227518081665
+        },
+        {
+          "time": 756.25,
+          "actual_time": 756.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-9.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-9.jpg",
+            "sha256": "33dd0f767a0500f58ac7d1b8f8e8b43ff57b7e610747139b5bf07fa41434602c"
+          },
+          "frame_index": 22688,
+          "rim_match_score": 0.35551920533180237
+        },
+        {
+          "time": 756.5,
+          "actual_time": 756.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-10.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-10.jpg",
+            "sha256": "56ee0f77731b334697ec29a6f5a188725cd0d3a136aa10c89e85c119cda6933e"
+          },
+          "frame_index": 22695,
+          "rim_match_score": 0.35551565885543823
+        },
+        {
+          "time": 756.75,
+          "actual_time": 756.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-11.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-11.jpg",
+            "sha256": "dcddec62feb95830365bbb991d30b470163b5b5c2d085d83a2df94e8fb76f11d"
+          },
+          "frame_index": 22702,
+          "rim_match_score": 0.35550859570503235
+        },
+        {
+          "time": 757.0,
+          "actual_time": 757.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-12.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-12.jpg",
+            "sha256": "2c8c37fd6daa8bb460842955372f8f3d8be32b2d360990c4c212c890d67e8186"
+          },
+          "frame_index": 22710,
+          "rim_match_score": 0.3536444306373596
+        },
+        {
+          "time": 757.25,
+          "actual_time": 757.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-13.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-13.jpg",
+            "sha256": "a3c4ad575eaa45a67c3f0fc5f1f4a91c33d75245de2bb15eebe0b687d686a7fc"
+          },
+          "frame_index": 22718,
+          "rim_match_score": 0.3612866997718811
+        },
+        {
+          "time": 757.5,
+          "actual_time": 757.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-14.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-14.jpg",
+            "sha256": "e23cbff0835bc5399a6a7ecf4f46fa456b328ada46535894885f1ff4f5d2f8fc"
+          },
+          "frame_index": 22725,
+          "rim_match_score": 0.3633142411708832
+        },
+        {
+          "time": 757.75,
+          "actual_time": 757.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-15.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-15.jpg",
+            "sha256": "8456624e94eaeababda1e0540dfd912a734ada1f517c14d93cfe04c95456aa63"
+          },
+          "frame_index": 22732,
+          "rim_match_score": 0.36373522877693176
+        },
+        {
+          "time": 758.0,
+          "actual_time": 758.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-16.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-16.jpg",
+            "sha256": "e8ea83c090a9a8ab7920fb2b29325402c8bb208dbf7c0a97259eeb41fba87004"
+          },
+          "frame_index": 22740,
+          "rim_match_score": 0.36372894048690796
+        },
+        {
+          "time": 758.25,
+          "actual_time": 758.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-17.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-17.jpg",
+            "sha256": "7b15778584ef38d49ab879cc5083c3642eae9e87e8cd578f3d569bfa0817e6fa"
+          },
+          "frame_index": 22748,
+          "rim_match_score": 0.36360108852386475
+        },
+        {
+          "time": 758.5,
+          "actual_time": 758.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-18.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-18.jpg",
+            "sha256": "be6c70b775e79e5b17b20bd93f7e546c468b20fba384c5330fb647c7041d2137"
+          },
+          "frame_index": 22755,
+          "rim_match_score": 0.363592267036438
+        },
+        {
+          "time": 758.75,
+          "actual_time": 758.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-19.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-19.jpg",
+            "sha256": "7c7fe7f65c125b75ce993422bbbda68090381319c16e67913b6595181a30c8ad"
+          },
+          "frame_index": 22762,
+          "rim_match_score": 0.36360108852386475
+        },
+        {
+          "time": 759.0,
+          "actual_time": 759.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-20.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-20.jpg",
+            "sha256": "d7c50b8e18e1800aa7f5b9e4d981b36071237e241724770dcf7df610b5ea1d1f"
+          },
+          "frame_index": 22770,
+          "rim_match_score": 0.36338919401168823
+        },
+        {
+          "time": 759.25,
+          "actual_time": 759.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-21.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-21.jpg",
+            "sha256": "1710b8597cbe31b19c6f856c460e5ebd38c3b8ac5f7d6e857c52e64a71d1ed73"
+          },
+          "frame_index": 22778,
+          "rim_match_score": 0.36301809549331665
+        },
+        {
+          "time": 759.5,
+          "actual_time": 759.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-22.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-22.jpg",
+            "sha256": "701609a665fdaa59053e737716cc3cde075b0c18d7785ee06cca3ea48e2affa8"
+          },
+          "frame_index": 22785,
+          "rim_match_score": 0.3623529374599457
+        },
+        {
+          "time": 759.75,
+          "actual_time": 759.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-23.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-23.jpg",
+            "sha256": "1fdb0d51f3cfb46c58adb0b6a9a2166046f47ae90e271df710e455c8abdb14c6"
+          },
+          "frame_index": 22792,
+          "rim_match_score": 0.36085283756256104
+        },
+        {
+          "time": 760.0,
+          "actual_time": 760.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-24.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-24.jpg",
+            "sha256": "76a6256619096f956698bb565f3a1079022cee64c3860f8b86836dc0bbed691a"
+          },
+          "frame_index": 22800,
+          "rim_match_score": 0.3655121922492981
+        },
+        {
+          "time": 760.25,
+          "actual_time": 760.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-25.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-25.jpg",
+            "sha256": "7fbb8596706f113d153abfee6b7b8b10faa75737de2e4b549e609b6cbeae7a8b"
+          },
+          "frame_index": 22808,
+          "rim_match_score": 0.365420937538147
+        },
+        {
+          "time": 760.5,
+          "actual_time": 760.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-26.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-26.jpg",
+            "sha256": "5a3168a0914c15e617520cdc87da6e234fe5d1347b2c3e173de57e5d711269fb"
+          },
+          "frame_index": 22815,
+          "rim_match_score": 0.36194711923599243
+        },
+        {
+          "time": 760.75,
+          "actual_time": 760.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-27.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-27.jpg",
+            "sha256": "1de6c6425e15fa64ed9df8f87236f215b8352213195d2c451d8e3029e16c717a"
+          },
+          "frame_index": 22822,
+          "rim_match_score": 0.359986275434494
+        },
+        {
+          "time": 761.0,
+          "actual_time": 761.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-28.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-28.jpg",
+            "sha256": "23be847c20b16c1c0aaafd70f692dc882190dc3c70f5ef6771367d3d142a7d62"
+          },
+          "frame_index": 22830,
+          "rim_match_score": 0.34571394324302673
+        },
+        {
+          "time": 761.25,
+          "actual_time": 761.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-29.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-29.jpg",
+            "sha256": "1f010d0caba3d024782ea97e2db6eca408325f6cd461cfa92e024589b9fb3fee"
+          },
+          "frame_index": 22838,
+          "rim_match_score": 0.37582623958587646
+        },
+        {
+          "time": 761.5,
+          "actual_time": 761.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-30.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-30.jpg",
+            "sha256": "7cf763df1c1a8eb5912df67ca78d9e3ff60c8cfb5a45aaf377afd17cce630b89"
+          },
+          "frame_index": 22845,
+          "rim_match_score": 0.3538995087146759
+        },
+        {
+          "time": 761.75,
+          "actual_time": 761.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-31.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-31.jpg",
+            "sha256": "d9c808c9062dbb043102cef0a095ba1c8128da63467db0f0cc6ab041b0a802e2"
+          },
+          "frame_index": 22852,
+          "rim_match_score": 0.3600214421749115
+        },
+        {
+          "time": 762.0,
+          "actual_time": 762.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-32.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-32.jpg",
+            "sha256": "b18489b80f379f02c5ed15fb67eb7655dec96c99bf905f4192ea620c022d3c61"
+          },
+          "frame_index": 22860,
+          "rim_match_score": 0.3518750071525574
+        },
+        {
+          "time": 762.25,
+          "actual_time": 762.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-33.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-33.jpg",
+            "sha256": "03dfbb08c770cf5c52b4a4c24e8ff607485d1c7f64461914e43ea7adcb9e3448"
+          },
+          "frame_index": 22868,
+          "rim_match_score": 0.35029616951942444
+        },
+        {
+          "time": 762.5,
+          "actual_time": 762.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-34.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-34.jpg",
+            "sha256": "895eed5d144fc856a3cd864dc5e156fdec7b19697a588efd6344570405e34036"
+          },
+          "frame_index": 22875,
+          "rim_match_score": 0.3502654731273651
+        },
+        {
+          "time": 762.75,
+          "actual_time": 762.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-35.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-35.jpg",
+            "sha256": "13478d0f6ce8db7455a38f1865510b12b1c7386e653bd9d8547034d4674f1b3c"
+          },
+          "frame_index": 22882,
+          "rim_match_score": 0.3476814329624176
+        },
+        {
+          "time": 763.0,
+          "actual_time": 763.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-36.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-36.jpg",
+            "sha256": "a94121f27021d254a36aa53f5c6f6aac993f64c589b36e6062fe28d1865da903"
+          },
+          "frame_index": 22890,
+          "rim_match_score": 0.3526069223880768
+        },
+        {
+          "time": 763.25,
+          "actual_time": 763.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-37.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-37.jpg",
+            "sha256": "83a5fbc4f82542b20b2908df6f494ef0dc4540619dd0e1f8652989414b2d6a46"
+          },
+          "frame_index": 22898,
+          "rim_match_score": 0.3363502323627472
+        },
+        {
+          "time": 763.5,
+          "actual_time": 763.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-38.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-38.jpg",
+            "sha256": "d7d081a3f0c26cf3d817143c924f60d1e3639e533c97d71fb69623e025a636d7"
+          },
+          "frame_index": 22905,
+          "rim_match_score": 0.34900256991386414
+        },
+        {
+          "time": 763.75,
+          "actual_time": 763.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-39.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-39.jpg",
+            "sha256": "7ba2e03198e80fc63450348c3194003dfe009cefbf8c0eaef65ea1ae9d52a0e8"
+          },
+          "frame_index": 22912,
+          "rim_match_score": 0.34907370805740356
+        },
+        {
+          "time": 764.0,
+          "actual_time": 764.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-40.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-40.jpg",
+            "sha256": "bc91577fd1517ca37dcecd2957cb185c13d44142f33767f67c99bca448ccabd9"
+          },
+          "frame_index": 22920,
+          "rim_match_score": 0.37243399024009705
+        },
+        {
+          "time": 764.25,
+          "actual_time": 764.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-41.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-41.jpg",
+            "sha256": "74f7adeff677daafc6e192cb15cf9dc97cc98b695ff74773597c4504ed9513f1"
+          },
+          "frame_index": 22928,
+          "rim_match_score": 0.5249798893928528
+        },
+        {
+          "time": 764.5,
+          "actual_time": 764.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-42.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-42.jpg",
+            "sha256": "7da9c51afb492d772948d4de9b19605474b88a2034b49ecd1b1a443cd2dc0a0b"
+          },
+          "frame_index": 22935,
+          "rim_match_score": 0.5715618133544922
+        },
+        {
+          "time": 764.75,
+          "actual_time": 764.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-43.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-43.jpg",
+            "sha256": "b7537051fa38bbdb7f4762a3a7aaa0aef09db079a543637963b42187e1a716eb"
+          },
+          "frame_index": 22942,
+          "rim_match_score": 0.5830321907997131
+        },
+        {
+          "time": 765.0,
+          "actual_time": 765.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-44.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-44.jpg",
+            "sha256": "aef1c2a6d73d7bef7ce4641cac8954d94f7396a08646032fa046223ed9ee947f"
+          },
+          "frame_index": 22950,
+          "rim_match_score": 0.7478247880935669,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w2-rim-44.jpg",
+            "sha256": "5a3e0381e516a6427a9898002049edd45153f5ab40350a8f65fbc6fb4cf7897a",
+            "bounds": [
+              795,
+              62,
+              1115,
+              382
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 765.25,
+          "actual_time": 765.2666666666667,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-45.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-45.jpg",
+            "sha256": "c244a0df556fc59f7829fb08d5aee98ba10d3d804c0ca354ea0f206d9508dad9"
+          },
+          "frame_index": 22958,
+          "rim_match_score": 0.7302451729774475,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w2-rim-45.jpg",
+            "sha256": "3755612b507de3bfd3c83dda8cccadd93f2e35e79e6f5dee730a6f2db4153063",
+            "bounds": [
+              691,
+              62,
+              1011,
+              382
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 765.5,
+          "actual_time": 765.5,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-46.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-46.jpg",
+            "sha256": "8f5ae9c965dad5bce2141297d8cbebcb1de279e6deccac9f32411a2d98ca7066"
+          },
+          "frame_index": 22965,
+          "rim_match_score": 0.5652520656585693
+        },
+        {
+          "time": 765.75,
+          "actual_time": 765.7333333333333,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-47.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-47.jpg",
+            "sha256": "170395140aaa8e58aae40c533cd6cf468efe005742e6e66d128306731f53bb5e"
+          },
+          "frame_index": 22972,
+          "rim_match_score": 0.5231056213378906
+        },
+        {
+          "time": 766.0,
+          "actual_time": 766.0,
+          "native": "evals/iterations/evidence-state-018/media/w2-native-48.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w2-wide-48.jpg",
+            "sha256": "bcb3c14b1b7d91b6d944f69b27db38540ce6c8475be11b8835da8c94721b8943"
+          },
+          "frame_index": 22980,
+          "rim_match_score": 0.5391861200332642
+        }
+      ],
+      "fps": 30.0,
+      "clip": "evals/iterations/evidence-state-018/media/w2-continuous.mp4"
+    },
+    {
+      "index": 6,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 1316,
+        "end": 1324,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+        ],
+        "types": [
+          "defensive_rebound",
+          "offensive_rebound",
+          "three_point_miss",
+          "turnover",
+          "two_point_miss"
+        ]
+      },
+      "frames": [
+        {
+          "time": 1314.0,
+          "actual_time": 1314.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-0.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-0.jpg",
+            "sha256": "dc358bc6cedb7a6e08b543c4109d2c0964d7afb6ac9dabbc8044664ba476997c"
+          },
+          "frame_index": 32850,
+          "rim_match_score": 0.6792932152748108,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-0.jpg",
+            "sha256": "27ba3c17732ee7f0f888ca218edee34311ca2c1ed9f2bcf944cc3c484a2fe8fe",
+            "bounds": [
+              292,
+              114,
+              612,
+              434
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1314.25,
+          "actual_time": 1314.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-1.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-1.jpg",
+            "sha256": "a4758f955dd36dab8e1118f256e27348e394ccf069120057a91f080e59fc4a34"
+          },
+          "frame_index": 32856,
+          "rim_match_score": 0.6845237612724304,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-1.jpg",
+            "sha256": "060eaa8ee3a65f76533247bd29ecacff9855578ff91eb921b2ec43aff76cbeb1",
+            "bounds": [
+              290,
+              116,
+              610,
+              436
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1314.5,
+          "actual_time": 1314.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-2.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-2.jpg",
+            "sha256": "c192c7cf7d8cc301e4539c131c3c8034057651b7c850c0ebb40e22cdd5483456"
+          },
+          "frame_index": 32862,
+          "rim_match_score": 0.675648033618927,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-2.jpg",
+            "sha256": "1c44cf7d6b2e55e80c4d7b94a4b93ee76b71383f25c56f159a9b7b93e41640f9",
+            "bounds": [
+              310,
+              113,
+              630,
+              433
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1314.75,
+          "actual_time": 1314.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-3.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-3.jpg",
+            "sha256": "9c2e7084567c18dafb5ff4f80fcf78dd16294d653f5778f0978301ff664cce54"
+          },
+          "frame_index": 32869,
+          "rim_match_score": 0.6646079421043396,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-3.jpg",
+            "sha256": "3713bf232bb7456d51201fdab4abadde05af26eae6a89081c5d6076e0c9de60d",
+            "bounds": [
+              339,
+              114,
+              659,
+              434
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1315.0,
+          "actual_time": 1315.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-4.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-4.jpg",
+            "sha256": "6bede49291db3d4a2a11ca7812319981daea881c223e43bd0e1dce46037e6015"
+          },
+          "frame_index": 32875,
+          "rim_match_score": 0.6615724563598633,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-4.jpg",
+            "sha256": "1fdd3af9e1201174b8afb70c2e1f30b27caa7db5872f4f18f260ebc78813b541",
+            "bounds": [
+              370,
+              115,
+              690,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1315.25,
+          "actual_time": 1315.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-5.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-5.jpg",
+            "sha256": "778a5427af212c70fd45dc522a5b09772e3d24941239187877b47686c46b2654"
+          },
+          "frame_index": 32881,
+          "rim_match_score": 0.651828408241272,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-5.jpg",
+            "sha256": "ba5fa123c096b9982850d9fba10b0b24b691b78979b3ade4a747dc0278693085",
+            "bounds": [
+              406,
+              113,
+              726,
+              433
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1315.5,
+          "actual_time": 1315.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-6.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-6.jpg",
+            "sha256": "5f99e04ae6a044ffe90a2580c4124cdd7e19018435dc98d6c74fa784498bcd7d"
+          },
+          "frame_index": 32888,
+          "rim_match_score": 0.6452937126159668,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-6.jpg",
+            "sha256": "1a4d50966190edecf1d52fc5047958b64705ca1f0157e6efcfa3274f7ad7bcca",
+            "bounds": [
+              434,
+              115,
+              754,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1315.75,
+          "actual_time": 1315.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-7.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-7.jpg",
+            "sha256": "97886ead9b4af6fda14d259a311757f656ba77c873d299b880b017f0b2f7d2e6"
+          },
+          "frame_index": 32894,
+          "rim_match_score": 0.6472469568252563,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-7.jpg",
+            "sha256": "e7ca98f014d21ac3e4cfb26ba242941e39f5acfa0213a8c5ca5feac488d0f1c7",
+            "bounds": [
+              451,
+              113,
+              771,
+              433
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1316.0,
+          "actual_time": 1316.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-8.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-8.jpg",
+            "sha256": "18bb6566a4e94fe14cdfb1f8a915a25f168be0f3452dc1c9678e02b89359b4cf"
+          },
+          "frame_index": 32900,
+          "rim_match_score": 0.6438891291618347,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-8.jpg",
+            "sha256": "de64e083eacd594d88da09ed1751c6b4905086c072a1d9e08389220ff390a16a",
+            "bounds": [
+              460,
+              114,
+              780,
+              434
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1316.25,
+          "actual_time": 1316.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-9.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-9.jpg",
+            "sha256": "08cbacbd0a2266ffc4121806c73ef8c4051788d145487faec68dd5808916c22d"
+          },
+          "frame_index": 32906,
+          "rim_match_score": 0.6360950469970703,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-9.jpg",
+            "sha256": "fe558916fb98088244141eefd4fb815ba416c4995f008d1bc39d6fdd21f4afe0",
+            "bounds": [
+              459,
+              115,
+              779,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1316.5,
+          "actual_time": 1316.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-10.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-10.jpg",
+            "sha256": "8316b51d0a837ece0a10e7953938b7b97a523c80822df48d665d729b44445704"
+          },
+          "frame_index": 32912,
+          "rim_match_score": 0.638329029083252,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-10.jpg",
+            "sha256": "b277c941649ec724e32f2dde4f8a2e794343bb1dca26ecf05af0578b59fc7ad2",
+            "bounds": [
+              461,
+              114,
+              781,
+              434
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1316.75,
+          "actual_time": 1316.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-11.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-11.jpg",
+            "sha256": "fbc82fbba3190d57a5124abc4d61af8ab5175b3c19683db3784221547e7a68b5"
+          },
+          "frame_index": 32919,
+          "rim_match_score": 0.6370964050292969,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-11.jpg",
+            "sha256": "bef9ba7e5febc9e07819fd98c8e50634237611b82da31b73786b04043da5250f",
+            "bounds": [
+              447,
+              116,
+              767,
+              436
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1317.0,
+          "actual_time": 1317.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-12.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-12.jpg",
+            "sha256": "419553c593cbc76a218529e68ca7fc67938bd25fd82b4e1031ed70765879bc10"
+          },
+          "frame_index": 32925,
+          "rim_match_score": 0.6443567872047424,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-12.jpg",
+            "sha256": "e411f5a3fc986d811463e80ee8f3282cc61b80625e50e93e8dd7d69f50ef5bf7",
+            "bounds": [
+              418,
+              115,
+              738,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1317.25,
+          "actual_time": 1317.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-13.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-13.jpg",
+            "sha256": "f6c3f0ad92e7164e209ed0b7e430cceee0647dc5b9f6ecf35c7aff036ad2db8e"
+          },
+          "frame_index": 32931,
+          "rim_match_score": 0.6581128835678101,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-13.jpg",
+            "sha256": "fd860f5d77cb1d31af779330e32f7b51c4a4e0b35fba87342bfab9ca886266d4",
+            "bounds": [
+              372,
+              115,
+              692,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1317.5,
+          "actual_time": 1317.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-14.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-14.jpg",
+            "sha256": "cc98d6a0339100724b9915658bb1ef6fb3b27e70c76e402c424d538b82ea7128"
+          },
+          "frame_index": 32938,
+          "rim_match_score": 0.6668411493301392,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-14.jpg",
+            "sha256": "84a756c5e34b8a5a7e01a42d93d259dd1d7f0fc66ebfb5d5a73db5de55cbd1bb",
+            "bounds": [
+              323,
+              116,
+              643,
+              436
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1317.75,
+          "actual_time": 1317.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-15.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-15.jpg",
+            "sha256": "0fe4f7ea4b253ddef465ac275c9b2676e4ab042ef9e94801b29564a18f6d973e"
+          },
+          "frame_index": 32944,
+          "rim_match_score": 0.6821969151496887,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-15.jpg",
+            "sha256": "2eff0e258592d8d38f933405ae2121b3dc53a55a0b33e3cf5e35facf15c7778e",
+            "bounds": [
+              296,
+              115,
+              616,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1318.0,
+          "actual_time": 1318.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-16.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-16.jpg",
+            "sha256": "81fb354ed46c1ccd7644408533646b9b100cbf725359a9e1b69511ae9d5d573c"
+          },
+          "frame_index": 32950,
+          "rim_match_score": 0.6808322072029114,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-16.jpg",
+            "sha256": "67801b33727efd6e67e6bff63798692ca7a23817554acfecb39a8c10fe87bcf4",
+            "bounds": [
+              273,
+              117,
+              593,
+              437
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1318.25,
+          "actual_time": 1318.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-17.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-17.jpg",
+            "sha256": "342a2c45e7506d9f0474b8917f9313597b27e813cf693105470d2976e84560b5"
+          },
+          "frame_index": 32956,
+          "rim_match_score": 0.6807723045349121,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-17.jpg",
+            "sha256": "02f0fe448c648ee4e46bce59ecdb4d0c748e6d8d8984e01f1fb0c39d3a56d73d",
+            "bounds": [
+              249,
+              115,
+              569,
+              435
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1318.5,
+          "actual_time": 1318.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-18.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-18.jpg",
+            "sha256": "2198f583731bcdcfe9474aaaae2442486b97afc9d26d06124632e7664dd5d6f4"
+          },
+          "frame_index": 32962,
+          "rim_match_score": 0.6801118850708008,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-18.jpg",
+            "sha256": "dbb8835b866527863cb3c80b0d6be2f9dbf3df7a0b452888e34ea27ee72fbc4e",
+            "bounds": [
+              250,
+              116,
+              570,
+              436
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1318.75,
+          "actual_time": 1318.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-19.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-19.jpg",
+            "sha256": "9d3dfe07ce243c3c86a7120c3df1f5db7e0fbc050516e998284fb4b23384a2f7"
+          },
+          "frame_index": 32969,
+          "rim_match_score": 0.7120679020881653,
+          "rejected_crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-19.jpg",
+            "sha256": "d02d9844e8713e6b7ee47a32cd5742ac395ad74b04197a48a33f774858895456",
+            "bounds": [
+              916,
+              95,
+              1236,
+              415
+            ],
+            "width": 320,
+            "height": 320
+          },
+          "crop_rejection_reason": "Pre-inference visual QA: template matched background advertising rather than a backboard during early camera view."
+        },
+        {
+          "time": 1319.0,
+          "actual_time": 1319.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-20.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-20.jpg",
+            "sha256": "efaf3ec3dcf81f031563f240c59a05cc8b7a43f2b30958ba94e339293d9f72c6"
+          },
+          "frame_index": 32975,
+          "rim_match_score": 0.6861628293991089,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-20.jpg",
+            "sha256": "88d02ebc1a1d2564dac555433ccf8278b95c690c113e2e1c88d1866c867f346d",
+            "bounds": [
+              825,
+              93,
+              1145,
+              413
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1319.25,
+          "actual_time": 1319.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-21.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-21.jpg",
+            "sha256": "bc139e284592af94dbddc93eb7baebae9d7e0584417c2e6194e408ba060d4eac"
+          },
+          "frame_index": 32981,
+          "rim_match_score": 0.7175437808036804,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-21.jpg",
+            "sha256": "0859ea121b8aadf55938bc3cc71b0bc5932f7d7e89c4b42506034b1fd265f38a",
+            "bounds": [
+              753,
+              97,
+              1073,
+              417
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1319.5,
+          "actual_time": 1319.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-22.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-22.jpg",
+            "sha256": "a689a2fa89e58997231910c4e04855d39184290e07b30e6a9e2248724ae10580"
+          },
+          "frame_index": 32988,
+          "rim_match_score": 0.7961448431015015,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-22.jpg",
+            "sha256": "fca275323084a35dee152081c458d5764421b6b8ec658c031605a47c1e0391c2",
+            "bounds": [
+              655,
+              99,
+              975,
+              419
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1319.75,
+          "actual_time": 1319.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-23.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-23.jpg",
+            "sha256": "d9bda2009d0891e96cac7b7196a2503c9181b1cfdbbba6b988b608845d171ac2"
+          },
+          "frame_index": 32994,
+          "rim_match_score": 0.8115555644035339,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-23.jpg",
+            "sha256": "90e4c25e37f9d9260be72aaf055aab4ed5be0580d531af6aac1299ac1acb291b",
+            "bounds": [
+              536,
+              99,
+              856,
+              419
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1320.0,
+          "actual_time": 1320.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-24.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-24.jpg",
+            "sha256": "00cd708d60ecf4b63b123c7e31a7c6ea2bbfd107702a70959a627cdb82e297af"
+          },
+          "frame_index": 33000,
+          "rim_match_score": 0.8526411056518555,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-24.jpg",
+            "sha256": "8403f6412d0f675d59f7a78de9ecb8cd50d9ceae0fb19883fd9368e22df63d28",
+            "bounds": [
+              443,
+              101,
+              763,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1320.25,
+          "actual_time": 1320.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-25.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-25.jpg",
+            "sha256": "32e27f7f7077dd6f4bc96cbfb5722248b07708a67b58b8ddb3b009d130fadb92"
+          },
+          "frame_index": 33006,
+          "rim_match_score": 0.9038320779800415,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-25.jpg",
+            "sha256": "7ca0a8fe7b9849b8b40b826cd994e3f75512a45ade53a60ceee5110b907873bc",
+            "bounds": [
+              371,
+              102,
+              691,
+              422
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1320.5,
+          "actual_time": 1320.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-26.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-26.jpg",
+            "sha256": "7acaa2df123755ccba3e942a40e6d868098034e9d6e216a624622f821a12e5bc"
+          },
+          "frame_index": 33012,
+          "rim_match_score": 0.9506766200065613,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-26.jpg",
+            "sha256": "fe03e33d5a87bd9d5f67467a899dff2adfdaa0be5952f7f0eb45e48ff17f7560",
+            "bounds": [
+              344,
+              102,
+              664,
+              422
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1320.75,
+          "actual_time": 1320.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-27.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-27.jpg",
+            "sha256": "c9d2444d01da3a84980c986ee608d86e1a0d19ba185990c087b93e2f9f112134"
+          },
+          "frame_index": 33019,
+          "rim_match_score": 0.9559946060180664,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-27.jpg",
+            "sha256": "777705bc1b2366fa33e174fcb545d946416885e29499d1a2edd2c89cf03b34cb",
+            "bounds": [
+              329,
+              103,
+              649,
+              423
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1321.0,
+          "actual_time": 1321.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-28.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-28.jpg",
+            "sha256": "2a624ac6535dca3e0b6c93ea9c272f14d043c4fa8422770610e11ef429475166"
+          },
+          "frame_index": 33025,
+          "rim_match_score": 1.0,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-28.jpg",
+            "sha256": "f6baf273e714bab2855ec604c4de31fe760fa6e52683b9b01015f29241b86751",
+            "bounds": [
+              330,
+              102,
+              650,
+              422
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1321.25,
+          "actual_time": 1321.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-29.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-29.jpg",
+            "sha256": "4f4da8d2742195aede47eb1a4edcba1c89d5bbddc13ae97a75686bb381e47911"
+          },
+          "frame_index": 33031,
+          "rim_match_score": 0.9639655351638794,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-29.jpg",
+            "sha256": "c2858a793f059e060ed8a644dbe19fd50fc2191c66de9680e7d966b89c7bae15",
+            "bounds": [
+              351,
+              102,
+              671,
+              422
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1321.5,
+          "actual_time": 1321.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-30.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-30.jpg",
+            "sha256": "9924dde0818961aacd0f69f9945ad692a2ff71da1048441738abb3458a7fe909"
+          },
+          "frame_index": 33038,
+          "rim_match_score": 0.9363248944282532,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-30.jpg",
+            "sha256": "56d9bea907572b1046483a6e66496abdf487c830dd59bcc7986f6f931da4eb16",
+            "bounds": [
+              377,
+              102,
+              697,
+              422
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1321.75,
+          "actual_time": 1321.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-31.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-31.jpg",
+            "sha256": "3e35223e437b4b2d398011698cdc1c58d1fe1289af833223c04e6511f89e8fad"
+          },
+          "frame_index": 33044,
+          "rim_match_score": 0.9180222749710083,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-31.jpg",
+            "sha256": "0406c79918900182228ff0d3c875eeed9228d9451c9b7dfa9b861b62b2896e9a",
+            "bounds": [
+              402,
+              101,
+              722,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1322.0,
+          "actual_time": 1322.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-32.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-32.jpg",
+            "sha256": "8f83a7aa0b6644d076fc915f2e6e1ab2b18f85fb9ac16da199e9d3ee24d8c5d7"
+          },
+          "frame_index": 33050,
+          "rim_match_score": 0.8829256892204285,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-32.jpg",
+            "sha256": "ed6f3485816086e169db14526f42de9a4b970b84be020f0acc601e1b1b0f9612",
+            "bounds": [
+              422,
+              101,
+              742,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1322.25,
+          "actual_time": 1322.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-33.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-33.jpg",
+            "sha256": "ecab9549cec841eb2f183186c3d121a7bcf8b349824090b7f11879cf9868e6aa"
+          },
+          "frame_index": 33056,
+          "rim_match_score": 0.8701714277267456,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-33.jpg",
+            "sha256": "65f1c4a80bd231af99137e1ea3616d04b34cae3a67fb1aaecc1e3edfe0a397da",
+            "bounds": [
+              435,
+              101,
+              755,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1322.5,
+          "actual_time": 1322.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-34.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-34.jpg",
+            "sha256": "f61e189e847341a5e6e8d0dec1306b7880ee30171cf9a636d4eddee3be20f117"
+          },
+          "frame_index": 33062,
+          "rim_match_score": 0.8649367094039917,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-34.jpg",
+            "sha256": "8e3a568afa06a8d5495d944ea577f0eaa3bc2a94bf6927187dbea628f0a68d0c",
+            "bounds": [
+              434,
+              101,
+              754,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1322.75,
+          "actual_time": 1322.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-35.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-35.jpg",
+            "sha256": "2146829d6281994c211a60ce98aceaa7e55ade025f2b94a1f0dccfc83f0cb353"
+          },
+          "frame_index": 33069,
+          "rim_match_score": 0.8375170230865479,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-35.jpg",
+            "sha256": "44e36b71edafecfec2f61e98a89d389850e38dce0ff6152c736f6c7c4ef54172",
+            "bounds": [
+              434,
+              101,
+              754,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1323.0,
+          "actual_time": 1323.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-36.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-36.jpg",
+            "sha256": "c229443789686486aa6e75d9ef7368814353ab5c0ff852e0149de1de8544ea9b"
+          },
+          "frame_index": 33075,
+          "rim_match_score": 0.8517040610313416,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-36.jpg",
+            "sha256": "03fd23f809dcc578bb8fb13f3437ec21ceab486ccb6d2573427cdd0ccb82f109",
+            "bounds": [
+              434,
+              101,
+              754,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1323.25,
+          "actual_time": 1323.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-37.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-37.jpg",
+            "sha256": "564f912a3c56baf6a0d964826c9ebcc518d24a8db02a2376a811895fa93c2039"
+          },
+          "frame_index": 33081,
+          "rim_match_score": 0.855482280254364,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-37.jpg",
+            "sha256": "8c3e1af44c22ef9031a3bcf36eb2b845c59b303b0236dc78e1a91498171a0c3a",
+            "bounds": [
+              434,
+              101,
+              754,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1323.5,
+          "actual_time": 1323.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-38.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-38.jpg",
+            "sha256": "662bc3798cf762645d11ad7a4f893b842a26576961f640d2631bd6bd867f2e94"
+          },
+          "frame_index": 33088,
+          "rim_match_score": 0.8593860864639282,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-38.jpg",
+            "sha256": "f222d05495e05607f436f957b4d84c8fdf4b030ac017ade078f13eab9b0308ad",
+            "bounds": [
+              438,
+              101,
+              758,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1323.75,
+          "actual_time": 1323.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-39.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-39.jpg",
+            "sha256": "3d1f32ee9243fafbf6b1acb0e144acfdf0b96f954e497d9a3681ef5e9d590d7a"
+          },
+          "frame_index": 33094,
+          "rim_match_score": 0.85336834192276,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-39.jpg",
+            "sha256": "bc38599ad6a1de9c83881d2949dac1024e2fc44bbfad5681a44278e033869e38",
+            "bounds": [
+              454,
+              101,
+              774,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1324.0,
+          "actual_time": 1324.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-40.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-40.jpg",
+            "sha256": "80e2893e2c489db945473ac696c9ef676c091fd5856eb772c338580d3b87e666"
+          },
+          "frame_index": 33100,
+          "rim_match_score": 0.8512911200523376,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-40.jpg",
+            "sha256": "664010fd599c1dfe54bd03d6bdcf82f35002c28e61c9fa7b8ee763332f04c48f",
+            "bounds": [
+              471,
+              101,
+              791,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1324.25,
+          "actual_time": 1324.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-41.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-41.jpg",
+            "sha256": "23f20280bdf0f05f36b350158eb7d08025ad5998bf01d1bbb6e672d0b4bc130f"
+          },
+          "frame_index": 33106,
+          "rim_match_score": 0.8313120007514954,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-41.jpg",
+            "sha256": "771611051e2d0d3cc7c91e3d3484594634eaf16cc0b00aa6c66b146326417c8d",
+            "bounds": [
+              486,
+              100,
+              806,
+              420
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1324.5,
+          "actual_time": 1324.48,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-42.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-42.jpg",
+            "sha256": "bf0a3f3526195fc0319527b7f4dc6b63fcc9c9d9af96bd3cc42931a3d5c90a95"
+          },
+          "frame_index": 33112,
+          "rim_match_score": 0.8350648283958435,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-42.jpg",
+            "sha256": "a52d0dd5403a3d982af0c158f20e9b6d08edea7dbb6d47d10e7d79f7846b8d51",
+            "bounds": [
+              487,
+              100,
+              807,
+              420
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1324.75,
+          "actual_time": 1324.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-43.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-43.jpg",
+            "sha256": "10fca99a54fce9370dc1bbca410bba83a3f925195c9d95d00fa31f2b4c031116"
+          },
+          "frame_index": 33119,
+          "rim_match_score": 0.8343404531478882,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-43.jpg",
+            "sha256": "13d993c1041ef289f5280edd0047e9261ce17aed5cf9b673f60c19bef6522e16",
+            "bounds": [
+              487,
+              101,
+              807,
+              421
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1325.0,
+          "actual_time": 1325.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-44.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-44.jpg",
+            "sha256": "a6c48ec97304b85e053c69c45ee3c1b9e350b9012ae42f968f3eea2dbdfe67f9"
+          },
+          "frame_index": 33125,
+          "rim_match_score": 0.8510183691978455,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-44.jpg",
+            "sha256": "0bd409c244cc9b79c214e12bf182cfe72e661d892097b3afbd845cdf9d83e288",
+            "bounds": [
+              525,
+              100,
+              845,
+              420
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1325.25,
+          "actual_time": 1325.24,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-45.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-45.jpg",
+            "sha256": "71dcd66ba9fb155837fb7e65810eab4e455915560ba3db6e25e644b815965640"
+          },
+          "frame_index": 33131,
+          "rim_match_score": 0.8556451201438904,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-45.jpg",
+            "sha256": "f875eb5611d886bfc7464a2165b9b9e74a43ca9cf7af88e6e8ff1e61498aff4c",
+            "bounds": [
+              611,
+              99,
+              931,
+              419
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1325.5,
+          "actual_time": 1325.52,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-46.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-46.jpg",
+            "sha256": "8fc4d8e596f1d3419af81ddac86a4390c424b2589ab920c76ffb5f88e1bf2829"
+          },
+          "frame_index": 33138,
+          "rim_match_score": 0.7610185146331787,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-46.jpg",
+            "sha256": "d37f12eb8d544fd6c66bf40467744e6af0de07b28848c0867057101fd03179ea",
+            "bounds": [
+              737,
+              98,
+              1057,
+              418
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1325.75,
+          "actual_time": 1325.76,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-47.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-47.jpg",
+            "sha256": "b0e077c433e0b7077bb7572f5e2f4b1cd554932d600b754c86d88401564fb87f"
+          },
+          "frame_index": 33144,
+          "rim_match_score": 0.785724401473999,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-47.jpg",
+            "sha256": "42fc1099280936d081f64150599cc4a58a8457ba443b5da41bb52e8f7a3f216f",
+            "bounds": [
+              692,
+              98,
+              1012,
+              418
+            ],
+            "width": 320,
+            "height": 320
+          }
+        },
+        {
+          "time": 1326.0,
+          "actual_time": 1326.0,
+          "native": "evals/iterations/evidence-state-018/media/w6-native-48.jpg",
+          "wide": {
+            "path": "evals/iterations/evidence-state-018/media/w6-wide-48.jpg",
+            "sha256": "ee31aa363dfda0fe5e4c95d50f16a54d7f0502e6db09af01271718c230e48436"
+          },
+          "frame_index": 33150,
+          "rim_match_score": 0.8423682451248169,
+          "crop": {
+            "path": "evals/iterations/evidence-state-018/media/w6-rim-48.jpg",
+            "sha256": "db04370f176ea91ed20ee9436d6cda2c4de26dd131501ee9be303cf589f38365",
+            "bounds": [
+              609,
+              99,
+              929,
+              419
+            ],
+            "width": 320,
+            "height": 320
+          }
+        }
+      ],
+      "fps": 25.0,
+      "clip": "evals/iterations/evidence-state-018/media/w6-continuous.mp4"
+    }
+  ],
+  "rim_calibration": {
+    "created_at": "2026-09-12T21:29:18.428378+05:30",
+    "specs": [
+      [
+        "east-bay",
+        "media/w1-native-0.jpg",
+        [
+          714,
+          46,
+          840,
+          148
+        ]
+      ],
+      [
+        "campus",
+        "media/w6-native-28.jpg",
+        [
+          419,
+          144,
+          562,
+          261
+        ]
+      ]
+    ],
+    "threshold": 0.6,
+    "scales": [
+      0.65,
+      0.8,
+      1.0,
+      1.2,
+      1.4
+    ],
+    "crop_pixels": 320,
+    "note": "Video-only backboard templates; candidate crops not guaranteed correct. No player position/court homography implemented. No upscaling.",
+    "quality_correction": "Campus first20 crop candidates rejected before inference after visual QA found advertising false matches. Other crops remain candidates, not verified detector accuracy."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "source_time_origin": 0,
+  "candidate_equality_with_006": true,
+  "frames_per_candidate": 5,
+  "image_max_edge": 640,
+  "sampling": [
+    {
+      "window": {
+        "start": 175.65333333333334,
+        "end": 188.89999999999998,
+        "signal_scores": {
+          "motion_intensity": 0.9665322113135836
+        }
+      },
+      "source_seconds": [
+        175.65333333333334,
+        178.965,
+        182.27666666666664,
+        185.5883333333333,
+        188.89999999999998
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event (made_basket, three_pointer, block, steal) is evident across frames; players are in transition or non-attacking positions."
+      }
+    },
+    {
+      "window": {
+        "start": 188.89999999999998,
+        "end": 202.14666666666665,
+        "signal_scores": {
+          "motion_intensity": 0.9665322113135836
+        }
+      },
+      "source_seconds": [
+        188.89999999999998,
+        192.21166666666664,
+        195.5233333333333,
+        198.83499999999998,
+        202.14666666666665
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear play from rubric events; players are moving or standing, no visible basket, block, steal, or three-pointer."
+      }
+    },
+    {
+      "window": {
+        "start": 202.14666666666665,
+        "end": 215.39333333333332,
+        "signal_scores": {
+          "motion_intensity": 0.9665322113135836
+        }
+      },
+      "source_seconds": [
+        202.14666666666665,
+        205.45833333333331,
+        208.76999999999998,
+        212.08166666666665,
+        215.39333333333332
+      ],
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.0,
+        "reason": "No clear highlight event (made basket, three pointer, block, steal) occurs across frames; players are in transition or moving without clear possession change or outcome."
+      }
+    }
+  ]
+}

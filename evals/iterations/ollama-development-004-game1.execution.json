@@ -1,0 +1,148 @@
+{
+  "attempt_id": "ollama-development-004-game1",
+  "started_at": "2026-09-12T14:14:17.406081+05:30",
+  "status": "interrupted_or_failed",
+  "command": [
+    "bash",
+    "scripts/run_local.sh",
+    "eval",
+    "--dataset",
+    "evals/experiments/game-1-ollama-local.pipeline.jsonl",
+    "--output",
+    "evals/results/iterations/ollama-development-004-game1",
+    "--change-note",
+    "Local runtime experiment 004 game1; num_batch128 memory hypothesis after 003 diagnosis; otherwise unchanged 5 frames, 6s context, 448px, 8192 context, no verifier; six-call cap; cached360p; diagnostic reference-stratified; unchanged padded horizon"
+  ],
+  "change_note": "Local runtime experiment 004 game1; num_batch128 memory hypothesis after 003 diagnosis; otherwise unchanged 5 frames, 6s context, 448px, 8192 context, no verifier; six-call cap; cached360p; diagnostic reference-stratified; unchanged padded horizon",
+  "source_sha256": "41e0ec54c6ec0c3030365e40a36ef373a4b2da953854508bbe61db4b507b5e20",
+  "dataset_sha256": "b579c9fcef5d9c148cbde14b8da85db4fb46954d166101b6cd04a39227bfde99",
+  "recipe_sha256": "9568acbca4a1b8f39c11d08f0554c60de11f7f76e2adf2d28e01d99c01e94adf",
+  "code_revision": "dae74b11044484c9fcc0a9e721c3b86f8fd06ed0",
+  "working_tree_dirty": true,
+  "num_batch": 128,
+  "model": "qwen3-vl:4b-instruct",
+  "model_digest": "ee4b975b58c17ce268cd19d40db35d5edc64603035d2ffc1fee1968eb0947f7b",
+  "holdout_used": false,
+  "observations": [
+    {
+      "at": "2026-09-12T14:14:17.522381+05:30",
+      "elapsed_seconds": 0.0,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:22.530081+05:30",
+      "elapsed_seconds": 5.01,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:27.539875+05:30",
+      "elapsed_seconds": 10.02,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:32.548848+05:30",
+      "elapsed_seconds": 15.03,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:37.562961+05:30",
+      "elapsed_seconds": 20.04,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:42.582019+05:30",
+      "elapsed_seconds": 25.06,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:47.596122+05:30",
+      "elapsed_seconds": 30.08,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:52.610796+05:30",
+      "elapsed_seconds": 35.09,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:14:57.621398+05:30",
+      "elapsed_seconds": 40.1,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:02.632912+05:30",
+      "elapsed_seconds": 45.11,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:07.648128+05:30",
+      "elapsed_seconds": 50.13,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:12.663549+05:30",
+      "elapsed_seconds": 55.15,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:17.677515+05:30",
+      "elapsed_seconds": 60.16,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:22.693572+05:30",
+      "elapsed_seconds": 65.18,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:27.702048+05:30",
+      "elapsed_seconds": 70.18,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:32.715044+05:30",
+      "elapsed_seconds": 75.2,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:37.728723+05:30",
+      "elapsed_seconds": 80.21,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:42.744979+05:30",
+      "elapsed_seconds": 85.23,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:47.764486+05:30",
+      "elapsed_seconds": 90.25,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:52.784025+05:30",
+      "elapsed_seconds": 95.27,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:15:57.809512+05:30",
+      "elapsed_seconds": 100.29,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:16:02.825772+05:30",
+      "elapsed_seconds": 105.31,
+      "memory_pressure_level": 1
+    },
+    {
+      "at": "2026-09-12T14:16:07.837163+05:30",
+      "elapsed_seconds": 110.32,
+      "memory_pressure_level": 2
+    }
+  ],
+  "pid": 60045,
+  "stop_reason": "memory_pressure",
+  "exit_code": -2,
+  "ended_at": "2026-09-12T14:16:08.192021+05:30",
+  "elapsed_seconds": 110.67
+}

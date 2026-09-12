@@ -138,6 +138,9 @@ def append_iteration_history(report: dict, history_path: str | Path, change_note
             "case_id": case["case_id"],
             "status": case["status"],
             "metrics": case["metrics"],
+            "inference_configuration": case.get("inference_configuration"),
+            "provider_checkpoint_path": case.get("provider_checkpoint_path"),
+            "provider_usage": case.get("provider_usage"),
             "provider_attempted_calls": case.get("provider_attempted_calls"),
             "estimated_provider_spend_usd": case.get("estimated_provider_spend_usd"),
             "estimated_provider_cumulative_spend_usd": case.get(

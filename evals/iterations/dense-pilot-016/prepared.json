@@ -1,0 +1,649 @@
+{
+  "name": "dense-pilot-016-preparation",
+  "started_at": "2026-09-12T20:50:54.526668+05:30",
+  "status": "completed",
+  "sampling": "six frames spanning exactly [core.start, core.end]; 1.6s apart across 8s",
+  "control_sampling": "six frames spanning [core.start-2, core.end+2]; 2.4s apart across 12s",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  },
+  "frames_per_window": 6,
+  "windows": [
+    {
+      "index": 0,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 20,
+        "end": 28,
+        "reference_ids": [],
+        "types": [],
+        "annotation_empty_not_human_verified": true
+      },
+      "fps": 30.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense0.jpg",
+          "sha256": "1a8bf20b8cac62bea32a6998f510923daba24d906de6d7c2ac48eb1f69ff5d12",
+          "width": 768,
+          "height": 431,
+          "time": 20.0,
+          "actual_time": 20.0,
+          "frame_index": 600,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense1.jpg",
+          "sha256": "ecb3ecdb50ac6fefc6a4d3329eeb2b2c3c857a94eeaeed0fbb4db90d12120504",
+          "width": 768,
+          "height": 431,
+          "time": 21.6,
+          "actual_time": 21.6,
+          "frame_index": 648,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense2.jpg",
+          "sha256": "6ab9983df12970ff63cc0be43402f7c85df00de7258467de307b43d961df91cd",
+          "width": 768,
+          "height": 431,
+          "time": 23.2,
+          "actual_time": 23.2,
+          "frame_index": 696,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense3.jpg",
+          "sha256": "96cbb498bcf5bbc921272b24f87b07d0be298986b7420106fd8a375bb3bc8431",
+          "width": 768,
+          "height": 431,
+          "time": 24.8,
+          "actual_time": 24.8,
+          "frame_index": 744,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense4.jpg",
+          "sha256": "feaf1b462663dcda7cecbffe075ece81c1217a57b476673d4d3aa90aa8da0851",
+          "width": 768,
+          "height": 431,
+          "time": 26.4,
+          "actual_time": 26.4,
+          "frame_index": 792,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w0-dense5.jpg",
+          "sha256": "6ab107eb5c9fcf6da7fe10895ea4a33bdc4bb7895c458c4ed13cbe52042e769f",
+          "width": 768,
+          "height": 431,
+          "time": 28.0,
+          "actual_time": 28.0,
+          "frame_index": 840,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.6000000000000014
+    },
+    {
+      "index": 1,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 223,
+        "end": 231,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-018"
+        ],
+        "types": [
+          "free_throw_made"
+        ]
+      },
+      "fps": 30.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense0.jpg",
+          "sha256": "f081cb32a4da76e3757f4d83408e63f56f02d16321ceac60e34d708c4f86403a",
+          "width": 768,
+          "height": 431,
+          "time": 223.0,
+          "actual_time": 223.0,
+          "frame_index": 6690,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense1.jpg",
+          "sha256": "081419cf3a3eae3cb662d4687aefb19d76ca6e41da3d3c7eb6890d9c30614ad2",
+          "width": 768,
+          "height": 431,
+          "time": 224.6,
+          "actual_time": 224.6,
+          "frame_index": 6738,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense2.jpg",
+          "sha256": "ba666fe2d975ab473e3722192be339991e5a010230a167f3d44222dec73865e8",
+          "width": 768,
+          "height": 431,
+          "time": 226.2,
+          "actual_time": 226.2,
+          "frame_index": 6786,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense3.jpg",
+          "sha256": "f78b131c4ed600b1655de303088ebf30975433fa461c7a446db11bfb97f6f74a",
+          "width": 768,
+          "height": 431,
+          "time": 227.8,
+          "actual_time": 227.8,
+          "frame_index": 6834,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense4.jpg",
+          "sha256": "5bfa232932716b5d927b70be682b309a49dbd190c876e8318b9e176a3354773a",
+          "width": 768,
+          "height": 431,
+          "time": 229.4,
+          "actual_time": 229.4,
+          "frame_index": 6882,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w1-dense5.jpg",
+          "sha256": "67434d13cced4fc38f76561c118da270ab18e78772e35c3029f1e51e25350467",
+          "width": 768,
+          "height": 431,
+          "time": 231.0,
+          "actual_time": 231.0,
+          "frame_index": 6930,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.5999999999999943
+    },
+    {
+      "index": 2,
+      "window": {
+        "game_id": "east-bay-elite-vs-spartans",
+        "start": 756,
+        "end": 764,
+        "reference_ids": [
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-064",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-065",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-066",
+          "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+        ],
+        "types": [
+          "assist",
+          "steal",
+          "turnover",
+          "two_point_made"
+        ]
+      },
+      "fps": 30.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense0.jpg",
+          "sha256": "8caeb1656325b230fb1dcebb33f7390a263ae5749066c1db05e1687343cfaa2e",
+          "width": 768,
+          "height": 431,
+          "time": 756.0,
+          "actual_time": 756.0,
+          "frame_index": 22680,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense1.jpg",
+          "sha256": "ee4b50b5cf5b55d31ca1b829c930be38f15d17f002e8ae5cbb6c1cff4c8c905e",
+          "width": 768,
+          "height": 431,
+          "time": 757.6,
+          "actual_time": 757.6,
+          "frame_index": 22728,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense2.jpg",
+          "sha256": "d05dd4bc7e28d2892c45e9a0cf1a24ba3d6029fbd3ff0be2e4274ced08c3f281",
+          "width": 768,
+          "height": 431,
+          "time": 759.2,
+          "actual_time": 759.2,
+          "frame_index": 22776,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense3.jpg",
+          "sha256": "dd49134e6447b3685b856687851a814d2ebfd6870b1f777c34310daab93326cb",
+          "width": 768,
+          "height": 431,
+          "time": 760.8,
+          "actual_time": 760.8,
+          "frame_index": 22824,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense4.jpg",
+          "sha256": "7b9e2d958def7ed8863b4e6b60ed8d569bd78ae2be37a9e4f8b5a7851f2c2d96",
+          "width": 768,
+          "height": 431,
+          "time": 762.4,
+          "actual_time": 762.4,
+          "frame_index": 22872,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w2-dense5.jpg",
+          "sha256": "80139561bde8d0ab5f922a69b781d3ae7103cdcf7e75a297db29aea6efeace79",
+          "width": 768,
+          "height": 431,
+          "time": 764.0,
+          "actual_time": 764.0,
+          "frame_index": 22920,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.6000000000000227
+    },
+    {
+      "index": 3,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 20,
+        "end": 28,
+        "reference_ids": [],
+        "types": [],
+        "annotation_empty_not_human_verified": true
+      },
+      "fps": 25.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense0.jpg",
+          "sha256": "783b557538bff549dd6151c6fe27ea36cdeebe382856c135d2286ea2f1556980",
+          "width": 768,
+          "height": 432,
+          "time": 20.0,
+          "actual_time": 20.0,
+          "frame_index": 500,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense1.jpg",
+          "sha256": "609c86c7bf08c32ef1f7efd12975673c9bc3e04aa9a67b8824a710ba9eb4c43f",
+          "width": 768,
+          "height": 432,
+          "time": 21.6,
+          "actual_time": 21.6,
+          "frame_index": 540,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense2.jpg",
+          "sha256": "4237c7ebcd5f9063a94115209ecfccaea63bb4afcd54c11b7b39e65590d9f39b",
+          "width": 768,
+          "height": 432,
+          "time": 23.2,
+          "actual_time": 23.2,
+          "frame_index": 580,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense3.jpg",
+          "sha256": "be0d2fe72d31b26003f47179642527165bcb5503ec4454d04d28f8c0b32db6b5",
+          "width": 768,
+          "height": 432,
+          "time": 24.8,
+          "actual_time": 24.8,
+          "frame_index": 620,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense4.jpg",
+          "sha256": "6495d0b73fdae2f427fa8cb041b2ceb0f5e38648472011ea8830d73f8774322d",
+          "width": 768,
+          "height": 432,
+          "time": 26.4,
+          "actual_time": 26.4,
+          "frame_index": 660,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w3-dense5.jpg",
+          "sha256": "43f45c23730fd9315ab4ffbab15ccba81dcaee53c7c9c6d4fd738ebb0f27ac1b",
+          "width": 768,
+          "height": 432,
+          "time": 28.0,
+          "actual_time": 28.0,
+          "frame_index": 700,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.6000000000000014
+    },
+    {
+      "index": 4,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 94,
+        "end": 102,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-002"
+        ],
+        "types": [
+          "free_throw_miss"
+        ]
+      },
+      "fps": 25.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense0.jpg",
+          "sha256": "9bee9c4c93ddb085b36d340ead8fec0e594fd14e2a27d53ddb02680cc3791e26",
+          "width": 768,
+          "height": 432,
+          "time": 94.0,
+          "actual_time": 94.0,
+          "frame_index": 2350,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense1.jpg",
+          "sha256": "84e5c80ff9b135c6e95d47e7faf8f964f9d24080b21168ffa15c6e803645f5f6",
+          "width": 768,
+          "height": 432,
+          "time": 95.6,
+          "actual_time": 95.6,
+          "frame_index": 2390,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense2.jpg",
+          "sha256": "be6d5b51f6df91fc14f183ea43d8e68db696f2f4c3f71130338ec74690912b30",
+          "width": 768,
+          "height": 432,
+          "time": 97.2,
+          "actual_time": 97.2,
+          "frame_index": 2430,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense3.jpg",
+          "sha256": "3a72e070e8ad0b10e013541f719edaa4973960af52f60777a1808cab213d8e53",
+          "width": 768,
+          "height": 432,
+          "time": 98.8,
+          "actual_time": 98.8,
+          "frame_index": 2470,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense4.jpg",
+          "sha256": "be03ce780d85d4f159ceb5b2b9cf307626102d1a6bb9dedbc538d9b992a26dba",
+          "width": 768,
+          "height": 432,
+          "time": 100.4,
+          "actual_time": 100.4,
+          "frame_index": 2510,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w4-dense5.jpg",
+          "sha256": "00ea84f174f6445bfada80afd6a65d29dfb56f3f87aaef6052332f2e1072dc92",
+          "width": 768,
+          "height": 432,
+          "time": 102.0,
+          "actual_time": 102.0,
+          "frame_index": 2550,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.5999999999999943
+    },
+    {
+      "index": 5,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 976,
+        "end": 984,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-075",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-076"
+        ],
+        "types": [
+          "block",
+          "two_point_miss"
+        ]
+      },
+      "fps": 25.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense0.jpg",
+          "sha256": "2e5da38d8cb9bbf1e90fd0d251f00bd505dd1a05dc290d1dfab71457af6b9f89",
+          "width": 768,
+          "height": 432,
+          "time": 976.0,
+          "actual_time": 976.0,
+          "frame_index": 24400,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense1.jpg",
+          "sha256": "5ca63f9cd58405719c6abd00a9bd30bf26f40f85ceeaacfcbcbbd3a9a736f751",
+          "width": 768,
+          "height": 432,
+          "time": 977.6,
+          "actual_time": 977.6,
+          "frame_index": 24440,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense2.jpg",
+          "sha256": "eec479898bdd2da3cff851f7a22ec0d53b51fa479218b8d8d184355bb2f6879d",
+          "width": 768,
+          "height": 432,
+          "time": 979.2,
+          "actual_time": 979.2,
+          "frame_index": 24480,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense3.jpg",
+          "sha256": "ed241ccf612716d21c17f9c56771c9c149392d64e21c02ae76821d30d98dde77",
+          "width": 768,
+          "height": 432,
+          "time": 980.8,
+          "actual_time": 980.8,
+          "frame_index": 24520,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense4.jpg",
+          "sha256": "805bc5c2084cdfb9d8d3861d6c08b6c07550db5a021990da2f1027df955194c4",
+          "width": 768,
+          "height": 432,
+          "time": 982.4,
+          "actual_time": 982.4,
+          "frame_index": 24560,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w5-dense5.jpg",
+          "sha256": "1e68589e073e7fdf20fca8ea0bb78717099491b946450e587ee6ca3b3baa03a4",
+          "width": 768,
+          "height": 432,
+          "time": 984.0,
+          "actual_time": 984.0,
+          "frame_index": 24600,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.6000000000000227
+    },
+    {
+      "index": 6,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 1316,
+        "end": 1324,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-104",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-108"
+        ],
+        "types": [
+          "defensive_rebound",
+          "offensive_rebound",
+          "three_point_miss",
+          "turnover",
+          "two_point_miss"
+        ]
+      },
+      "fps": 25.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense0.jpg",
+          "sha256": "ebc60c53eae59652cdb8240bc8034465baa4f894a2656c3fe9cab64e59cb0036",
+          "width": 768,
+          "height": 432,
+          "time": 1316.0,
+          "actual_time": 1316.0,
+          "frame_index": 32900,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense1.jpg",
+          "sha256": "f85a9c2feb9214fc62f6acf3d53d6d6b47d188e1041e0a8adb772bb4568312bd",
+          "width": 768,
+          "height": 432,
+          "time": 1317.6,
+          "actual_time": 1317.6,
+          "frame_index": 32940,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense2.jpg",
+          "sha256": "114a2077de36ecec76fa652e71a8a9b05fb7e70f80f167e5f49e41d6fdc9bcfb",
+          "width": 768,
+          "height": 432,
+          "time": 1319.2,
+          "actual_time": 1319.2,
+          "frame_index": 32980,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense3.jpg",
+          "sha256": "3f00558bf3f561c0556b94fc93cf21dfe67669f2dd24a29bd999c1f257486aa7",
+          "width": 768,
+          "height": 432,
+          "time": 1320.8,
+          "actual_time": 1320.8,
+          "frame_index": 33020,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense4.jpg",
+          "sha256": "b4002c1aa4e33cbfad191404d05607ea698b61e09c75b2d5ec7a890c08b14acf",
+          "width": 768,
+          "height": 432,
+          "time": 1322.4,
+          "actual_time": 1322.4,
+          "frame_index": 33060,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w6-dense5.jpg",
+          "sha256": "3ca0836dec2928c44b2a811f28a2ee7c87d588b444b9f2c9628d1b50f88cc412",
+          "width": 768,
+          "height": 432,
+          "time": 1324.0,
+          "actual_time": 1324.0,
+          "frame_index": 33100,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.599999999999909
+    },
+    {
+      "index": 7,
+      "window": {
+        "game_id": "unlimited-vs-campus",
+        "start": 2378,
+        "end": 2386,
+        "reference_ids": [
+          "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-193"
+        ],
+        "types": [
+          "three_point_made"
+        ]
+      },
+      "fps": 25.0,
+      "frames": [
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense0.jpg",
+          "sha256": "208ff515f28237953602281066c898bffb5f18674ff166f3fdcc1ba6f1b792e4",
+          "width": 768,
+          "height": 432,
+          "time": 2378.0,
+          "actual_time": 2378.0,
+          "frame_index": 59450,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense1.jpg",
+          "sha256": "2a039b02b29abaafe59399e0c6f18935bd6b149aca82330190d7165eed03ef19",
+          "width": 768,
+          "height": 432,
+          "time": 2379.6,
+          "actual_time": 2379.6,
+          "frame_index": 59490,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense2.jpg",
+          "sha256": "d25c80fa8dd1eb98964d409fce059492be253ae0be4fa605a5640ae1677486c6",
+          "width": 768,
+          "height": 432,
+          "time": 2381.2,
+          "actual_time": 2381.16,
+          "frame_index": 59529,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense3.jpg",
+          "sha256": "9286b9236f1476ecade2c74ac8b5b82b1eb378c96762d5d26f8c5646ace75a52",
+          "width": 768,
+          "height": 432,
+          "time": 2382.8,
+          "actual_time": 2382.8,
+          "frame_index": 59570,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense4.jpg",
+          "sha256": "55493bbe77e955e50335526138e4115565f129b18d10bf783140481e830cb192",
+          "width": 768,
+          "height": 432,
+          "time": 2384.4,
+          "actual_time": 2384.4,
+          "frame_index": 59610,
+          "view": "wide"
+        },
+        {
+          "path": "evals/iterations/dense-pilot-016/media/w7-dense5.jpg",
+          "sha256": "b2cbc55cbef30374f5f38049c551154407d521938cae9e53fe4e7de38f2f8a4d",
+          "width": 768,
+          "height": 432,
+          "time": 2386.0,
+          "actual_time": 2386.0,
+          "frame_index": 59650,
+          "view": "wide"
+        }
+      ],
+      "spacing_seconds": 1.599999999999909
+    }
+  ],
+  "ended_at": "2026-09-12T20:50:57.641747+05:30"
+}

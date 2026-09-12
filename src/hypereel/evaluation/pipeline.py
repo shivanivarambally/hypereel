@@ -15,6 +15,43 @@ from .metrics import (
 )
 
 
+def inference_configuration(settings: Settings) -> dict:
+    """Safe inference provenance: deliberately exclude credentials and endpoints."""
+    configuration = {
+        "frames_per_candidate": settings.frames_per_candidate,
+        "classification_context_seconds": settings.classification_context_seconds,
+        "verify_with_core_frames": settings.verify_with_core_frames,
+        "motion_sample_fps": settings.motion_sample_fps,
+        "max_provider_calls": settings.max_provider_calls,
+    }
+    if "ollama" in {settings.vision_provider.lower(), settings.llm_provider.lower()}:
+        configuration["ollama"] = {
+            "model": settings.ollama_model,
+            "num_ctx": settings.ollama_num_ctx,
+            "num_predict": settings.ollama_num_predict,
+            "num_batch": settings.ollama_num_batch or None,
+            "image_max_edge": settings.ollama_image_max_edge,
+            "timeout_seconds": settings.ollama_timeout_seconds,
+            "temperature": 0,
+            "seed": 0,
+            "input_mode": "ordered_sampled_images",
+            "frame_timestamps_supplied": False,
+        }
+    return configuration
+
+
+def classification_provider_error_rate(classifications, provider_name: str) -> float | None:
+    """Fraction of classified windows that returned an explicit provider failure.
+
+    Separate from the historical schema metric; no old iteration is rewritten.
+    """
+    if not classifications:
+        return None
+    prefixes = (f"{provider_name} error:", f"{provider_name} verification error:")
+    return sum(c.reason.startswith(prefixes) or c.reason == "classification error"
+               for c in classifications) / len(classifications)
+
+
 def evaluate_pipeline_case(case, recipe, settings: Settings, dataset_dir: Path) -> dict:
     source = case.source
     if "://" not in source:
@@ -39,7 +76,9 @@ def evaluate_pipeline_case(case, recipe, settings: Settings, dataset_dir: Path) 
                                 event.model_dump(mode="json")
                                 for event in case.reference_events or []
                             ])
-        with provider_budget_scope(isolated) as provider_budget:
+        with provider_budget_scope(isolated, checkpoint_context={
+            "case_id": case.case_id, "inference_configuration": inference_configuration(isolated),
+        }) as provider_budget:
             graph.invoke(initial, config)
         snapshot = graph.get_state(config)
         if tuple(snapshot.next) != ("approve_clips",):
@@ -60,8 +99,7 @@ def evaluate_pipeline_case(case, recipe, settings: Settings, dataset_dir: Path) 
             degraded.extend(state.get("errors", []))
             classifications = state.get("classifications", [])
             provider_name = state.get("mode", "")
-            if any(c.reason.startswith(f"{provider_name} error:")
-                   or c.reason == "classification error" for c in classifications):
+            if classification_provider_error_rate(classifications, provider_name):
                 degraded.append("one or more vision calls failed")
         clips = state.get("selected_clips", [])
         metrics, matches = selection_metrics(
@@ -110,6 +148,9 @@ def evaluate_pipeline_case(case, recipe, settings: Settings, dataset_dir: Path) 
         metrics["classification_schema_pass_rate"] = (
             valid_classifications / len(classifications) if classifications else None
         )
+        metrics["classification_provider_error_rate"] = classification_provider_error_rate(
+            classifications, state.get("mode", "")
+        )
         metrics.update(pipeline_diagnostic_metrics(
             candidates,
             classifications,
@@ -141,7 +182,9 @@ def evaluate_pipeline_case(case, recipe, settings: Settings, dataset_dir: Path) 
             "requested_vision_provider": settings.vision_provider,
             "requested_llm_provider": settings.llm_provider,
             "actual_vision_provider": state.get("mode"),
+            "inference_configuration": inference_configuration(settings),
             "trace_execution_id": config.get("metadata", {}).get("hypereel_execution_id"),
+            "provider_checkpoint_path": provider_budget["checkpoint_path"],
             "provider_usage": provider_budget["calls"],
             "provider_attempted_calls": provider_budget["attempted_calls"],
             "estimated_provider_spend_usd": provider_budget["estimated_spend_usd"],

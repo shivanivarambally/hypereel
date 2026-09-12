@@ -1,0 +1,55 @@
+"""025: Gemini video + generated visual transcript against cached direct024."""
+import json,base64,time,resource,shutil,os
+from pathlib import Path
+from hypereel.evaluation.gemini_retry_policy import retry_delay
+from run_gemini_development import ROOT,MODEL,CONFIG,RATES,post,sha,write,now
+from hypereel.config import get_settings
+from hypereel.evaluation.transcript import observation_prompt,parse_transcript,extraction_prompt,parse_window_extracted_events
+from hypereel.evaluation.basketball_events import score_events
+OUT=ROOT/'evals/iterations/gemini-transcript-025'
+def note(s):
+ with (ROOT/'evals/IMPLEMENTATION_NOTES.md').open('a') as f:f.write('\n### '+now()+' — Gemini-transcript025\n\n'+s+'\n')
+def main():
+ OUT.mkdir(exist_ok=True)
+ if (OUT/'report.json').exists():raise FileExistsError('Never overwrite results')
+ base=json.loads((ROOT/os.environ.get('GEMINI_CONTROL_REPORT','evals/iterations/gemini-development-024/report.json')).read_text());assert base['status']=='completed' and len(base['calls'])==8
+ refs=base['scored_references'];ledger=ROOT/'evals/iterations/spend-ledger.json';before=json.loads(ledger.read_text())['estimated_spend_usd'];key=get_settings().gemini_api_key
+ plan={'iteration':'025','started_at':now(),'model':MODEL,'config':CONFIG,'rates':RATES,'max_calls':16,'max_transient_retries':2,'hypothesis':'Explicit chronological observations with citation-linked extraction increase event recall or precision over direct video recognition.','control':'Cached024 directvideo; same8clips,4fps,HIGHresolution,core windows,model/config/scorer. Experimental arm adds a fresh Gemini visual transcript and more explicit extraction contract; extra reasoning/prompt/cost differ, so not isolated benefit of prose alone.','references':'14references,12types,2unannotated windows not verified negatives','source_report_sha256':sha(ROOT/os.environ.get('GEMINI_CONTROL_REPORT','evals/iterations/gemini-development-024/report.json')),'budget':'Existing cumulative$8 ceiling, reserve before each request, unknownusage retains reserve; no schema retries or posthoc repairs','holdout_used':False}
+ write(OUT/'plan.json',plan);shutil.copy2(Path(__file__),OUT/'run_gemini_transcript.py.snapshot');shutil.copy2(ROOT/'src/hypereel/evaluation/transcript.py',OUT/'transcript.py.snapshot');r={'status':'running','plan':plan,'started_at':now(),'calls':[],'windows':[],'scored_references':refs,'spend_before_usd':before,'holdout_used':False};start=time.monotonic()
+ def save():write(OUT/'report.json',r)
+ def call(idx,stage,prompt,video):
+  parts=[video,{'text':prompt}];body={'contents':[{'role':'user','parts':parts}],'generationConfig':CONFIG};c={'index':idx,'stage':stage,'prompt':prompt,'started_at':now(),'status':'preflight','attempts':[]};r['calls'].append(c);save()
+  count=post(key,'countTokens',{'generateContentRequest':dict(body,model='models/'+MODEL)});c['token_preflight']=count;reserve=(count['totalTokens']*1.25*.75+8192*3.75)/1e6+.01
+  for attempt in range(2):
+   spent=json.loads(ledger.read_text())['estimated_spend_usd'];assert spent+reserve<=8,'Budget ceiling';write(ledger,{'estimated_spend_usd':spent+reserve});ar={'started_at':now(),'reserve_usd':reserve};c['attempts'].append(ar);c['status']='reserved';save();ts=time.monotonic()
+   try:raw=post(key,'generateContent',body);ar.update(status='received',latency_seconds=time.monotonic()-ts);break
+   except RuntimeError as e:
+    ar.update(status='provider_error',error=str(e));save();note('ERROR '+json.dumps(ar))
+    delay=retry_delay(e)
+    if attempt or r.get('retry_count',0)>=2 or delay is None:raise
+    r['retry_count']=r.get('retry_count',0)+1;time.sleep(delay)
+  c.update(raw_response=raw,ended_at=now(),status='received');save();u=raw.get('usageMetadata',{});assert 'totalTokenCount' in u and 'promptTokenCount' in u,'Usage missing reservation retained'
+  ot=max(u.get('candidatesTokenCount',0)+u.get('thoughtsTokenCount',0),u['totalTokenCount']-u['promptTokenCount']);cost=(u['promptTokenCount']*.75+ot*3.75)/1e6;write(ledger,{'estimated_spend_usd':spent+cost});c.update(usage=u,estimated_cost_usd=cost)
+  choices=raw.get('candidates',[])
+  if not choices or choices[0].get('finishReason')!='STOP':save();raise ValueError('Incomplete output')
+  txt=''.join(x.get('text','') for x in choices[0].get('content',{}).get('parts',[]) if not x.get('thought'));c.update(raw_text=txt,status='completed');save();write(OUT/f'w{idx}-{stage}.json',c);note('CALL '+json.dumps(c));return txt
+ note('Frozen before calls '+json.dumps(plan));save()
+ try:
+  for control in base['calls']:
+   idx=control['index'];core=control['window'];m=control['manifest'][0];p=ROOT/m['path'];assert sha(p)==m['sha256'];lo=m['source_start'];hi=m['source_end'];times=[lo+i/4 for i in range(49)]
+   video={'inlineData':{'mimeType':'video/mp4','data':base64.b64encode(p.read_bytes()).decode()},'videoMetadata':{'fps':4}}
+   row={'index':idx,'window':core,'manifest':m,'status':'started'};r['windows'].append(row);save()
+   try:
+    prompt=observation_prompt(times).replace('these ordered images','this continuous video').replace('Image timestamps','Allowed source timestamps').replace('hidden between images','hidden from the video')+f' Video00:00 is source time{lo}. Use source time_seconds from the supplied grid, including context.'
+    rows=parse_transcript(call(idx,'narration',prompt,video),times);row['observations']=rows
+    prompt=extraction_prompt(rows,core['start'],core['end']).replace('ONLY from the supplied visual transcript. You cannot see the video.','from the supplied visual transcript, verified against the same video. Treat generated observations as unverified and do not accept unsupported claims.')+f' Video00:00 is source time{lo}. Return source time_seconds. Do not infer an outcome from a scoreboard.'
+    ev,context=parse_window_extracted_events(call(idx,'extraction',prompt,video),rows,lo,hi,core['start'],core['end']);row.update(status='completed',events=[dict(e,game_id=core['game_id']) for e in ev],context_events=context)
+   except ValueError as e:row.update(status='invalid',error=str(e));note(f'window{idx} invalid: {e}; no retry')
+   save();note('WINDOW '+json.dumps(row));print(idx,row['status'],row.get('events'),flush=True)
+  r['status']='completed' if all(w['status']=='completed' for w in r['windows']) else 'completed_with_invalid_windows'
+ except Exception as e:r.update(status='stopped',error=str(e).replace(key,'[REDACTED]'));note('STOP '+r['error'])
+ finally:
+  common=[w['index'] for w in r['windows'] if w['status']=='completed'];ids={i for w in r['windows'] if w['index'] in common for i in w['window']['reference_ids']};subset=[x for x in refs if x['reference_id'] in ids];r['common_completed_indices']=common;r['paired_metrics']={}
+  for arm,ws in [('direct_video',base['calls']),('video_transcript',r['windows'])]:r['paired_metrics'][arm]=score_events(subset,[e for w in ws if w['index'] in common for e in w['events']])
+  r.update(ended_at=now(),elapsed_seconds=time.monotonic()-start,peak_client_rss_gib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**3,spend_after_usd=json.loads(ledger.read_text())['estimated_spend_usd']);r['incremental_estimated_spend_usd']=r['spend_after_usd']-before;save();note('FINAL '+json.dumps({a:{k:m[k] for k in ['tp','fp','fn','micro_precision','micro_recall','micro_f1']} for a,m in r['paired_metrics'].items()}));print(r['status'],flush=True)
+if __name__=='__main__':main()

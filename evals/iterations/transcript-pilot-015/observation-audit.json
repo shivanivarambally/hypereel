@@ -1,0 +1,324 @@
+{
+  "created_at": "2026-09-12T19:48:56.157529+05:30",
+  "kind": "post_run_offline_audit",
+  "inference_calls": 0,
+  "primary_report_unchanged": true,
+  "method": "Agent visual inspection of all18 supplied frames as three contact sheets, plus entailment inspection of raw transcript/extraction. Qualitative observations, not independent human audit or new golden labels.",
+  "findings": [
+    "All18 transcript rows use visibility=clear, including text saying possibly or uncertain. Metadata does not reliably represent uncertainty.",
+    "Window1 narrative describes black-team shooting near the three-point line; supplied images show a blue-uniform player at the free-throw line. Free-throw setup recognition is wrong. Sparse frames do not independently settle every shot outcome.",
+    "Window2 at758.8s shows a black-uniform ball handler near midcourt with blue defenders; narration calls this a shot towards the basket. At763.6s black players remain visible although narration says the black player is no longer in frame. This establishes visual-description errors without altering reference times.",
+    "Window6 narration repeats ball-in-air descriptions across most frames instead of distinguishing the changing action. Initial claim of white control is questionable: first image shows ball near a yellow-uniform player. Exact full action sequence is not reannotated from these sparse samples.",
+    "All6 accepted transcript-branch events have citations that do not establish their claimed outcome/control: ball-in-air is used for misses and rebounds; one uncertain-outcome row becomes an offensive rebound. All6 events have confidence1.0.",
+    "All3 transcript label/time matches occur in window6. None of their cited observations establishes the event. Better reference matching here does not establish better grounded recognition.",
+    "Window1 extraction includes233s outside core223\u2013231; original parser rejects whole extraction. Direct parser accepts observed-context times then filters to core. This asymmetric boundary handling is a pilot limitation, not a model recognition failure alone."
+  ],
+  "boundary_sensitivity": {
+    "description": "Post-hoc same context/filter policy for both arms; no new inference. Primary strict failure remains recorded.",
+    "indices": [
+      1,
+      2,
+      6
+    ],
+    "transcript": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "predictions": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "predictions": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_miss": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 0,
+          "support": 1,
+          "predictions": 3,
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 8,
+          "prediction_index": 6
+        },
+        {
+          "reference_index": 6,
+          "prediction_index": 5
+        },
+        {
+          "reference_index": 7,
+          "prediction_index": 4
+        }
+      ],
+      "tp": 3,
+      "fp": 4,
+      "fn": 7,
+      "micro_precision": 0.42857142857142855,
+      "micro_recall": 0.3,
+      "micro_f1": 0.35294117647058826,
+      "macro_f1": 0.2037037037037037,
+      "worst_type_recall": 0.0,
+      "measured_types": 9,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "direct": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 4,
+          "fn": 0,
+          "support": 1,
+          "predictions": 5,
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1": 0.3333333333333333
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 0,
+          "support": 1,
+          "predictions": 4,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 8,
+          "prediction_index": 7
+        },
+        {
+          "reference_index": 4,
+          "prediction_index": 4
+        }
+      ],
+      "tp": 2,
+      "fp": 8,
+      "fn": 8,
+      "micro_precision": 0.2,
+      "micro_recall": 0.2,
+      "micro_f1": 0.2,
+      "macro_f1": 0.08148148148148149,
+      "worst_type_recall": 0.0,
+      "measured_types": 9,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    }
+  }
+}

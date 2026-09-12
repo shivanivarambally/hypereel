@@ -1,0 +1,36 @@
+{
+  "iteration": "027",
+  "status": "frozen_before_inference",
+  "indices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "arms": [
+    "video"
+  ],
+  "reason": "024stopped on repeated503after valid windows0,1,2. Recover only missing five with same settings; later consolidate immutable valid024and027calls with explicit provenance. No repeated successful calls.",
+  "holdout_used": false,
+  "model": "gemini-3.8-flash",
+  "generation_config": {
+    "temperature": 0,
+    "maxOutputTokens": 8192,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json",
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "rates": {
+    "input_per_million": 0.75,
+    "output_including_thinking_per_million": 3.75
+  },
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "api_source": "https://ai.google.dev/api/generate-content",
+  "implementation": "Standard-library REST generateContent; no SDK installation needed. Documented videoMetadata.fps=4 (deprecated compatibility field).",
+  "comparison_caveats": "Identical image bytes and prompt, but provider decoding differs: Gemini LOW thinking and8192 total output cap vs MiniCPM1536. Native video also changes resolution and sampling, so video effect is combined evidence change, not FPS alone.",
+  "failure_policy": "At most one retry per transient503/429 request, maximum2 retries per run,20sbackoff; reserve each attempt. Other provider errors stop. Invalid schema not retried. Unknown usage reservation retained.",
+  "started_at": "2026-09-12T22:46:33.430407+05:30"
+}

@@ -1,0 +1,1501 @@
+{
+  "created_at": "2026-09-12T20:48:59.529200+05:30",
+  "kind": "post_run_offline_audit",
+  "inference_calls": 0,
+  "primary_report_unchanged": true,
+  "audits": "transcript-pilot-015",
+  "boundary_policy": "Part1 parity: parse over the observed context span, then split on the core window. Recovers window1, which the original asymmetric parser discarded whole.",
+  "method": "Agent inspection of the frozen transcript, cited observation text and event evidence in report.json, plus a deliberately over-permissive lexical screen. Not independent human reannotation, not new golden labels, no reference label or timestamp altered.",
+  "layer_asymmetry": "A MISSING lexical element is strong evidence a citation does not entail its event. A FOUND element is NOT evidence that it does. The auditor verdict is authoritative; the screen only bounds it. Disagreement in both directions is expected and counted.",
+  "arm_asymmetry": "Transcript events cite a frozen transcript, so entailment is checkable. Direct events carry only a self-reported evidence sentence about images, so the best available verdict is 'asserted': its own text claims the required elements. That is a weaker, non-equivalent bar and the two arms' gated results are NOT a clean paired comparison.",
+  "events": [
+    {
+      "window_index": 1,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "transcript",
+      "label": "two_point_miss",
+      "time_seconds": 228.2,
+      "in_core_window": true,
+      "observation_ids": [
+        "o4"
+      ],
+      "cited_text": [
+        "The ball makes contact with the rim, bouncing off. Players in blue and black are reacting to the shot."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_missing": [],
+      "lexical_verdict": "supported",
+      "auditor_verdict": "entailed",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "o4 states the ball makes contact with the rim and bounces off, an observed non-scoring outcome, and the same row refers to players reacting to the shot, so the citation supplies both required elements on its own and is complete. Entailed by the transcript is not visually correct: the015 contact-sheet audit found this window is a free-throw setup narrated as a shot near the three-point line, so this is a faithful extraction from a false narration.",
+      "model_confidence": 1.0,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 1,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "transcript",
+      "label": "offensive_rebound",
+      "time_seconds": 233.0,
+      "in_core_window": false,
+      "observation_ids": [
+        "o6"
+      ],
+      "cited_text": [
+        "A player in blue is seen with the ball, possibly after a rebound. The ball is in the player's hands."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_missing": [],
+      "lexical_verdict": "supported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "o6 says a player in blue is seen with the ball 'possibly after a rebound'. Control is explicitly hedged, and blue is the defending team relative to the black shooter in o1/o2, so even at face value this describes a defensive rebound. No observation establishes the shooting team regaining control.",
+      "model_confidence": 1.0,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 1,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "two_point_miss",
+      "time_seconds": 223.4,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "the ball is seen in the air and does not go through the hoop in the second image."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_outcome"
+      ],
+      "lexical_missing": [
+        "shot_attempt"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "asserted",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Claims the ball does not go through the hoop. Both required elements are asserted, but this is unverifiable model self-report about an image, with no citation into frozen text.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 1,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 223.4,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "the ball is seen in the air and does not go through the hoop in the second image, and the defending team is seen gaining control of the ball."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "prior_miss",
+        "control_after"
+      ],
+      "lexical_missing": [
+        "team_identity"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Reuses the same sentence as the two_point_miss above at the same timestamp and appends a control claim. A rebound placed on the shot-release frame is temporally incoherent, and one sentence cannot evidence two distinct actions at one instant.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "transcript",
+      "label": "two_point_miss",
+      "time_seconds": 758.8,
+      "in_core_window": true,
+      "observation_ids": [
+        "o3"
+      ],
+      "cited_text": [
+        "The player in black is attempting a shot. The ball is in the air, heading towards the basket. The player in blue is near the basket, possibly defending."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_attempt"
+      ],
+      "lexical_missing": [
+        "shot_outcome"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "o3 establishes an attempt and the ball in the air, never an outcome. The next observation o4 explicitly states the outcome of the shot is uncertain, so the transcript contradicts rather than supports a miss.",
+      "model_confidence": 1.0,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "transcript",
+      "label": "offensive_rebound",
+      "time_seconds": 761.2,
+      "in_core_window": true,
+      "observation_ids": [
+        "o4"
+      ],
+      "cited_text": [
+        "The ball is in the air, close to the basket. The player in black is still in the frame, and the player in blue is near the basket. The outcome of the shot is uncertain."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "prior_miss",
+        "control_after"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "o4 has the ball still in the air and says the outcome is uncertain. No preceding miss, no control gained, no team attribution.",
+      "model_confidence": 1.0,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "transcript",
+      "label": "defensive_rebound",
+      "time_seconds": 763.6,
+      "in_core_window": true,
+      "observation_ids": [
+        "o5",
+        "o6"
+      ],
+      "cited_text": [
+        "The ball is in the air, and the players are moving around the court. The player in black is no longer in the frame, and the player in blue is still near the basket. The ball's trajectory is uncertain.",
+        "The ball is in the air, and the players are moving around the court. The player in black is no longer in the frame, and the player in blue is still near the basket. The ball's trajectory is uncertain."
+      ],
+      "cited_visibility": [
+        "clear",
+        "clear"
+      ],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "prior_miss",
+        "control_after"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "o5 and o6 describe the ball in the air with an uncertain trajectory. Neither observation has any player controlling the ball.",
+      "model_confidence": 1.0,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 756.4,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "Scoreboard shows EBE leading 7-0 at 12:33, indicating a basket was scored."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_outcome"
+      ],
+      "lexical_missing": [
+        "shot_attempt"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": true,
+      "citation_complete": true,
+      "auditor_reason": "Infers a basket from the scoreboard, which build_prompt explicitly forbids. No shot attempt and no observed outcome.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 758.8,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The ball is seen in the possession of a player in a black uniform, indicating the defending team gained control after a missed shot."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_missing": [],
+      "lexical_verdict": "supported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Asserts possession by a black-uniform player after a missed shot, but black is the team attempting the shot in this sequence, so the claimed defensive attribution contradicts the action it describes. The miss itself is asserted, never observed.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 761.2,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "Scoreboard shows EBE leading 7-0 at 12:41, indicating a basket was scored."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_outcome"
+      ],
+      "lexical_missing": [
+        "shot_attempt"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": true,
+      "citation_complete": true,
+      "auditor_reason": "Scoreboard inference, and the score quoted is 7-0, unchanged from the 756.4 event that already claimed a basket. An unchanged score cannot evidence a second basket.",
+      "model_confidence": 0.8,
+      "matched_reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067"
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 763.6,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The ball is seen in the possession of a player in a black uniform, indicating the defending team gained control after a missed shot."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_missing": [],
+      "lexical_verdict": "supported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Evidence string is byte-identical to the 758.8 defensive rebound. Repeated identical text is not a distinct observed action.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 2,
+      "game_id": "east-bay-elite-vs-spartans",
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 766.0,
+      "in_core_window": false,
+      "observation_ids": [],
+      "cited_text": [
+        "Scoreboard shows EBE leading 7-0 at 12:45, indicating a basket was scored."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_outcome"
+      ],
+      "lexical_missing": [
+        "shot_attempt"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": true,
+      "citation_complete": true,
+      "auditor_reason": "Scoreboard inference with the same unchanged 7-0 score; third claimed basket from one static scoreboard.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "transcript",
+      "label": "two_point_miss",
+      "time_seconds": 1316.4,
+      "in_core_window": true,
+      "observation_ids": [
+        "o2"
+      ],
+      "cited_text": [
+        "The ball is in the air, moving towards the basket. Players in yellow jerseys are positioned under the basket, ready to rebound."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [],
+      "lexical_missing": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "o2 is an attempt in flight. 'Players in yellow are ready to rebound' is anticipation, not an observed outcome.",
+      "model_confidence": 1.0,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106"
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "transcript",
+      "label": "offensive_rebound",
+      "time_seconds": 1323.6,
+      "in_core_window": true,
+      "observation_ids": [
+        "o5"
+      ],
+      "cited_text": [
+        "The ball is in the air, moving towards the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "prior_miss",
+        "control_after"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "o5 has the ball still in the air. No control is gained by anyone and no preceding miss is observed.",
+      "model_confidence": 1.0,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105"
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "transcript",
+      "label": "defensive_rebound",
+      "time_seconds": 1323.6,
+      "in_core_window": true,
+      "observation_ids": [
+        "o5"
+      ],
+      "cited_text": [
+        "The ball is in the air, moving towards the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+      ],
+      "cited_visibility": [
+        "clear"
+      ],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "prior_miss",
+        "control_after"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": false,
+      "citation_complete": false,
+      "auditor_reason": "Cites the identical observation o5 at the identical timestamp as the offensive rebound above. The two labels are mutually exclusive and cannot both follow from one observation.",
+      "model_confidence": 1.0,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107"
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 1316.4,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The scoreboard shows 'Unl 20 - 12 Campus', indicating a score change. The white team is in possession, and the ball is near the basket."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [
+        "shot_outcome"
+      ],
+      "lexical_missing": [
+        "shot_attempt"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": true,
+      "citation_complete": true,
+      "auditor_reason": "Infers a score change from a scoreboard reading, explicitly forbidden. Ball near the basket is not an outcome.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 1318.8,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The yellow team gains control of the ball after the white team's shot attempt."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "prior_miss"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "asserted",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Asserts a prior white shot attempt, yellow gaining control, and the team identity. All required elements are claimed, but unverifiable self-report rather than entailment.",
+      "model_confidence": 0.8,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107"
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 1321.2,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The scoreboard still shows 'Unl 20 - 12 Campus', but the ball is in the air, suggesting another score."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_found": [],
+      "lexical_missing": [
+        "shot_attempt",
+        "shot_outcome"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "unsupported",
+      "prohibited_inference": true,
+      "citation_complete": true,
+      "auditor_reason": "Self-contradictory: states the scoreboard is unchanged and then suggests another score from the ball being in the air.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    },
+    {
+      "window_index": 6,
+      "game_id": "unlimited-vs-campus",
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 1323.6,
+      "in_core_window": true,
+      "observation_ids": [],
+      "cited_text": [
+        "The yellow team is seen running back, indicating they have gained possession after a missed shot."
+      ],
+      "cited_visibility": [],
+      "required_elements": [
+        "prior_miss",
+        "control_after",
+        "team_identity"
+      ],
+      "lexical_found": [
+        "prior_miss",
+        "team_identity"
+      ],
+      "lexical_missing": [
+        "control_after"
+      ],
+      "lexical_verdict": "unsupported",
+      "auditor_verdict": "asserted",
+      "prohibited_inference": false,
+      "citation_complete": true,
+      "auditor_reason": "Asserts yellow gaining possession after a missed shot with team identity. Claimed, not observed; the miss is never independently evidenced.",
+      "model_confidence": 0.8,
+      "matched_reference_id": null
+    }
+  ],
+  "observations": [
+    {
+      "window_index": 1,
+      "observation_id": "o1",
+      "time_seconds": 221.0,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "A player in black holds the ball near the three-point line, preparing to shoot. The ball is not visible yet."
+    },
+    {
+      "window_index": 1,
+      "observation_id": "o2",
+      "time_seconds": 223.4,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The player in black releases the ball towards the basket. The ball is in mid-air, heading towards the rim."
+    },
+    {
+      "window_index": 1,
+      "observation_id": "o3",
+      "time_seconds": 225.8,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is still in the air, approaching the basket. The players in blue are positioned to defend."
+    },
+    {
+      "window_index": 1,
+      "observation_id": "o4",
+      "time_seconds": 228.2,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball makes contact with the rim, bouncing off. Players in blue and black are reacting to the shot."
+    },
+    {
+      "window_index": 1,
+      "observation_id": "o5",
+      "time_seconds": 230.6,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "possibly"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "The ball is in the air again, possibly after a rebound. Players in blue and black are moving towards the ball."
+    },
+    {
+      "window_index": 1,
+      "observation_id": "o6",
+      "time_seconds": 233.0,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "possibly"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "A player in blue is seen with the ball, possibly after a rebound. The ball is in the player's hands."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o1",
+      "time_seconds": 754.0,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "Players are positioned on the court. A player in black is holding the ball, preparing to make a play. The ball is in the player's hand."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o2",
+      "time_seconds": 756.4,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The player in black is dribbling the ball towards the basket. The ball is in the player's hand, and the player is moving forward."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o3",
+      "time_seconds": 758.8,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "possibly"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "The player in black is attempting a shot. The ball is in the air, heading towards the basket. The player in blue is near the basket, possibly defending."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o4",
+      "time_seconds": 761.2,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "uncertain"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "The ball is in the air, close to the basket. The player in black is still in the frame, and the player in blue is near the basket. The outcome of the shot is uncertain."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o5",
+      "time_seconds": 763.6,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "uncertain"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "The ball is in the air, and the players are moving around the court. The player in black is no longer in the frame, and the player in blue is still near the basket. The ball's trajectory is uncertain."
+    },
+    {
+      "window_index": 2,
+      "observation_id": "o6",
+      "time_seconds": 766.0,
+      "visibility": "clear",
+      "hedging_tokens": [
+        "uncertain"
+      ],
+      "visibility_conflicts_with_text": true,
+      "observation": "The ball is in the air, and the players are moving around the court. The player in black is no longer in the frame, and the player in blue is still near the basket. The ball's trajectory is uncertain."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o1",
+      "time_seconds": 1314.0,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "A player in a white jersey is holding the ball near the three-point line, facing the basket. The ball is in the player's hands."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o2",
+      "time_seconds": 1316.4,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is in the air, moving towards the basket. Players in yellow jerseys are positioned under the basket, ready to rebound."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o3",
+      "time_seconds": 1318.8,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is in the air, approaching the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o4",
+      "time_seconds": 1321.2,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is in the air, moving towards the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o5",
+      "time_seconds": 1323.6,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is in the air, moving towards the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+    },
+    {
+      "window_index": 6,
+      "observation_id": "o6",
+      "time_seconds": 1326.0,
+      "visibility": "clear",
+      "hedging_tokens": [],
+      "visibility_conflicts_with_text": false,
+      "observation": "The ball is in the air, moving towards the basket. Players in yellow jerseys are under the basket, and a player in a white jersey is also near the basket."
+    }
+  ],
+  "aggregates": {
+    "events_audited": 19,
+    "by_arm": {
+      "direct": {
+        "total": 11,
+        "entailed": 0,
+        "asserted": 3,
+        "unsupported": 8,
+        "prohibited_inference": 5,
+        "lexical_supported": 2,
+        "lexical_disagrees_with_auditor": 5
+      },
+      "transcript": {
+        "total": 8,
+        "entailed": 1,
+        "asserted": 0,
+        "unsupported": 7,
+        "prohibited_inference": 0,
+        "lexical_supported": 2,
+        "lexical_disagrees_with_auditor": 1
+      }
+    },
+    "confidence_by_verdict": {
+      "direct": [
+        0.8
+      ],
+      "transcript": [
+        1.0
+      ]
+    },
+    "observations_total": 18,
+    "observations_flagged_clear_but_hedged": 6,
+    "matches_total": 5,
+    "matches_entailed": 0,
+    "matches_asserted": 1,
+    "matches_unsupported": 4
+  },
+  "matched_events": [
+    {
+      "window_index": 2,
+      "arm": "direct",
+      "label": "two_point_made",
+      "time_seconds": 761.2,
+      "matched_reference_id": "east-bay-elite-vs-spartans:east-bay-elite-11u-2025-26-vs-spartans-2026-03-21-71c9f6-067",
+      "auditor_verdict": "unsupported",
+      "model_confidence": 0.8
+    },
+    {
+      "window_index": 6,
+      "arm": "transcript",
+      "label": "two_point_miss",
+      "time_seconds": 1316.4,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-106",
+      "auditor_verdict": "unsupported",
+      "model_confidence": 1.0
+    },
+    {
+      "window_index": 6,
+      "arm": "transcript",
+      "label": "offensive_rebound",
+      "time_seconds": 1323.6,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-105",
+      "auditor_verdict": "unsupported",
+      "model_confidence": 1.0
+    },
+    {
+      "window_index": 6,
+      "arm": "transcript",
+      "label": "defensive_rebound",
+      "time_seconds": 1323.6,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "auditor_verdict": "unsupported",
+      "model_confidence": 1.0
+    },
+    {
+      "window_index": 6,
+      "arm": "direct",
+      "label": "defensive_rebound",
+      "time_seconds": 1318.8,
+      "matched_reference_id": "unlimited-vs-campus:unlimited-vs-campus-2026-03-14-404790-107",
+      "auditor_verdict": "asserted",
+      "model_confidence": 0.8
+    }
+  ],
+  "boundary_parity_metrics": {
+    "description": "Label/time scoring under the Part1 parity policy over all three windows. Reproduces the post-hoc numbers already recorded in observation-audit.json; recorded here only so the entailment cross-tab has a matching denominator.",
+    "indices": [
+      1,
+      2,
+      6
+    ],
+    "direct": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 4,
+          "fn": 0,
+          "support": 1,
+          "predictions": 5,
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1": 0.3333333333333333
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 0,
+          "support": 1,
+          "predictions": 4,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4
+        },
+        "two_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predictions": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 8,
+          "prediction_index": 7
+        },
+        {
+          "reference_index": 4,
+          "prediction_index": 4
+        }
+      ],
+      "tp": 2,
+      "fp": 8,
+      "fn": 8,
+      "micro_precision": 0.2,
+      "micro_recall": 0.2,
+      "micro_f1": 0.2,
+      "macro_f1": 0.08148148148148149,
+      "worst_type_recall": 0.0,
+      "measured_types": 9,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    },
+    "transcript": {
+      "metric_version": "basketball-events-point-v2-provisional",
+      "tolerance_seconds": 5.0,
+      "per_type": {
+        "assist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "defensive_rebound": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "predictions": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "offensive_rebound": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "predictions": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "three_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predictions": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "turnover": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "support": 2,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predictions": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_miss": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 0,
+          "support": 1,
+          "predictions": 3,
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5
+        }
+      },
+      "matches": [
+        {
+          "reference_index": 8,
+          "prediction_index": 6
+        },
+        {
+          "reference_index": 6,
+          "prediction_index": 5
+        },
+        {
+          "reference_index": 7,
+          "prediction_index": 4
+        }
+      ],
+      "tp": 3,
+      "fp": 4,
+      "fn": 7,
+      "micro_precision": 0.42857142857142855,
+      "micro_recall": 0.3,
+      "micro_f1": 0.35294117647058826,
+      "macro_f1": 0.2037037037037037,
+      "worst_type_recall": 0.0,
+      "measured_types": 9,
+      "total_required_types": 12,
+      "release_gate_pass": false,
+      "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+    }
+  },
+  "entailment_gated_diagnostic": {
+    "caveat": "SECONDARY DIAGNOSTIC. Never a replacement for report.json paired_metrics or available_metrics, which are unchanged. It quantifies how much of each reported score rests on evidence that survives inspection, and it is expected to lower scores, not raise them. The two arms are gated at different, non-equivalent bars (see arm_asymmetry) and must not be read as a clean paired result.",
+    "indices": [
+      1,
+      2,
+      6
+    ],
+    "direct": {
+      "kept": 3,
+      "of": 10,
+      "bar": "asserted",
+      "metrics": {
+        "metric_version": "basketball-events-point-v2-provisional",
+        "tolerance_seconds": 5.0,
+        "per_type": {
+          "assist": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "block": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "defensive_rebound": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "predictions": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "free_throw_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_miss": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "offensive_rebound": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "steal": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "three_point_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "three_point_miss": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "turnover": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "support": 2,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "two_point_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "two_point_miss": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "support": 1,
+            "predictions": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "matches": [
+          {
+            "reference_index": 8,
+            "prediction_index": 1
+          }
+        ],
+        "tp": 1,
+        "fp": 2,
+        "fn": 9,
+        "micro_precision": 0.3333333333333333,
+        "micro_recall": 0.1,
+        "micro_f1": 0.15384615384615385,
+        "macro_f1": 0.07407407407407407,
+        "worst_type_recall": 0.0,
+        "measured_types": 9,
+        "total_required_types": 12,
+        "release_gate_pass": false,
+        "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+      }
+    },
+    "transcript": {
+      "kept": 1,
+      "of": 7,
+      "bar": "entailed",
+      "metrics": {
+        "metric_version": "basketball-events-point-v2-provisional",
+        "tolerance_seconds": 5.0,
+        "per_type": {
+          "assist": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "block": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "defensive_rebound": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_miss": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "offensive_rebound": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "steal": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "three_point_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predictions": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "three_point_miss": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "turnover": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "support": 2,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "two_point_made": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "support": 1,
+            "predictions": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "two_point_miss": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "support": 1,
+            "predictions": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "matches": [],
+        "tp": 0,
+        "fp": 1,
+        "fn": 10,
+        "micro_precision": 0.0,
+        "micro_recall": 0.0,
+        "micro_f1": 0.0,
+        "macro_f1": 0.0,
+        "worst_type_recall": 0.0,
+        "measured_types": 9,
+        "total_required_types": 12,
+        "release_gate_pass": false,
+        "release_gate_reason": "Diagnostic point timestamps are unaudited; representative held-out development coverage required"
+      }
+    }
+  }
+}

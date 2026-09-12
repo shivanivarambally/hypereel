@@ -1,0 +1,14 @@
+{
+  "iteration": "026",
+  "status": "planned",
+  "indices": [
+    2,
+    6
+  ],
+  "arms": [
+    "images"
+  ],
+  "planned_calls": 2,
+  "reason": "Finish missing image arms from503-interrupted023. Retain successful023image1; compare to024video windows1,2,6. This is a staged confirmation with source run IDs, not one simultaneous batch. No edits to earlier reports.",
+  "holdout_used": false
+}

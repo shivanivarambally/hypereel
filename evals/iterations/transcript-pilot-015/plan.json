@@ -1,0 +1,29 @@
+{
+  "name": "transcript-pilot-015",
+  "created_at": "2026-09-12T19:46:51.734068+05:30",
+  "indices": [
+    1,
+    2,
+    6
+  ],
+  "model": "openbmb/MiniCPM-V-4_5",
+  "hypothesis": "Explicit observation transcript followed by text-only extraction improves event precision/F1 without hiding lost recall.",
+  "evidence": "Identical six JPEGs and timestamps per direct/transcript window, reused from013;12second context;768wide;not native continuous video.",
+  "budget": {
+    "max_calls": 9,
+    "cumulative_ceiling": 5,
+    "reserve_per_call": 0.3
+  },
+  "output_limit": 1536,
+  "temperature": 0,
+  "seed": 0,
+  "extraction": "Same model, text only, observation-ID links required; semantic support checked in post-run observations, not assumed from citations.",
+  "failures": "No retries. Record failed window/stage; skip dependent extraction if narration invalid; proceed independent windows unless transport/budget failure.",
+  "scoring": "Frozen HoopIQ development references,12 label definitions,five-second matcher;only completed common windows compared;unsupported types unmeasured.",
+  "holdout_used": false,
+  "reference_sha256": "40f3eb6064c33b7171b6325835bba1233bd0ca3c233c829a1e01285b7c771534",
+  "source_sha256": {
+    "east-bay-elite-vs-spartans": "9ad93efe89b26265ed354c32d3fcc844ce06376b4f0ef577c121047463f7750a",
+    "unlimited-vs-campus": "5d0c2bcc274bb7335e3aa42817855484ea5c25ca0e01d9f4ccfb1d926017e1b2"
+  }
+}
