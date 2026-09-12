@@ -47,3 +47,7 @@ evals/iterations/*/media/
 
 # Runtime budget lock; keep the ledger JSON tracked.
 evals/iterations/spend-ledger.lock
+
+# Local duplicate exports and superseded visual drafts; final boards live in illustrated-v3.
+/demoassets/
+/assets/teleprompter-visuals/track_*.png

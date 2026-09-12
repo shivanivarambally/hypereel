@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HypeReel — Evals Week Breakout Submission</title>
+<style>
+  :root{
+    --ink:#1a2233; --muted:#5b6577; --line:#e3e8f0; --bg:#ffffff;
+    --accent:#f97316; --accent2:#2563eb; --good:#16a34a; --warn:#d97706; --bad:#dc2626;
+    --chip:#f1f5f9; --code:#0f172a; --soft:#f8fafc;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); max-width:980px; margin:0 auto; padding:40px 24px 120px; line-height:1.55; background:var(--bg)}
+  h1{font-size:2.2rem; margin:0 0 .2em; letter-spacing:-.5px}
+  h1 .sub{display:block; font-size:1rem; font-weight:500; color:var(--muted); margin-top:.4em}
+  h2{margin-top:2.4em; padding-bottom:.3em; border-bottom:2px solid var(--line); font-size:1.5rem}
+  h2 .n{color:var(--accent); font-weight:800; margin-right:.4em}
+  h3{margin-top:1.6em; font-size:1.15rem; color:var(--accent2)}
+  h4{margin:1.2em 0 .3em; font-size:1rem}
+  code{background:var(--chip); padding:.12em .4em; border-radius:5px; font-size:.9em;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  pre{background:var(--code); color:#e5edff; padding:16px 18px; border-radius:10px; overflow:auto;
+    font-size:.82rem; line-height:1.45; font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  table{border-collapse:collapse; width:100%; margin:1em 0; font-size:.92rem}
+  th,td{border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top}
+  th{background:var(--soft); font-weight:600}
+  .oneliner{background:linear-gradient(180deg,#fff7ed,#fff); border:1px solid #fed7aa;
+    border-left:5px solid var(--accent); border-radius:10px; padding:18px 20px; font-size:1.02rem}
+  .callout{background:#f0f9ff; border:1px solid #bae6fd; border-left:5px solid var(--accent2);
+    border-radius:8px; padding:12px 16px; margin:1em 0}
+  .q{background:var(--soft); border:1px solid var(--line); border-left:5px solid var(--accent2);
+    border-radius:8px; padding:12px 16px; margin:1.4em 0 .6em; font-weight:600}
+  .q .qlabel{color:var(--accent2); font-weight:800; margin-right:.4em}
+  .fill{background:#fffdf5; border:1px dashed #e5c07b; border-radius:6px; padding:2px 6px; color:#8a6d3b}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .card{border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:#fff}
+  .card h4{margin-top:0}
+  .stat{border:1px solid var(--line); border-radius:12px; padding:16px; background:var(--soft); text-align:center}
+  .stat .big{font-size:1.9rem; font-weight:800; color:var(--accent); line-height:1.1}
+  .stat .lbl{font-size:.8rem; color:var(--muted); margin-top:6px}
+  .chip{display:inline-block; background:var(--chip); border-radius:999px; padding:2px 10px;
+    font-size:.78rem; color:var(--muted); margin:0 4px 4px 0}
+  .tag-read{color:var(--good); font-weight:600}
+  .tag-write{color:var(--bad); font-weight:600}
+  .muted{color:var(--muted)}
+  .pill{font-size:.7rem; text-transform:uppercase; letter-spacing:.5px; font-weight:700; padding:2px 8px; border-radius:6px}
+  .pill.det{background:#dcfce7; color:#166534}
+  .pill.llm{background:#e0e7ff; color:#3730a3}
+  .pill.hitl{background:#fef3c7; color:#92400e}
+  .flow{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:1em 0}
+  .step{border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:.82rem; background:#fff; white-space:nowrap}
+  .step.gate{background:#fffbeb; border-color:#fde68a; font-weight:700}
+  .step.judge{background:#eef2ff; border-color:#c7d2fe}
+  .arrow{color:var(--muted); font-weight:700}
+  footer{margin-top:60px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); padding-top:16px}
+  @media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<h1>HypeReel — Evals Week Breakout Submission
+  <span class="sub">THE GEN ACADEMY · Mastering Agentic AI · Evals Week Breakout · Team Breakout Handout</span>
+</h1>
+
+<p>
+  <span class="chip">Track 2 · LangChain + LangGraph</span>
+  <span class="chip">Bring-your-own use case</span>
+  <span class="chip">Offline mock mode · paid Gemini live demo</span>
+  <span class="chip">In scope: RAG · tool calling · autonomy vs workflow · evals</span>
+</p>
+
+<div class="callout">
+  <b>Deadline to submit:</b> 12 Sept 11:59pm PT &nbsp;·&nbsp;
+  <b>Repo:</b> <a href="https://github.com/shivanivarambally/hypereel">github.com/shivanivarambally/hypereel</a> &nbsp;·&nbsp;
+  <b>Design doc:</b> <code>design/HypeReel-Design.html</code> &nbsp;·&nbsp;
+  <b>Demo (≤5 min):</b> <a href="https://drive.google.com/file/d/1c_W8egamBQFVbjVJV_sDs186M_oqpM1u/view">video</a>
+  <br><span class="muted" style="font-size:.85rem">Reflects repo synced to upstream <code>main</code> @ <code>df3fc18</code> (2026-09-13) — "Integrate live Gemini video demos with human clip review." Technical status updated 2026-09-13; market statements preserved as requested.</span>
+</div>
+<div class="callout" style="background:#fffbeb;border-color:#fde68a">
+  <b>⚠ Confirm before submitting:</b> the handout's dates are internally inconsistent — title says <i>Aug 2026</i>,
+  deadline <i>Sept 12</i>, footer <i>July 12–13 demo</i>, and the linked form is titled <i>May 2026 Cohort</i>.
+  The form also needs a <b>team number</b>, confirmed member names/emails, the uploaded breakout doc, the GitHub
+  URL, and a Drive demo link. Verify the cohort/form and the demo video's shareability with the organizer.
+</div>
+
+<div class="oneliner">
+  <b>One-liner.</b> HypeReel aims to help a <b>player or coach</b> turn a full 60-minute game recording into a
+  <b>share-ready highlight reel</b> matching a <b>plain-language brief</b> (one player, a whole team,
+  only threes, no steals), replacing the <b>3–4 hours of manual scrubbing and clip-cutting</b> it takes
+  today. The prototype ingests video, proposes and classifies candidate plays, and can revise the proposed selection using configurable tools (yt-dlp, frame sampling, scoreboard CV, a vision model, an
+  LLM judge, ffmpeg), pausing for a human to <b>approve the clip list before it renders and again before
+  its delivery step</b>; external uploading is not implemented. Product target, not a measured result: a watchable, single-team reel <b>in under 30 minutes</b> the user would
+  actually post <b>8 times out of 10</b>.
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="n">1</span>Who is on this team</h2>
+<p class="muted">Blank rows left open for teammates who join later.</p>
+<table>
+  <tr><th>#</th><th>Full name</th><th>Email</th></tr>
+  <tr><td>1</td><td>Shivani <span class="muted">— builder / point person</span></td><td><span class="fill">shivani@…</span></td></tr>
+  <tr><td>2</td><td></td><td></td></tr>
+  <tr><td>3</td><td></td><td></td></tr>
+  <tr><td>4</td><td></td><td></td></tr>
+  <tr><td>5</td><td></td><td></td></tr>
+  <tr><td>6</td><td></td><td></td></tr>
+  <tr><td>7</td><td></td><td></td></tr>
+</table>
+<p><b>Point person (owns this doc and coordinates the team):</b> Shivani.
+  <span class="muted">Built solo as the Week-3 "bring-your-own" capstone.</span></p>
+
+<!-- ============================================================ -->
+<h2><span class="n">2</span>Warm up: go around the room</h2>
+<p><b>Icebreaker.</b> Name, location, and the one tedious task you'd hand to an AI agent tomorrow.</p>
+<div class="card">
+  <p style="margin:0"><b>Shivani</b> — <span class="fill">[your city]</span> —
+  “The task I'd hand off tomorrow: <b>cutting highlight reels from full game footage.</b> After every AAU
+  weekend, someone scrubs a 60-minute recording frame-by-frame to find the ~10 plays that matter for one
+  kid or one team, then cuts and stitches them in a video editor. It's 3–4 hours of tedium per reel — and
+  it's exactly the repetitive, judgment-light-but-time-heavy work an agent should own. That task became
+  HypeReel.”</p>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="n">3</span>Pick a topic and sketch the design</h2>
+<p class="muted">Talk through the three questions, then jot the thinking below.</p>
+
+<!-- Q1 -->
+<div class="q"><span class="qlabel">Q1.</span>Pick the use case — a slow or frustrating process an agent could improve.</div>
+
+<p><b>Use case: automated highlight reels for youth / AAU basketball.</b> Grassroots basketball runs on
+tape. Parents and coaches record full games, then hand-edit highlights for recruiting, team shares, and
+social. The editing is the bottleneck, and it scales brutally with the size of the sport.</p>
+
+<div class="grid3">
+  <div class="stat"><div class="big">~2,000</div><div class="lbl">games at a single big tournament weekend (verified: 421 teams / 36 courts, 2026 West Coast Nationals, LVCC)</div></div>
+  <div class="stat"><div class="big">3–4 hrs</div><div class="lbl">manual scrubbing + cutting per reel today</div></div>
+  <div class="stat"><div class="big">~7,000 hrs</div><div class="lbl">human editing burned in one 3-day weekend, even at just 1 team-reel per game</div></div>
+</div>
+
+<p class="muted" style="margin-top:.2em">Scaling out: Bigfoot Hoops alone runs 30+ national events/year, and
+its own materials describe hosting “thousands of teams and tens of thousands of athletes.” Across all US
+grassroots circuits there are 1,000+ multi-day tournaments a year — putting the manual-editing labor pool
+in the millions of hours annually, or a ~$75M+ addressable market at ~$75/reel outsourced. <span class="fill">(tournament-count and pricing figures are estimates worth firming up before an external pitch)</span></p>
+
+<div class="callout"><b>Why it's a great agent problem:</b> the work is <b>slow, repetitive, high-volume,
+and rule-shaped</b> ("find this team's made baskets, spread across all four quarters, drop the opponent").
+It doesn't need a human's creativity — it needs a human's <i>approval</i>. That's the reads-autonomous /
+writes-gated shape an agent fits perfectly.</div>
+
+<!-- Q2 -->
+<div class="q"><span class="qlabel">Q2.</span>Knowledge and tools — what must the agent <i>know</i> vs <i>do</i>? Where does retrieval (RAG) fit, and what tools/APIs does it call?</div>
+
+<h4>Knowledge and configuration</h4>
+<p>HypeReel loads <b>recipes</b> and the user brief at runtime. Some domain-specific logic remains in code. Memory storage primitives exist, but are not wired into automatic personalization in the current Streamlit flow:</p>
+<ul>
+  <li><b>The recipe (declarative YAML policy)</b> — the retrieved definition of "what counts as a highlight"
+    for a domain: the <code>moment_types</code> with natural-language rubrics (<code>made_basket</code>,
+    <code>three_pointer</code>, <code>block</code>, <code>steal_break</code>), which proposer signals are
+    active, selection budget/ordering, exclusions, and acceptance criteria. Swap the recipe → the same
+    pipeline retargets to a new sport or even a real-estate walkthrough (<code>quality_based</code> strategy)
+    through configurable settings; new-domain perception and signal behavior still require implementation and validation.</li>
+  <li><b>Memory primitives</b> — a local JSON store supports profiles and feedback counts. The wrapper's auto-approval path can record feedback, but the Streamlit approval path does not currently record it and no production consumer applies stored profiles/preferences to subsequent runs. Automatic personalization is future work.</li>
+  <li><b>Per-video calibration</b> — tuned scoreboard regions / per-team score attribution retrieved for a
+    known source (e.g. <code>basketball_player23_blackred.yaml</code>).</li>
+</ul>
+<div class="callout"><b>Honest framing of "RAG" here (per the author's own submission draft):</b> RAG is a
+<b>potential future knowledge layer, not an implemented claim</b> in this prototype. Today the agent's
+knowledge comes from explicit <b>YAML recipes + the user's brief</b> — for a small fixed rubric that is
+simpler and more auditable than a vector DB. JSON preference storage and graph checkpoints are
+<b>not</b> described as a full RAG pipeline. When the recipe/roster/preference corpus grows, retrieval
+could supply <i>definitions and identity context</i> — but never visual proof that a play happened, and
+<b>golden event labels are confined to evaluation and must never be retrieved into an inference prompt.</b></div>
+
+<h4>Action — configurable pipeline capabilities</h4>
+<table>
+  <tr><th>Tool</th><th>What it does</th><th>R/W</th></tr>
+  <tr><td><code>source_resolver</code> (yt-dlp / local)</td><td>Resolve a local file or attempt a YouTube download; quality depends on available formats and access</td><td><span class="tag-read">read</span></td></tr>
+  <tr><td><code>audio_peak</code> (librosa)</td><td>Propose candidate windows from crowd/commentary spikes</td><td><span class="tag-read">read</span></td></tr>
+  <tr><td><code>motion_intensity</code> (opencv)</td><td>Propose candidate windows from on-court motion</td><td><span class="tag-read">read</span></td></tr>
+  <tr><td><code>scoreboard_reader</code> (OCR-free CV)</td><td>Optional per-video calibrated score-change evidence; inactive in the current both-teams demo</td><td><span class="tag-read">read</span></td></tr>
+  <tr><td><code>vision_classifier</code> (VLM)</td><td>Classify each window against the recipe's moment rubrics</td><td><span class="tag-read">read</span></td></tr>
+  <tr><td><code>llm_judge</code></td><td>Judge selected-clip metadata against acceptance criteria; optionally request one bounded re-selection</td><td><span class="tag-read">read</span> / reason</td></tr>
+  <tr><td><code>renderer</code> (moviepy / ffmpeg)</td><td>Cut + concat approved clips into a video (manifest fallback)</td><td><span class="tag-write">write*</span></td></tr>
+  <tr><td><code>share / upload</code> (gated, stubbed connector)</td><td>Delivery approval boundary; current terminal node records status only, without external upload</td><td><span class="tag-write">write</span></td></tr>
+</table>
+<p class="muted">Final reel rendering follows Gate 1 approval. Local downloads, preview clips, logs and checkpoints are written automatically before that gate. Gate 2 is a delivery approval boundary; the current connector does not upload externally. The active demo uses Gemini native video via an opt-in REST provider. Other provider interfaces support legacy Gemini, Nebius, Groq, local Ollama and offline mock operation. Factory setup fallbacks are distinct from runtime errors: the native Gemini adapter reports failed classifications rather than substituting mock detections.</p>
+
+<!-- Q3 -->
+<div class="q"><span class="qlabel">Q3.</span>Autonomy and evals — how much freedom vs fixed process? What is success, and how are failures detected?</div>
+
+<h4>Autonomy vs workflow: "deterministic spine, agentic where it earns its cost"</h4>
+<p>HypeReel is a <b>single agent</b> — one LangGraph graph, one shared <code>ReelState</code> — with a
+<b>deterministic orchestration spine</b>. Model-based classification and a bounded judge operate inside the fixed graph; human approval gates final rendering and delivery:</p>
+<div class="grid3">
+  <div class="card"><span class="pill det">deterministic</span><h4>The spine</h4><p class="muted">plan → ingest
+    → propose → scoreboard → classify → select. Fixed order; model outputs can still vary. Cheap local signals propose;
+    deterministic code budget-fits the final clip set.</p></div>
+  <div class="card"><span class="pill llm">agentic</span><h4>Model judgment</h4><p class="muted">The
+    <b>vision model</b> classifies each window zero-shot against natural-language rubrics; the
+    <b>LLM judge</b> critiques the proposed clip metadata and may send it back for <b>one</b> bounded revision
+    (broadens if too thin — never tightens into an empty reel).</p></div>
+  <div class="card"><span class="pill hitl">human-gated</span><h4>Two HITL gates</h4><p class="muted">
+    <code>interrupt_before</code> pauses the graph so a human <b>approves/edits the clip list</b> (Gate 1)
+    and <b>approves the share</b> (Gate 2). Internal processing is autonomous; final render and delivery are gated.</p></div>
+</div>
+
+<div class="flow">
+  <span class="step">plan</span><span class="arrow">→</span>
+  <span class="step">ingest</span><span class="arrow">→</span>
+  <span class="step">propose</span><span class="arrow">→</span>
+  <span class="step">scoreboard</span><span class="arrow">→</span>
+  <span class="step">classify</span><span class="arrow">→</span>
+  <span class="step">select</span><span class="arrow">→</span>
+  <span class="step judge">judge ↺ (×1)</span><span class="arrow">→</span>
+  <span class="step gate">⛔ Gate 1: approve clips</span><span class="arrow">→</span>
+  <span class="step">render</span><span class="arrow">→</span>
+  <span class="step">summarize</span><span class="arrow">→</span>
+  <span class="step gate">⛔ Gate 2: approve &amp; share</span><span class="arrow">→</span>
+  <span class="step">deliver</span>
+</div>
+
+<h4>What "success" means</h4>
+<p><b>End-to-end task completion, not single-shot accuracy.</b> The product target, not a validated acceptance-study result: a user gets a <b>watchable,
+single-team reel in under 30 minutes</b> that they'd <b>actually post 8 times out of 10</b> — coverage
+spread across all four quarters, the opponent's baskets excluded, no dead-ball filler.</p>
+
+<h4>How failures are detected</h4>
+<p>This is where the bulk of the engineering went — a full offline <b>evaluation harness</b> (see §5),
+plus live-run guardrails: a pre-flight form checker, a cached image-based provider health ping, and a diagnostic funnel showing where candidates were rejected. A successful image ping does not guarantee video access, enough budget for an entire run, or accurate detection. Subject rejection does not prove the team is absent.</p>
+
+<!-- ============================================================ -->
+<h2><span class="n">4</span>Our project</h2>
+<p>Use case, where RAG fits, tools, autonomy vs workflow, and evaluation — consolidated.</p>
+
+<table>
+  <tr><th>Dimension</th><th>Decision</th></tr>
+  <tr><td><b>Agent goal</b></td><td>Turn a full game recording + a plain-language brief into a time-boxed, share-ready highlight reel for one team or player.</td></tr>
+  <tr><td><b>Surface</b></td><td>Streamlit web app (input + review panel, pipeline visualizer, pre-flight checker). CLI for scripted/demo runs.</td></tr>
+  <tr><td><b>Knowledge / retrieval</b></td><td>Recipe YAML + user brief; optional per-video scoreboard calibration. Storage APIs for profiles/feedback exist, but automatic personalization is not integrated into the current UI.</td></tr>
+  <tr><td><b>Tools</b></td><td>Source resolver, audio/motion proposals, optional scoreboard CV, vision classifier, metadata judge, renderer, and a delivery-status stub.</td></tr>
+  <tr><td><b>Autonomy vs workflow</b></td><td>Fixed graph order; model classification and at most one judge-driven re-selection; human gates before final render and delivery.</td></tr>
+  <tr><td><b>Memory</b></td><td>Session: <code>ReelState</code> + in-memory checkpointer (resumable on same thread). Persistent: JSON profile/feedback storage APIs, not active automatic personalization.</td></tr>
+  <tr><td><b>Guardrails</b></td><td>Recipe/prompt constraints request grounded labels and exclusions; they are not guarantees of perception accuracy. Final render and delivery have human approval gates. Native Gemini failures are reported as errors, not mock results.</td></tr>
+  <tr><td><b>Success metric</b></td><td>Unvalidated product target: watchable single-team reel in &lt;30 min, would-post 8/10. Coverage across all quarters, opponent excluded.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2><span class="n">5</span>Evaluation — how we know it works</h2>
+<p>HypeReel treats evaluation as a first-class subsystem, not an afterthought. There is a dedicated
+<code>evals/</code> tree and an installable <code>hypereel.evaluation</code> package with its own CLI,
+deterministic metrics, an optional LLM-as-a-Judge, and reproducible reports. <b>The core benchmark runner stops at the first approval gate</b>. Separate demo integration checks 029–032 stored under <code>evals/</code> also validate local rendering; these are not accuracy benchmarks.</p>
+
+<div class="grid3">
+  <div class="stat"><div class="big">411 / 4</div><div class="lbl">tests passing / skipped (+1 holdout test deselected) — no paid calls in the test suite; some checks exercise local media processing</div></div>
+  <div class="stat"><div class="big">~50 runs</div><div class="lbl">historical tuning/perception iterations, followed by demo integration 029–032; not independent trials</div></div>
+  <div class="stat"><div class="big">3 splits</div><div class="lbl">golden (dev) · holdout (final, still sealed) · experiments</div></div>
+</div>
+<div class="callout" style="background:#fff7ed;border-color:#fed7aa">
+  <b>The honest headline:</b> it took <b>nearly 50 documented evaluation runs</b> to get HypeReel to where it
+  is today — a working end-to-end agent with a rigorous evaluation system — and it is <b>honestly not
+  "done."</b> The evaluation didn't just measure the agent; it <b>found the wall</b> (perception) and made
+  the remaining work concrete. There is a lot of headroom here and a clear list of improvements still to make
+  (see §6).
+</div>
+
+<h3>5.1 · Methodology — train/test discipline</h3>
+<p>Datasets are split to avoid tuning on the test set, and cases are built from <b>externally-labeled</b>
+real AAU games (labels provided independently of the pipeline), then frozen:</p>
+<ul>
+  <li><b>Golden (development):</b> cases used while iterating — <code>east-bay-elite-vs-spartans</code>,
+    <code>unlimited-vs-campus</code>, plus a synthetic <code>development</code> case. Externally-labeled
+    reference events live under <code>evals/golden/source/</code>.</li>
+  <li><b>Holdout (final):</b> a game never used for tuning (<code>east-bay-elite-13u-vs-ptown-wu</code>),
+    reserved to be scored once after validation; it has not been evaluated.</li>
+  <li><b>Experiments:</b> per-iteration pipeline snapshots (<code>game-1-iteration-01…20</code>,
+    <code>game-2-iteration-07…19</code>) so score progression across the build is auditable.</li>
+</ul>
+
+<h3>5.2 · The metrics used — full catalogue</h3>
+<p>Metrics are computed per case with <b>no model in the loop</b> (the LLM judge in §5.3 is advisory only).
+Any ratio whose denominator is unavailable reports <b>N/A</b>, never a silent <code>0</code>. Versions differ by harness: <code>selection-v6</code> for highlight selection and a provisional event-time version for all-events pilots. The catalogue below spans these harnesses and is grouped into five families:</p>
+<table>
+  <tr><th>Family</th><th>Metrics</th><th>What it answers</th></tr>
+  <tr>
+    <td><b>Matching foundation</b></td>
+    <td>One-to-one, <b>label-aware</b> temporal matching (maximum-cardinality bipartite — no clip or event
+      counted twice; stable input order breaks ties). Point labels expanded to provisional action windows
+      <code>[t−5s, t+4s]</code>. Candidate / selected-event recall at <b>IoU 0.10 / 0.30 / 0.50</b>.</td>
+    <td>Fair credit assignment before any score is computed. Two matchers exist and are <b>never pooled</b>:
+      a legacy IoU-aware matcher (highlight selection) and an event-time matcher (all-events pilots).</td>
+  </tr>
+  <tr>
+    <td><b>Quality / recognition</b></td>
+    <td>Relevant-clip <b>precision</b> (exhaustive labels only, else N/A), selected-event <b>recall</b>,
+      selection <b>F1</b> (micro), <b>macro-F1</b>, per-moment-type P/R/F1, confusion matrices, balanced
+      accuracy, <b>negative-window specificity</b> (false positives on no-event footage), average precision,
+      <b>calibration error (ECE)</b>, and a candidate-threshold sweep.</td>
+    <td>How many true highlights reach the reel, how many selected clips are right, and whether reported
+      confidence is trustworthy.</td>
+  </tr>
+  <tr>
+    <td><b>Temporal quality</b></td>
+    <td>Mean temporal IoU, event-time / boundary error, <b>action completeness</b> (does the matched clip
+      contain the whole reference action?), moment-type diversity / four-quarter coverage.</td>
+    <td>Are the clip boundaries actually on the play, and is the reel spread across the game?</td>
+  </tr>
+  <tr>
+    <td><b>Entailment axis</b> <span class="muted">(pilots 015–016)</span></td>
+    <td>A separate measurement: does the model's own cited observation <b>actually support</b> the event it
+      claims? Recorded as its own axis (over-permissive lexical screen) — <b>never used to filter or boost</b>
+      the primary scores.</td>
+    <td>Distinguishes a <i>correct label</i> from an <i>asserted</i> one — the crux of the perception
+      bottleneck (§5.6).</td>
+  </tr>
+  <tr>
+    <td><b>Structural &amp; operational</b></td>
+    <td>Classification schema-pass rate, invalid-boundary count, overlap rate, duplicate/overlapping-clip
+      checks, budget compliance &amp; utilization, operational success rate (passed / attempted), per-call
+      latency (provider/run specific; the 032 graph completed in 469.46 s including local processing and 53 provider calls), model-call count, token usage, cumulative estimated spend,
+      and <b>cost-per-true-positive</b>.</td>
+    <td>Is the output well-formed, on-budget, reproducible, and affordable?</td>
+  </tr>
+</table>
+<p class="muted">Human review is tracked <b>separately</b> from these deterministic metrics (visual
+correctness, action completeness, "would you post it?") and is never conflated with a passing metric. A
+graph fallback reaching human review is <b>not</b> counted as model acceptance.</p>
+
+<h3>5.3 · LLM-as-a-Judge (advisory)</h3>
+<p>Optional (<code>--judge</code>), run <i>after</i> deterministic metrics. Returns validated JSON —
+<code>relevance</code>, <code>coverage</code>, <code>coherence</code>, <code>diversity</code>,
+<code>overall_score</code>, <code>reasoning</code>, <code>recommendations</code> — scored in [0,1] or
+<code>null</code> when unsupported. Anti-gaming guardrails:</p>
+<ul>
+  <li>Advisory only — judge scores <b>never</b> change selected clips, deterministic aggregates, case
+    status, or exit codes.</li>
+  <li>The judge reviews recipe intent + clip metadata + metrics + reference events — <b>not</b> rendered
+    video/audio (so it can't be swayed by production polish).</li>
+  <li><b>Mock provider is never judged</b> — canned responses can't give a meaningful assessment, so no
+    scores are fabricated. Failed/degraded cases are skipped, not scored.</li>
+  <li><code>coverage</code> requires exhaustive reference annotations, else it returns <code>null</code>.</li>
+  <li>Separate from the production graph's <i>revision</i> judge — evaluation and control are decoupled.</li>
+</ul>
+
+<h3>5.4 · Release gates (defined up front, before tuning)</h3>
+<p>The eval harness commits to explicit <b>development release gates</b> — a run must clear <i>all</i> of
+them on an independent slice before a full-game or holdout run is authorized:</p>
+<table>
+  <tr><th>Gate</th><th>Threshold</th></tr>
+  <tr><td>Candidate recall @ IoU 0.30</td><td>≥ 0.80</td></tr>
+  <tr><td>Selected-event precision / recall / F1</td><td>each ≥ 0.70</td></tr>
+  <tr><td>Selected-event recall @ IoU 0.30</td><td>≥ 0.70</td></tr>
+  <tr><td>Classification schema pass rate</td><td>= 1.00</td></tr>
+  <tr><td>Invalid boundary count · selected overlap rate</td><td>0 · 0</td></tr>
+  <tr><td>Total estimated provider spend across the loop</td><td>Current policy: ≤ USD 2.00 incremental from baseline USD 7.192294875 (cumulative ceiling USD 9.192294875); earlier USD 8 ceiling is historical</td></tr>
+</table>
+<p class="muted">The metrics catalogue across selection and event-time harnesses includes: candidate
+recall at IoU 0.1/0.3/0.5, per-moment-type precision/recall/F1, macro-F1, balanced accuracy, temporal IoU,
+event-time / boundary error, negative-window specificity, calibration error (ECE), a candidate-threshold
+sweep, plus operational success rate, provider spend, and cost-per-true-positive.</p>
+
+<h3>5.5 · What we tried — the full iteration journey</h3>
+<p>The audit trail includes original selection-tuning iterations, perception/model pilots 001–028, and demo integration 029–032. IDs include diagnostics, failures and recovery runs; they are not independent benchmark replications. Logging varies by harness: the core evaluation runner records <code>history.jsonl</code> and change notes, while standalone pilots and UI integrations use plans, raw responses, checkpoints and implementation notes. Dataset hashing is recorded where supported by that harness. Cumulative estimated spend at this documentation checkpoint is <b>$8.987366625</b>: <b>$1.79507175</b> used from the incremental $2 cap, approximately <b>$0.20493 remaining</b>. A comparable new ~$0.53 full demo run does not fit this remaining allowance. These are ledger estimates, not invoice totals; do not reset the ledger.</p>
+<div class="grid3">
+  <div class="stat"><div class="big">~50</div><div class="lbl">historical tuning/perception iterations; logging and hashing differ by harness</div></div>
+  <div class="stat"><div class="big">5</div><div class="lbl">distinct evidence approaches tried against the perception wall — all logged, most rejected</div></div>
+  <div class="stat"><div class="big">$8.987</div><div class="lbl">cumulative estimated ledger at 2026-09-13 documentation checkpoint, including demo runs</div></div>
+</div>
+
+<div class="callout">
+<p><b>The observed pattern.</b> Hosted and local models made event errors, including outcomes unsupported by the supplied evidence. Local feasibility testing established execution but did not establish useful recognition on the tested references. These observations motivate improved temporal evidence; they do not prove every earlier matched label was fabricated or that prompting can never help.</p>
+<p>Next I reached for <b>YOLO</b> for stronger object tracking, on the theory that detector evidence plus a vision model might
+ground events better — it didn't (the ball was trackable in only a handful of frames). Then, from a
+background in <b>event-driven development</b>, I reframed the hard cases as state transitions: a
+<i>steal</i> requires a defender disrupting opponent possession and gaining control, not merely any possession change. The
+model struggled to bound that as a single valid event, so I tried building a <b>text/visual transcript</b>
+and reasoning <i>over the transcript</i> to recover the correct event time.</p>
+<p>The transcript route did raise <b>precision</b> in early subsets (roughly 25%→50% P, ~24%→40% F1 on
+the quota-blocked partial set), which is why it looked promising. But once the <b>$5 credit funded the
+full 8-window run</b>, the honest picture settled: <b>native-video Gemini at F1 .37</b> (P 38.5% / R 35.7%)
+has higher measured F1 in that shared comparison, and adding a transcript <i>traded away recall</i> (F1 .35) — so it was <b>not
+adopted</b>. Early-subset numbers ran a little hotter (~40% F1 on 6 of 8 windows) than the funded full set;
+the full-coverage figures above are the ones I stand behind.</p>
+</div>
+
+<p>The work moved through five phases. Each phase's headline result is the honest one — including the
+runs that failed:</p>
+<table>
+  <tr><th>Phase</th><th>Iterations</th><th>What was tried</th><th>Best / headline result</th></tr>
+  <tr>
+    <td><b>1 · Prompt &amp; sampling tuning</b><br><span class="muted">Nebius MiniCPM-V-4.5, cloud</span></td>
+    <td>1–21</td>
+    <td>Highlight-selection classification: frame count, temporal context (4→9 frames), before/action/after
+      frame roles, spread vs dense sampling, shot-evidence guards, contrastive negatives (rebound/miss/
+      turnover), deterministic temperature, centered-clip shaping.</td>
+    <td>Tuned slice (18): <b>P .667 / R 1.0 / F1 .80</b>. Independent slice (20): P 1.0 / <b>R .50 / F1 .667</b>
+      — <b>fails</b> the recall &amp; F1 gates on unseen data.</td>
+  </tr>
+  <tr>
+    <td><b>2 · Local feasibility</b><br><span class="muted">Ollama qwen3-vl:4b, $0</span></td>
+    <td>001–008</td>
+    <td>Can a free local VLM run the pipeline offline? 360p source, 3→5 central frames, per-call
+      checkpoints, memory-pressure handling on an M1 / 16 GB.</td>
+    <td>Execution proven (001: 4 windows in 321 s); <b>recognition failed</b> — 006–008 scored TP0/FP0/FN2
+      on both dev games. 002–005 aborted on memory pressure.</td>
+  </tr>
+  <tr>
+    <td><b>3 · All-12-event detection</b><br><span class="muted">multi-category matcher</span></td>
+    <td>009–012</td>
+    <td>Widen from highlight selection to <i>perceiving all 12 event/outcome types</i>; matched
+      byte-identical MiniCPM vs local Qwen at 4 and 6 frames.</td>
+    <td>Local F1 0. MiniCPM <b>over-predicts</b>: 4-frame F1 .16 (TP4/FP32), 6-frame F1 .147 (TP5/FP49) —
+      more frames, more false positives, <i>lower</i> F1.</td>
+  </tr>
+  <tr>
+    <td><b>4 · Evidence representation</b><br><span class="muted">the core experiments</span></td>
+    <td>013–020</td>
+    <td>Several representations tested for better evidence: <b>YOLO ball-crops</b> (013/014),
+      <b>visual transcripts</b> (narrate→extract, 015), <b>denser frame sampling</b> (016),
+      <b>closed-vocabulary ball-state grounding</b> (017), corrected v2 rules + rim crops (018/019), and
+      <b>YOLO11n + ByteTrack</b> track-augmented transcripts (020).</td>
+    <td>All hit the <b>same wall</b> (§5.6). Transcript 015 lifted F1 to .40 on 2 windows but 0–1 events were
+      entailment-supported; grounding (017) scored an honest <b>0</b>; track-augmented (020) reached F1 .353
+      but ball was tracked in only 8 of 1,023 frames.</td>
+  </tr>
+  <tr>
+    <td><b>5 · Native-video model</b><br><span class="muted">Gemini gemini-3.8-flash</span></td>
+    <td>021–028</td>
+    <td>Swap frame sequences for <b>native muted video at 4 fps</b> via a new REST adapter with quota-aware
+      retry; strict-JSON output. Quota first blocked full coverage; a <b>$5 API credit</b> then funded the
+      recovery runs (025/026/028) to complete all eight windows, with fourteen references spanning twelve categories.</td>
+    <td><b>Best in track — and now on full coverage</b>: direct video <b>F1 .37</b> (P 38.5% / R 35.7%)
+      across all 8 windows, <b>+24.5 F1 points over MiniCPM's .125</b> on the same set. Generated transcripts
+      cost more and <i>lowered</i> recall (F1 .35) → not adopted. Still ~half the 0.70 gate.</td>
+  </tr>
+</table>
+
+<h4>What we tried and deliberately rejected</h4>
+<p>An equally important part of the record is what was <b>tested and not adopted</b> — kept in the audit
+trail rather than quietly deleted:</p>
+<table>
+  <tr><th>Approach</th><th>Why it was rejected</th></tr>
+  <tr><td><b>Any-overlap matching</b> (iter 13)</td><td>Reported a perfect 1.0/1.0/1.0, but mean temporal IoU was only <b>0.059</b> — the "win" was a metric bug. Iteration 14 replaced it with IoU-aware matching; the bogus result stays in the log, unrewritten.</td></tr>
+  <tr><td><b>Alternative-label verifier</b> (iter 21)</td><td>Regressed to <b>0.0 recall</b>; rejected and the code reverted (result retained in the trail).</td></tr>
+  <tr><td><b>Generic YOLO ball-crop pipeline</b> (013/014)</td><td>12-image and crop requests hit provider <code>BadRequestError</code>; YOLO found a ball in only <b>6 of 96</b> sampled frames. No reliable ball evidence to crop around.</td></tr>
+  <tr><td><b>MiniCPM narrate→extract as a detector</b> (015)</td><td>Numerical lift was real (23.5%→40% F1) but <b>not entailment-grounded</b> — accepted events cited observations that didn't establish them, all at confidence 1.0. Kept as a <i>diagnostic</i>, not a detector.</td></tr>
+  <tr><td><b>"Denser frames alone" hypothesis</b> (016)</td><td>Not supported as a general improvement by this pilot: outputs contained 26 mutually exclusive label pairs and grounding remained weak. This does not establish that temporal density is irrelevant on other configurations.</td></tr>
+  <tr><td><b>Six-frames-as-quality-win</b> (all-events)</td><td>More frames added false positives and lowered F1 — not promoted.</td></tr>
+  <tr><td><b>Gaming the score</b></td><td>Explicitly refused: raising event limits, discarding unmatched predictions, or integrating tracking merely to lift the reported number.</td></tr>
+  <tr><td><b>Nebius Qwen3.5</b> · <b>Cosmos / Qwen2.5-VL-7B</b></td><td>Qwen3.5 <b>failed a capability probe</b> (HTTP 400, no image/video input). Cosmos-Reason2 and Qwen2.5-VL-7B deferred — no credits — with LoRA fine-tuning gated on untuned comparisons justifying it.</td></tr>
+  <tr><td><b>Vector-DB RAG · multi-agent · LangSmith upload</b></td><td>Vector retrieval and multi-agent orchestration were not adopted for the small fixed rubric. Tracing infrastructure exists, but tracing was disabled in the verified native-video demo; these are separate decisions.</td></tr>
+</table>
+
+<h3>5.6 · Concrete results &amp; honest current status</h3>
+<p>Some earlier development slices reached 1.00 candidate recall; that does not establish complete full-game proposal coverage. Perception, candidate timing and subject scope remain limitations. The two scorecards below use different matchers and scopes and must not be pooled.</p>
+
+<h4>Scorecard A — highlight-selection pipeline (legacy IoU-aware matcher)</h4>
+<div class="grid">
+  <div class="card"><h4>Iteration 18 — best <i>tuned</i> dev slice</h4>
+    <table>
+      <tr><th>Metric</th><th>Result</th><th>Gate</th></tr>
+      <tr><td>Candidate recall @ IoU 0.30</td><td>1.000</td><td>0.80 ✅</td></tr>
+      <tr><td>Precision</td><td>0.667</td><td>0.70 ❌</td></tr>
+      <tr><td>Recall</td><td>1.000</td><td>0.70 ✅</td></tr>
+      <tr><td>F1</td><td>0.800</td><td>0.70 ✅</td></tr>
+      <tr><td>Schema pass rate</td><td>1.000</td><td>1.00 ✅</td></tr>
+    </table>
+    <p class="muted">Fails only the precision gate — and it's a tuned slice.</p>
+  </div>
+  <div class="card"><h4>Iteration 20 — clean <i>independent</i> slice (other game)</h4>
+    <table>
+      <tr><th>Metric</th><th>Result</th><th>Gate</th></tr>
+      <tr><td>Candidate recall @ IoU 0.30</td><td>1.000</td><td>0.80 ✅</td></tr>
+      <tr><td>Precision</td><td>1.000</td><td>0.70 ✅</td></tr>
+      <tr><td>Recall</td><td>0.500</td><td>0.70 ❌</td></tr>
+      <tr><td>F1</td><td>0.667</td><td>0.70 ❌</td></tr>
+      <tr><td>Neg-window specificity</td><td>1.000</td><td>monitored</td></tr>
+    </table>
+    <p class="muted">Fails recall &amp; F1 on unseen data.</p>
+  </div>
+</div>
+
+<h4>Scorecard B — all-events perception pilots (new event-time matcher · <span class="muted">do not pool with A</span>)</h4>
+<p>Since iteration 21 the work pivoted to the harder question underneath selection: can a model
+<i>perceive all 12 event types</i> at all? Four representation changes were tried — <b>visual transcripts</b>,
+<b>detector-cropped frames</b>, <b>denser sampling</b>, and <b>closed-vocabulary ball-state grounding</b> —
+plus <b>YOLO/ByteTrack</b> ball tracking and <b>Gemini native-video</b> classification. A $5 API credit
+funded the recovery runs, so the <b>headline is now a complete eight-window comparison with fourteen references spanning twelve categories</b> (no longer
+a partial subset) — and <b>Gemini native video has the higher measured F1 on this shared comparison</b>, though still ~half the
+0.70 gate:</p>
+<table>
+  <tr><th>Pilot / config</th><th>Coverage</th><th>TP/FP/FN</th><th>Precision</th><th>Recall</th><th>micro-F1</th></tr>
+  <tr style="background:#f0fdf4"><td><b>Gemini direct video</b> — 024/027/028 <span class="muted">(complete, funded)</span></td><td><b>8 win / 12 types</b></td><td>5/8/9</td><td>38.5%</td><td>35.7%</td><td><b>37.0%</b></td></tr>
+  <tr><td>Gemini video + generated transcript — 025 <span class="muted">(not adopted)</span></td><td>8 win / 12 types</td><td>4/5/10</td><td>44.4%</td><td>28.6%</td><td>34.8%</td></tr>
+  <tr><td>Historical MiniCPM direct <span class="muted">(same 8 windows)</span></td><td>8 win / 12 types</td><td>3/31/11</td><td>8.8%</td><td>21.4%</td><td>12.5%</td></tr>
+  <tr><td>Gemini images — 021/026</td><td>partial</td><td>2/0/8</td><td>100.0%</td><td>20.0%</td><td>33.3%</td></tr>
+  <tr><td>MiniCPM + YOLO/ByteTrack transcript — 020</td><td>3 win</td><td>3/4/7</td><td>42.9%</td><td>30.0%</td><td>35.3%</td></tr>
+  <tr><td>Ball-state grounded derivation — 017</td><td>8 win</td><td>0/1/14</td><td>0%</td><td>0%</td><td><b>0</b></td></tr>
+</table>
+<p class="muted">On the <b>full 8-window set</b>, Gemini direct video beats historical MiniCPM by
+<b>+24.5 F1 points</b> (37.0% vs 12.5%). Generated transcripts <i>raised precision but lost more recall</i>
+(F1 34.8%) — so they were <b>rejected</b>, kept only as a diagnostic. Ball tracks were negligible (8 of 1,023
+frames), so 020's lift is not track-grounded. Grounded derivation (017) scored <b>0</b>: constrained to
+report only visible states, the model reported <code>rim_contact</code> zero times across 48 frames.
+Confidence is uncalibrated — reference-conflicting predictions still carry 0.85–0.95 confidence.</p>
+
+<div class="callout"><b>Measured takeaway:</b> evidence representations and model choice changed the results, but reliable event recognition remains unresolved. Better temporal context and candidate coverage warrant controlled evaluation. Rim/detail evidence was already explored in 018/019; longer context was used in demo032. Court geometry remains future work. These experiments do not prove that additional prompt work cannot help.</div>
+
+<div class="callout"><b>Current status (2026-09-13):</b> the holdout has not been evaluated. Some individual criteria pass, but the overall development release criteria have not all passed. The all-events comparison covers <b>eight selected development windows with fourteen references spanning twelve categories</b>, using a provisional ±5-second event-time matcher. Gemini micro-F1 .37037 versus MiniCPM .125 is a 24.54-percentage-point difference on this small set, not full-game accuracy or a statistically established general ranking. Keep this scorecard separate from the highlight-selection IoU gates. The limited lexical entailment screen is a diagnostic, not proof of visual grounding.</div>
+
+<h3>5.7 · Models evaluated (and why perception is the frontier)</h3>
+<ul>
+  <li><b>Gemini <code>gemini-3.8-flash</code> (highest F1 in the shared eight-window comparison)</b> — native muted 1280-wide video at
+    4 fps, temperature 0, via a standard-library REST adapter (not the legacy Gemini SDK) in the evaluation harness with a
+    <b>quota-aware retry policy</b> (daily-quota 429s are terminal and never retried; minute limits honored
+    with headroom) and a hard <b>spend cap enforced before every request</b> (<code>gemini_budget.py</code>,
+    7 dedicated budget tests). The production native-video demo adapter has separate budget reservations and no automatic retry. A $5 API credit funded the recovery runs, so the eight-window / fourteen-reference result spanning twelve categories is
+    complete: <b>F1 .37, +24.5 points over MiniCPM</b>.</li>
+  <li><b>Local Ollama <code>qwen3-vl:4b-instruct</code></b> — loopback-only, pinned digest, temp 0, seed 0,
+    <b>$0 cloud cost</b>. Baseline proved execution (4 windows in 321 s) but missed both reference steals.
+    The thinking-variant alias truncated and was rejected.</li>
+  <li><b>Nebius <code>openbmb/MiniCPM-V-4_5</code></b> — ran the bulk of the iterations; <b>overpredicts</b>
+    and gave different verdicts across identical temperature-0 runs (5.9% F1 on the latest 6-window subset).</li>
+  <li><b>Nebius <code>Qwen3.5</code></b> — capability-probed 2026-09-12 and <b>failed</b>: HTTP 400 "does
+    not support image input" / "video input".
+    <span class="muted">(Earlier environment settings used Qwen2.5-VL-72B; the current verified live demo uses Gemini. Model configuration is separate from recipe selection.)</span></li>
+  <li><b>Deferred (no credits):</b> NVIDIA <code>Cosmos-Reason2-2B/8B</code>, <code>Qwen2.5-VL-7B</code>,
+    with LoRA fine-tuning only if untuned comparisons justify it.</li>
+</ul>
+
+<h3>5.8 · Real-world lesson baked into the evals</h3>
+<p>A run once returned <b>0 clips</b> and looked like a prompt bug. Root cause: an HTTP <b>402</b>
+(Nebius budget exhausted in that historical run) silently failing every vision call. The fix wasn't a prompt tweak — it was
+making the failure <i>loud</i>: a pre-flight live ping (with a real image), and a diagnosis branch that
+declares a provider failure when errors exceed half the classifications. <b>Don't trust the agent's first
+explanation; verify it.</b></p>
+
+<!-- ============================================================ -->
+<h2><span class="n">6</span>Where it stands &amp; what's next</h2>
+<p>What exists today is a <b>working end-to-end agent</b> and a <b>rigorous evaluation system</b> that took
+nearly 50 documented runs to build. It is honestly <b>not finished</b> — the overall development release criteria remain unmet and the
+holdout is still sealed — but the same evaluation work that exposed the limits also makes the path forward
+concrete. There is substantial potential here and a clear backlog of improvements.</p>
+
+<div class="callout"><b>Working live demo (032):</b> a continuous ten-minute East Bay excerpt (original 12:30–22:30), explicitly covering both light-blue and black teams, generated 51 candidates. Fresh Gemini analysis selected six non-overlapping clips and, after approval, rendered an <b>87-second reel</b> in <b>7m49s</b> for an estimated <b>$0.533808</b>. The later user's 89.5-second output is a separate run. The full app at <code>/?demo=full-flow</code> shows the input form, actual pipeline stages, per-clip video previews and Keep controls, final rendering, and a final player/download. The recorded032 judge accepted without revision. This demonstrates the workflow, not audited event accuracy or an externally uploaded reel.</div>
+
+<div class="grid">
+  <div class="card" style="border-left:5px solid var(--accent2)">
+    <h4 style="color:var(--accent2)">What we have today</h4>
+    <ul style="margin:.3em 0 0; padding-left:1.1em">
+      <li>The full agent end to end: recipe → deterministic LangGraph spine → vision classify → an optional bounded
+        judge revision → two human gates → rendered reel.</li>
+      <li>An evaluation system as a first-class deliverable: historical tuning/perception runs plus demo integration checks, a metrics catalogue plus explicit release gates, a sealed
+        holdout, an append-only cost ledger, and rejected experiments kept in the trail.</li>
+      <li>A clear, measured diagnosis: <b>perception is the bottleneck</b>; Gemini native video is
+        best-in-track at F1 .37 (+24.5 pts over MiniCPM), still short of the 0.70 gate.</li>
+    </ul>
+  </div>
+  <div class="card" style="border-left:5px solid var(--accent)">
+    <h4 style="color:var(--accent)">Where the potential is (backlog)</h4>
+    <ul style="margin:.3em 0 0; padding-left:1.1em">
+      <li><b>Better visual evidence</b> — higher-resolution rim frames, denser sampling around the shot
+        release, and a court-geometry signal — the lever the evals point to, over more prompt tuning.</li>
+      <li>Re-run development validation and, only if the gates hold, run the <b>sealed holdout once</b> for an
+        honest final read.</li>
+      <li>Broader reach: more sports recipes to prove the recipe abstraction generalizes, true vector
+        retrieval over a growing recipe/preference corpus, and a real share connector behind Gate 2.</li>
+    </ul>
+  </div>
+</div>
+<p class="muted" style="margin-top:.6em">Team cadence across the (optional) 3-week window:
+<span class="fill">[check-in — set day/time]</span>. The items on the right are the <i>plan the evaluation
+justifies</i> — improvements with real headroom, not a claim that any gate is already met.</p>
+
+<footer>
+  HypeReel · Evals Week Breakout submission · generated to accompany
+  <code>github.com/shivanivarambally/hypereel</code>. Fields marked
+  <span class="fill">like this</span> are for you to confirm/fill (location, email, cadence) or are
+  estimates to firm up before an external pitch.
+</footer>
+
+</body>
+</html>
