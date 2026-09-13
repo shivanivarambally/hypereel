@@ -57,6 +57,11 @@
   .arrow{color:var(--muted); font-weight:700}
   footer{margin-top:60px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); padding-top:16px}
   @media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}}
+
+  .section-visual{margin:22px 0 28px; padding:10px; border:1px solid #e6dded; border-radius:16px; background:#fff; break-inside:avoid}
+  .section-visual img{display:block; width:100%; height:auto; border-radius:10px}
+  .section-visual figcaption{padding:12px 8px 4px; font-size:.83rem; color:var(--muted); line-height:1.5}
+  @media print{.section-visual{box-shadow:none; margin:12px 0; padding:4px}}
 </style>
 </head>
 <body>
@@ -75,15 +80,8 @@
 <div class="callout">
   <b>Deadline to submit:</b> 12 Sept 11:59pm PT &nbsp;·&nbsp;
   <b>Repo:</b> <a href="https://github.com/shivanivarambally/hypereel">github.com/shivanivarambally/hypereel</a> &nbsp;·&nbsp;
-  <b>Design doc:</b> <code>design/HypeReel-Design.html</code> &nbsp;·&nbsp;
-  <b>Demo (≤5 min):</b> <a href="https://drive.google.com/file/d/1c_W8egamBQFVbjVJV_sDs186M_oqpM1u/view">video</a>
+  <b>Design doc:</b> <code>design/HypeReel-Design.html</code>
   <br><span class="muted" style="font-size:.85rem">Reflects repo synced to upstream <code>main</code> @ <code>df3fc18</code> (2026-09-13) — "Integrate live Gemini video demos with human clip review." Technical status updated 2026-09-13; market statements preserved as requested.</span>
-</div>
-<div class="callout" style="background:#fffbeb;border-color:#fde68a">
-  <b>⚠ Confirm before submitting:</b> the handout's dates are internally inconsistent — title says <i>Aug 2026</i>,
-  deadline <i>Sept 12</i>, footer <i>July 12–13 demo</i>, and the linked form is titled <i>May 2026 Cohort</i>.
-  The form also needs a <b>team number</b>, confirmed member names/emails, the uploaded breakout doc, the GitHub
-  URL, and a Drive demo link. Verify the cohort/form and the demo video's shareability with the organizer.
 </div>
 
 <div class="oneliner">
@@ -101,31 +99,37 @@
 <p class="muted">Blank rows left open for teammates who join later.</p>
 <table>
   <tr><th>#</th><th>Full name</th><th>Email</th></tr>
-  <tr><td>1</td><td>Shivani <span class="muted">— builder / point person</span></td><td><span class="fill">shivani@…</span></td></tr>
-  <tr><td>2</td><td></td><td></td></tr>
-  <tr><td>3</td><td></td><td></td></tr>
-  <tr><td>4</td><td></td><td></td></tr>
-  <tr><td>5</td><td></td><td></td></tr>
+  <tr><td>1</td><td>Shivani Varambally</td><td>gshivani.work@gmail.com</td></tr>
+  <tr><td>2</td><td>Satya Parimi</td><td>satya.parimi@yahoo.com</td></tr>
+  <tr><td>3</td><td>Hiyo</td><td>hotcoa@gmail.com</td></tr>
+  <tr><td>4</td><td>Aamani</td><td>aamani.nemtur0119@gmail.com</td></tr>
+  <tr><td>5</td><td>Megan Shehab</td><td></td></tr>
   <tr><td>6</td><td></td><td></td></tr>
   <tr><td>7</td><td></td><td></td></tr>
 </table>
-<p><b>Point person (owns this doc and coordinates the team):</b> Shivani.
-  <span class="muted">Built solo as the Week-3 "bring-your-own" capstone.</span></p>
+
 
 <!-- ============================================================ -->
 <h2><span class="n">2</span>Warm up: go around the room</h2>
+<figure class="section-visual">
+  <img src="demoassets/Codex%20Image%20Sep%2013%2C%202026%2C%2001_48_55%20AM.png" alt="From tournament footage and hours of manual editing to human-reviewed basketball highlights." loading="lazy" decoding="async" />
+  <figcaption>The problem and product vision, illustrated. Sharing is a product goal; the current app produces a local download.</figcaption>
+</figure>
 <p><b>Icebreaker.</b> Name, location, and the one tedious task you'd hand to an AI agent tomorrow.</p>
 <div class="card">
-  <p style="margin:0"><b>Shivani</b> — <span class="fill">[your city]</span> —
-  “The task I'd hand off tomorrow: <b>cutting highlight reels from full game footage.</b> After every AAU
-  weekend, someone scrubs a 60-minute recording frame-by-frame to find the ~10 plays that matter for one
-  kid or one team, then cuts and stitches them in a video editor. It's 3–4 hours of tedium per reel — and
-  it's exactly the repetitive, judgment-light-but-time-heavy work an agent should own. That task became
-  HypeReel.”</p>
+<p>Shivani — Fremont — “My kids are into basketball. Besides my full-time job, my second job is getting them to practices and tournaments and coaching them as needed. Basketball takes up a good chunk of our weekends, and the task I’d happily hand over to an AI agent tomorrow is editing their game videos.</p>
+<p>I have an advanced setup of AI cameras that can track and record their games, but recording is only the beginning. Afterward, I spend hours editing the footage for film study or social media. Creating just one highlight reel easily takes three to four hours. So this is something I’m genuinely passionate about, and I’m personally invested in figuring out how computer vision and advanced models can help.</p>
+<p>HypeReel is my initial attempt to automate one part of what I do. In the demo, you’ll see a highlight from my daughter’s game. Her teammate intercepts a pass for a steal, then passes the ball to my daughter, who scores a two-pointer. Those are exactly the moments I want to capture—for the kids to learn from, for us to share, and simply to keep as memories. That’s what makes this project so personal to me.</p>
+<p>But I see a lot more beyond HypeReel. These tournaments happen almost every weekend, and families are already investing significant time and money. Entrance alone can cost $15 for a game or up to $90 for a weekend—and often it’s not just one parent attending, but the whole family.</p>
+<p>That’s why I see a potentially huge total addressable market, or TAM, around helping players and their families. The entrance fees don’t directly tell us what families would pay for HypeReel, but they show how invested they already are. Video editing is just one small piece of the puzzle. There are plenty of other things I’d love to make easier for them. Basketball is my starting point because I live this every week, but I can see this extending well beyond basketball.”</p>
 </div>
 
 <!-- ============================================================ -->
 <h2><span class="n">3</span>Pick a topic and sketch the design</h2>
+<figure class="section-visual">
+  <img src="demoassets/Codex%20Image%20Sep%2013%2C%202026%2C%2001_49_28%20AM.png" alt="Recipe-led workflow from ingestion and Gemini classification through selection, human review and rendering." loading="lazy" decoding="async" />
+  <figcaption>System design schematic. Scoreboard processing is optional and inactive in the demo. Download is available at Gate 2 before delivery approval; external upload is not implemented.</figcaption>
+</figure>
 <p class="muted">Talk through the three questions, then jot the thinking below.</p>
 
 <!-- Q1 -->
@@ -234,6 +238,14 @@ plus live-run guardrails: a pre-flight form checker, a cached image-based provid
 
 <!-- ============================================================ -->
 <h2><span class="n">4</span>Our project</h2>
+<figure class="section-visual">
+  <img src="demoassets/Codex%20Image%20Sep%2013%2C%202026%2C%2001_49_13%20AM.png" alt="Illustrated live flow: configure the brief, review proposed clips, then render a reel." loading="lazy" decoding="async" />
+  <figcaption>Illustrated screens, not app screenshots. Clip-card labels are examples. Run 032 produced six clips totaling 87 seconds in 7 minutes 49 seconds; its model labels were five steals and one rebound.</figcaption>
+</figure>
+<figure class="section-visual">
+  <img src="demoassets/submission-product.png" alt="Actual HypeReel app showing the configuration form and completed agent pipeline through rendering and summarization, awaiting human approval at the share gate." loading="lazy" decoding="async" />
+  <figcaption><b>The actual product.</b> User-provided screenshot of HypeReel after clip approval, rendering and summarization, paused at the second human approval gate. This shows the real application, not an illustrated mockup. External uploading is not implemented.</figcaption>
+</figure>
 <p>Use case, where RAG fits, tools, autonomy vs workflow, and evaluation — consolidated.</p>
 
 <table>
@@ -250,6 +262,10 @@ plus live-run guardrails: a pre-flight form checker, a cached image-based provid
 
 <!-- ============================================================ -->
 <h2><span class="n">5</span>Evaluation — how we know it works</h2>
+<figure class="section-visual">
+  <img src="demoassets/Codex%20Image%20Sep%2013%2C%202026%2C%2001_49_22%20AM.png" alt="Development evaluation compares MiniCPM, Gemini and Gemini with generated transcript while preserving the holdout." loading="lazy" decoding="async" />
+  <figcaption>Development comparison on eight windows with fourteen references. These F1 scores are not full-game accuracy; release criteria remain unmet and the final holdout remains unused.</figcaption>
+</figure>
 <p>HypeReel treats evaluation as a first-class subsystem, not an afterthought. There is a dedicated
 <code>evals/</code> tree and an installable <code>hypereel.evaluation</code> package with its own CLI,
 deterministic metrics, an optional LLM-as-a-Judge, and reproducible reports. <b>The core benchmark runner stops at the first approval gate</b>. Separate demo integration checks 029–032 stored under <code>evals/</code> also validate local rendering; these are not accuracy benchmarks.</p>
@@ -540,6 +556,10 @@ explanation; verify it.</b></p>
 
 <!-- ============================================================ -->
 <h2><span class="n">6</span>Where it stands &amp; what's next</h2>
+<figure class="section-visual">
+  <img src="demoassets/Codex%20Image%20Sep%2013%2C%202026%2C%2001_49_03%20AM.png" alt="Current review-and-render workflow and future improvements to temporal evidence and event coverage." loading="lazy" decoding="async" />
+  <figcaption>Current capabilities and next steps, illustrated. Player timestamps and event icons are schematic, not measured results. The demonstrated run produced an 87-second reel; full-game recognition is not validated.</figcaption>
+</figure>
 <p>What exists today is a <b>working end-to-end agent</b> and a <b>rigorous evaluation system</b> that took
 nearly 50 documented runs to build. It is honestly <b>not finished</b> — the overall development release criteria remain unmet and the
 holdout is still sealed — but the same evaluation work that exposed the limits also makes the path forward
@@ -571,15 +591,12 @@ concrete. There is substantial potential here and a clear backlog of improvement
     </ul>
   </div>
 </div>
-<p class="muted" style="margin-top:.6em">Team cadence across the (optional) 3-week window:
-<span class="fill">[check-in — set day/time]</span>. The items on the right are the <i>plan the evaluation
+<p class="muted" style="margin-top:.6em">The items on the right are the <i>plan the evaluation
 justifies</i> — improvements with real headroom, not a claim that any gate is already met.</p>
 
 <footer>
   HypeReel · Evals Week Breakout submission · generated to accompany
-  <code>github.com/shivanivarambally/hypereel</code>. Fields marked
-  <span class="fill">like this</span> are for you to confirm/fill (location, email, cadence) or are
-  estimates to firm up before an external pitch.
+  <code>github.com/shivanivarambally/hypereel</code>.
 </footer>
 
 </body>

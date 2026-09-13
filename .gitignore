@@ -49,5 +49,12 @@ evals/iterations/*/media/
 evals/iterations/spend-ledger.lock
 
 # Local duplicate exports and superseded visual drafts; final boards live in illustrated-v3.
-/demoassets/
+/demoassets/*
+!/demoassets/Codex Image Sep 13, 2026, 01_48_55 AM.png
+!/demoassets/Codex Image Sep 13, 2026, 01_49_28 AM.png
+!/demoassets/Codex Image Sep 13, 2026, 01_49_13 AM.png
+!/demoassets/submission-product.png
+!/demoassets/Codex Image Sep 13, 2026, 01_49_22 AM.png
+!/demoassets/Codex Image Sep 13, 2026, 01_49_03 AM.png
+!/demoassets/submission-visuals.md
 /assets/teleprompter-visuals/track_*.png

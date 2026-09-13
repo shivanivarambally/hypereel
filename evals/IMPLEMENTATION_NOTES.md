@@ -4218,3 +4218,39 @@ Validation: HTML tag stack balanced; scripts/teleprompter consistency and market
 ### 2026-09-12T20:14:25.208011+00:00 — Illustrated teleprompter boards v3
 
 User supplied a preferred hand-drawn image reference after rejecting earlier visuals. Created five matching illustrated PNG boards, one per teleprompter section, using built-in image generation; replaced transcript paragraphs with scenes, diagrams and short labels. Files, gallery, complete prompts and QA notes: assets/teleprompter-visuals/illustrated-v3/. Earlier image variants preserved. Architecture checked against graph/build.py. Visual QA corrected the Select-to-Judge arrow, an invented recipe duration, incorrect held-out-test heading, closing player duration and misleading numbered steps/event checkmarks. Final figures retain development scope and sealed holdout, with six-clip/87-second/7m49s demo metrics. Drawn UI, clip examples and thumbnail timestamps are illustrative, not run evidence. Market estimate retained from user script and marked illustrative. Five PNGs verified readable. No evaluation, project inference spend, holdout access, app changes, commit or push.
+
+### 2026-09-13T09:39:05.446752+05:30 — Breakout handout coverage check
+
+Read the linked Google handout via its public text export after web extraction failed. Current submission HTML substantively answers Q1(use case),Q2(knowledge/tools/RAG role),Q3(autonomy/success/failure detection),and project summary. Handout requests an architecture pitch; a prototype is optional. Remaining completion items are full name/email,location,and next-three-weeks meeting cadence. Existing HTML warning claims title Aug2026 and May-cohort form mismatch; the current fetched handout does not show that Aug title and the form was not inspected here, so those warnings must not be represented as newly verified. No documents changed, no API inference, no holdout access.
+
+### 2026-09-13T09:56:36.703569+05:30 — Submission section illustrations
+
+Added one Excalidraw-style illustration to each of the six main submission sections: team, problem, architecture, live flow, evaluation and next steps. Reused five supplied demoassets boards and generated a matching team board; corrected an invented Fine-tune label to Iterate. Added alt text, responsive layout and captions distinguishing schematic labels from actual run 032 metrics and current delivery behavior. Original document prose, including market claims, preserved byte-for-byte. Created self-contained HTML with embedded PNGs in task outputs. Checked six image references and PNG signatures; no app changes, evaluation calls, Google API spend or holdout access. No commit/push requested.
+
+### 2026-09-13T09:57:10.909058+05:30 — Actual product screenshot in submission
+
+Added the user-supplied app screenshot unchanged alongside the section 4 workflow illustration. Caption describes the visible rendered/summarized state awaiting share approval and does not claim external upload. Updated image provenance notes and standalone embedded-image HTML. Verified all seven PNG references. No inference, runtime changes or holdout access.
+
+### 2026-09-13T09:58:36.816930+05:30 — Team roster update
+
+Added Satya Parimi as the second team member; retained Shivani without builder/point-person designation. Removed the solo/point-person paragraph. Edited the team image with built-in image generation so both names appear equally under Our team. Updated alt text, caption and portable embedded HTML. No email invented. No app or evaluation changes.
+
+### 2026-09-13T10:04:48.960981+05:30 — Remove team illustration
+
+Removed the team-section illustration at user request; retained Shivani and Satya Parimi in the roster. Other section illustrations and the actual product screenshot remain. Regenerated standalone embedded HTML; previous image asset retained as unused history. No runtime or evaluation changes.
+
+### 2026-09-13T10:38:11.961058+05:30 — Submission contact fields
+
+Updated the team table with five user-provided names and four supplied email addresses; Megan Shehab email left blank because none was supplied. Updated standalone embedded HTML. Attached conversation treated as background, not authorization for unrelated edits or push. No app, evaluation or image changes.
+
+### 2026-09-13T10:39:26.891089+05:30 — Personal icebreaker correction
+
+Replaced the generic icebreaker with the final combined five-paragraph version supplied in the attached conversation, preserving its wording: Fremont, family basketball commitments, AI cameras and editing burden, daughter’s teammate steal/pass/two-pointer example, family investment, TAM and opportunities beyond basketball. Updated standalone embedded HTML. Verified five paragraphs and preserved the supplied text through HTML escaping. No runtime or evaluation changes.
+
+### 2026-09-13T10:43:11.725820+05:30 — Submission cleanup
+
+Removed the header demo link, confirm-before-submitting warning, optional team cadence placeholder and footer fill-in guidance as explicitly requested. Preserved the adjacent evaluation-plan qualification. Refreshed standalone HTML; verified each requested removal matched exactly once. No runtime or evaluation changes.
+
+### 2026-09-13T11:06:30.042279+05:30 — Submission commit preparation
+
+Prepared latest submission updates for requested upstream push: five-member roster and supplied emails, full personal icebreaker, requested removals, five section illustrations and actual product screenshot. Allowed only referenced demoassets images and provenance notes through gitignore; unused team image remains excluded. Verified balanced HTML, six valid local PNG references with alt text, and whitespace checks. Documentation-only; no paid inference or holdout access.
