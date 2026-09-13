@@ -1,5 +1,9 @@
 # HypeReel — Demo Script (target under four minutes)
 
+**Submission date:** 13 September 2026, 12:29 IST
+
+**Recordings:** [Evaluation and testing demo](https://drive.google.com/file/d/1R3s7lWN8B7mSCR56EYsPhUerBNBheSaS/view?usp=sharing) · [Initial demo (first part)](https://drive.google.com/file/d/1c_W8egamBQFVbjVJV_sDs186M_oqpM1u/view?usp=sharing)
+
 **[SCREEN]** indicates what to show. Plain paragraphs in the five numbered beats are the spoken track, identical to HypeReel-Demo-Teleprompter.md. Market wording is preserved as requested.
 
 ## Timing plan

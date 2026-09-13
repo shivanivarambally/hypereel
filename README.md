@@ -4,7 +4,11 @@ A recipe-driven, agentic highlight-reel builder built on LangGraph.
 
 > Full design document: [`design/HypeReel-Design.html`](design/HypeReel-Design.html)
 
-> Demo: [Watch the HypeReel demo](https://drive.google.com/file/d/1c_W8egamBQFVbjVJV_sDs186M_oqpM1u/view?usp=sharing)
+> **Submission date:** 13 September 2026, 12:29 IST
+>
+> **Latest demo — evaluations and more rigorous testing:** [Watch the evaluation demo](https://drive.google.com/file/d/1R3s7lWN8B7mSCR56EYsPhUerBNBheSaS/view?usp=sharing)
+>
+> **Initial demo — first part:** [Watch the original HypeReel demo](https://drive.google.com/file/d/1c_W8egamBQFVbjVJV_sDs186M_oqpM1u/view?usp=sharing)
 
 > Local Qwen vision setup (Ollama, no paid API): [instructions](docs/OLLAMA.md). Current measured quality and limitations: [evaluation status](evals/STATUS.md).
 

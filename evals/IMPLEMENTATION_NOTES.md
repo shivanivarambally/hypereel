@@ -4254,3 +4254,27 @@ Removed the header demo link, confirm-before-submitting warning, optional team c
 ### 2026-09-13T11:06:30.042279+05:30 — Submission commit preparation
 
 Prepared latest submission updates for requested upstream push: five-member roster and supplied emails, full personal icebreaker, requested removals, five section illustrations and actual product screenshot. Allowed only referenced demoassets images and provenance notes through gitignore; unused team image remains excluded. Verified balanced HTML, six valid local PNG references with alt text, and whitespace checks. Documentation-only; no paid inference or holdout access.
+
+### 2026-09-13T11:08:17.435617+05:30 — Submission upload size reduction
+
+Created a separate standalone under-10MB HTML export by converting six inline PNGs to quality-92 JPEG with full chroma resolution, preserving image dimensions and all text/content. Original images and full-quality export retained. Verified all six embedded images decode and final file is 4480103 bytes. No runtime, inference or holdout changes.
+
+### 2026-09-13T12:04:47.689978+05:30 — Shareable submission copied to repository
+
+Copied the self-contained HypeReel-Breakout-Submission-under-10MB.html into the repository root at user request. Verified byte-identical to the compact export, 4,480,103 bytes, with six embedded images. This is the single file to upload.
+
+### 2026-09-13T12:12:42.749560+05:30 — HypeReel icon
+
+Created a simple hand-drawn basketball/video icon using built-in image generation. Saved PNG and prompt provenance under assets/branding. Visually checked composition and absence of text. No app integration or submission changes requested.
+
+### 2026-09-13T12:13:58.017285+05:30 — Satya icebreaker
+
+Added Satya Parimi’s three-paragraph icebreaker verbatim as supplied by the user after Shivani’s icebreaker. Updated main repository HTML, compact repository HTML and both task exports. Verified compact versions remain below 10 MB and retain all six embedded images. Personal contribution statements are user-supplied, not a new attribution audit. No app or evaluation changes.
+
+### 2026-09-13T12:29:46+05:30 — Submission recordings and date
+
+Added the user-provided evaluation/testing demo link while retaining/restoring the initial demo as a separate first-part recording. Added submission date 13 September 2026, 12:29 IST to README, both director scripts, main and compact submission HTML, and task exports. Spoken teleprompter unchanged. Compact submission remains under 10 MB with all images embedded. Links supplied by user; video contents and sharing permissions not newly verified.
+
+### 2026-09-13T12:30:21.419360+05:30 — Final submission commit checks
+
+Prepared requested new commit with compact self-contained submission, Satya icebreaker, both demo recordings and dated submission references, branding icon and provenance. Verified six inline JPEG images, balanced compact HTML, size below 10 MB, both recording IDs, and identical director scripts. Documentation/assets only; no app restart or paid evaluations.
