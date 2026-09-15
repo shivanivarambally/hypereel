@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-15T13:56:14.175772+00:00",
+  "status": "completed",
+  "reserved_usd": 0.013898125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 9.0s were selected:\n- two_point_miss (2.0-11.0s, score 0.20)"
+  ],
+  "token_preflight": {
+    "totalTokens": 62,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 62
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here's a short, upbeat highlight-reel summary for the clip:\n\n\"Bringing the energy right from the tip! The offense pushes the pace and creates a great look inside, battling through tough defense to get a shot up. High-octane basketball action from start to finish!\"",
+              "thoughtSignature": "EmcKZQERTTIPRj75oEtIJsotAgav5lZRieJ7Lq+DVMh+uDwEdWcEkxkIgKMiI0NuuYFjSiwecwtLvaQ1OsQErOxIiNu5hppImV/clfqTFYzaT7QnbIbfVI9C5/erlG1Gsn1Yg3qKB+LW"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 62,
+      "candidatesTokenCount": 58,
+      "totalTokenCount": 120,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 62
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "fk6paur5MJjeg8UP5ZGFuQQ"
+  },
+  "estimated_cost_usd": 0.000264,
+  "elapsed_seconds": 2.0057838750071824
+}

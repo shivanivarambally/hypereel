@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-09-15T14:22:34.495403+00:00",
+  "status": "completed",
+  "reserved_usd": 0.013898125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 8.0s were selected:\n- missed_field_goal (2.0-10.0s, score 0.49)"
+  ],
+  "token_preflight": {
+    "totalTokens": 62,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 62
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Get ready for non-stop action on the court! In this quick burst of high-stakes hoops, the offense attacks the rim and puts up a bold shot, bringing pure energy and intensity to the floor!",
+              "thoughtSignature": "Et4DCtsDARFNMg/Vzz7HGrUI57dwuJsaCAIQ7wzpBoUf1uKCJky0qaunlZhsboLXJnm4HDLyWC5YxxqfCFr21svQILKT7vHPj40Ff2vOtscgblnsn9O92NQTlhnmPoK/Py0p3VkupiFWHwgOWqnuO/e5d3WcerUopgmZ4VrNYqwCW7KInBeGXOZNcg4hN4tbXieq4d1Fn/JqL5+cyqyQ+cN2doZ7Jkc9hUtqL/qNHVxy0KU5XK9qKc5dJkQzFCamS0e3wkvmelUeGo1uXxX6q6V6atVTWpfSJcT95C9lB1YMZCnb5L1bE1kl841PSawVSCsgoTwvPpnXXEzNoYswgmHEZSYMgxfwe0IyDR7cap/w/HfyFwJbwWkUt1Xob7UU4A4fTJgIa5FEuzzwFI2hd5wlR2qSlKRNUDsy+upuFT6EbrWfDOVnQzudZEC7c5ezhCEDc0EQe9DqXNYHWyjbXE8mI06/bLCpjkXe16XeIfvH/uAzHBSQU1z52N5EgkmE2VHwS33Wos2Pz6SdndOV0dC7JLAn/W777DarHWmCM4/2fXchtE/HuPtEXgSMFonK7DzBKLOV92oYh9dQ+pTenezGRbJbKS32qh36QhuzeKoQnXu/czPF7360M2LRZUFTxg=="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 62,
+      "candidatesTokenCount": 42,
+      "totalTokenCount": 208,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 62
+        }
+      ],
+      "thoughtsTokenCount": 104,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "qlSpaqazOPHNjuMPtdzmgQQ"
+  },
+  "estimated_cost_usd": 0.000594,
+  "elapsed_seconds": 6.496106084028725
+}

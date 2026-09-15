@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from typing import Any, Optional, TypedDict
 
-from ..models import CandidateWindow, Classification, Clip, Recipe
+from ..models import CandidateWindow, Classification, Clip, PotentialEvent, Recipe
 
 
 class ReelState(TypedDict, total=False):
@@ -50,8 +50,10 @@ class ReelState(TypedDict, total=False):
     strategy: str                   # planner's chosen strategy family
     active_signals: list[str]       # signal types the planner enabled
     candidates: list[CandidateWindow]
+    proposal_windows: list[CandidateWindow]  # before temporal expansion; retained for audit
     uncapped_candidates: list[CandidateWindow]  # proposer output before quick-test truncation
     classifications: list[Classification]   # aligned 1:1 with candidates
+    review_queue: list[PotentialEvent]
 
     # ---- selection / render ----
     scored_clips: list[Clip]        # all candidates that passed threshold, scored
@@ -118,6 +120,7 @@ def new_state(source: str, recipe: Recipe, **overrides: Any) -> ReelState:
         "candidates": [],
         "uncapped_candidates": [],
         "classifications": [],
+        "review_queue": [],
         "scored_clips": [],
         "selected_clips": [],
         "proposed_duration": 0.0,

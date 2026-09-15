@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iterations": [
+    "046",
+    "047",
+    "048"
+  ],
+  "kind": "variance_estimate_and_consensus",
+  "fps": 8,
+  "windows": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "baseline_reused_from": "038",
+  "repeats_of": "045",
+  "video_calls": 27,
+  "provider_errors": 0,
+  "incremental_estimated_spend_usd": 0.5710103,
+  "spend_after_usd": 10.748652375,
+  "remaining_headroom_usd": 0.443642,
+  "session_total_043_to_048_usd": 1.0548003,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "tests": {
+    "passed": 443,
+    "skipped": 4
+  },
+  "single_run_f1": {
+    "045": 0.727,
+    "046": 0.727,
+    "047": 0.727,
+    "048": 0.545,
+    "mean": 0.682,
+    "sd": 0.091,
+    "spread": 0.182
+  },
+  "single_pass_control_f1": 0.5,
+  "consensus": {
+    "threshold_0.50": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.8,
+      "recall": 0.667,
+      "f1": 0.727
+    },
+    "threshold_0.75": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.8,
+      "recall": 0.667,
+      "f1": 0.727
+    },
+    "deterministic": true,
+    "recommended_threshold": 0.75,
+    "cost_multiplier": "4x inference per answer"
+  },
+  "findings": [
+    "Variance is real (sd 0.091, spread 0.182) but does not explain the gain: the worst of four runs (0.545) still beats the 0.500 single-pass baseline and the prior 0.400.",
+    "Core event per window is stable; periphery is not. Shot type wobbles within the correct outcome family; secondary events appear/disappear; rebound team attribution flips.",
+    "W4 is correct in 3 of 4 runs. Every report before 045 sampled the wrong side.",
+    "Consensus scores what the best single run scores (0.727) deterministically rather than the mean (0.682); both thresholds agree.",
+    "Only two errors remain under consensus: W1 (reference disputed by eight independent runs) and W5 block (never detected by any arm, any run, any frame rate)."
+  ],
+  "sensitivity": {
+    "w1_reference_as_written": {
+      "f1": 0.727
+    },
+    "w1_reference_if_missed_fg": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.833,
+      "f1": 0.909
+    }
+  },
+  "stopped_deliberately": "headroom intact; further repeats will not move a consensus already stable across both thresholds, and the binding constraint is now the six-label reference set",
+  "next_action": {
+    "step": "re-adjudicate W1 (free, blocking, decides 0.727 vs 0.909), then grow the reference set past six labels"
+  }
+}

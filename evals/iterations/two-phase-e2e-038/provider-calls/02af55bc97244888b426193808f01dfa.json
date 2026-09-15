@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-09-15T13:53:07.742329+00:00",
+  "status": "completed",
+  "reserved_usd": 0.03165625,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "kind": "native_video_verification",
+    "window_index": 0,
+    "proposed_label": "two_point_miss",
+    "window": {
+      "start": 2.0,
+      "end": 11.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "604ee4424f2c01f27acf94298d3604a920a58fe2eac2c4adec1d4cd725d10313",
+    "source_start": 0,
+    "duration": 13.0,
+    "fps": 4,
+    "iteration": "038",
+    "window_id": "W6",
+    "arm": "two_phase"
+  },
+  "prompt": [
+    "Act as a strict verification pass for ordered candidate-action frames from a basketball video.\nThe first pass proposed: 'two_point_miss'. Allowed labels are: two_point_made, two_point_miss, three_point_made, three_point_miss, free_throw_made, free_throw_miss, offensive_rebound, defensive_rebound, steal, turnover, block, assist, made_field_goal, missed_field_goal.\nReject it unless the ordered frames directly establish the proposed event.\nDo not infer from a scoreboard, player reaction, or possession change alone. If the visual evidence does not prove the proposal, return moment_type=null. Do not substitute a different event label.\nRespond with STRICT JSON only in this shape:\n{\"moment_type\": <the proposed string or null>, \"subject_present\": <true|false>, \"confidence\": <number 0..1>, \"reason\": <short evidence-based string>}\nYou are receiving continuous video. Clip00:00 is source0s; the candidate interval is [2.0,11.0] source seconds. Follow the complete action.\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\n\nIf visible evidence contradicts the proposal, return moment_type=null and begin reason with REJECTED:. If the proposal remains plausible but evidence is incomplete or occluded, return moment_type=null and begin reason with UNCERTAIN:. Confirm only the proposed label; do not substitute another event."
+  ],
+  "token_preflight": {
+    "totalTokens": 14908,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 504
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13988
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 416
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"moment_type\": null, \"subject_present\": true, \"confidence\": 0.2, \"reason\": \"UNCERTAIN: A shot is taken around 00:05-00:06, but the ball trajectory and whether it hits the rim, goes in, or is rebounded/airballed is unclear and obstructed from the camera angle at the basket.\"}",
+              "thoughtSignature": "EmcKZQERTTIP4oZg24BMiq9kZe0xDTS0mL+pmqoOFY7iJCzp+QNAXnRNz8aJlJMQdcxX43nRW/h6wfVTLit0Jzy2J5Eq4NdyqnBnz54Gk9/QrgOIUGCwroYJ1ASfmuzp72DcZNYnKVcx"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 14232,
+      "candidatesTokenCount": 82,
+      "totalTokenCount": 14314,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 504
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 13728
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "xk2pas4nxaSO4w_048qABA"
+  },
+  "estimated_cost_usd": 0.0109815,
+  "elapsed_seconds": 5.418012083042413
+}

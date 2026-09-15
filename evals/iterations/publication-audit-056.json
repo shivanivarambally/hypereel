@@ -1,0 +1,6818 @@
+{
+  "source": "evals/golden/golden_events.jsonl",
+  "golden_total": 462,
+  "scope": "all-event detection; references derived from source_event_type + source_outcome",
+  "matching": "window membership (golden boundaries are provisional, event_time-5s/+4s)",
+  "boundary": "half-open",
+  "iterations": {
+    "055": {
+      "discovery": {
+        "overall": {
+          "tp": 41,
+          "fp": 89,
+          "fn": 57,
+          "precision": 0.3153846153846154,
+          "recall": 0.41836734693877553,
+          "f1": 0.35964912280701755
+        },
+        "per_class": {
+          "assist": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          "block": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "defensive_rebound": {
+            "tp": 1,
+            "fp": 11,
+            "fn": 6,
+            "precision": 0.08333333333333333,
+            "recall": 0.14285714285714285,
+            "f1": 0.10526315789473684
+          },
+          "free_throw_made": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_miss": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 5,
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222
+          },
+          "offensive_rebound": {
+            "tp": 5,
+            "fp": 10,
+            "fn": 6,
+            "precision": 0.3333333333333333,
+            "recall": 0.45454545454545453,
+            "f1": 0.38461538461538464
+          },
+          "steal": {
+            "tp": 6,
+            "fp": 20,
+            "fn": 4,
+            "precision": 0.23076923076923078,
+            "recall": 0.6,
+            "f1": 0.3333333333333333
+          },
+          "three_point_miss": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          "turnover": {
+            "tp": 9,
+            "fp": 16,
+            "fn": 14,
+            "precision": 0.36,
+            "recall": 0.391304347826087,
+            "f1": 0.375
+          },
+          "two_point_made": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 9,
+            "precision": 0.3333333333333333,
+            "recall": 0.1,
+            "f1": 0.15384615384615385
+          },
+          "two_point_miss": {
+            "tp": 17,
+            "fp": 21,
+            "fn": 9,
+            "precision": 0.4473684210526316,
+            "recall": 0.6538461538461539,
+            "f1": 0.53125
+          }
+        },
+        "windows": [
+          {
+            "index": 600,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 610,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 620,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 630,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 640,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 650,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          {
+            "index": 660,
+            "references": [
+              "steal",
+              "turnover",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 670,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "defensive_rebound",
+                "predicted": "defensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 3,
+            "fn": 0,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 680,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 690,
+            "references": [
+              "two_point_miss",
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 3,
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.3333333333333333
+          },
+          {
+            "index": 700,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 710,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 720,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 730,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 740,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "assist",
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 750,
+            "references": [
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "steal",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 760,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "assist",
+              "two_point_made"
+            ],
+            "matched": [
+              {
+                "reference": "assist",
+                "predicted": "assist"
+              },
+              {
+                "reference": "two_point_made",
+                "predicted": "two_point_made"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          {
+            "index": 770,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 780,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [
+              "offensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 790,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 6,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 800,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 810,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444444
+          },
+          {
+            "index": 820,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "steal",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 830,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 840,
+            "references": [
+              "turnover",
+              "steal",
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          {
+            "index": 850,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 860,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 870,
+            "references": [],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "free_throw_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 880,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 890,
+            "references": [
+              "defensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "three_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 900,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 910,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 920,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 930,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 940,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 950,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 960,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 970,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 980,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 990,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1000,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1010,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1020,
+            "references": [],
+            "predictions": [
+              "assist"
+            ],
+            "matched": [],
+            "false_positives": [
+              "assist"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1030,
+            "references": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4
+          },
+          {
+            "index": 1040,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1050,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1060,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [
+              {
+                "reference": "free_throw_miss",
+                "predicted": "free_throw_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1070,
+            "references": [
+              "free_throw_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "free_throw_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1080,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1090,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1100,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1110,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1120,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1130,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1140,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          {
+            "index": 1150,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1160,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1170,
+            "references": [
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1180,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1190,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1200,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "free_throw_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "free_throw_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 1210,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1220,
+            "references": [
+              "steal"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "steal"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1230,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1240,
+            "references": [],
+            "predictions": [
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1250,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1260,
+            "references": [],
+            "predictions": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1270,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1280,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1290,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1300,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1310,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1320,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1330,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1340,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1350,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1360,
+            "references": [],
+            "predictions": [
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1370,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1380,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1390,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1400,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1410,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1420,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1430,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1440,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          {
+            "index": 1450,
+            "references": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "steal"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1460,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1470,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1480,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1490,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1500,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1510,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1520,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1530,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1540,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1550,
+            "references": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1560,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1570,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1580,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1590,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        ]
+      },
+      "confirmed": {
+        "overall": {
+          "tp": 41,
+          "fp": 87,
+          "fn": 57,
+          "precision": 0.3203125,
+          "recall": 0.41836734693877553,
+          "f1": 0.36283185840707965
+        },
+        "per_class": {
+          "assist": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          "block": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "defensive_rebound": {
+            "tp": 1,
+            "fp": 10,
+            "fn": 6,
+            "precision": 0.09090909090909091,
+            "recall": 0.14285714285714285,
+            "f1": 0.1111111111111111
+          },
+          "free_throw_made": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_miss": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 5,
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222
+          },
+          "offensive_rebound": {
+            "tp": 5,
+            "fp": 10,
+            "fn": 6,
+            "precision": 0.3333333333333333,
+            "recall": 0.45454545454545453,
+            "f1": 0.38461538461538464
+          },
+          "steal": {
+            "tp": 6,
+            "fp": 20,
+            "fn": 4,
+            "precision": 0.23076923076923078,
+            "recall": 0.6,
+            "f1": 0.3333333333333333
+          },
+          "three_point_miss": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          "turnover": {
+            "tp": 9,
+            "fp": 16,
+            "fn": 14,
+            "precision": 0.36,
+            "recall": 0.391304347826087,
+            "f1": 0.375
+          },
+          "two_point_made": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 9,
+            "precision": 0.3333333333333333,
+            "recall": 0.1,
+            "f1": 0.15384615384615385
+          },
+          "two_point_miss": {
+            "tp": 17,
+            "fp": 21,
+            "fn": 9,
+            "precision": 0.4473684210526316,
+            "recall": 0.6538461538461539,
+            "f1": 0.53125
+          }
+        },
+        "windows": [
+          {
+            "index": 600,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 610,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 620,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 630,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 640,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 650,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          {
+            "index": 660,
+            "references": [
+              "steal",
+              "turnover",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 670,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "defensive_rebound",
+                "predicted": "defensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 3,
+            "fn": 0,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 680,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 690,
+            "references": [
+              "two_point_miss",
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 3,
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.3333333333333333
+          },
+          {
+            "index": 700,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 710,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 720,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 730,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 740,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "assist",
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 750,
+            "references": [
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "steal",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 760,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "assist",
+              "two_point_made"
+            ],
+            "matched": [
+              {
+                "reference": "assist",
+                "predicted": "assist"
+              },
+              {
+                "reference": "two_point_made",
+                "predicted": "two_point_made"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          {
+            "index": 770,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 780,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [
+              "offensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 790,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 6,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 800,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 810,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444444
+          },
+          {
+            "index": 820,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "steal",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 830,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 840,
+            "references": [
+              "turnover",
+              "steal",
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          {
+            "index": 850,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 860,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 870,
+            "references": [],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "free_throw_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 880,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 890,
+            "references": [
+              "defensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "three_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 900,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 910,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 920,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 930,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 940,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 950,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 960,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 970,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 980,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 990,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1000,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1010,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1020,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1030,
+            "references": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4
+          },
+          {
+            "index": 1040,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1050,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1060,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [
+              {
+                "reference": "free_throw_miss",
+                "predicted": "free_throw_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1070,
+            "references": [
+              "free_throw_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "free_throw_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1080,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1090,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1100,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1110,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1120,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1130,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1140,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          {
+            "index": 1150,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1160,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1170,
+            "references": [
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1180,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1190,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1200,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "free_throw_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "free_throw_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 1210,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1220,
+            "references": [
+              "steal"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "steal"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1230,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1240,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1250,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1260,
+            "references": [],
+            "predictions": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1270,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1280,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1290,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1300,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1310,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1320,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1330,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1340,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1350,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1360,
+            "references": [],
+            "predictions": [
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1370,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1380,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1390,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1400,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1410,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1420,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1430,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1440,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          {
+            "index": 1450,
+            "references": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "steal"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1460,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1470,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1480,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1490,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1500,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1510,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1520,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1530,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1540,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1550,
+            "references": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1560,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1570,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1580,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1590,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        ]
+      },
+      "confirmed_plus_potential": {
+        "overall": {
+          "tp": 41,
+          "fp": 89,
+          "fn": 57,
+          "precision": 0.3153846153846154,
+          "recall": 0.41836734693877553,
+          "f1": 0.35964912280701755
+        },
+        "per_class": {
+          "assist": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          "block": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "defensive_rebound": {
+            "tp": 1,
+            "fp": 11,
+            "fn": 6,
+            "precision": 0.08333333333333333,
+            "recall": 0.14285714285714285,
+            "f1": 0.10526315789473684
+          },
+          "free_throw_made": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "free_throw_miss": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 5,
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222
+          },
+          "offensive_rebound": {
+            "tp": 5,
+            "fp": 10,
+            "fn": 6,
+            "precision": 0.3333333333333333,
+            "recall": 0.45454545454545453,
+            "f1": 0.38461538461538464
+          },
+          "steal": {
+            "tp": 6,
+            "fp": 20,
+            "fn": 4,
+            "precision": 0.23076923076923078,
+            "recall": 0.6,
+            "f1": 0.3333333333333333
+          },
+          "three_point_miss": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          "turnover": {
+            "tp": 9,
+            "fp": 16,
+            "fn": 14,
+            "precision": 0.36,
+            "recall": 0.391304347826087,
+            "f1": 0.375
+          },
+          "two_point_made": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 9,
+            "precision": 0.3333333333333333,
+            "recall": 0.1,
+            "f1": 0.15384615384615385
+          },
+          "two_point_miss": {
+            "tp": 17,
+            "fp": 21,
+            "fn": 9,
+            "precision": 0.4473684210526316,
+            "recall": 0.6538461538461539,
+            "f1": 0.53125
+          }
+        },
+        "windows": [
+          {
+            "index": 600,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 610,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 620,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 630,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 640,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 650,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          {
+            "index": 660,
+            "references": [
+              "steal",
+              "turnover",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 670,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "defensive_rebound",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "defensive_rebound",
+                "predicted": "defensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 3,
+            "fn": 0,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 680,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 690,
+            "references": [
+              "two_point_miss",
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "block",
+              "steal",
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 3,
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.3333333333333333
+          },
+          {
+            "index": 700,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 710,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 720,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 730,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 740,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "assist",
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 750,
+            "references": [
+              "steal",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "steal",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 760,
+            "references": [
+              "assist",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "assist",
+              "two_point_made"
+            ],
+            "matched": [
+              {
+                "reference": "assist",
+                "predicted": "assist"
+              },
+              {
+                "reference": "two_point_made",
+                "predicted": "two_point_made"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          {
+            "index": 770,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 780,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [
+              "offensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 790,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal",
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 6,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 800,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 810,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "steal",
+              "steal"
+            ],
+            "false_negatives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444444
+          },
+          {
+            "index": 820,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "steal",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 830,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 840,
+            "references": [
+              "turnover",
+              "steal",
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          {
+            "index": 850,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 860,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 870,
+            "references": [],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "free_throw_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 880,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 890,
+            "references": [
+              "defensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "three_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 900,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 910,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 920,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 930,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 940,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 950,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 960,
+            "references": [],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 970,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 980,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 990,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1000,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "predictions": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1010,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound",
+              "steal",
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1020,
+            "references": [],
+            "predictions": [
+              "assist"
+            ],
+            "matched": [],
+            "false_positives": [
+              "assist"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1030,
+            "references": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "three_point_miss"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 1,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4
+          },
+          {
+            "index": 1040,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_miss",
+              "turnover"
+            ],
+            "predictions": [
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1050,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1060,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [
+              "free_throw_miss"
+            ],
+            "matched": [
+              {
+                "reference": "free_throw_miss",
+                "predicted": "free_throw_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1070,
+            "references": [
+              "free_throw_made"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "free_throw_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1080,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1090,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1100,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1110,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1120,
+            "references": [],
+            "predictions": [
+              "turnover",
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover",
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1130,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1140,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          {
+            "index": 1150,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1160,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1170,
+            "references": [
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "turnover"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          {
+            "index": 1180,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1190,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1200,
+            "references": [
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover"
+            ],
+            "predictions": [
+              "free_throw_miss",
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "offensive_rebound",
+                "predicted": "offensive_rebound"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "free_throw_miss",
+              "defensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1": 0.5714285714285714
+          },
+          {
+            "index": 1210,
+            "references": [],
+            "predictions": [
+              "turnover"
+            ],
+            "matched": [],
+            "false_positives": [
+              "turnover"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1220,
+            "references": [
+              "steal"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "steal"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1230,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "turnover",
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "steal",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 2,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1240,
+            "references": [],
+            "predictions": [
+              "defensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "defensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1250,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1260,
+            "references": [],
+            "predictions": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss",
+              "free_throw_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1270,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1280,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1290,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1300,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1310,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1320,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1330,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1340,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1350,
+            "references": [],
+            "predictions": [
+              "three_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "three_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1360,
+            "references": [],
+            "predictions": [
+              "two_point_made"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_made"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1370,
+            "references": [],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1380,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1390,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1400,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "index": 1410,
+            "references": [],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          {
+            "index": 1420,
+            "references": [
+              "two_point_miss",
+              "defensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound",
+              "turnover",
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              },
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              },
+              {
+                "reference": "turnover",
+                "predicted": "turnover"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound",
+              "steal"
+            ],
+            "false_negatives": [
+              "defensive_rebound"
+            ],
+            "tp": 3,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666
+          },
+          {
+            "index": 1430,
+            "references": [
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [],
+            "false_positives": [
+              "steal",
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "two_point_made"
+            ],
+            "tp": 0,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1440,
+            "references": [
+              "steal",
+              "turnover",
+              "two_point_made"
+            ],
+            "predictions": [
+              "steal"
+            ],
+            "matched": [
+              {
+                "reference": "steal",
+                "predicted": "steal"
+              }
+            ],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_made"
+            ],
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          {
+            "index": 1450,
+            "references": [
+              "turnover",
+              "steal",
+              "two_point_miss"
+            ],
+            "predictions": [
+              "two_point_miss",
+              "offensive_rebound"
+            ],
+            "matched": [
+              {
+                "reference": "two_point_miss",
+                "predicted": "two_point_miss"
+              }
+            ],
+            "false_positives": [
+              "offensive_rebound"
+            ],
+            "false_negatives": [
+              "turnover",
+              "steal"
+            ],
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          {
+            "index": 1460,
+            "references": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "two_point_miss",
+              "defensive_rebound"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1470,
+            "references": [
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1480,
+            "references": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "turnover",
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1490,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1500,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1510,
+            "references": [
+              "free_throw_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "free_throw_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1520,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1530,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1540,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1550,
+            "references": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "offensive_rebound",
+              "assist",
+              "two_point_made",
+              "turnover"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1560,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1570,
+            "references": [
+              "two_point_miss"
+            ],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [
+              "two_point_miss"
+            ],
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "index": 1580,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          {
+            "index": 1590,
+            "references": [],
+            "predictions": [],
+            "matched": [],
+            "false_positives": [],
+            "false_negatives": [],
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Golden rows are source-annotated and unverified for this project; only a small subset has human adjudication.",
+    "Boundaries are provisional, so a prediction is credited for naming an event the window contains, not for timing it.",
+    "Coverage depends on the supplied report; no full-game or holdout accuracy claim."
+  ]
+}

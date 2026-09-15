@@ -1,0 +1,145 @@
+{
+  "dataset_id": "hypereel-development-human-review",
+  "version": "1.0.0",
+  "split": "development",
+  "created_at": "2026-09-15T17:33:41+05:30",
+  "status": "partial_human_adjudication",
+  "original_dataset": "../golden_events.jsonl",
+  "cached_prediction_source": "../../iterations/gemini-development-summary/full-control.json",
+  "annotation_source": "/Users/shivani/Documents/Codex/2026-09-15/realtime-voice-chat/outputs/hypereel-human-footage-annotations.md",
+  "rules_source": "FIBA Statisticians' Manual 2024, sections 4, 5 and 8, plus section 2.1",
+  "rules_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-statisticians-manual-2024.pdf",
+  "notes": [
+    "Original external labels and historical metrics remain unchanged.",
+    "Observed intervals are user narration, not independently verified frame annotations.",
+    "Unknown point value is never forced into a two-point or three-point subtype.",
+    "An unscorable subtype is unknown, not a negative."
+  ],
+  "windows": [
+    {
+      "window_id": "W0",
+      "game_id": "east-bay-elite-vs-spartans",
+      "clip_start": 18,
+      "clip_end": 30,
+      "core_start": 20,
+      "core_end": 28,
+      "review_status": "not_adjudicated",
+      "observations": [
+        {"label": "turnover", "subtype": "travel", "start": 12, "end": 14, "team": "Spartans", "inside_window": false}
+      ],
+      "rescore_status": "excluded_unreviewed_window"
+    },
+    {
+      "window_id": "W1",
+      "game_id": "east-bay-elite-vs-spartans",
+      "clip_start": 221,
+      "clip_end": 233,
+      "core_start": 223,
+      "core_end": 231,
+      "review_status": "partially_adjudicated",
+      "original_references": [{"label": "free_throw_made", "time_seconds": 225}],
+      "observations": [{"label": "free_throw_made", "start": 221, "end": 229, "team": "East Bay Elite", "player": "jersey 3", "original_anchor": 225}],
+      "boundary_flags": ["observed_action_starts_before_core"],
+      "rescore_status": "point_comparable_using_preserved_original_anchor"
+    },
+    {
+      "window_id": "W2",
+      "game_id": "east-bay-elite-vs-spartans",
+      "clip_start": 754,
+      "clip_end": 766,
+      "core_start": 756,
+      "core_end": 764,
+      "review_status": "partially_adjudicated",
+      "original_references": [
+        {"label": "steal", "time_seconds": 758},
+        {"label": "turnover", "time_seconds": 758},
+        {"label": "assist", "time_seconds": 761},
+        {"label": "two_point_made", "time_seconds": 762}
+      ],
+      "observations": [
+        {"label": "steal", "start": 760, "end": 763, "team": "East Bay Elite", "player": "jersey 6", "original_anchor": 758},
+        {"label": "two_point_made", "start": 763, "end": 767, "team": "East Bay Elite", "player": "jersey 23", "original_anchor": 762}
+      ],
+      "unresolved_original_references": ["turnover@758", "assist@761"],
+      "boundary_flags": ["made_basket_ends_after_core", "made_basket_ends_after_cached_clip"],
+      "rescore_status": "steal_point_comparable; made_basket_input_not_comparable; assist_and_turnover_unresolved"
+    },
+    {
+      "window_id": "W3",
+      "game_id": "unlimited-vs-campus",
+      "clip_start": 18,
+      "clip_end": 30,
+      "core_start": 20,
+      "core_end": 28,
+      "review_status": "human_confirmed_negative",
+      "observations": [],
+      "rescore_status": "comparable_negative"
+    },
+    {
+      "window_id": "W4",
+      "game_id": "unlimited-vs-campus",
+      "clip_start": 92,
+      "clip_end": 104,
+      "core_start": 94,
+      "core_end": 102,
+      "review_status": "adjudicated_label_approximate_time",
+      "original_references": [{"label": "free_throw_miss", "time_seconds": 96}],
+      "observations": [{"label": "free_throw_miss", "start": 99, "end": 101, "original_anchor": 96}],
+      "rescore_status": "point_comparable_using_preserved_original_anchor; timing_revision_not_point_scorable"
+    },
+    {
+      "window_id": "W5",
+      "game_id": "unlimited-vs-campus",
+      "clip_start": 974,
+      "clip_end": 986,
+      "core_start": 976,
+      "core_end": 984,
+      "review_status": "rules_adjudicated_unknown_shot_value",
+      "original_references": [{"label": "two_point_miss", "time_seconds": 978}, {"label": "block", "time_seconds": 978}],
+      "observations": [
+        {"label": "block", "start": 979, "end": 981, "original_anchor": 978},
+        {"label": "missed_field_goal", "point_value": "unknown", "start": 979, "end": 981, "original_anchor": 978}
+      ],
+      "rescore_status": "block_point_comparable; generic_miss_requires_hierarchical_taxonomy"
+    },
+    {
+      "window_id": "W6",
+      "game_id": "unlimited-vs-campus",
+      "clip_start": 1314,
+      "clip_end": 1326,
+      "core_start": 1316,
+      "core_end": 1324,
+      "review_status": "partially_adjudicated_with_unresolved_time",
+      "original_references": [
+        {"label": "three_point_miss", "time_seconds": 1318},
+        {"label": "offensive_rebound", "time_seconds": 1319},
+        {"label": "two_point_miss", "time_seconds": 1320},
+        {"label": "defensive_rebound", "time_seconds": 1321},
+        {"label": "turnover", "time_seconds": 1323}
+      ],
+      "observations": [
+        {"label": "pass", "time_approximate": 1318, "typed_as": 778, "correction_status": "presumed_21_58_typo_pending_confirmation"},
+        {"label": "pass_received", "time_approximate": 1319},
+        {"label": "two_point_miss", "time_approximate": 1320, "original_anchor": 1320},
+        {"label": "offensive_rebound", "time_approximate": 1322, "team": "Campus"},
+        {"label": "two_point_miss", "time_seconds": null, "timing_status": "unresolved_second_miss"},
+        {"label": "defensive_rebound", "start": 1323, "end": 1325, "team": "Unlimited"}
+      ],
+      "rejected_original_references": ["three_point_miss@1318", "offensive_rebound@1319", "turnover@1323"],
+      "boundary_flags": ["defensive_rebound_extends_after_core"],
+      "rescore_status": "first_two_point_miss_point_comparable; later_sequence_not_point_comparable"
+    },
+    {
+      "window_id": "W7",
+      "game_id": "unlimited-vs-campus",
+      "clip_start": 2376,
+      "clip_end": 2388,
+      "core_start": 2378,
+      "core_end": 2386,
+      "review_status": "rules_adjudicated_unknown_shot_value",
+      "original_references": [{"label": "three_point_made", "time_seconds": 2380}],
+      "observations": [{"label": "made_field_goal", "point_value": "unknown", "time_approximate": 2380, "shooter_visibility": "off_camera"}],
+      "rescore_status": "generic_make_requires_hierarchical_taxonomy_and_exact_time_remains_unverified"
+    }
+  ]
+}

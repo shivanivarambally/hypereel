@@ -1,0 +1,61 @@
+{
+  "name": "gemini-w6-rebound-fix-036",
+  "status": "completed",
+  "started_at": "2026-09-15T18:18:29.606968+05:30",
+  "model": "gemini-3.8-flash",
+  "scope": "reviewed development W6 only",
+  "holdout_used": false,
+  "spend_before_usd": 9.084293625000049,
+  "prompt": "Analyze the continuous basketball play in source interval [1316,1325]. Clip 00:00 is source 1314 seconds. Team identity supplied by the reviewed game setup: Campus wears yellow and Unlimited wears white. This identity mapping is context, not an event label.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn every supported event in chronological order. Allowed labels: defensive_rebound, missed_field_goal, offensive_rebound, steal, turnover, two_point_miss. For shots, team is the shooting team and shooting_team is the same value. For rebounds, team is the team obtaining clear control and shooting_team is the team that took the immediately preceding missed shot. Use unknown for an unsupported identity. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"Campus|Unlimited|unknown\",\"shooting_team\":\"Campus|Unlimited|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Do not use the scoreboard and do not invent events hidden between frames.",
+  "raw_text": "{\n \"events\": [\n  {\n   \"sequence_index\": 1,\n   \"label\": \"two_point_miss\",\n   \"time_seconds\": 8.5,\n   \"team\": \"Campus\",\n   \"shooting_team\": \"Campus\",\n   \"confidence\": 0.85,\n   \"evidence\": \"Campus player in yellow attempts a shot inside the arc that misses off the rim around 00:08.500-00:08.833.\"\n  },\n  {\n   \"sequence_index\": 2,\n   \"label\": \"missed_field_goal\",\n   \"time_seconds\": 8.67,\n   \"team\": \"Campus\",\n   \"shooting_team\": \"Campus\",\n   \"confidence\": 0.85,\n   \"evidence\": \"Campus missed field goal confirmed as the ball hits the rim and bounces out around 00:08.667-00:09.000.\"\n  },\n  {\n   \"sequence_index\": 3,\n   \"label\": \"defensive_rebound\",\n   \"time_seconds\": 10.33,\n   \"team\": \"Unlimited\",\n   \"shooting_team\": \"Campus\",\n   \"confidence\": 0.8,\n   \"evidence\": \"Unlimited player in white gains clear control of the ball after Campus misses the field goal around 00:10.333-00:10.833.\"\n  }\n ]\n}",
+  "events": [
+    {
+      "sequence_index": 1,
+      "label": "two_point_miss",
+      "time_seconds": 1322.5,
+      "team": "Campus",
+      "shooting_team": "Campus",
+      "confidence": 0.85,
+      "evidence": "Campus player in yellow attempts a shot inside the arc that misses off the rim around 00:08.500-00:08.833.",
+      "reported_time_seconds": 8.5,
+      "time_basis": "clip_relative_normalized_to_source",
+      "internal_consistency": {
+        "valid": true,
+        "reason": "not a rebound"
+      }
+    },
+    {
+      "sequence_index": 3,
+      "label": "defensive_rebound",
+      "time_seconds": 1324.33,
+      "team": "Unlimited",
+      "shooting_team": "Campus",
+      "confidence": 0.8,
+      "evidence": "Unlimited player in white gains clear control of the ball after Campus misses the field goal around 00:10.333-00:10.833.",
+      "reported_time_seconds": 10.33,
+      "time_basis": "clip_relative_normalized_to_source",
+      "internal_consistency": {
+        "valid": true,
+        "reason": "internally consistent"
+      }
+    }
+  ],
+  "evaluation": {
+    "defensive_rebound": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "supported": true
+    },
+    "sequence_coverage": {
+      "campus_offensive_rebound_recovered": false,
+      "second_campus_miss_recovered": true,
+      "unsupported_turnover_emitted": false
+    }
+  },
+  "ended_at": "2026-09-15T18:18:37.656728+05:30",
+  "elapsed_seconds": 8.048977333004586,
+  "spend_after_usd": 9.101359875000048,
+  "incremental_estimated_spend_usd": 0.017066249999999172,
+  "normalization_note": "Reparsed preserved raw output; no provider call."
+}

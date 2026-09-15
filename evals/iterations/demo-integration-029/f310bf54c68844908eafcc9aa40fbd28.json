@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-15T13:52:15.437611+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0138990625,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 15.0s were selected:\n- two_point_made (0.0-15.0s, score 0.85)"
+  ],
+  "token_preflight": {
+    "totalTokens": 63,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 63
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here's a short, upbeat highlight-reel summary for the clip:\n\n**\"Count it! \ud83c\udfc0 Quick, sharp execution leads straight to the hoop for a clean two-point finish!\"**",
+              "thoughtSignature": "EmcKZQERTTIP2/QxOPwN5Vm5ugsItyn7UYap0D1zLAE3OUmr0Fb9P6QhRarXwWeVa723MyBa6oQCxZczGlhP8cwF4REwdaNb8zFcirsB5yPJpn6glJpihJIvT7WZXjuAnDmyqtaxpQyk"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 63,
+      "candidatesTokenCount": 41,
+      "totalTokenCount": 104,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 63
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "j02pasOuOfiiqfkPtLun6Qw"
+  },
+  "estimated_cost_usd": 0.000201,
+  "elapsed_seconds": 2.3804912909981795
+}

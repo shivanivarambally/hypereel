@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iterations": ["038", "039"],
+  "video_calls": 33,
+  "ui_judge_and_summary_calls": 11,
+  "provider_errors": 0,
+  "budget": {
+    "authorized_increase_usd": 2,
+    "previous_ceiling_usd": 9.192294875,
+    "new_ceiling_usd": 11.192294875,
+    "spend_before_usd": 9.166582125,
+    "incremental_estimated_spend_usd": 0.3790425,
+    "spend_after_usd": 9.545624625,
+    "remaining_usd": 1.64667025
+  },
+  "primary_scope": "Six reviewed positive labels in W1-W5; fixed-window label coverage, conditional on adjudicated families",
+  "single_pass": {"tp": 2, "fp": 0, "fn": 4, "recall": 0.3333333333333333, "f1": 0.5},
+  "two_phase_discovery": {"tp": 2, "fp": 1, "fn": 4, "recall": 0.3333333333333333, "f1": 0.4444444444444444},
+  "two_phase_auto_confirmed": {"tp": 1, "fp": 0, "fn": 5, "recall": 0.16666666666666666, "f1": 0.2857142857142857},
+  "two_phase_confirmed_plus_potential": {"tp": 2, "fp": 0, "fn": 4, "recall": 0.3333333333333333, "f1": 0.5},
+  "human_reviews_completed": 0,
+  "ui_review_actions": "simulated for workflow testing only; excluded from accuracy metrics",
+  "tests": {"passed": 431, "skipped": 4, "holdout_deselected": 1},
+  "holdout_used": false,
+  "performance_improvement_demonstrated": false,
+  "limitation": "Production emits one label per window and no event timestamp or structured team fields. Not directly comparable with historical event-level scores."
+}

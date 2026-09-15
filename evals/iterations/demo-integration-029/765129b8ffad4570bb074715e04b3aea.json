@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-09-15T12:59:39.804381+00:00",
+  "status": "completed",
+  "reserved_usd": 0.030597812500000002,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "037",
+    "window_id": "W3",
+    "kind": "broader_possession_fix",
+    "fps": 4
+  },
+  "prompt": [
+    "Analyze all supported basketball events in source interval [20,28]. Clip 00:00 is source 18 seconds. Reviewed game setup supplies team identity only: Campus wears yellow; Unlimited wears white. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action."
+  ],
+  "token_preflight": {
+    "totalTokens": 13779,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 483
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"events\": []\n}",
+              "thoughtSignature": "EmcKZQERTTIPbahJ28w6rwEBFlhskpQyV+bq4AYPrr1XXQ/HULXslSd7+6Q6oBjLCdTpxPXXECaQWPgOZRxan9kHy5gg08Qxlw53mUnPe/SvdShEAcBvxqALDh5zrx0LsvDmvp/XXbrF"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13155,
+      "candidatesTokenCount": 9,
+      "totalTokenCount": 13164,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 483
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "PUGpao_UBL6P4-EPj9yc-AI"
+  },
+  "estimated_cost_usd": 0.0099,
+  "elapsed_seconds": 4.420804082998075
+}

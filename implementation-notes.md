@@ -1,5 +1,7 @@
 # HypeReel — Implementation Notes
 
+> **Current maintainer entry point — 16 September 2026:** The detailed sections below describe the August implementation. Temporal multi-event discovery, optional verification, rules-assisted human review, experiments through 055 and offline publication audit 056 are recorded in [the timestamped evaluation implementation log](evals/IMPLEMENTATION_NOTES.md). Begin with [status](evals/STATUS.md), [handoff](evals/AGENT_HANDOFF.md) and [publication review](docs/REVIEW_2026-09-16.md).
+
 Living technical reference for how HypeReel is actually built. The
 [`README.md`](README.md) is the user-facing overview; this file is the
 under-the-hood detail for maintainers. Keep it in sync with the code, and log

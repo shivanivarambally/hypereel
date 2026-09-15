@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-15T13:55:52.454096+00:00",
+  "status": "completed",
+  "reserved_usd": 0.014245,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nYou are the QUALITY JUDGE for a highlight-reel agent \u2014 the last check before a human reviews the reel. Judge whether the selected clips form a compelling, on-theme reel for the recipe 'All basketball events' (basketball).\n\nAcceptance criteria the reel should satisfy:\n  - (none specified)\n\nReel under review: 0 clip(s), 0s of a 15s budget (0% filled). 0 clip(s) have a confirmed moment type; 0 are UNCLASSIFIED (the vision scorer saw the subject but could not confirm a specific play).\nClips:\n  (no clips selected)\n\nJudge on TWO axes:\n1) Quality: a strong sports reel is built from real, varied plays (for basketball: made baskets, threes, dunks/layups, blocks, steals, rebounds), not padded with UNCLASSIFIED windows where nothing clearly happens.\n2) Length: a good reel shows SEVERAL plays and uses a meaningful share of the budget. A reel of only 1-3 clips, or well under ~40% of the budget, is too thin if the game surely had more real plays to show.\n\nChoose ONE action:\n- 'require_confirmed_moments' \u2014 if more than about a third of the clips are UNCLASSIFIED (drops padding).\n- 'raise_threshold' \u2014 if the clips are mostly confirmed but low-scoring/weak.\n- 'broaden' \u2014 if the reel is too short/thin (too few clips, well under budget) and should include more real plays.\n- 'none' \u2014 if the reel is already a good length and quality; then verdict 'accept'.\n\nRespond with STRICT JSON only, no prose or markdown fences, exactly:\n{\"quality_score\": <number 0..1>, \"verdict\": \"accept\"|\"revise\", \"action\": \"none\"|\"require_confirmed_moments\"|\"raise_threshold\"|\"broaden\", \"issues\": [<short strings>], \"feedback\": <one short sentence>}"
+  ],
+  "token_preflight": {
+    "totalTokens": 432,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 432
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"quality_score\": 0.0, \"verdict\": \"revise\", \"action\": \"broaden\", \"issues\": [\"reel is completely empty\", \"budget utilization is 0%\"], \"feedback\": \"Broaden the search criteria to include basketball plays and populate the empty reel.\"}",
+              "thoughtSignature": "EmcKZQERTTIPOkW+ZicyvtMrhYGDUsVzbxT/5sBB7FheGdMVjY6wtxMUMkEfFttoFDuQvLIdtn0Rn3KJCe2Y2g/JNk77Fyrmv30tfTrdu4mqKlLWeA4DbY8tFrtdY9d1ijMNkcstgPs/"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 432,
+      "candidatesTokenCount": 61,
+      "totalTokenCount": 493,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 432
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "aE6paqCvOOyumNMP09mvOQ"
+  },
+  "estimated_cost_usd": 0.00055275,
+  "elapsed_seconds": 18.259531999996398
+}

@@ -1,0 +1,3693 @@
+{
+  "iteration": "055",
+  "kind": "unbiased_contiguous_proposer_sweep",
+  "discovery_only": true,
+  "fps": 8,
+  "span": [
+    600,
+    1600
+  ],
+  "step": 10,
+  "game_id": "east-bay-elite-vs-spartans",
+  "source_video": "downloads/KBETdDRM70Q.studio-720p.mp4",
+  "sampling": "contiguous uniform tiling, not density-selected",
+  "started_at": "2026-09-15T18:31:57.365472+00:00",
+  "status": "completed",
+  "holdout_used": false,
+  "spend_before_usd": 11.159071875000052,
+  "cases": [
+    {
+      "index": 600,
+      "core": [
+        600,
+        610
+      ],
+      "source_offset": 598,
+      "media_sha256": "b236c27c1ec44f6e61f8532bfa70b0f7b5fee669cb28559803a6289161ca1f07",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 610,
+      "core": [
+        610,
+        620
+      ],
+      "source_offset": 608,
+      "media_sha256": "d5a3e1f3f362d72bc60468fbf6c5b6d2b3afbb217bcc765b7332d658b991d735",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 620,
+      "core": [
+        620,
+        630
+      ],
+      "source_offset": 618,
+      "media_sha256": "8ffb30e24e21653a35118a73edd7652020032b3d3def75df4f38665fa5c7b854",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 630,
+      "core": [
+        630,
+        640
+      ],
+      "source_offset": 628,
+      "media_sha256": "a64d67b29ef2cf1283456fbc38e4f4663a716b569f0ba3f12d48f4fa843d72ae",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 640,
+      "core": [
+        640,
+        650
+      ],
+      "source_offset": 638,
+      "media_sha256": "728a5c9983273c80d6b84a7fe10b27d112b2e5f5fa25c3abc526ee0548553cec",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 650,
+      "core": [
+        650,
+        660
+      ],
+      "source_offset": 648,
+      "media_sha256": "fbafec5eea04c0ba5a36deb539ffffc54983def58564f857a31226bf76ee3bbf",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The player in black (#10/Spartan) takes a two-point shot from the right baseline area around 00:08-00:09, and the ball hits the rim/backboard and misses around 00:09-00:10.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.7,
+              "phase1_event_time": 9.7,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "After the ball misses and bounces off the rim, a player in black jumps up and secures the offensive rebound around 00:10-00:11.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.7,
+              "phase1_event_time": 10.7,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "A follow-up putback shot attempt by the player in black is tipped/attempted right at the rim and misses around 00:11-00:12.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.5,
+              "phase1_event_time": 11.5,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 660,
+      "core": [
+        660,
+        670
+      ],
+      "source_offset": 658,
+      "media_sha256": "dd23a3395f4129b4611f43787b23a9e3c59ae737986d2f712f6fbf0d7aa20b48",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player's shot under the basket misses off the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.4,
+              "phase1_event_time": 2.4,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "East Bay Elite (blue) player secures the defensive rebound.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.7,
+              "phase1_event_time": 2.7,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Spartan player wrestles the ball away from the ball handler on the floor/scramble.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.1,
+              "phase1_event_time": 5.1,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "East Bay Elite defender pokes and gains control of the ball from Spartan ball handler.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.2,
+              "phase1_event_time": 11.2,
+              "team": "EBE",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 670,
+      "core": [
+        670,
+        680
+      ],
+      "source_offset": 668,
+      "media_sha256": "a0683e445608a7246bfce1db87600c4971d862617da2e55307736801a28549dc",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player (#7) picks up the loose ball/steals possession from Spartan player around 00:02.125.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.1,
+              "phase1_event_time": 2.1,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player throws a fastbreak layup/shot at the basket which misses the rim/board around 00:07.8.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 7.8,
+              "phase1_event_time": 7.8,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.7,
+              "reason": "Offensive player from Spartans battles for the rebound under the rim, but blue secures it.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.7,
+              "phase1_event_time": 8.7,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue player secures the rebound off the missed shot around 00:08.8.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.8,
+              "phase1_event_time": 8.8,
+              "team": "East Bay Elite",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player #24 strips the ball/pokes it away from blue ballhandler around 00:09.8.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.8,
+              "phase1_event_time": 9.8,
+              "team": "Spartan",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 680,
+      "core": [
+        680,
+        690
+      ],
+      "source_offset": 678,
+      "media_sha256": "0863f96ce4226d626cb8141619cf0c7a5d78ce26e13f3d280e6045afafc59feb",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "A player in blue shoots a layup/close shot at the basket around 00:04.7, but it misses off the rim/backboard around 00:05.7.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.7,
+              "phase1_event_time": 5.7,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "A Spartan player in black secures the rebound under the rim following the missed shot by East Bay Elite.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.7,
+              "phase1_event_time": 6.7,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 690,
+      "core": [
+        690,
+        700
+      ],
+      "source_offset": 688,
+      "media_sha256": "c09c63024474fc86daa246656c32ce176ab657b112def0f8238d67dc78654294",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Spartan player attempts a close-range shot near the basket around 11.5-12.0s, which misses the rim/backboard amid contest.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.7,
+              "phase1_event_time": 11.7,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.7,
+              "reason": "East Bay Elite player (in blue) secures control of the rebound around the rim area.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 700,
+      "core": [
+        700,
+        710
+      ],
+      "source_offset": 698,
+      "media_sha256": "f4fc6627a608777a80d0b62e32489764908e01a42d3607bcaa41a8e06c3ad2ee",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Black team player attempts a close-range shot under pressure and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.2,
+              "phase1_event_time": 2.2,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Blue team player secures the rebound after the missed shot in the paint and begins dribbling downcourt.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.7,
+              "phase1_event_time": 3.7,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 710,
+      "core": [
+        710,
+        720
+      ],
+      "source_offset": 708,
+      "media_sha256": "2d72b6a2a4a3b5314850cab755decb707edcd7390e1bdbe4f74cd7c2641e99e9",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue team ball handler loses dribble/control under pressure, referee signals violation/foul stopping play",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.8,
+              "phase1_event_time": 5.8,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 720,
+      "core": [
+        720,
+        730
+      ],
+      "source_offset": 718,
+      "media_sha256": "03b0aa1f401e45f099ef5c28416491ffd1633608a338006895a99f04c431592d",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 730,
+      "core": [
+        730,
+        740
+      ],
+      "source_offset": 728,
+      "media_sha256": "479c1c464ba8882aad82b6edec4ee623c78745f459f0f5678d7e67c047ea441d",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 740,
+      "core": [
+        740,
+        750
+      ],
+      "source_offset": 738,
+      "media_sha256": "945928cbb1297bc7b7605060494847720c4234b6af6d20c2d30eb1cf5cc77be1",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue player drives and loses the ball out towards the sideline/corner where it gets recovered by Spartans.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 6.25,
+              "phase1_event_time": 6.25,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Spartans defender secures the loose ball created from the ball handler's mishandle/drive.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 6.25,
+              "phase1_event_time": 6.25,
+              "team": "Spartans",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Player in black takes a corner/baseline shot at 00:10.8-00:11.0, and the ball hits the rim/backboard and misses around 00:12.0.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "Spartans",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 750,
+      "core": [
+        750,
+        760
+      ],
+      "source_offset": 748,
+      "media_sha256": "d50e6b48e51e2c2d8241daa2f396d2af2fcffd158c0edbaa7557e639fa5db86a",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "The black jersey player's corner shot bounces off the rim and misses visibly around 00:02.000.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.0,
+              "phase1_event_time": 2.0,
+              "team": null,
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans (black) teammate secures control of the ball after the missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.375,
+              "phase1_event_time": 2.375,
+              "team": null,
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 760,
+      "core": [
+        760,
+        770
+      ],
+      "source_offset": 758,
+      "media_sha256": "4e0f82b1ccfa0683d961132caf8d99a84b880d418c03026b75975b0ea76026bc",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player picks up the loose ball after disruption and pushes up court",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.75,
+              "phase1_event_time": 3.75,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "assist",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player tosses an outlet pass downcourt to teammate running ahead, leading directly to a made basket",
+              "decision": "confirmed",
+              "phase1_moment_type": "assist",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.875,
+              "phase1_event_time": 4.875,
+              "team": "East Bay Elite",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Blue player lays the ball up and scores a two-point field goal, score increments to 9",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_made",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.125,
+              "phase1_event_time": 8.125,
+              "team": "East Bay Elite",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 770,
+      "core": [
+        770,
+        780
+      ],
+      "source_offset": 768,
+      "media_sha256": "58ab38f65a989599825b7f43636c45eacadaad4398ea4433f8f94340a1fd17c7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.53,
+              "reason": "Player in black (#44/ball handler) drives into traffic and appears to lose or have the ball disrupted by the blue defender near 00:11.8 - 00:12.2, though full change of possession doesn't cleanly materialize into an obvious turnover before clip ends, making this a low-confidence/no event stretch.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.8,
+              "phase1_event_time": 11.8,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 780,
+      "core": [
+        780,
+        790
+      ],
+      "source_offset": 778,
+      "media_sha256": "4e13c9dd1318bcb0b02c0a2a61af3461edbefde6f69f89c7118ab93790bdb6ee",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "East Bay Elite player in blue pokes and steals the ball away from the Spartan ballhandler.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.875,
+              "phase1_event_time": 6.875,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "East Bay Elite player drives to the basket and shoots around 10.3s, but the ball hits the rim/backboard and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 790,
+      "core": [
+        790,
+        800
+      ],
+      "source_offset": 788,
+      "media_sha256": "349c756b013bf8cf9f77b10dc4ee880dc9201a4b04997246747692d38953b1de",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans player shoots from inside the arc and misses off the rim around 2.1s",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.1,
+              "phase1_event_time": 2.1,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Blue team (EBE) gathers the loose ball rebound in the paint",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.7,
+              "phase1_event_time": 3.7,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Loose ball in paint ends up tipped/passed straight to Spartan #44 who secures it",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 7.5,
+              "phase1_event_time": 7.5,
+              "team": "EBE",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartan #44 takes possession of the loose ball resulting from the turnover",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 7.6,
+              "phase1_event_time": 7.6,
+              "team": "Spartan",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans player throws an overhead outlet pass directly to the opposing player (EBE) downcourt around 11.5-12.0s",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "Spartan",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "EBE player cleanly intercepts the long outlet pass",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "EBE",
+              "event_id": "w0e5",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 800,
+      "core": [
+        800,
+        810
+      ],
+      "source_offset": 798,
+      "media_sha256": "dec1bbb2b339ef8217a2e11b82e9c9b76b19789abd6f876b43fb154c0ea959cf",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: ValueError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 810,
+      "core": [
+        810,
+        820
+      ],
+      "source_offset": 808,
+      "media_sha256": "40c2c0b4135a611cbf35d07c9f866b1bd2c0c8c9425cfcd606891169b0308ee1",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Black jersey player #44 shoots a mid-range jumper that misses the rim/backboard area.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.0,
+              "phase1_event_time": 3.0,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Black team secures the rebound off the missed shot near the right side of the basket.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.6,
+              "phase1_event_time": 3.6,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue team player #23 strips/takes the ball away from the Spartan ballhandler.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.4,
+              "phase1_event_time": 5.4,
+              "team": "EBE",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans defender pokes the ball away from #23 blue, causing a loose ball.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.8,
+              "phase1_event_time": 6.8,
+              "team": "Spartan",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Spartans defender pokes the ball loose and gains possession around the paint/mid-range area after blue's drive.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.4,
+              "phase1_event_time": 11.4,
+              "team": "Spartan",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 820,
+      "core": [
+        820,
+        830
+      ],
+      "source_offset": 818,
+      "media_sha256": "9313d7212227a397747063a0df3e6ec1cd8a60fbe295e3be7a19dbedff658a66",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Player #4 in black loses the ball to East Bay Elite player #34/blue defender who tips and steals it away.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 2.2,
+              "phase1_event_time": 2.2,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Referee raises arm and blows whistle signaling a backcourt violation or traveling turnover against East Bay Elite around 00:04.5-00:05.7.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 5.7,
+              "phase1_event_time": 5.7,
+              "team": "East Bay Elite",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 830,
+      "core": [
+        830,
+        840
+      ],
+      "source_offset": 828,
+      "media_sha256": "a62fe10970ded1661d6bbcd191b7e1b44d49afeadcaf7c8fb10cc40198efa54f",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.6,
+              "reason": "A long pass downcourt rolls away and is picked up by Spartan player #27 near 00:11-00:12, representing a turnover/loose ball recovered by Spartan.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.875,
+              "phase1_event_time": 11.875,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 840,
+      "core": [
+        840,
+        850
+      ],
+      "source_offset": 838,
+      "media_sha256": "04db26125f67625e8cb3dd2258e582cef443a5262d59ca6bbebbbb27236073a8",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The blue team player intercepts/steals the pass thrown by the black team player near midcourt and transitions to dribble forward.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.7,
+              "phase1_event_time": 8.7,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 850,
+      "core": [
+        850,
+        860
+      ],
+      "source_offset": 848,
+      "media_sha256": "c9eaa46e32120175cf6596f00f7d6cd2407487ca1a565cdc129fb24aa1729b7f",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue player takes a shot near the basket on the break that misses off the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.1,
+              "phase1_event_time": 4.1,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player in black (#44/10 area) secures the defensive rebound off the miss.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.8,
+              "phase1_event_time": 4.8,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 860,
+      "core": [
+        860,
+        870
+      ],
+      "source_offset": 858,
+      "media_sha256": "eba8958a7b8c36d6f88c43c9a4b7d586078848b709c3a909f02d0686057ee5f0",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 870,
+      "core": [
+        870,
+        880
+      ],
+      "source_offset": 868,
+      "media_sha256": "b5f55abcfa0c1e4972e2a077530af0aed350754ae90478c986067d9d5bcf676e",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "free_throw_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player in light blue (#34) takes a free throw attempt that hits the rim and bounces away, missing.",
+              "decision": "confirmed",
+              "phase1_moment_type": "free_throw_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.3,
+              "phase1_event_time": 6.3,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 880,
+      "core": [
+        880,
+        890
+      ],
+      "source_offset": 878,
+      "media_sha256": "39d4c0f9d23da0fe93463f293e47d41df66736615c6da187ac9bee8c58177d6e",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 890,
+      "core": [
+        890,
+        900
+      ],
+      "source_offset": 888,
+      "media_sha256": "76e2b3ed8af53519bf9f46fd018497d135aeeb69c8b58a293e59e6ea04e63656",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "East Bay Elite player (#34 in blue) shoots from beyond the arc and misses the basket",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.1,
+              "phase1_event_time": 6.1,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Scramble for the ball under the basket leads to a foul or violation whistled by the referee at around 9.8-10.0 seconds",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.8,
+              "phase1_event_time": 9.8,
+              "team": null,
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 900,
+      "core": [
+        900,
+        910
+      ],
+      "source_offset": 898,
+      "media_sha256": "de892d2707890dca91f9cd50c697bbf3749f5c6430e04f62591a945963b8aa50",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player inbounds or passes the ball out of bounds near the sideline, resulting in a turnover/dead ball.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.3,
+              "phase1_event_time": 3.3,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 910,
+      "core": [
+        910,
+        920
+      ],
+      "source_offset": 908,
+      "media_sha256": "b06f1c17fc4fb212a5f741ddaf389eeb6a13952c4c30d386113386f163a773f2",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "The Spartan player (wearing black, #10) intercepts/gains control of the ball from the inbound pass / offense, taking possession for his team.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.3,
+              "phase1_event_time": 10.3,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 920,
+      "core": [
+        920,
+        930
+      ],
+      "source_offset": 918,
+      "media_sha256": "dff235d86e43920176c4e57fe4eee960b6be75057512522d6d3aa1429b79cba9",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue team (East Bay Elite) loses control under defensive pressure near the midcourt sideline, ball bounces loose and is gathered/stolen by Spartans #44",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 11.75,
+              "phase1_event_time": 11.75,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans #44 in black gains clean possession of the loose ball poked away from East Bay Elite player",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "away",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 930,
+      "core": [
+        930,
+        940
+      ],
+      "source_offset": 928,
+      "media_sha256": "ce0bf1dc86065108e67d710e79389d3ec3b338e2362302551ae762ffbe3fd99b",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "A player in black drives towards the basket and attempts a two-point shot around 00:04.25, which misses off the rim/backboard around 00:05.75.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.7,
+              "phase1_event_time": 5.7,
+              "team": null,
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.65,
+              "reason": "Players battle underneath the basket and black secures control of the rebound around 00:07.3.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 7.3,
+              "phase1_event_time": 7.3,
+              "team": null,
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "A putback attempt under the basket by black misses around 00:09.6.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.6,
+              "phase1_event_time": 9.6,
+              "team": null,
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 940,
+      "core": [
+        940,
+        950
+      ],
+      "source_offset": 938,
+      "media_sha256": "c2918788e18b29229adde00fcbaadabb3ba13445d785c2064d450b5b30b51b19",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Player in blue collects loose ball / outlet after possession contest near halfcourt",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.1,
+              "phase1_event_time": 5.1,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 950,
+      "core": [
+        950,
+        960
+      ],
+      "source_offset": 948,
+      "media_sha256": "6a0b9b02bc220c77ed4a5a01e42e3430e9a781537d2db315c5c783cbfe537f59",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The player in blue throws a pass out of bounds / intercepted / turned over as the referee raises hand signaling a stoppage/turnover.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.7,
+              "phase1_event_time": 3.7,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 960,
+      "core": [
+        960,
+        970
+      ],
+      "source_offset": 958,
+      "media_sha256": "affdcac2c7d87481f010cb11b64b15860ecf2dc0628d402c4609cff9e15130c7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The blue team defender pokes the ball away and secures control from the black jersey ball-handler.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.5,
+              "phase1_event_time": 10.5,
+              "team": "blue",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 970,
+      "core": [
+        970,
+        980
+      ],
+      "source_offset": 968,
+      "media_sha256": "eacbe97cb78c4b17ebb3efd3dd6ebc916743402f928fb066f9df8d9c6081dbf1",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player passes the ball across court which rolls out of bounds near the back sideline around 00:05.500-00:06.500, resulting in an out-of-bounds turnover.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.0,
+              "phase1_event_time": 6.0,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 980,
+      "core": [
+        980,
+        990
+      ],
+      "source_offset": 978,
+      "media_sha256": "2afd41d75af033a1b5beeff74fcca3ba0695220074a1868fe48cb673b63caab3",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The inbounder/passer in blue throws the ball across the court out of bounds, which is caught or rolls out behind the basket baseline, resulting in a turnover.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.8,
+              "phase1_event_time": 6.8,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 990,
+      "core": [
+        990,
+        1000
+      ],
+      "source_offset": 988,
+      "media_sha256": "2cd316ec41c285eee57bff60e206ae5e09f0ca2e55108113fcb4bb3a016283c6",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1000,
+      "core": [
+        1000,
+        1010
+      ],
+      "source_offset": 998,
+      "media_sha256": "32c6d8e285e5dee44b174ae2dd37976a70b6e36413e3eca81d49f7b348b98a23",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The Spartan ball-handler loses possession during a drive/scramble near midcourt/frontcourt, and the blue team (East Bay Elite) recovers the loose ball on the floor.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.25,
+              "phase1_event_time": 6.25,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue player drives to the basket and shoots a layup, which misses off the backboard/rim around 12-13 seconds.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1010,
+      "core": [
+        1010,
+        1020
+      ],
+      "source_offset": 1008,
+      "media_sha256": "2f666ed22243c25ebe13b9dbecd5d4bbaa8eb42989d83d59736b37e7b65cb785",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Black team player takes a layup/short shot that misses the rim/backboard and bounces out.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.0,
+              "phase1_event_time": 3.0,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue team player secures the rebound after Spartan's missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.6,
+              "phase1_event_time": 3.6,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartan player intercepts/strips the ball from the rebounder, gaining control.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.6,
+              "phase1_event_time": 4.6,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Spartan player puts the ball into the basket, visible basket made (scoreboard changes shortly after from 4 to 5/6).",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_made",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.5,
+              "phase1_event_time": 6.5,
+              "team": "Spartan",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1020,
+      "core": [
+        1020,
+        1030
+      ],
+      "source_offset": 1018,
+      "media_sha256": "cb976dd4b8c57ee1b3a33b3c6fa74376b42d031408d3d8495e13cca16e050088",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "assist",
+              "subject_present": true,
+              "confidence": 0.49,
+              "reason": "Player #7 in blue passes inside to teammate driving towards the basket who attempts a shot right after (shot completes outside window around 14.0s).",
+              "decision": "potential_event",
+              "phase1_moment_type": "assist",
+              "verification_reason": "RULES: assist with no made field goal in this window; free throws are never assisted and an assist requires a made basket",
+              "expert_review_required": true,
+              "event_time": 8.6,
+              "phase1_event_time": 8.6,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1030,
+      "core": [
+        1030,
+        1040
+      ],
+      "source_offset": 1028,
+      "media_sha256": "bf9cba8e9f85a8eb39e3d9f8dce9e133adbda489744a2690e0ea02d66eaf2278",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player #0 drives and takes a floater/layup in the paint that hits the rim and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.6,
+              "phase1_event_time": 4.6,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "Blue player #34 secures the rebound after the missed shot near the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.7,
+              "phase1_event_time": 5.7,
+              "team": "East Bay Elite",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player #23 in the right corner attempts a three-point shot that misses off the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.6,
+              "phase1_event_time": 10.6,
+              "team": "East Bay Elite",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1040,
+      "core": [
+        1040,
+        1050
+      ],
+      "source_offset": 1038,
+      "media_sha256": "fc131797c39bc9146305713297a0d551f414d5d3ed106536bf6d679fb11518f1",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The Spartan player throws a loose pass downcourt that is chased and retrieved/stolen by East Bay Elite (#23 in blue).",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 8.7,
+              "phase1_event_time": 8.7,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "East Bay Elite player (#23 blue) secures the ball ahead of Spartan defenders after the loose pass.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 8.8,
+              "phase1_event_time": 8.8,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1050,
+      "core": [
+        1050,
+        1060
+      ],
+      "source_offset": 1048,
+      "media_sha256": "929a5a59420ecb426dd2a3bd80fc8435ceea119427c6fbd6265d9bb298712919",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "The player in blue drives to the basket and attempts a layup, but it misses off the rim/backboard around 2.5-3.0 seconds, leading to a scramble/foul call.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.8,
+              "phase1_event_time": 2.8,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1060,
+      "core": [
+        1060,
+        1070
+      ],
+      "source_offset": 1058,
+      "media_sha256": "6ac7f837fc71c2a067e44181bde51e3ce87edf24ddf2de0eea3edcef7b3d536a",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "free_throw_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player #34 in blue shoots a free throw that hits the rim and bounces off visibly missing at around 11.6 seconds.",
+              "decision": "confirmed",
+              "phase1_moment_type": "free_throw_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.6,
+              "phase1_event_time": 11.6,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1070,
+      "core": [
+        1070,
+        1080
+      ],
+      "source_offset": 1068,
+      "media_sha256": "496d51750c2f30cb6e37cee7afb28735f0d3bebc082d5ad45dbc04a06edcd17f",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Player in blue (#34) throws an inbound pass that is intercepted/lost to the defender (#44 in black).",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 2.1,
+              "phase1_event_time": 2.1,
+              "team": "blue",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Defender (#44 in black) intercepts the inbound pass thrown by blue (#34).",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 2.2,
+              "phase1_event_time": 2.2,
+              "team": "black",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Player #44 in black immediately takes a shot after intercepting and misses the basket.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.5,
+              "phase1_event_time": 3.5,
+              "team": "black",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1080,
+      "core": [
+        1080,
+        1090
+      ],
+      "source_offset": 1078,
+      "media_sha256": "fb2969e02a415e51200644a8169d196fa5f047e2a188a2bfbbdf8b5697741fe3",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Blue team player shoots a two-pointer that hits the rim and misses",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.8,
+              "phase1_event_time": 8.8,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Black jersey player recovers the loose ball after the missed shot",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.0,
+              "phase1_event_time": 11.0,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1090,
+      "core": [
+        1090,
+        1100
+      ],
+      "source_offset": 1088,
+      "media_sha256": "fba538e55d34d20c83a678af2b54d000458e77c4c6b679debd69eba13b341426",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The Spartan ball handler gets tied up/defended along the sideline by the blue player (#23) and the referee signals a violation/stoppage or turnover near the sideline around 00:11.375 - 00:11.750.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.5,
+              "phase1_event_time": 11.5,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1100,
+      "core": [
+        1100,
+        1110
+      ],
+      "source_offset": 1098,
+      "media_sha256": "ca4d72b21393ac806e87ff8099705f957888306c59948b1ed13f98e204de1a76",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1110,
+      "core": [
+        1110,
+        1120
+      ],
+      "source_offset": 1108,
+      "media_sha256": "f57c508cedb262919cc3d77605e4228cfed7f840b3e40080186cb4fd8388de34",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "A player in blue shoots from close range near the basket; the ball hits the rim/backboard and does not go through the net.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.3,
+              "phase1_event_time": 10.3,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "An offensive player in blue secures control of the rebound after the missed shot under the basket.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.2,
+              "phase1_event_time": 11.2,
+              "team": "East Bay Elite",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1120,
+      "core": [
+        1120,
+        1130
+      ],
+      "source_offset": 1118,
+      "media_sha256": "42f0749344cc3fecfa1ef7c15667856b897c6a4ece746961ac5cdbb4731ba4f8",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.55,
+              "reason": "Scramble for the ball in the paint results in ball coming loose / turnover, leading to blue pushing in transition",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.7,
+              "phase1_event_time": 3.7,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.65,
+              "reason": "Player #23 in blue mishandles/bobs the pass while running in transition, briefly losing clean control before regaining",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 7.1,
+              "phase1_event_time": 7.1,
+              "team": "East Bay Elite",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1130,
+      "core": [
+        1130,
+        1140
+      ],
+      "source_offset": 1128,
+      "media_sha256": "e2296f8ac752807803e7a787bc9770f9f0a8590adf9de1e054402931041947fb",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player #34 in blue takes a close-range shot near the basket that visibly misses off the rim around 12 seconds.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1140,
+      "core": [
+        1140,
+        1150
+      ],
+      "source_offset": 1138,
+      "media_sha256": "9a451575e0cf84cb79d6d9da7fb22809cec365217c357dbf67136cd3a23d07fa",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Spartan player in black (#24 or #44) attempts a close-range shot/layup that hits the rim and misses",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.3,
+              "phase1_event_time": 2.3,
+              "team": "away",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.7,
+              "reason": "Blue team contests and ties up/gains control amidst a scrum for the rebound under the rim",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.8,
+              "phase1_event_time": 2.8,
+              "team": "home",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Referee blows whistle and signals a held ball / jump ball or travel turnover after a scrum for the ball",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 7.5,
+              "phase1_event_time": 7.5,
+              "team": "home",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1150,
+      "core": [
+        1150,
+        1160
+      ],
+      "source_offset": 1148,
+      "media_sha256": "a5ac01b90c3719eb9083d36b39da49c7c4dc0f4bce4ff79fd5d622e6422915e0",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.5,
+              "reason": "The Spartans inbounder attempts a full court pass around 00:01.75 - 00:02.12, which sails out of bounds / is turned over across midcourt.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.2,
+              "phase1_event_time": 2.2,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1160,
+      "core": [
+        1160,
+        1170
+      ],
+      "source_offset": 1158,
+      "media_sha256": "82c8f1b649eb281b8abf153ea8bf9af80435cf9083dfd7df133a5661f9fede3b",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "A player takes a close-range shot towards the basket which hits the rim and misses around 8.0s.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.0,
+              "phase1_event_time": 8.0,
+              "team": null,
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.65,
+              "reason": "An offensive player battles and collects the ball around the basket after the missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.8,
+              "phase1_event_time": 8.8,
+              "team": null,
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1170,
+      "core": [
+        1170,
+        1180
+      ],
+      "source_offset": 1168,
+      "media_sha256": "212bc6f912e6d895a8d88c0b4bf6f20cb97bdf969eed5e8f14bb4fa611d152f7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "The blue player takes a layup/close shot that hits the rim/backboard and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.6,
+              "phase1_event_time": 9.6,
+              "team": "blue",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.7,
+              "reason": "After the missed shot, the ball bounces out of bounds or a foul/stoppage occurs, with the referee blowing the whistle and signaling.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.3,
+              "phase1_event_time": 10.3,
+              "team": "black",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1180,
+      "core": [
+        1180,
+        1190
+      ],
+      "source_offset": 1178,
+      "media_sha256": "49800e4c0a37b4eac25a98362b2988937b332f04ffb923f7b556ab27777bc964",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1190,
+      "core": [
+        1190,
+        1200
+      ],
+      "source_offset": 1188,
+      "media_sha256": "85b3d14ac85e2512778f5d4767d4f8845a7111a3b2983d0b2bc443f0f46ab00a",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1200,
+      "core": [
+        1200,
+        1210
+      ],
+      "source_offset": 1198,
+      "media_sha256": "313e154b0fc78d3c483bd330f5980b3e1d8b50f91d1027018093ca47af23e1c5",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "free_throw_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player shooting free throw misses as the ball hits the rim and bounces off.",
+              "decision": "confirmed",
+              "phase1_moment_type": "free_throw_miss",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 6.2,
+              "phase1_event_time": 6.2,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans player in black jumps up and grabs the ball off the missed free throw.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 7.3,
+              "phase1_event_time": 7.3,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans player shoots a putback attempt near the rim which misses and bounces off.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.7,
+              "phase1_event_time": 10.7,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "EBE player in blue (number 23/teammate) secures the rebound off the missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.4,
+              "phase1_event_time": 11.4,
+              "team": "EBE",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1210,
+      "core": [
+        1210,
+        1220
+      ],
+      "source_offset": 1208,
+      "media_sha256": "09edf0006f59f8f4d9aa64203b9e68c197bcc2d8f334dbf82a4caba1762e26b9",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue team player on the floor loses control or is tied up / travels resulting in a whistle/stoppage or turnover around 3.5-4.0 seconds.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.6,
+              "phase1_event_time": 3.6,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1220,
+      "core": [
+        1220,
+        1230
+      ],
+      "source_offset": 1218,
+      "media_sha256": "70f66610fd73606476e103011d9784a5c2531194290ccc3b47dfc92a324ab8a7",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1230,
+      "core": [
+        1230,
+        1240
+      ],
+      "source_offset": 1228,
+      "media_sha256": "61c4d4918e33af7913e1fb596b2fa51eff595bcc91e1baf8e5bc347191741cd7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue player loses the ball under defensive pressure/steal attempt by black team around 00:02.5 - 00:02.8",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 2.75,
+              "phase1_event_time": 2.75,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Black team intercepts/takes possession of the loose ball at 00:04.2 and moves on the fastbreak",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 4.25,
+              "phase1_event_time": 4.25,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Black team takes a fastbreak layup at the basket around 00:10.5 - 00:11.0 that misses off the rim/backboard",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.0,
+              "phase1_event_time": 11.0,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.6,
+              "reason": "A scramble under the rim ensues where black team attempts to secure the rebound at around 00:11.75",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.75,
+              "phase1_event_time": 11.75,
+              "team": "Spartan",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1240,
+      "core": [
+        1240,
+        1250
+      ],
+      "source_offset": 1238,
+      "media_sha256": "44a24bd33238ed7eac7b110331936d0deaf9b8f7d33d19ecb5b21cc4183bd93c",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.49,
+              "reason": "After a missed shot attempt under the basket, player #27 in black (Spartan) or the blue player gathers control under the rim amidst a scrum, with referee calling a foul or stoppage right around 00:03-00:04.",
+              "decision": "potential_event",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "RULES: defensive_rebound with no preceding shot event in this window; a rebound requires a missed shot that leaves the ball live",
+              "expert_review_required": true,
+              "event_time": 2.1,
+              "phase1_event_time": 2.1,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1250,
+      "core": [
+        1250,
+        1260
+      ],
+      "source_offset": 1248,
+      "media_sha256": "1ed00efcd7cfefb65d54d0239c9363f876007cc763b18526f8e39e11b1e54293",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1260,
+      "core": [
+        1260,
+        1270
+      ],
+      "source_offset": 1258,
+      "media_sha256": "f1c0928d85fbace19b797c62aec6686fed5f76656ec77715e278f645fd571af9",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Player in blue jersey #4 launches a shot from well beyond the three-point arc (near half court) at ~00:02.25 and it misses off the rim/backboard around 00:03.75.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.75,
+              "phase1_event_time": 3.75,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "free_throw_made",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Player #4 shoots a free throw starting around 00:08.5 and makes it through the hoop around 00:10.5.",
+              "decision": "confirmed",
+              "phase1_moment_type": "free_throw_made",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.5,
+              "phase1_event_time": 10.5,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1270,
+      "core": [
+        1270,
+        1280
+      ],
+      "source_offset": 1268,
+      "media_sha256": "7add36ba124172b0e57133919313dc284158538cd34e2fd623bfebb62e3b5df3",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player #4 in blue shoots a layup/short jumper from right under/around the basket during warmup/action, hits the backboard/rim and misses around 00:11.7.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.7,
+              "phase1_event_time": 11.7,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1280,
+      "core": [
+        1280,
+        1290
+      ],
+      "source_offset": 1278,
+      "media_sha256": "5e15450411a707231356e7db91546d62d6a47bcb5b25a2d40edd40f31e6965ab",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "A player in blue shoots a layup/close-range shot near the basket that misses off the backboard/rim around 00:02.000.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.0,
+              "phase1_event_time": 2.0,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "The player in blue retrieves the ball and takes another two-point shot attempt from close range, which visibly misses off the rim/backboard around 00:09.375.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.375,
+              "phase1_event_time": 9.375,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1290,
+      "core": [
+        1290,
+        1300
+      ],
+      "source_offset": 1288,
+      "media_sha256": "a4f83cb2c5b1feb2123134af4aaade7a433e28e7868ab25bb882922cc65b16c9",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1300,
+      "core": [
+        1300,
+        1310
+      ],
+      "source_offset": 1298,
+      "media_sha256": "687cbf8e18d1ab850b28da71d00c0f14164b119fbd6bcdab5622e800b4710475",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: ValueError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1310,
+      "core": [
+        1310,
+        1320
+      ],
+      "source_offset": 1308,
+      "media_sha256": "5df10c8850f884c501d4cd02905312172730043aa4e5c5cf58685244a8aa06b5",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "A player in black (#22 or similar) shoots from well beyond the three-point line on the left side, and the ball hits the rim/backboard and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.7,
+              "phase1_event_time": 2.7,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1320,
+      "core": [
+        1320,
+        1330
+      ],
+      "source_offset": 1318,
+      "media_sha256": "8ee6910d79b0a4c1f583db052f5c380c8e90642ce96a3d2d81d2841058a4609b",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "The player in blue (East Bay Elite) drives to the basket and attempts a layup which misses off the rim/backboard.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 7.375,
+              "phase1_event_time": 7.375,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The same offensive player in blue tracks down and secures the rebound after his missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.625,
+              "phase1_event_time": 8.625,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1330,
+      "core": [
+        1330,
+        1340
+      ],
+      "source_offset": 1328,
+      "media_sha256": "523125d4dc7a4eb48567cf493d5130bcdd2a579bf0f3615d193426454df4c80e",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1340,
+      "core": [
+        1340,
+        1350
+      ],
+      "source_offset": 1338,
+      "media_sha256": "c3f7e5034e3109158fe700026f251982a611294f3ef4b8fd89a1ff7081344adc",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1350,
+      "core": [
+        1350,
+        1360
+      ],
+      "source_offset": 1348,
+      "media_sha256": "19101cbbfc66405b611c4e40ba1232f74bf65056547abd4d0436bffdfa9b9378",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.3,
+              "reason": "Player in blue jersey #4 shoots the ball from beyond the arc, but this appears to be dead-ball / warm-up shooting while waiting or play is stopped; if counted as live shot, it missed.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.8,
+              "phase1_event_time": 6.8,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1360,
+      "core": [
+        1360,
+        1370
+      ],
+      "source_offset": 1358,
+      "media_sha256": "613906a84c3053cac8132fcb7df2cd3fbc9e0e759233da8d4004b35b51cb6e44",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan player shot from the baseline/wing during warm-up/dead ball practice and the ball went through the basket around 00:03.750.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_made",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.75,
+              "phase1_event_time": 3.75,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1370,
+      "core": [
+        1370,
+        1380
+      ],
+      "source_offset": 1368,
+      "media_sha256": "ac008872560120e11265930ab37ca080a84f3687a240b2aab89b1b1af85b450a",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.6,
+              "reason": "Spartan player shoots toward the basket during warm-up/dead ball activity, hitting rim/missing",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 10.3,
+              "phase1_event_time": 10.3,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1380,
+      "core": [
+        1380,
+        1390
+      ],
+      "source_offset": 1378,
+      "media_sha256": "af843917e7f78e2721cb4aa89d44444cc76674e3290d8785ec97681e19c56722",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1390,
+      "core": [
+        1390,
+        1400
+      ],
+      "source_offset": 1388,
+      "media_sha256": "b45fe57b7f54616efeb328fddd5195a13c63d6775577061f868c1ed386bbc6d3",
+      "arms": {
+        "two_phase": {
+          "classifications": []
+        }
+      }
+    },
+    {
+      "index": 1400,
+      "core": [
+        1400,
+        1410
+      ],
+      "source_offset": 1398,
+      "media_sha256": "2d91ce1daf79aefdefce34582d0e66a09fe6c631385b5c5a33d596293b2e1dcc",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "East Bay Elite player in blue jersey #23 takes a long two-point shot around 00:11.750 that hits the rim/backboard and misses visibly around 00:12.000-00:12.750.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "East Bay Elite",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1410,
+      "core": [
+        1410,
+        1420
+      ],
+      "source_offset": 1408,
+      "media_sha256": "4a81e4d4666539afc7eb9cea71660d241ebbd574582315c2a7fe5b29159b47a5",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Player #23 in blue takes a shot from mid-range that hits the rim/backboard and misses.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.5,
+              "phase1_event_time": 2.5,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Player #23 in blue tracks down and retrieves their team's missed shot near the sideline.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.5,
+              "phase1_event_time": 5.5,
+              "team": "home",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1420,
+      "core": [
+        1420,
+        1430
+      ],
+      "source_offset": 1418,
+      "media_sha256": "87a05d817a146fb979342ad3a6a1092178ce526e5b04eebe18516756e7ac9051",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans defender (#24 in black) pounces on and disrupts/steals the ball from the blue ball-handler on the wing.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 3.1,
+              "phase1_event_time": 3.1,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Spartans player drives and attempts a close-range layup at the basket which misses off the rim/backboard.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.0,
+              "phase1_event_time": 5.0,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans players contest and battle under the basket, regaining control of the offensive rebound after the miss.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.2,
+              "phase1_event_time": 6.2,
+              "team": "Spartan",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "The ball is deflected/lost in the crowd under the basket.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 6.8,
+              "phase1_event_time": 6.8,
+              "team": "Spartan",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans player #24 secures control of the loose ball and starts a fast break.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": true,
+              "event_time": 9.3,
+              "phase1_event_time": 9.3,
+              "team": "Spartan",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1430,
+      "core": [
+        1430,
+        1440
+      ],
+      "source_offset": 1428,
+      "media_sha256": "60e0efe6809e5fc49c1e0bd7c2a16aaf6638b545e40f6884192631af1a2f1b72",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "A pass by the Spartan player is intercepted/picked up by the player in blue (EBE), gaining possession on the fastbreak.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.1,
+              "phase1_event_time": 4.1,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "EBE player takes a layup/shot near the basket that misses off the backboard/rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.7,
+              "phase1_event_time": 8.7,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "An EBE player (#23 blue) grabs the rebound near the key/baseline after the missed shot.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.6,
+              "phase1_event_time": 9.6,
+              "team": "EBE",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1440,
+      "core": [
+        1440,
+        1450
+      ],
+      "source_offset": 1438,
+      "media_sha256": "4967614563792f926f5a536d25ac122ead34be793a9e8a78c0131e973479ac33",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartan (black) passes/loses the ball, intercepted by EBE (blue jersey) around 11.4s as blue takes possession and fast breaks",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.4,
+              "phase1_event_time": 11.4,
+              "team": "away",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1450,
+      "core": [
+        1450,
+        1460
+      ],
+      "source_offset": 1448,
+      "media_sha256": "6fba1d3ecdc9a8a7d1ce08baa5dab9f535fa2f3904e3fde120619ee56e11d9f2",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue team player takes a driving shot/floater that misses off the backboard/rim around 00:04.8 - 00:05.1",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 5.1,
+              "phase1_event_time": 5.1,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue team secures possession after the missed shot",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 6.0,
+              "phase1_event_time": 6.0,
+              "team": "home",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1460,
+      "core": [
+        1460,
+        1470
+      ],
+      "source_offset": 1458,
+      "media_sha256": "bd2131fd0fee9fb9b9bf052736fc268f16801a2ef43754801d21bb4269e40d67",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1470,
+      "core": [
+        1470,
+        1480
+      ],
+      "source_offset": 1468,
+      "media_sha256": "f7ee2eed02a406f0ab188d76424fe4655f22b7e021c1b0a9aaeff261ad75b441",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1480,
+      "core": [
+        1480,
+        1490
+      ],
+      "source_offset": 1478,
+      "media_sha256": "459453d531fa9eb54d3afa0fbe4139a48ec3353f001404fe3b7b07cea26b86a7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1490,
+      "core": [
+        1490,
+        1500
+      ],
+      "source_offset": 1488,
+      "media_sha256": "1f0d86ba120bd95b0f67a669d8f2ad2a79949bdccaa1fc1f820688d28e79210b",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1500,
+      "core": [
+        1500,
+        1510
+      ],
+      "source_offset": 1498,
+      "media_sha256": "7f1026e5d397953551a19e1a86dc7598b6d2cdc99659331a8157761bf034eed1",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1510,
+      "core": [
+        1510,
+        1520
+      ],
+      "source_offset": 1508,
+      "media_sha256": "a586b8d428f09d571abd7a3b12707521775d499a1a664a65b22cd23d2761bb1e",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1520,
+      "core": [
+        1520,
+        1530
+      ],
+      "source_offset": 1518,
+      "media_sha256": "a443e925d6ebce4544df93f19424451f4eccd325d5fa9747d733d0008be78957",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1530,
+      "core": [
+        1530,
+        1540
+      ],
+      "source_offset": 1528,
+      "media_sha256": "d3d0cb91397353347ee41520065bf2a82c3746008c67eb2f34c4f91e8c9d7eeb",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1540,
+      "core": [
+        1540,
+        1550
+      ],
+      "source_offset": 1538,
+      "media_sha256": "e96f668584775819ff5db4a91ca4c2175ce729fc86205e93246c30ea3dbe98b7",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1550,
+      "core": [
+        1550,
+        1560
+      ],
+      "source_offset": 1548,
+      "media_sha256": "db6d5edc25e8b784e76b50d4c52f84924182db0b3bbec70bb23395a06782e3e3",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1560,
+      "core": [
+        1560,
+        1570
+      ],
+      "source_offset": 1558,
+      "media_sha256": "1bc1122ef28ea30b28e9086ccb539b4602613594f532a30143b8e9eab8eb7cc0",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1570,
+      "core": [
+        1570,
+        1580
+      ],
+      "source_offset": 1568,
+      "media_sha256": "652ac77efedf230f9a059181d61281ed3b92e1fceb7c61b08054ec11ed039400",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1580,
+      "core": [
+        1580,
+        1590
+      ],
+      "source_offset": 1578,
+      "media_sha256": "1045622df85d6e1b145ab95fc073c346fed632c2086e0c34388b2bc35db772a4",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1590,
+      "core": [
+        1590,
+        1600
+      ],
+      "source_offset": 1588,
+      "media_sha256": "842c7bf9a6823608f831383f0da685b7430548180a7e619453d402f6f0845f62",
+      "arms": {
+        "two_phase": {
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ended_at": "2026-09-15T18:48:46.009438+00:00",
+  "spend_after_usd": 13.165006125000057,
+  "incremental_estimated_spend_usd": 2.0059342500000046
+}

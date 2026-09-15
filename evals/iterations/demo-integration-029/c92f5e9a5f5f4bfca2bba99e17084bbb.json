@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-09-15T12:16:41.542601+00:00",
+  "status": "completed",
+  "reserved_usd": 0.030379375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "034",
+    "window_id": "W7",
+    "input": "unchanged"
+  },
+  "prompt": [
+    "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 2376 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [2378,2386], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed."
+  ],
+  "token_preflight": {
+    "totalTokens": 13546,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 250
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"made_field_goal\",\"time_seconds\":2385.75,\"confidence\":0.85,\"evidence\":\"The ball drops through the basket on the right court, scoring two points (indicated by scoreboard update to 38-30).\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPzPT71OKzOENnoFqBzVJPipkiuBVMANpYw8xvolAo4Kj3wSiavcyM90/PXwGhebsJOOaIHKlvGk/B2ezgClHh31XJvT73dGYiPVR8OBdxURN4OiiGx5JCUNwR/Lvt0fXa"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 12922,
+      "candidatesTokenCount": 60,
+      "totalTokenCount": 12982,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 250
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "KjepasjbJ8vkjuMPgtafkAU"
+  },
+  "estimated_cost_usd": 0.0099165,
+  "elapsed_seconds": 4.306547000014689
+}

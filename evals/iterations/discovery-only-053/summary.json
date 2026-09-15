@@ -1,0 +1,163 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "053",
+  "kind": "verify_events_flag_and_full_statistics",
+  "fps": 8,
+  "windows": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "discovery_only": true,
+  "video_calls": 5,
+  "incremental_estimated_spend_usd": 0.1048875,
+  "spend_after_usd": 11.088004125,
+  "remaining_headroom_usd": 0.104291,
+  "session_total_043_to_053_usd": 1.4941519,
+  "budget_exhausted": true,
+  "tests": {
+    "passed": 459,
+    "skipped": 4
+  },
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "implemented": {
+    "Recipe.verify_events": "bool|None per-recipe override; None defers to global setting",
+    "verification_enabled(recipe, settings)": "single greppable decision point shared by legacy and temporal paths",
+    "discovery_only_branch": "provider returns proposals marked confirmed, empty review queue",
+    "runner_flag": "--discovery-only",
+    "correctness_note": "turning off verification previously also disabled multi-event discovery via fallback to the single-label path; temporal path now stays active and only the second call is skipped"
+  },
+  "cost": {
+    "two_phase_calls": 9,
+    "two_phase_usd": 0.1908487,
+    "discovery_only_calls": 5,
+    "discovery_only_usd": 0.1048875,
+    "saving": "45%"
+  },
+  "statistics_discovery_stage": {
+    "n": 6,
+    "runs": [
+      "045",
+      "046",
+      "047",
+      "048",
+      "050",
+      "053"
+    ],
+    "f1": {
+      "values": [
+        0.727,
+        0.727,
+        0.727,
+        0.545,
+        0.545,
+        0.545
+      ],
+      "mean": 0.636,
+      "sd": 0.1,
+      "ci95": [
+        0.532,
+        0.741
+      ],
+      "width": 0.209
+    },
+    "precision": {
+      "mean": 0.7,
+      "sd": 0.11,
+      "ci95": [
+        0.585,
+        0.815
+      ],
+      "width": 0.23
+    },
+    "recall": {
+      "mean": 0.583,
+      "sd": 0.091,
+      "ci95": [
+        0.488,
+        0.679
+      ],
+      "width": 0.192
+    },
+    "single_pass_control_f1": 0.5,
+    "consensus_045_048_f1": 0.727,
+    "distribution": "bimodal, not continuous: every run is either 4/1/2 or 3/2/3; the difference is entirely whether W4 returns free_throw_miss (correct) or free_throw_made (wrong)"
+  },
+  "per_class_n6": {
+    "steal": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0,
+      "detection": "6/6"
+    },
+    "two_point_made": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0,
+      "detection": "6/6"
+    },
+    "missed_field_goal": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0,
+      "detection": "6/6"
+    },
+    "free_throw_miss": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.667,
+      "detection": "3/6 - coin flip"
+    },
+    "free_throw_made": {
+      "tp": 0,
+      "fp": 3,
+      "fn": 6,
+      "f1": 0.0,
+      "detection": "0/6 - W1 systematic misread"
+    },
+    "block": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.0,
+      "detection": "0/6 - never detected by any arm at any fps"
+    },
+    "two_point_miss": {
+      "fp": 3,
+      "note": "false positives only, all from W1"
+    },
+    "three_point_miss": {
+      "fp": 3,
+      "note": "false positives only, all from W1"
+    }
+  },
+  "confidence_answer": {
+    "achievable": false,
+    "runs_for_ci_width": {
+      "0.10": 16,
+      "0.05": 62,
+      "0.02": 385
+    },
+    "cost_for_ci_width_usd": {
+      "0.10": 1.68,
+      "0.05": 6.51,
+      "0.02": 40.42
+    },
+    "real_limit": "six positive labels: one event is 16.7% of recall, so sd is a property of the reference set, not the model. More runs tighten an interval around a number that still rests on five windows and one coin-flip label.",
+    "defensible_statement": "On a six-label development set, discovery-stage F1 is 0.64 +/- 0.10 (n=6) against a single-pass baseline of 0.50. Three of six classes detect perfectly and stably, one is unstable, two are never detected. Full-game accuracy unproven, holdout untouched.",
+    "not_defensible": "any single run's 0.727, or any claim of generalisation"
+  },
+  "next_action": {
+    "step": "grow the reference set to 40-60 labels across 15-20 windows",
+    "cost_usd": 0.0,
+    "rationale": "every open question has now reduced to this one"
+  }
+}

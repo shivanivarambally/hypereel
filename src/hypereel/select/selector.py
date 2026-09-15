@@ -193,6 +193,10 @@ def score_candidates(
     clips: list[Clip] = []
     for window, classification in zip(candidates, classifications):
         try:
+            # Potential events are preserved in the human-review queue, not
+            # auto-included in the reel before a reviewer confirms them.
+            if getattr(classification, "decision", None) in {"potential_event", "rejected"}:
+                continue
             # Effective moment_type may be upgraded from a scoreboard-confirmed
             # make when the vision model was too unsure to name the play.
             moment_type = _confirm_moment(window, classification, sb_cfg)
@@ -224,6 +228,8 @@ def score_candidates(
                     score=round(score, 4),
                     reason=reason,
                     subject_present=classification.subject_present,
+                    events=([classification] if classification.event_time is not None
+                            and classification.decision == 'confirmed' else []),
                 )
             )
         except Exception:
@@ -298,6 +304,8 @@ def select_clips(
 
     selection = recipe.selection
     budget = selection.max_duration if max_duration is None else max_duration
+    temporal_events = [event for clip in scored for event in clip.events
+                       if event.decision == 'confirmed' and event.event_time is not None]
     if selection.dedup_overlap:
         scored = _consolidate_same_type(scored, selection.max_clip)
 
@@ -319,4 +327,15 @@ def select_clips(
         # 'chronological' and 'narrative_arc' (documented placeholder for now)
         # both present the final set in timeline order.
         picked.sort(key=lambda c: c.start)
-    return picked
+    # Deduplicate footage, not its event annotations. Only retain anchors that
+    # actually lie within the final budget-fitted clip; do not credit cut events.
+    annotated = []
+    for clip in picked:
+        events, seen = [], set()
+        for event in temporal_events:
+            key = (event.source_window_index, event.event_id, event.event_time, event.moment_type)
+            if clip.start <= event.event_time < clip.end and key not in seen:
+                events.append(event)
+                seen.add(key)
+        annotated.append(clip.model_copy(update={'events': events}))
+    return annotated

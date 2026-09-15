@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-09-15T18:44:49.431361+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0473303125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 12.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "9f1a13227c480ebb4c6c489642070f4989ca488b569bdc3ccfef1cf15732791a",
+    "source_start": 0,
+    "duration": 14.0,
+    "fps": 8,
+    "contract": "temporal_events_v1",
+    "kind": "temporal_discovery"
+  },
+  "prompt": [
+    "PHASE 1: Enumerate distinct basketball events in temporal order from continuous video. Optimize candidate recall: include visually plausible uncertain events; do not invent events merely because they usually follow another. Several labels may describe one possession (e.g. steal then shot, missed shot then rebound). Repeated attempts are separate events. Do not force one label per clip. Return an empty events array for no plausible event. Follow ball possession, release, flight, rim/net interaction, and next control across time. A rebound is not a steal. Shot outcome and point value are separate; use generic field-goal labels when available and value cannot be seen. Use null team when attribution is unclear. Do not infer a score from a delayed scoreboard or invent jersey identities. \nBasketball rules that constrain valid answers:\n- A rebound requires a shot that visibly MISSED and left the ball live. If you did not see the ball fail to go through the net, do not report a rebound.\n- After a MADE field goal or a MADE free throw the ball is dead. A player collecting the ball is inbounding it, NOT rebounding. Never report a rebound after a made shot.\n- A missed free throw is only reboundable if it was the final attempt of its set.\n- Offensive rebound means the rebounder is on the SAME team as the shooter; defensive rebound means the OPPOSING team. Decide by team, not by which end of the floor.\n- If neither team clearly controls the ball, report no rebound rather than guessing.\n- An assist requires a made field goal. Free throws are never assisted.\n- A steal and a turnover are one possession change seen from two sides; report one.\nSubject selection: {\"type\":\"none\",\"value\":null,\"team_color\":null,\"audience\":\"team\",\"description\":\"Both teams; East Bay Elite wears blue, Spartans black.\"}. Rubric: {\"two_point_made\": \"A two-point field-goal attempt visibly scores.\", \"two_point_miss\": \"A two-point field-goal attempt visibly misses.\", \"three_point_made\": \"A shot from beyond the three-point arc visibly scores.\", \"three_point_miss\": \"A shot from beyond the three-point arc visibly misses.\", \"free_throw_made\": \"A free-throw attempt visibly scores.\", \"free_throw_miss\": \"A free-throw attempt visibly misses.\", \"offensive_rebound\": \"The shooting team gains control after its missed shot.\", \"defensive_rebound\": \"The defending team gains control after an opponent missed shot.\", \"steal\": \"A defender intercepts or disrupts opponent possession and gains team control.\", \"turnover\": \"A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\", \"block\": \"A defender visibly deflects an opponent shot attempt.\", \"assist\": \"A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\", \"made_field_goal\": \"A visibly made field goal with unknown point value.\", \"missed_field_goal\": \"A visibly missed field goal with unknown point value.\"}. Only event anchors between 2.0 and 12.0 seconds relative to THIS supplied clip (00:00=0), not game clock. For shots anchor outcome; for possession changes anchor control; for blocks anchor contact; for an ASSIST anchor the moment of the PASS, not the resulting basket. Surrounding footage is context. Return at most 12 events. JSON only: {\"events\":[{\"moment_type\":\"rubric_label\",\"time_seconds\":1.2,\"team\":null,\"subject_present\":true,\"confidence\":0.7,\"reason\":\"visible evidence and any uncertainty\"}]}"
+  ],
+  "token_preflight": {
+    "totalTokens": 31627,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 781
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 30397
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 449
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"events\": []\n}",
+              "thoughtSignature": "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"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 30349,
+      "candidatesTokenCount": 8,
+      "totalTokenCount": 31131,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 781
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 29568
+        }
+      ],
+      "thoughtsTokenCount": 774,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "IpKpaovjH96WjuMPuajloQI"
+  },
+  "estimated_cost_usd": 0.02569425,
+  "elapsed_seconds": 9.983276207989547
+}

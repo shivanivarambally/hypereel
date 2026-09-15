@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-15T13:52:05.395002+00:00",
+  "status": "completed",
+  "reserved_usd": 0.014280625,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nYou are the QUALITY JUDGE for a highlight-reel agent \u2014 the last check before a human reviews the reel. Judge whether the selected clips form a compelling, on-theme reel for the recipe 'All basketball events' (basketball).\n\nAcceptance criteria the reel should satisfy:\n  - (none specified)\n\nReel under review: 1 clip(s), 15s of a 15s budget (100% filled). 1 clip(s) have a confirmed moment type; 0 are UNCLASSIFIED (the vision scorer saw the subject but could not confirm a specific play).\nClips:\n  1. two_point_made | 0-15s | score 0.85 | The blue team steals the ball and passes ahead to a teammate who makes a two-poi\n\nJudge on TWO axes:\n1) Quality: a strong sports reel is built from real, varied plays (for basketball: made baskets, threes, dunks/layups, blocks, steals, rebounds), not padded with UNCLASSIFIED windows where nothing clearly happens.\n2) Length: a good reel shows SEVERAL plays and uses a meaningful share of the budget. A reel of only 1-3 clips, or well under ~40% of the budget, is too thin if the game surely had more real plays to show.\n\nChoose ONE action:\n- 'require_confirmed_moments' \u2014 if more than about a third of the clips are UNCLASSIFIED (drops padding).\n- 'raise_threshold' \u2014 if the clips are mostly confirmed but low-scoring/weak.\n- 'broaden' \u2014 if the reel is too short/thin (too few clips, well under budget) and should include more real plays.\n- 'none' \u2014 if the reel is already a good length and quality; then verdict 'accept'.\n\nRespond with STRICT JSON only, no prose or markdown fences, exactly:\n{\"quality_score\": <number 0..1>, \"verdict\": \"accept\"|\"revise\", \"action\": \"none\"|\"require_confirmed_moments\"|\"raise_threshold\"|\"broaden\", \"issues\": [<short strings>], \"feedback\": <one short sentence>}"
+  ],
+  "token_preflight": {
+    "totalTokens": 470,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 470
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"quality_score\": 0.8, \"verdict\": \"accept\", \"action\": \"none\", \"issues\": [], \"feedback\": \"The reel fully utilizes the 15-second budget with a confirmed, high-scoring transition basket.\"}",
+              "thoughtSignature": "EmcKZQERTTIP85mCfQakjm4AkzWzE1TXblG7p6l1m+9E5ZOiFifH4OmEGih0HGNEMzxiYgem1gsDz7QiZfJvDJjQzVgoqF9PVqjxrEO6sCK+8qvnP5UPZYBYmsRBi98cJ8gmXFcZja5F"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 470,
+      "candidatesTokenCount": 53,
+      "totalTokenCount": 523,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 470
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "hU2parKyNNKhjuMPioi_oQU"
+  },
+  "estimated_cost_usd": 0.00055125,
+  "elapsed_seconds": 3.8836652919999324
+}

@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-09-15T12:15:54.774506+00:00",
+  "status": "completed",
+  "reserved_usd": 0.030373749999999998,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "034",
+    "window_id": "W3",
+    "input": "unchanged"
+  },
+  "prompt": [
+    "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 18 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [20,28], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed."
+  ],
+  "token_preflight": {
+    "totalTokens": 13540,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 244
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"events\": []\n}",
+              "thoughtSignature": "EtIGCs8GARFNMg8baA8R6vyHFgyPQznH2w3GkDwiu30yO5998r+TyBruLHWt+KXyLQ/zBffGWlPMH/FSuNcv8eZUv4bEKFX+eLuxeUIxBrI9F6gIl3ecMJQR8n0otqkcqLChPKaD/lmmzEcc4AG+wHsfteY2o8JY9G7mJI/Hq0eTwc2RNoXHa3gXApRxom70q+RI9zbEuffAyBTdr4yR5xwj5mA/S2C6T1wGGJ6N/TcSywN1LAJZsjF94IpRzd8N0OK3c/3zqGONlWY3iyVG00vmKZvC6RqxWURZaphQdZcRkw8y0GonIy+ezvevBNj79XaRfiPSqH+V8KcQeB1HH9wPDnnkxrOkYSA69WpsMjG4gl74qTL54cUh9gueerWtm31A8bW4gAqrt+iHr+4dKhbzPBzWdGPAZMfmneIFqq56GVKai/4DDUudhB/fGuQcqgfOD+LjhbIY578A0zAGJGmu/aDlnOPdUZiEGWVNAy5F/9Y9KbC/CkZLIlYj+qL+Hpwh3iqBM6/+alYVR/LcHWw7g4V9bexMv/VIUzZz7YUnJo8XuFlPEvlq9yCB28ceXRfsVIVq81A5Rtcv9MNf5KNJGVrOzSRO/UgUaKEtjojVKvwRtAceq3k0KUUr8s5+0NxBF75UKgvxHsQjeuQQ0CqsZZY8smgVQyjzcWOdgNlV4e9XImPvjlfZjhxHXEhM+OGBGyZD4Ag40Fk3YeU4+mcWvUXHmuMUAaMj7babH+7gAR/FXKOUbkul68XjrBpRdXmGMBJXEVF6qJMqKG5d5h3Gm/j5QeuSo+jGQN7SLnSCS17bqxaiTspJvxxf7V3NrhsKarrDDWvJaom4VOiCPJbmZAavzdwceBqMspBcVL0jWeQIyr7hSaezws25uu02l60qI5eIy3uvK3jP2XFl2iSfGMDPxa8q3N361ktnXsJ+p1WYaq3H+4GqO5Ko3pRp9wWV8Uq27NZdw72R96bUzWqnXR2NzrzKpWadcKKNOKCxL5o1SMlywbbVn9fqKrKEsumk4ngmHsHSrzGRN0fbTWRxATuD4k+MPet5gonuT7j7ICkRo0DTmgeKUiScAJMpggKIEEI/wlCdYND8O6nVriUX428yOKoDmksr91J0f1EKF7IooA=="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 12916,
+      "candidatesTokenCount": 9,
+      "totalTokenCount": 13158,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 244
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "thoughtsTokenCount": 233,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "_Dapat-mCMqC4-EPoMG--AE"
+  },
+  "estimated_cost_usd": 0.0105945,
+  "elapsed_seconds": 16.8668542910018
+}

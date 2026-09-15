@@ -114,20 +114,56 @@ def build_classification_prompt(recipe: Recipe) -> str:
 def build_verification_prompt(recipe: Recipe, proposed: Classification) -> str:
     """Build a deliberately contrastive second-pass prompt for a proposed event."""
     label = proposed.moment_type
+
+    # Outcome criteria for the shot family. These were previously keyed to an
+    # older four-label taxonomy (made_basket / three_pointer), so under the
+    # current fourteen-label set only `steal` ever matched and every shot label
+    # fell through to the generic fallback. Shot outcome is where the observed
+    # errors are, so each made/missed label now carries its own contrastive test.
+    _MADE = (
+        "A make requires the ball visibly passing down through the rim and net. "
+        "Reject it if the ball hits the rim or backboard and stays out, if a rebound is "
+        "contested afterwards, or if play continues with the same team retaining possession "
+        "in a way that implies a miss. If the ball's path through the hoop is hidden at any "
+        "point, that is UNCERTAIN, not a make."
+    )
+    _MISS = (
+        "A miss requires visible evidence the ball did not pass through the net: a rim or "
+        "backboard carom, an airball, or a rebound being contested. Reject it if the ball "
+        "visibly passes down through the net. If the outcome is hidden, that is UNCERTAIN."
+    )
     alternatives = {
         "steal": (
             "Reject it if the sequence is a rebound after a shot, a loose-ball recovery, "
             "an unforced turnover, or merely shows possession changing between frames. "
             "Accept only when a defender visibly disrupts a live dribble or pass and gains possession."
         ),
-        "made_basket": (
-            "Reject it if this is only a shot attempt, a miss, a rebound, or the ball's outcome is hidden. "
-            "Accept only with visible ball-through-rim/net evidence or unmistakable immediate aftermath."
+        "turnover": (
+            "Reject it if possession changes because of a made basket, a rebound, or a dead ball. "
+            "Accept only when the offensive team loses the live ball without a shot attempt."
         ),
-        "three_pointer": (
-            "Reject it unless both the made outcome and the shooter's position behind the three-point line "
-            "are visually established."
+        "block": (
+            "Reject it if the defender contacts the shooter rather than the ball, or if the ball's "
+            "deflection is not visible. Accept only when a defender visibly alters or stops the ball "
+            "in flight on a shot attempt."
         ),
+        "offensive_rebound": (
+            "Reject it unless a missed shot is visible first and the rebounding player is on the same "
+            "team as the shooter."
+        ),
+        "defensive_rebound": (
+            "Reject it unless a missed shot is visible first and the rebounding player is on the "
+            "opposing team to the shooter."
+        ),
+        # Shot family. Each label gets the outcome test plus its shot-type test.
+        "two_point_made": _MADE + " Also reject it if the shooter released from behind the three-point line.",
+        "three_point_made": _MADE + " Also reject it unless the shooter's feet are visibly behind the three-point line at release.",
+        "free_throw_made": _MADE + " Also reject it unless the shot is an undefended attempt from the free-throw line with play stopped.",
+        "made_field_goal": _MADE + " Also reject it if the attempt is a free throw.",
+        "two_point_miss": _MISS + " Also reject it if the shooter released from behind the three-point line.",
+        "three_point_miss": _MISS + " Also reject it unless the shooter's feet are visibly behind the three-point line at release.",
+        "free_throw_miss": _MISS + " Also reject it unless the shot is an undefended attempt from the free-throw line with play stopped.",
+        "missed_field_goal": _MISS + " Also reject it if the attempt is a free throw.",
     }.get(label, "Reject it unless the ordered frames directly establish the proposed event.")
     valid_names = ", ".join(m.name for m in recipe.moment_types)
     return (
@@ -136,8 +172,17 @@ def build_verification_prompt(recipe: Recipe, proposed: Classification) -> str:
         f"{alternatives}\n"
         "Do not infer from a scoreboard, player reaction, or possession change alone. If the visual evidence "
         "does not prove the proposal, return moment_type=null. Do not substitute a different event label.\n"
+        # De-anchoring: the proposed label is stated above, and a verifier that jumps
+        # straight to a verdict tends to restate the proposal's own wording rather than
+        # re-examine the footage. Requiring an independent observation first, written
+        # before the verdict, forces a fresh look at the frames that decide the outcome.
+        "First write `observed`: describe only what the footage shows about the decisive moment, in your own "
+        "words, without referring to the proposed label. For a shot, say explicitly whether the ball passes "
+        "down through the net, hits rim or backboard and stays out, or is hidden from view. Then judge the "
+        "proposal against that observation. If `observed` contradicts the proposal, reject it.\n"
         "Respond with STRICT JSON only in this shape:\n"
-        '{"moment_type": <the proposed string or null>, "subject_present": <true|false>, '
+        '{"observed": <short independent description of the decisive moment>, '
+        '"moment_type": <the proposed string or null>, "subject_present": <true|false>, '
         '"confidence": <number 0..1>, "reason": <short evidence-based string>}'
     )
 
@@ -162,7 +207,7 @@ def frame_to_data_uri(raw: bytes, mime: str = "image/jpeg") -> str:
 _JSON_OBJECT_RE = re.compile(r"\{")
 
 
-def parse_classification_json(text: str, recipe: Recipe) -> Classification:
+def parse_classification_json(text: str, recipe: Recipe, *, permissive: bool = False) -> Classification:
     """Tolerantly parse a model's JSON response into a Classification.
 
     Strips ```json fences, finds the first {...} block, and falls back to a
@@ -201,7 +246,7 @@ def parse_classification_json(text: str, recipe: Recipe) -> Classification:
         confidence = max(0.0, min(1.0, confidence))
 
         reason = str(data.get("reason", ""))[:500]
-        if recipe.domain.lower() == "basketball" and moment_type in {
+        if not permissive and recipe.domain.lower() == "basketball" and moment_type in {
             "made_basket", "three_pointer"
         }:
             lowered = reason.lower()

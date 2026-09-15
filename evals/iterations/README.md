@@ -4,7 +4,7 @@ For the current executive summary, decision, spend, limitation, and next action,
 
 This directory is the durable audit trail for the development-only fix/evaluate/retest loop. The third game in `evals/holdout/` remains sealed until the development gates pass.
 
-Current all-event diagnostics use one-to-one same-label matching with a five-second point tolerance. Reference timestamps are provisional; the historical temporal-IoU and calibration measures below are not established by the current pilots. Read `../AGENT_HANDOFF.md`, `gemini-development-summary/results.md`, and `../../docs/EVALUATION_TESTING.md` for the current checkpoint and validation. The shared spend ledger, not an older amount quoted below, is authoritative.
+Current matching policy is report-specific. The 055 sweep and 056 offline replay use one-to-one label matching inside half-open windows against source-golden events, without exact timestamp credit. Earlier diagnostics used five-second point matching or a partially adjudicated subset. Do not compare scores without matching their reference and timing policies. See [current guide](../../docs/EVALUATION_TESTING.md) and [handoff](../AGENT_HANDOFF.md). The shared spend ledger, not an older amount quoted below, is authoritative.
 
 ## Historical pipeline evaluation matrix
 

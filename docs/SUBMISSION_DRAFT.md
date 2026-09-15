@@ -1,5 +1,7 @@
 # HypeReel — breakout submission and demo draft
 
+> **Archived draft — superseded 13 September 2026.** Use the [current single-file submission](../HypeReel-Breakout-Submission-under-10MB.html) for team details, personal icebreakers, both demo recordings and submission date. The date warnings, missing-details checklist and proposed answers below are historical drafting notes, not current submission guidance.
+
 Prepared September 12, 2026. Draft for owner review; nothing submitted or uploaded.
 
 ## Source requirements and items to confirm

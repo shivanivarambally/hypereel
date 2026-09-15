@@ -1,5 +1,7 @@
 # HypeReel — Week 3 Project Documentation
 
+> **Status note — 13 September 2026:** This is the initial Week 3 narrative; its single-player/full-game and sharing descriptions include product goals. The latest demo uses Gemini on a ten-minute, both-teams excerpt with human clip review and local download; external upload is not implemented. See the [current submission](HypeReel-Breakout-Submission-under-10MB.html) for the roster, both recordings and submission date, and [evaluation status](evals/STATUS.md) for measured quality.
+
 **Mastering Agentic AI Certification · Week 3: Build Your AI Agent**
 
 - **Builder:** Shivani

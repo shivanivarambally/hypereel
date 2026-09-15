@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-09-15T14:21:22.619542+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0138953125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 15.0s were selected:\n- steal (0.0-15.0s, score 0.95)"
+  ],
+  "token_preflight": {
+    "totalTokens": 59,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 59
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Talk about lightning-fast hands! Clocking in at an electric 15 seconds, this highlight delivers pure defensive hustle with a game-changing steal that completely flips the momentum on the court. Big-time defense at its finest!",
+              "thoughtSignature": "EuwKCukKARFNMg89VUIx3FwQIBbP0KWvdkv9oH6uwDiLjDOsQXF+h1iKufxM4LspoxzMmEE2PC9DX4ywfHG0wR2xrsEY2xGISh9G78DrYRk04SUOQm9B0G71pb0wj3ies9lqdPT5lCsLFHaidx+NCfNm+PHdHbUgGNgWt+tPQSMFGFkbcTutlvD2XfwwjLKw/v/gO9YnRFWZtZkI0win8rStrRwF2YiJ4i3eTbXtHk3PbTx8wKt3l85NWf2ckd4p+WQ0NY6nshQZGoNORtUB8Biz7P0MkZ3hP2Ogm4lSdEqCu9T15ffJkluu47cg66csn/2jZAJxLR187lzWsIXamGJpvLfz8Wp1v0Rw6p0/JUnYzeZAyWXGF9dzmulEbJOnr5thqULlJNQ9UrcrfCTviBo96Wq6gKD6kaTkeCLAbRKCZe+Qk96wvLhJV2JTcLScJjl/IfizPmDE3A5wiKJlJuvnZzP/okgRNbgLxnernMd6GPBNmDqdgrev0Iv96hBp20aa4jUZdF6I1Jl95oB4/PGb78oAMfU6wb7KVkmN3JVHHT4tLZnS9ws3jWgkovRAO1c9K6s6bpoSKbEYWIUX+mvG9djoiEMG5ehkWWQUYqKXe57gbwTOyF1xnBe6122Yq8hnBTQDXqAcuFz96Cmnw27xhurlNDvP+dbnnToOZcId2QZ2l1wYOJYdrU/qldxWZk3a2shqBSTPljAIOhUCOmBz6eRp0gTpST9fs6l6sbTJ25yWmJLJEMxPAbxOxcQ7nX8au2qVd9bNjvm/Ng1OE4TViAOsqq2IbAILC92jnEjbP+x5n903RS0Z5Jm5aURQWdSAG2xha6GsLAnlqy5eIBRlXzpiC3pbiGQF40SOIDnSRKJ/Be7ffsWuhHR++W6PKSkMY4VVUWQ2c5Zob0KD2J4LhQKNlqcjGWYIjbvOlWENxWLEXq7WdJ3pKutpMFpCqD/NP2cZha54KLaHxMsa0OOcRjwyfhoIf0eHoinDMAaHlX/8EBRupn7MnAmAaGgqSQ3QRWq5TxOY6gTsl9JQGc7XCV9KNlQFEPeVq9/+DSZF8FJnDqeP8pW/zzEzeXidfjzf3VFfM4usGqqfA6GOLs89yIBUV5EVx3zFPsh9NaWolWHKDEte2Aiz3pPO22A2oxstnL1S4d3cSJtBZ55mlRLOXcpWSgp+t/RGy2GmetQRKVTq47Nv1ZQuXxge1ulYa12CHBEGKCWV9IvfMG4hrhdrj4Rl4OCEMl6PxkTUfloHAXaSqxm5ubFRUs21Gy5F3IqlUgI1yaRR9hgzom2YLruew6Ydk4pkDiFb1fb/89UQHyUUpixbTLBglxduIhHrWyeSwhtFs2Ah2p10iiBCSU4yjqOZNqiPZh6LqvNXvkm0X9v6cX935KsBuJV5GCRxqgUNMB/IiBIYAHqlkju3zDjvmu4eXhqs1yCgDAM7kzAgFHXHILj88P4OGVr9I5JvfnyfZFcm4sik3oNYyBoTKDRYNTFWk7RmOkgZBotkN3ydScJ48Mu53hmH/dhAI6Q7QBDdXhEpS741KZhWWWOXeAW2o46KLd3tnVyQCShhn/eieu9cBtI0VuztsEZbMXeGaga1RpS3epWgYaq5lGo612sq/lmnVHyBJX/8XEMtZVjudW01B/FczjAvRiyMwUfie7utC+alyOH8QiuOD5Abhw7Nrt/s2C7ozxyQIVpuefH2pOzN55IkZqAhrEZnZIAkQWmWSQioKID/W75YIB3W2N9NsuuIfzt0LFYqjLaP9twWLvPAB/4dTtTN1+eQNCSWjIaqPBD/q3YJ2K/pd8/SVY+5WwMbMMcLQa/T7vF3JQFNvj5SigYlWL8rXqFrFgQ="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 59,
+      "candidatesTokenCount": 47,
+      "totalTokenCount": 443,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 59
+        }
+      ],
+      "thoughtsTokenCount": 337,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "Y1SpauQosNCO4w_6hJbgAg"
+  },
+  "estimated_cost_usd": 0.00148425,
+  "elapsed_seconds": 8.781379791034851
+}

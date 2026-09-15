@@ -1,3 +1,18 @@
+## Publication index — 2026-09-16
+
+- 033–037: human-observation rescoring, possession/rebound investigation and broader prompt changes; see the matching numbered directories.
+- 038–041: [initial two-phase and temporal multi-event workflow](two-phase-e2e-041/results.md), including live UI/render checks and selection metadata replay.
+- 042–048: family scoring, denser-frame experiments, contrastive verification, [variance and consensus](variance-consensus-046-048/results.md).
+- 049–051: [rules encoding](rules-encoding-049/results.md), [rules gate](rules-gate-050/results.md), [assist anchor](assist-anchor-051/results.md).
+- 052–053: [routing analysis](routing-analysis-052/summary.json), [discovery-only experiment](discovery-only-053/results.md).
+- 054: [source-golden expansion and dense windows](golden-expansion-054/results.md).
+- 055: [100-window contiguous discovery sweep](proposer-sweep-055/results.md), current broadest live development sample.
+- 056: [offline publication replay](publication-audit-056.json), explicit game identity and half-open windows; no new model calls.
+
+Refer to [current status](../STATUS.md) for interpretation corrections, available budget and the sealed-holdout policy. Earlier entries below describe their own checkpoints.
+
+---
+
 ## Commit/push checkpoint — 2026-09-13T00:56:24.665196+05:30
 
 User authorized committing and pushing all pending project changes. Full pre-push suite:411 passed,4 skipped,1 final-holdout test deselected; one legacy Gemini SDK warning. Demo integration029, live UI030, failed three-clip031, successful six-clip032 and subsequent user render/approval feedback fixes included. User's own later render output verified89.5seconds; no claim its Chrome gate2 was visually inspected. Provider spend ledger $8.982478125; funded use $1.790183 of$2, remaining $0.209817. This is insufficient for another similar ~$0.53 full inference run within the current cap. No paid calls made for commit validation; do not reset ledger.

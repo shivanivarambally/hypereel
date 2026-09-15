@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-09-15T12:16:13.681893+00:00",
+  "status": "completed",
+  "reserved_usd": 0.030374687499999997,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "034",
+    "window_id": "W4",
+    "input": "unchanged"
+  },
+  "prompt": [
+    "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 92 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [94,102], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed."
+  ],
+  "token_preflight": {
+    "totalTokens": 13541,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 245
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"free_throw_miss\",\"time_seconds\":99.0,\"confidence\":0.8,\"evidence\":\"player in white #11 shoots a free throw and it does not result in a score (subsequent play/rebound setup follows or missed free throw)\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPLX+1e0z9Yk1gWDGyPUj9NSN8R7yXI6DnCJvmvmznLPx5QrKxtWQ6Eyfmoi8QCaPZ7HkZ1h4T7hkZvEFo6kfAXQ2KwCkeavubfL1suToWmsvUkkBF10ocSiA6sN0zLI/U"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 12917,
+      "candidatesTokenCount": 61,
+      "totalTokenCount": 12978,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 245
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "DjepasfxPM6NjuMPxZ_KgQM"
+  },
+  "estimated_cost_usd": 0.0099165,
+  "elapsed_seconds": 8.019327249960043
+}

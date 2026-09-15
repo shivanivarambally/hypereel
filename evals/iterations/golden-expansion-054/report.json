@@ -1,0 +1,471 @@
+{
+  "iteration": "054",
+  "kind": "golden_expansion_new_windows",
+  "discovery_only": true,
+  "fps": 8,
+  "source_video": "downloads/KBETdDRM70Q.studio-720p.mp4",
+  "game_id": "east-bay-elite-vs-spartans",
+  "started_at": "2026-09-15T18:27:13.169285+00:00",
+  "status": "completed",
+  "holdout_used": false,
+  "spend_before_usd": 11.088004125000051,
+  "cases": [
+    {
+      "index": 100,
+      "core": [
+        808,
+        818
+      ],
+      "source_offset": 806,
+      "media_sha256": "f3d94191c63a46a4dcc9ccf051daa77559f71f5a2e536b2493eb7211298ff4d4",
+      "arms": {
+        "two_phase": {
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 12.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "81bcd070e7a31503077a44f4cd7771f79db882775c9fd26a5a41476bc3647a5a",
+                "source_start": 0,
+                "duration": 14.0,
+                "fps": 8,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "054",
+                "window_id": "G100"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\"moment_type\": \"steal\", \"time_seconds\": 9.2, \"team\": \"Spartan\", \"subject_present\": true, \"confidence\": 0.8, \"reason\": \"Spartans player pokes the ball away and gains control around 09.2s after blue player drives into traffic\"},\n    {\"moment_type\": \"two_point_miss\", \"time_seconds\": 11.8, \"team\": \"Spartan\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Spartans player shoots a floater/layup at around 10.7-11.0s and it hits the rim and misses around 11.8s\"}\n  ]\n}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans player pokes the ball away and gains control around 09.2s after blue player drives into traffic",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 9.2,
+              "phase1_event_time": 9.2,
+              "team": "Spartan",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans player shoots a floater/layup at around 10.7-11.0s and it hits the rim and misses around 11.8s",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 11.8,
+              "phase1_event_time": 11.8,
+              "team": "Spartan",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ],
+          "phase_transitions": [
+            {
+              "event_id": "w0e0",
+              "phase1_label": "steal",
+              "phase1_confidence": null,
+              "phase2_label": "steal",
+              "phase2_confidence": 0.8,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e1",
+              "phase1_label": "two_point_miss",
+              "phase1_confidence": null,
+              "phase2_label": "two_point_miss",
+              "phase2_confidence": 0.85,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            }
+          ],
+          "transition_metrics": {
+            "proposals": 2,
+            "outcomes": {
+              "confirmed_unchanged": 2
+            },
+            "survival_rate": 1.0,
+            "relabels": {},
+            "phase1_labels_not_surviving": {},
+            "rules_fired": {},
+            "expert_flagged": 0
+          },
+          "candidates": [],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      }
+    },
+    {
+      "index": 101,
+      "core": [
+        658,
+        668
+      ],
+      "source_offset": 656,
+      "media_sha256": "03412079a16c28e8d8b3cffb6b881cc44ed70a3b65f4e88edf87d84028ee717e",
+      "arms": {
+        "two_phase": {
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 12.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "7c37643e04aef7d070506c0506d2a9df0412903915e22dff698f00cdfa40f6ab",
+                "source_start": 0,
+                "duration": 14.0,
+                "fps": 8,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "054",
+                "window_id": "G101"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\"moment_type\": \"three_point_miss\", \"time_seconds\": 2.2, \"team\": \"Spartans\", \"subject_present\": true, \"confidence\": 0.95, \"reason\": \"Black jersey player (#10) attempts a three-pointer from the corner which hits the rim and bounces off visibly missing.\"},\n    {\"moment_type\": \"offensive_rebound\", \"time_seconds\": 2.6, \"team\": \"Spartans\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Spartans offensive player near the basket gathers the rebound off the missed three-point attempt.\"},\n    {\"moment_type\": \"two_point_miss\", \"time_seconds\": 4.5, \"team\": \"Spartans\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Spartans player (#31) shoots a putback attempt inside the key that bounces off the rim.\"},\n    {\"moment_type\": \"offensive_rebound\", \"time_seconds\": 4.8, \"team\": \"Spartans\", \"subject_present\": true, \"confidence\": 0.8, \"reason\": \"Spartans player secures the offensive board in traffic under the basket.\"},\n    {\"moment_type\": \"steal\", \"time_seconds\": 8.0, \"team\": \"Spartans\", \"subject_present\": true, \"confidence\": 0.75, \"reason\": \"After a loose ball struggle, Spartans player #31 secures possession and controls the basketball.\"}\n  ]\n}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Black jersey player (#10) attempts a three-pointer from the corner which hits the rim and bounces off visibly missing.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.2,
+              "phase1_event_time": 2.2,
+              "team": "Spartans",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans offensive player near the basket gathers the rebound off the missed three-point attempt.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 2.6,
+              "phase1_event_time": 2.6,
+              "team": "Spartans",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Spartans player (#31) shoots a putback attempt inside the key that bounces off the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.5,
+              "phase1_event_time": 4.5,
+              "team": "Spartans",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Spartans player secures the offensive board in traffic under the basket.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 4.8,
+              "phase1_event_time": 4.8,
+              "team": "Spartans",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.75,
+              "reason": "After a loose ball struggle, Spartans player #31 secures possession and controls the basketball.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.0,
+              "phase1_event_time": 8.0,
+              "team": "Spartans",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            }
+          ],
+          "phase_transitions": [
+            {
+              "event_id": "w0e0",
+              "phase1_label": "three_point_miss",
+              "phase1_confidence": null,
+              "phase2_label": "three_point_miss",
+              "phase2_confidence": 0.95,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e1",
+              "phase1_label": "offensive_rebound",
+              "phase1_confidence": null,
+              "phase2_label": "offensive_rebound",
+              "phase2_confidence": 0.85,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e2",
+              "phase1_label": "two_point_miss",
+              "phase1_confidence": null,
+              "phase2_label": "two_point_miss",
+              "phase2_confidence": 0.85,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e3",
+              "phase1_label": "offensive_rebound",
+              "phase1_confidence": null,
+              "phase2_label": "offensive_rebound",
+              "phase2_confidence": 0.8,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e4",
+              "phase1_label": "steal",
+              "phase1_confidence": null,
+              "phase2_label": "steal",
+              "phase2_confidence": 0.75,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            }
+          ],
+          "transition_metrics": {
+            "proposals": 5,
+            "outcomes": {
+              "confirmed_unchanged": 5
+            },
+            "survival_rate": 1.0,
+            "relabels": {},
+            "phase1_labels_not_surviving": {},
+            "rules_fired": {},
+            "expert_flagged": 0
+          },
+          "candidates": [],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      }
+    },
+    {
+      "index": 102,
+      "core": [
+        2736,
+        2746
+      ],
+      "source_offset": 2734,
+      "media_sha256": "fa90563c1ccd5d0ccd9883cef93cd3abedc9b700183cb90b120dbbc6ead99b83",
+      "arms": {
+        "two_phase": {
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 12.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "c9c147fec1479964e5d989f668479932b2edc653cf1ffd0fb3c281a7a674518c",
+                "source_start": 0,
+                "duration": 14.0,
+                "fps": 8,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "054",
+                "window_id": "G102"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\n      \"moment_type\": \"three_point_miss\",\n      \"time_seconds\": 3.7,\n      \"team\": \"EBE\",\n      \"subject_present\": true,\n      \"confidence\": 0.85,\n      \"reason\": \"Blue #10 takes a shot from beyond the three-point line which hits the rim and bounces off visibly around 00:03.750.\"\n    },\n    {\n      \"moment_type\": \"offensive_rebound\",\n      \"time_seconds\": 8.0,\n      \"team\": \"EBE\",\n      \"subject_present\": true,\n      \"confidence\": 0.8,\n      \"reason\": \"Blue player (#34 or teammate) tips/battles and blue collects the loose ball off the missed shot around 00:08.000.\"\n    }\n  ]\n}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Blue #10 takes a shot from beyond the three-point line which hits the rim and bounces off visibly around 00:03.750.",
+              "decision": "confirmed",
+              "phase1_moment_type": "three_point_miss",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 3.7,
+              "phase1_event_time": 3.7,
+              "team": "EBE",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.8,
+              "reason": "Blue player (#34 or teammate) tips/battles and blue collects the loose ball off the missed shot around 00:08.000.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": 8.0,
+              "phase1_event_time": 8.0,
+              "team": "EBE",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ],
+          "phase_transitions": [
+            {
+              "event_id": "w0e0",
+              "phase1_label": "three_point_miss",
+              "phase1_confidence": null,
+              "phase2_label": "three_point_miss",
+              "phase2_confidence": 0.85,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            },
+            {
+              "event_id": "w0e1",
+              "phase1_label": "offensive_rebound",
+              "phase1_confidence": null,
+              "phase2_label": "offensive_rebound",
+              "phase2_confidence": 0.8,
+              "outcome": "confirmed_unchanged",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            }
+          ],
+          "transition_metrics": {
+            "proposals": 2,
+            "outcomes": {
+              "confirmed_unchanged": 2
+            },
+            "survival_rate": 1.0,
+            "relabels": {},
+            "phase1_labels_not_surviving": {},
+            "rules_fired": {},
+            "expert_flagged": 0
+          },
+          "candidates": [],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      }
+    },
+    {
+      "index": 103,
+      "core": [
+        1888,
+        1898
+      ],
+      "source_offset": 1886,
+      "media_sha256": "0afd5c78f74de1d9dde40a3cc21c0e9e3bfdad44ece03f70ee6e9b7b72a299d2",
+      "arms": {
+        "two_phase": {
+          "calls": [],
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.0,
+              "reason": "temporal discovery error: RuntimeError",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false,
+              "event_time": null,
+              "phase1_event_time": null,
+              "team": null,
+              "event_id": null,
+              "source_window_index": 0
+            }
+          ],
+          "phase_transitions": [
+            {
+              "event_id": null,
+              "phase1_label": null,
+              "phase1_confidence": null,
+              "phase2_label": null,
+              "phase2_confidence": 0.0,
+              "outcome": "rejected",
+              "verification_reason": "",
+              "expert_review_required": false,
+              "rule_violations": []
+            }
+          ],
+          "transition_metrics": {
+            "proposals": 1,
+            "outcomes": {
+              "rejected": 1
+            },
+            "survival_rate": 0.0,
+            "relabels": {},
+            "phase1_labels_not_surviving": {
+              "null": 1
+            },
+            "rules_fired": {},
+            "expert_flagged": 0
+          },
+          "candidates": [],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      }
+    }
+  ],
+  "ended_at": "2026-09-15T18:27:52.955232+00:00",
+  "spend_after_usd": 11.159071875000052,
+  "incremental_estimated_spend_usd": 0.07106775000000098
+}

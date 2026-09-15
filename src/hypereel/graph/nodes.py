@@ -18,7 +18,8 @@ import json
 import os
 import re
 
-from ..analyze.classifier import classify_candidates
+from ..analyze.classifier import classify_moments
+from ..analyze.two_phase import build_review_queue
 from ..config import get_settings
 from ..ingest.source_resolver import IngestError, parse_video_quality, resolve_source
 from ..memory.store import MemoryStore
@@ -249,14 +250,20 @@ def classify_node(state: ReelState, settings=None) -> dict:
     settings = settings or get_settings()
     recipe: Recipe = state["recipe"]
     provider = get_vision_provider(settings)
-    classifications = classify_candidates(
+    proposal_windows = state.get("candidates", [])
+    candidates, classifications = classify_moments(
         state.get("candidates", []), recipe, provider, settings, state.get("video_path")
     )
+    review_queue = build_review_queue(candidates, classifications)
     return {
+        "proposal_windows": proposal_windows,
+        "candidates": candidates,
         "classifications": classifications,
+        "review_queue": review_queue,
         "mode": provider.name,
         "notes": state.get("notes", [])
-        + [f"classify: {len(classifications)} window(s) judged by '{provider.name}' provider"],
+        + [f"classify: {len(proposal_windows)} window(s), {len(classifications)} verdict(s) from '{provider.name}' provider",
+           f"classify: {len(review_queue)} potential event(s) queued for human review"],
     }
 
 

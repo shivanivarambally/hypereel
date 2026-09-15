@@ -1,5 +1,7 @@
 # Local vision inference with Ollama
 
+> **Provider scope:** This remains the local Ollama setup guide. The latest submitted demo uses Gemini native video; see [README](../README.md) and [evaluation status](../evals/STATUS.md).
+
 Ollama is the local model runtime; Qwen3-VL is the vision model. This setup
 uses `qwen3-vl:4b-instruct`, not a text-only Llama model. No provider API key or paid
 inference endpoint is required. Downloading the model still requires an

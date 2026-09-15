@@ -1,0 +1,2039 @@
+{
+  "iteration": "040",
+  "started_at": "2026-09-15T14:15:52.278592+00:00",
+  "status": "completed",
+  "holdout_used": false,
+  "scope": "fixed reviewed development windows; temporal_events_v1 two-phase; no proposer recall claim",
+  "spend_before_usd": 9.545624625000045,
+  "cases": [
+    {
+      "index": 1,
+      "clip": "evals/iterations/gemini-development-media/w1-continuous.mp4",
+      "source_offset": 221,
+      "media_sha256": "75d23ea4566f7fbc658560f877113ebc31e405f5354138bba5ad8360f745026b",
+      "core": [
+        221,
+        231
+      ],
+      "recipe": {
+        "id": "two_phase_w1",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; East Bay Elite wears blue, Spartans black."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 0.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "7f82d64020865dfc588adda6ce82738b87e6e370e5ede8f7fb4f3cb107775dc9",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W1",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": \"defensive_rebound\", \"subject_present\": true, \"confidence\": 0.9, \"reason\": \"East Bay Elite (blue) takes a shot that misses off the rim, and Spartans (black #24) secures the defensive rebound.\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "East Bay Elite (blue) takes a shot that misses off the rim, and Spartans (black #24) secures the defensive rebound.",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "defensive_rebound",
+              "score": 0.9,
+              "reason": "East Bay Elite (blue) takes a shot that misses off the rim, and Spartans (black #24) secures the defensive rebound.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 0.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "7f82d64020865dfc588adda6ce82738b87e6e370e5ede8f7fb4f3cb107775dc9",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W1",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\n      \"moment_type\": \"two_point_miss\",\n      \"time_seconds\": 7.25,\n      \"team\": \"home\",\n      \"subject_present\": true,\n      \"confidence\": 0.95,\n      \"reason\": \"Player in blue #3 takes a two-point shot around 00:06.000, which hits the rim and misses at about 00:07.250.\"\n    },\n    {\n      \"moment_type\": \"defensive_rebound\",\n      \"time_seconds\": 8.25,\n      \"team\": \"away\",\n      \"subject_present\": true,\n      \"confidence\": 0.9,\n      \"reason\": \"Player in black #24 collects the rebound after the missed shot.\"\n    }\n  ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 0.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "7f82d64020865dfc588adda6ce82738b87e6e370e5ede8f7fb4f3cb107775dc9",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W1",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"two_point_miss\",\"time_seconds\":7.25,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"At 06.00s player #3 in blue drives and shoots a floater/layup from inside the arc, which hits the rim/backboard and misses at 07.25s.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"defensive_rebound\",\"time_seconds\":8.25,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Following the missed shot, Spartan player #24 in black secures possession of the defensive rebound under the rim at 08.25s.\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "At 06.00s player #3 in blue drives and shoots a floater/layup from inside the arc, which hits the rim/backboard and misses at 07.25s.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "At 06.00s player #3 in blue drives and shoots a floater/layup from inside the arc, which hits the rim/backboard and misses at 07.25s.",
+              "expert_review_required": false,
+              "event_time": 7.25,
+              "phase1_event_time": 7.25,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Following the missed shot, Spartan player #24 in black secures possession of the defensive rebound under the rim at 08.25s.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "Following the missed shot, Spartan player #24 in black secures possession of the defensive rebound under the rim at 08.25s.",
+              "expert_review_required": false,
+              "event_time": 8.25,
+              "phase1_event_time": 8.25,
+              "team": "away",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "two_point_miss",
+              "score": 0.95,
+              "reason": "At 06.00s player #3 in blue drives and shoots a floater/layup from inside the arc, which hits the rim/backboard and misses at 07.25s.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 2,
+      "clip": "evals/iterations/gemini-human-review-034/media/w2-action-complete.mp4",
+      "source_offset": 754,
+      "media_sha256": "6b6a9b7f7fc33df081d7decda9f3014e4bb8e5fe7cdef73b2f2569206122104c",
+      "core": [
+        756,
+        767
+      ],
+      "recipe": {
+        "id": "two_phase_w2",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; East Bay Elite wears blue, Spartans black."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 13.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "d6036041bb5284777eaa7dfb2d88a65e8b4c56e42b3f55e3291d94ba95044171",
+                "source_start": 0,
+                "duration": 15.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W2",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": \"two_point_made\", \"subject_present\": true, \"confidence\": 0.95, \"reason\": \"East Bay Elite (blue) steals/advances the ball and player #27 in blue drives to the hoop, scoring a two-point layup around 00:11-00:13 (score updates from 7 to 9).\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "East Bay Elite (blue) steals/advances the ball and player #27 in blue drives to the hoop, scoring a two-point layup around 00:11-00:13 (score updates from 7 to 9).",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 15.0,
+              "moment_type": "two_point_made",
+              "score": 0.95,
+              "reason": "East Bay Elite (blue) steals/advances the ball and player #27 in blue drives to the hoop, scoring a two-point layup around 00:11-00:13 (score updates from 7 to 9).",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 15.0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 2.0,
+              "end": 13.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 13.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 13.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 13.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "d6036041bb5284777eaa7dfb2d88a65e8b4c56e42b3f55e3291d94ba95044171",
+                "source_start": 0,
+                "duration": 15.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W2",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n \"events\": [\n  {\n   \"moment_type\": \"steal\",\n   \"time_seconds\": 7.5,\n   \"team\": \"home\",\n   \"subject_present\": true,\n   \"confidence\": 0.85,\n   \"reason\": \"Blue team defender intercepts/strips the ball from the black team ball handler on the fast break.\"\n  },\n  {\n   \"moment_type\": \"turnover\",\n   \"time_seconds\": 7.5,\n   \"team\": \"away\",\n   \"subject_present\": true,\n   \"confidence\": 0.85,\n   \"reason\": \"Black team turns over possession as the blue player takes the ball.\"\n  },\n  {\n   \"moment_type\": \"two_point_made\",\n   \"time_seconds\": 12.0,\n   \"team\": \"home\",\n   \"subject_present\": true,\n   \"confidence\": 0.9,\n   \"reason\": \"Blue team player (number 27/girl in blue) receives pass on fast break and makes a layup/shot inside the arc, scoring visible basket.\"\n  }\n ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 13.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "d6036041bb5284777eaa7dfb2d88a65e8b4c56e42b3f55e3291d94ba95044171",
+                "source_start": 0,
+                "duration": 15.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W2",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"steal\",\"time_seconds\":7.5,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"turnover\",\"time_seconds\":7.5,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"The Spartan player turns the ball over via an intercepted pass.\"},{\"event_id\":\"w0e2\",\"status\":\"confirmed\",\"moment_type\":\"two_point_made\",\"time_seconds\":12.0,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.9,\"reason\":\"The blue player takes a layup/shot close to the basket and scores two points (score changes from 7 to 9).\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+              "expert_review_required": false,
+              "event_time": 7.5,
+              "phase1_event_time": 7.5,
+              "team": "home",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "The Spartan player turns the ball over via an intercepted pass.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "The Spartan player turns the ball over via an intercepted pass.",
+              "expert_review_required": true,
+              "event_time": 7.5,
+              "phase1_event_time": 7.5,
+              "team": "away",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "The blue player takes a layup/shot close to the basket and scores two points (score changes from 7 to 9).",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_made",
+              "verification_reason": "The blue player takes a layup/shot close to the basket and scores two points (score changes from 7 to 9).",
+              "expert_review_required": false,
+              "event_time": 12.0,
+              "phase1_event_time": 12.0,
+              "team": "home",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 15.0,
+              "moment_type": "steal",
+              "score": 0.95,
+              "reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 15.0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 3,
+      "clip": "evals/iterations/gemini-development-media/w3-continuous.mp4",
+      "source_offset": 18,
+      "media_sha256": "6501224232c640342167dfa8d35e16d98d423721dace3e3241e374a1fc68c092",
+      "core": [
+        20,
+        28
+      ],
+      "recipe": {
+        "id": "two_phase_w3",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; Campus wears yellow, Unlimited white."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "3638de9b0cd33f189ba39e755bba47542f766658fe4a1bddd7d358a2339adf2d",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W3",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": null, \"subject_present\": false, \"confidence\": 0.95, \"reason\": \"Dead ball period; players are standing near the sideline and referees are waiting at center court.\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.95,
+              "reason": "Dead ball period; players are standing near the sideline and referees are waiting at center court.",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        },
+        "two_phase": {
+          "candidates": [],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "3638de9b0cd33f189ba39e755bba47542f766658fe4a1bddd7d358a2339adf2d",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W3",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n  \"events\": []\n}"
+            }
+          ],
+          "classifications": [],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 4,
+      "clip": "evals/iterations/gemini-development-media/w4-continuous.mp4",
+      "source_offset": 92,
+      "media_sha256": "80403a717e273882cbc1deffcbc06bd1e1cf1ea9043cd5c6ffc1bfa4bbef82d4",
+      "core": [
+        94,
+        102
+      ],
+      "recipe": {
+        "id": "two_phase_w4",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; Campus wears yellow, Unlimited white."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "ba8d76b2dc7c51eeb911023378c7b78a1c48857bc66a4e48372c0564837b95c7",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W4",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": \"free_throw_miss\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Unlimited player #11 shoots a free throw at 00:06-00:07 which misses the rim/net\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "free_throw_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Unlimited player #11 shoots a free throw at 00:06-00:07 which misses the rim/net",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "free_throw_miss",
+              "score": 0.85,
+              "reason": "Unlimited player #11 shoots a free throw at 00:06-00:07 which misses the rim/net",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 2.0,
+              "end": 10.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "ba8d76b2dc7c51eeb911023378c7b78a1c48857bc66a4e48372c0564837b95c7",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W4",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n \"events\": [\n  {\n   \"moment_type\": \"free_throw_made\",\n   \"time_seconds\": 8.0,\n   \"team\": \"white\",\n   \"subject_present\": true,\n   \"confidence\": 0.8,\n   \"reason\": \"Player #11 in white shoots a free throw at approximately 00:06.75 - 00:07.00 and it goes through the basket around 00:08.0.\"\n  }\n ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "ba8d76b2dc7c51eeb911023378c7b78a1c48857bc66a4e48372c0564837b95c7",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W4",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"free_throw_made\",\"time_seconds\":8.0,\"team\":\"white\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Player #11 in white shoots a free throw at 00:06.5-00:07.0, and the ball goes through the basket cleanly around 00:08.0.\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "free_throw_made",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Player #11 in white shoots a free throw at 00:06.5-00:07.0, and the ball goes through the basket cleanly around 00:08.0.",
+              "decision": "confirmed",
+              "phase1_moment_type": "free_throw_made",
+              "verification_reason": "Player #11 in white shoots a free throw at 00:06.5-00:07.0, and the ball goes through the basket cleanly around 00:08.0.",
+              "expert_review_required": false,
+              "event_time": 8.0,
+              "phase1_event_time": 8.0,
+              "team": "white",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "free_throw_made",
+              "score": 0.95,
+              "reason": "Player #11 in white shoots a free throw at 00:06.5-00:07.0, and the ball goes through the basket cleanly around 00:08.0.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 5,
+      "clip": "evals/iterations/gemini-development-media/w5-continuous.mp4",
+      "source_offset": 974,
+      "media_sha256": "e9f4ba912798f1ffffd0c98cd66b894a09b1f9d57cc28316d07e612fc810a9ba",
+      "core": [
+        976,
+        984
+      ],
+      "recipe": {
+        "id": "two_phase_w5",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; Campus wears yellow, Unlimited white."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "028741377a06653851bceb1604fcc74e6ab43a0fc43c8ba726fdceb7e905fb0e",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W5",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\":null,\"subject_present\":false,\"confidence\":0.9,\"reason\":\"Whistle blows on a drive/foul or turnover at 00:04, ball becomes dead and players stand around setting up free throws or inbound; no field goal attempt made.\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": null,
+              "subject_present": false,
+              "confidence": 0.9,
+              "reason": "Whistle blows on a drive/foul or turnover at 00:04, ball becomes dead and players stand around setting up free throws or inbound; no field goal attempt made.",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [],
+          "proposed_duration": 0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 2.0,
+              "end": 10.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "028741377a06653851bceb1604fcc74e6ab43a0fc43c8ba726fdceb7e905fb0e",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W5",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\n      \"moment_type\": \"two_point_miss\",\n      \"time_seconds\": 6.2,\n      \"team\": null,\n      \"subject_present\": true,\n      \"confidence\": 0.8,\n      \"reason\": \"Player in white attempts a shot inside the arc near the basket that misses/deflected and ball goes out of play/foul whistle blown\"\n    }\n  ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "028741377a06653851bceb1604fcc74e6ab43a0fc43c8ba726fdceb7e905fb0e",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W5",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"potential_event\",\"moment_type\":\"two_point_miss\",\"time_seconds\":6.2,\"team\":null,\"subject_present\":true,\"confidence\":0.6,\"reason\":\"Around 00:04 - 00:06 a shot attempt occurs near the basket by a player driving in, but the ball/rim interaction is heavily occluded by defenders and people in the background, making it ambiguous whether a two-point miss, foul, or other outcome occurred without clear referee signals.\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.49,
+              "reason": "Player in white attempts a shot inside the arc near the basket that misses/deflected and ball goes out of play/foul whistle blown",
+              "decision": "potential_event",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "Around 00:04 - 00:06 a shot attempt occurs near the basket by a player driving in, but the ball/rim interaction is heavily occluded by defenders and people in the background, making it ambiguous whether a two-point miss, foul, or other outcome occurred without clear referee signals.",
+              "expert_review_required": true,
+              "event_time": 6.2,
+              "phase1_event_time": 6.2,
+              "team": null,
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [
+            {
+              "candidate_index": 0,
+              "start": 2.0,
+              "end": 10.0,
+              "proposed_label": "two_point_miss",
+              "confidence": 0.49,
+              "uncertainty_reason": "Around 00:04 - 00:06 a shot attempt occurs near the basket by a player driving in, but the ball/rim interaction is heavily occluded by defenders and people in the background, making it ambiguous whether a two-point miss, foul, or other outcome occurred without clear referee signals.",
+              "review_status": "pending",
+              "expert_review_required": true
+            }
+          ],
+          "selected_clips": [],
+          "proposed_duration": 0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 6,
+      "clip": "evals/iterations/gemini-human-review-034/media/w6-action-complete.mp4",
+      "source_offset": 1314,
+      "media_sha256": "6d1c4df2201a11b369b35b2b35a62718cb768bbe012f3b05ca2e51dfea17061d",
+      "core": [
+        1316,
+        1325
+      ],
+      "recipe": {
+        "id": "two_phase_w6",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; Campus wears yellow, Unlimited white."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 11.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "604ee4424f2c01f27acf94298d3604a920a58fe2eac2c4adec1d4cd725d10313",
+                "source_start": 0,
+                "duration": 13.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W6",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": \"three_point_miss\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"White team #11 attempts a three-point shot from the corner around 00:05.500 which visibly misses off the rim around 00:08.500-00:09.000.\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "three_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "White team #11 attempts a three-point shot from the corner around 00:05.500 which visibly misses off the rim around 00:08.500-00:09.000.",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 13.0,
+              "moment_type": "three_point_miss",
+              "score": 0.85,
+              "reason": "White team #11 attempts a three-point shot from the corner around 00:05.500 which visibly misses off the rim around 00:08.500-00:09.000.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 13.0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            },
+            {
+              "start": 2.0,
+              "end": 11.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 11.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "604ee4424f2c01f27acf94298d3604a920a58fe2eac2c4adec1d4cd725d10313",
+                "source_start": 0,
+                "duration": 13.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W6",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\"moment_type\": \"turnover\", \"time_seconds\": 3.8, \"team\": \"away\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Yellow dribbler loses the ball in the lane amidst white defenders.\"},\n    {\"moment_type\": \"steal\", \"time_seconds\": 4.2, \"team\": \"home\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"White team gathers the loose ball and starts a fast break.\"},\n    {\"moment_type\": \"two_point_miss\", \"time_seconds\": 6.2, \"team\": \"home\", \"subject_present\": true, \"confidence\": 0.8, \"reason\": \"White player in transition attempts a contested layup/shot that misses.\"},\n    {\"moment_type\": \"offensive_rebound\", \"time_seconds\": 7.5, \"team\": \"home\", \"subject_present\": true, \"confidence\": 0.75, \"reason\": \"White trailing player secures the rebound near the basket.\"},\n    {\"moment_type\": \"two_point_miss\", \"time_seconds\": 8.8, \"team\": \"home\", \"subject_present\": true, \"confidence\": 0.9, \"reason\": \"White player attempts a putback close to the rim that misses off the rim/backboard.\"},\n    {\"moment_type\": \"defensive_rebound\", \"time_seconds\": 10.5, \"team\": \"away\", \"subject_present\": true, \"confidence\": 0.75, \"reason\": \"Yellow team player gains possession off the missed putback.\"}\n  ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 11.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "604ee4424f2c01f27acf94298d3604a920a58fe2eac2c4adec1d4cd725d10313",
+                "source_start": 0,
+                "duration": 13.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W6",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"turnover\",\"time_seconds\":3.8,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"The Campus ball handler loses control when intercepted/stripped around 00:03.8.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"steal\",\"time_seconds\":4.2,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited player steals the loose ball and breaks forward in transition around 00:04.2.\"},{\"event_id\":\"w0e2\",\"status\":\"confirmed\",\"moment_type\":\"two_point_miss\",\"time_seconds\":6.2,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.9,\"reason\":\"Unlimited player in white shoots a contested layup around 00:06.0 - 00:06.5 that misses off the rim.\"},{\"event_id\":\"w0e3\",\"status\":\"confirmed\",\"moment_type\":\"offensive_rebound\",\"time_seconds\":7.5,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited team player grabs the offensive rebound around 00:07.5 under the hoop.\"},{\"event_id\":\"w0e4\",\"status\":\"confirmed\",\"moment_type\":\"two_point_miss\",\"time_seconds\":8.8,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited player puts up a second shot attempt in the paint that misses off the rim around 00:08.8.\"},{\"event_id\":\"w0e5\",\"status\":\"confirmed\",\"moment_type\":\"defensive_rebound\",\"time_seconds\":10.5,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Campus player secures the defensive rebound and clears it upcourt around 00:10.5.\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "turnover",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "The Campus ball handler loses control when intercepted/stripped around 00:03.8.",
+              "decision": "confirmed",
+              "phase1_moment_type": "turnover",
+              "verification_reason": "The Campus ball handler loses control when intercepted/stripped around 00:03.8.",
+              "expert_review_required": true,
+              "event_time": 3.8,
+              "phase1_event_time": 3.8,
+              "team": "away",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "steal",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Unlimited player steals the loose ball and breaks forward in transition around 00:04.2.",
+              "decision": "confirmed",
+              "phase1_moment_type": "steal",
+              "verification_reason": "Unlimited player steals the loose ball and breaks forward in transition around 00:04.2.",
+              "expert_review_required": false,
+              "event_time": 4.2,
+              "phase1_event_time": 4.2,
+              "team": "home",
+              "event_id": "w0e1",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.9,
+              "reason": "Unlimited player in white shoots a contested layup around 00:06.0 - 00:06.5 that misses off the rim.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "Unlimited player in white shoots a contested layup around 00:06.0 - 00:06.5 that misses off the rim.",
+              "expert_review_required": false,
+              "event_time": 6.2,
+              "phase1_event_time": 6.2,
+              "team": "home",
+              "event_id": "w0e2",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "offensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Unlimited team player grabs the offensive rebound around 00:07.5 under the hoop.",
+              "decision": "confirmed",
+              "phase1_moment_type": "offensive_rebound",
+              "verification_reason": "Unlimited team player grabs the offensive rebound around 00:07.5 under the hoop.",
+              "expert_review_required": false,
+              "event_time": 7.5,
+              "phase1_event_time": 7.5,
+              "team": "home",
+              "event_id": "w0e3",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "two_point_miss",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Unlimited player puts up a second shot attempt in the paint that misses off the rim around 00:08.8.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_miss",
+              "verification_reason": "Unlimited player puts up a second shot attempt in the paint that misses off the rim around 00:08.8.",
+              "expert_review_required": false,
+              "event_time": 8.8,
+              "phase1_event_time": 8.8,
+              "team": "home",
+              "event_id": "w0e4",
+              "source_window_index": 0
+            },
+            {
+              "moment_type": "defensive_rebound",
+              "subject_present": true,
+              "confidence": 0.85,
+              "reason": "Campus player secures the defensive rebound and clears it upcourt around 00:10.5.",
+              "decision": "confirmed",
+              "phase1_moment_type": "defensive_rebound",
+              "verification_reason": "Campus player secures the defensive rebound and clears it upcourt around 00:10.5.",
+              "expert_review_required": false,
+              "event_time": 10.5,
+              "phase1_event_time": 10.5,
+              "team": "away",
+              "event_id": "w0e5",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 13.0,
+              "moment_type": "two_point_miss",
+              "score": 0.9,
+              "reason": "Unlimited player in white shoots a contested layup around 00:06.0 - 00:06.5 that misses off the rim.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 13.0
+        }
+      },
+      "baseline_reused_from": "038"
+    },
+    {
+      "index": 7,
+      "clip": "evals/iterations/gemini-development-media/w7-continuous.mp4",
+      "source_offset": 2376,
+      "media_sha256": "e92e90a398d4337dd510b609801e7f0476cabe68d275b914b27913904e4cb3d6",
+      "core": [
+        2378,
+        2386
+      ],
+      "recipe": {
+        "id": "two_phase_w7",
+        "name": "All basketball events",
+        "domain": "basketball",
+        "highlight_model": "event_based",
+        "description": "",
+        "moment_types": [
+          {
+            "name": "two_point_made",
+            "description": "A two-point field-goal attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "two_point_miss",
+            "description": "A two-point field-goal attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_made",
+            "description": "A shot from beyond the three-point arc visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "three_point_miss",
+            "description": "A shot from beyond the three-point arc visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_made",
+            "description": "A free-throw attempt visibly scores.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "free_throw_miss",
+            "description": "A free-throw attempt visibly misses.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "offensive_rebound",
+            "description": "The shooting team gains control after its missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "defensive_rebound",
+            "description": "The defending team gains control after an opponent missed shot.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "steal",
+            "description": "A defender intercepts or disrupts opponent possession and gains team control.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "turnover",
+            "description": "A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "block",
+            "description": "A defender visibly deflects an opponent shot attempt.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "assist",
+            "description": "A pass directly leads to a teammate made field goal; both pass and made shot must be supported.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "made_field_goal",
+            "description": "A visibly made field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          },
+          {
+            "name": "missed_field_goal",
+            "description": "A visibly missed field goal with unknown point value.",
+            "weight": 1.0,
+            "ideal_len": 8.0
+          }
+        ],
+        "scoring_rubric": null,
+        "signals": [
+          {
+            "type": "vision_classify",
+            "role": "scorer",
+            "weight": 1.0,
+            "enabled": true,
+            "enabled_if": null,
+            "params": {}
+          }
+        ],
+        "subject_selector": {
+          "type": "none",
+          "value": null,
+          "team_color": null,
+          "audience": "team",
+          "description": "Both teams; Campus wears yellow, Unlimited white."
+        },
+        "selection": {
+          "max_duration": 60.0,
+          "min_clip": 4.0,
+          "max_clip": 15.0,
+          "lead_in": 2.0,
+          "lead_out": 2.0,
+          "min_score": 0.5,
+          "ordering": "chronological",
+          "coverage": null,
+          "dedup_overlap": true,
+          "min_gap_seconds": 0.0
+        },
+        "style": {
+          "transitions": "hard_cut",
+          "audio": "keep_original",
+          "overlays": [],
+          "format": "16:9",
+          "platform": "local"
+        },
+        "guardrails": {
+          "never_include": [],
+          "privacy": null,
+          "grounding": null
+        },
+        "acceptance": []
+      },
+      "arms": {
+        "single_pass": {
+          "calls": [
+            {
+              "metadata": {
+                "kind": "native_video",
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "9e8ee5b75bb18f0a6aa653c9189209973e280c9acf9448fa07fd31927430d91c",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "iteration": "038",
+                "window_id": "W7",
+                "arm": "single_pass"
+              },
+              "raw_text": "{\"moment_type\": \"two_point_made\", \"subject_present\": true, \"confidence\": 0.95, \"reason\": \"Unlimited (white) drives into the paint and makes a two-point field goal, score updates to 38-30.\"}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Unlimited (white) drives into the paint and makes a two-point field goal, score updates to 38-30.",
+              "decision": null,
+              "phase1_moment_type": null,
+              "verification_reason": "",
+              "expert_review_required": false
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "two_point_made",
+              "score": 0.95,
+              "reason": "Unlimited (white) drives into the paint and makes a two-point field goal, score updates to 38-30.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        },
+        "two_phase": {
+          "candidates": [
+            {
+              "start": 2.0,
+              "end": 10.0,
+              "signal_scores": {}
+            }
+          ],
+          "calls": [
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "9e8ee5b75bb18f0a6aa653c9189209973e280c9acf9448fa07fd31927430d91c",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_discovery",
+                "iteration": "040",
+                "window_id": "W7",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\n  \"events\": [\n    {\"moment_type\": \"two_point_made\", \"time_seconds\": 8.5, \"team\": \"Unlimited\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Unlimited player in white drives to the basket and scores a layup; the ball drops through and scoreboard updates to 38-30.\"}\n  ]\n}"
+            },
+            {
+              "metadata": {
+                "window_index": 0,
+                "window": {
+                  "start": 2.0,
+                  "end": 10.0,
+                  "signal_scores": {}
+                },
+                "video_sha256": "9e8ee5b75bb18f0a6aa653c9189209973e280c9acf9448fa07fd31927430d91c",
+                "source_start": 0,
+                "duration": 12.0,
+                "fps": 4,
+                "contract": "temporal_events_v1",
+                "kind": "temporal_verification",
+                "iteration": "040",
+                "window_id": "W7",
+                "arm": "two_phase"
+              },
+              "raw_text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"two_point_made\",\"time_seconds\":8.5,\"team\":\"Unlimited\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Around 00:08 - 00:09, the Unlimited player in white drives inside the key and makes a layup/short two-point shot which successfully drops through the basket, and the scoreboard updates to 38-30.\"}]}"
+            }
+          ],
+          "classifications": [
+            {
+              "moment_type": "two_point_made",
+              "subject_present": true,
+              "confidence": 0.95,
+              "reason": "Around 00:08 - 00:09, the Unlimited player in white drives inside the key and makes a layup/short two-point shot which successfully drops through the basket, and the scoreboard updates to 38-30.",
+              "decision": "confirmed",
+              "phase1_moment_type": "two_point_made",
+              "verification_reason": "Around 00:08 - 00:09, the Unlimited player in white drives inside the key and makes a layup/short two-point shot which successfully drops through the basket, and the scoreboard updates to 38-30.",
+              "expert_review_required": false,
+              "event_time": 8.5,
+              "phase1_event_time": 8.5,
+              "team": "Unlimited",
+              "event_id": "w0e0",
+              "source_window_index": 0
+            }
+          ],
+          "review_queue": [],
+          "selected_clips": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "moment_type": "two_point_made",
+              "score": 0.95,
+              "reason": "Around 00:08 - 00:09, the Unlimited player in white drives inside the key and makes a layup/short two-point shot which successfully drops through the basket, and the scoreboard updates to 38-30.",
+              "subject_present": true
+            }
+          ],
+          "proposed_duration": 12.0
+        }
+      },
+      "baseline_reused_from": "038"
+    }
+  ],
+  "elapsed_seconds": 141.1174102909863,
+  "ended_at": "2026-09-15T14:18:13.400015+00:00",
+  "spend_after_usd": 9.690163875000044,
+  "incremental_estimated_spend_usd": 0.14453924999999934
+}

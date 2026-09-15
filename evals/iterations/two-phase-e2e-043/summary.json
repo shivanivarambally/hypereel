@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "043",
+  "kind": "frame_rate_ablation",
+  "fps": 8,
+  "fps_baseline": 4,
+  "windows": [
+    1,
+    4,
+    5
+  ],
+  "baseline_reused_from": "038",
+  "video_calls": 6,
+  "provider_errors": 0,
+  "spend_before_usd": 9.693852375,
+  "incremental_estimated_spend_usd": 0.1202475,
+  "spend_after_usd": 9.814099875,
+  "remaining_headroom_usd": 1.378195,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "tests": {
+    "passed": 443,
+    "skipped": 4
+  },
+  "scope": "4 reviewed positive labels in W1/W4/W5",
+  "discovery_4fps_041": {
+    "tp": 1,
+    "fp": 2,
+    "fn": 3,
+    "f1": 0.2857142857142857
+  },
+  "discovery_8fps_043": {
+    "tp": 1,
+    "fp": 2,
+    "fn": 3,
+    "f1": 0.2857142857142857
+  },
+  "hypothesis": "4 fps (250ms) cannot resolve ball-through-net (~200ms); 8 fps recovers outcome discrimination",
+  "hypothesis_supported": false,
+  "findings": [
+    "Doubling fps changed zero scored labels at every stage.",
+    "fps does improve confidence and coverage: W5 two_point_miss 0.49->0.85, moved from review queue to auto-confirmed, and a second event (offensive_rebound) was recovered.",
+    "W4 free_throw_made persists at 0.90 across two frame rates with a specific claim (ball through basket at 08.7s); single-pass control and reference both say miss.",
+    "W1 now contradicted by four independent runs across two pipeline designs and two frame rates."
+  ],
+  "next_action": {
+    "step": "human re-adjudication of W1 and W4 reference labels",
+    "cost_usd": 0.0,
+    "rationale": "two of four labels in this subset are contradicted by every run ever made against them; no further tuning is decidable until resolved"
+  }
+}

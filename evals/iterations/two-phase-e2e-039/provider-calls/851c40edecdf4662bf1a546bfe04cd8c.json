@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-09-15T13:55:33.965986+00:00",
+  "status": "completed",
+  "reserved_usd": 0.03066625,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "kind": "native_video_verification",
+    "window_index": 0,
+    "proposed_label": "two_point_miss",
+    "window": {
+      "start": 2.0,
+      "end": 10.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "ba8d76b2dc7c51eeb911023378c7b78a1c48857bc66a4e48372c0564837b95c7",
+    "source_start": 0,
+    "duration": 12.0,
+    "fps": 4,
+    "iteration": "039",
+    "window_id": "W4",
+    "arm": "two_phase"
+  },
+  "prompt": [
+    "Act as a strict verification pass for ordered candidate-action frames from a basketball video.\nThe first pass proposed: 'two_point_miss'. Allowed labels are: two_point_made, two_point_miss, three_point_made, three_point_miss, free_throw_made, free_throw_miss, offensive_rebound, defensive_rebound, steal, turnover, block, assist, made_field_goal, missed_field_goal.\nReject it unless the ordered frames directly establish the proposed event.\nDo not infer from a scoreboard, player reaction, or possession change alone. If the visual evidence does not prove the proposal, return moment_type=null. Do not substitute a different event label.\nRespond with STRICT JSON only in this shape:\n{\"moment_type\": <the proposed string or null>, \"subject_present\": <true|false>, \"confidence\": <number 0..1>, \"reason\": <short evidence-based string>}\nYou are receiving continuous video. Clip00:00 is source0s; the candidate interval is [2.0,10.0] source seconds. Follow the complete action.\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\n\nIf visible evidence contradicts the proposal, return moment_type=null and begin reason with REJECTED:. If the proposal remains plausible but evidence is incomplete or occluded, return moment_type=null and begin reason with UNCERTAIN:. Confirm only the proposed label; do not substitute another event. An off-camera basket or hidden ball outcome is UNCERTAIN, not a visible contradiction. Explain the observed opposite outcome when rejecting. If a statistical rule depends on an unclear foul or referee call, use UNCERTAIN so a basketball expert can review it."
+  ],
+  "token_preflight": {
+    "totalTokens": 13852,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 556
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"moment_type\": null,\n \"subject_present\": true,\n \"confidence\": 0.95,\n \"reason\": \"REJECTED: The action shown is a free throw attempt by the player in white (#11), not a two-point field goal attempt.\"\n}",
+              "thoughtSignature": "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"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13228,
+      "candidatesTokenCount": 64,
+      "totalTokenCount": 13804,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 556
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "thoughtsTokenCount": 512,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "V06pasXDO6HnjuMP7s3BoAQ"
+  },
+  "estimated_cost_usd": 0.012081,
+  "elapsed_seconds": 7.097517166985199
+}

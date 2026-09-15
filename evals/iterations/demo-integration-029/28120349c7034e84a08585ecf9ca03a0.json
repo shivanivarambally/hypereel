@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-09-15T12:15:46.318848+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0337459375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "034",
+    "window_id": "W2",
+    "input": "revised_action_complete"
+  },
+  "prompt": [
+    "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 754 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [756,767], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed."
+  ],
+  "token_preflight": {
+    "totalTokens": 17137,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 247
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 16409
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 481
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":760.75,\"confidence\":0.85,\"evidence\":\"Player in light blue jersey strips the ball away from the ball-handler leading to a fast break.\"},{\"label\":\"turnover\",\"time_seconds\":760.75,\"confidence\":0.85,\"evidence\":\"Ball-handler loses possession due to a steal by the defender in light blue.\"},{\"label\":\"assist\",\"time_seconds\":763.5,\"confidence\":0.8,\"evidence\":\"Player passes ahead on fast break leading to a layup.\"},{\"label\":\"two_point_made\",\"time_seconds\":766.0,\"confidence\":0.9,\"evidence\":\"Player in light blue makes a layup at the basket.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPCIdKOua8ZblxGloJacMY4SawWsmyEXDdmIkBJl1kSSEnPCUCFUNuopfuOHU+4j1i+tWtdbruPZnvyCuscjJRsC5sVN/YHqbBxpez67s7khZLxqGa+rP499W68II9imGe"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 16087,
+      "candidatesTokenCount": 162,
+      "totalTokenCount": 16249,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 15840
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 247
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "8zapapfMI5nIjuMPt8ye8QQ"
+  },
+  "estimated_cost_usd": 0.01267275,
+  "elapsed_seconds": 6.64811304101022
+}

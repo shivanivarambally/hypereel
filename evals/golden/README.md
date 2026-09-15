@@ -4,6 +4,8 @@ This directory is the canonical, versioned development reference set for
 HypeReel. It follows the course-kit pattern of keeping pristine expected data
 separate from generated experiment outputs.
 
+**Detection versus selection:** all 462 rows retain source annotations in `source_event_type` and `source_outcome`. Only 100 rows have a non-null `expected_moment_type`, because that field encodes the original highlight-selection target. Null there does not mean “no basketball event.” Use [the full-source scorer](../../scripts/score_against_golden.py) for detection. Later human observations live separately under `revisions/` and `../adjudication/`; keep their provenance and disagreements with source annotations explicit.
+
 ## Layout
 
 ```text

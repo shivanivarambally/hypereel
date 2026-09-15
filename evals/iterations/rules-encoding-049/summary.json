@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "049",
+  "kind": "rules_encoding_and_w1_test",
+  "fps": 8,
+  "windows": [
+    1
+  ],
+  "video_calls": 2,
+  "incremental_estimated_spend_usd": 0.0436155,
+  "spend_after_usd": 10.792267875,
+  "remaining_headroom_usd": 0.400027,
+  "session_total_043_to_049_usd": 1.1984157,
+  "tests": {
+    "passed": 457,
+    "skipped": 4,
+    "new": 14
+  },
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "rag_decision": {
+    "built": false,
+    "reason": "rule set is one page and closed; retrieval adds a failure mode (missing the free-throw rule on a free-throw window) for no gain over a constant string; model was not ignorant of the rules, it confabulated from visual ambiguity"
+  },
+  "rules_verified_against": [
+    "NBA.com Stat Glossary",
+    "NBA Rule 9",
+    "NBA Rule 6",
+    "NBA Rule 4"
+  ],
+  "correction_to_draft": "earlier draft said uncontrolled recovery gives 'jump ball or alternating-possession throw-in'; NBA uses a jump ball and has no possession arrow. Alternating possession is NFHS/FIBA. Owner's original statement was correct.",
+  "league_caveat": "footage is amateur/club (likely NFHS or FIBA); R3 is NBA-specific, R1/R2/R4/R5 consistent across codes",
+  "w1_result": {
+    "before_8_runs": "field goal miss (two_point_miss x7, three_point_miss x1) + defensive_rebound",
+    "after_049": "free_throw_miss + defensive_rebound",
+    "shot_type": "FIXED - verifier corrected phase1 three_point_miss to free_throw_miss, citing the foul line and players lined along the key",
+    "outcome": "STILL WRONG - asserts rim contact and a miss at 0.95; truth is a made free throw",
+    "interpretation": "model moved from an incoherent story to a self-consistent but wrong one"
+  },
+  "validator_behaviour": {
+    "on_049_output": "R1 review (legal if final attempt)",
+    "on_truth_shape": "R1 illegal (rebound after made free throw is an inbound)",
+    "limit": "rules reject impossible combinations; they cannot detect a plausible sequence built on a misread outcome"
+  },
+  "hypothesis_update": "Original theory (saw catch -> inferred rebound -> back-inferred miss) is weakened: naming the free throw did not remove the miss. Model asserts positive rim contact, so it is likely misreading the rim interaction directly. Consistent with W4 verifier reporting the hoop is occluded from this camera.",
+  "next_action": {
+    "step": "human check whether rim/net are visible at ~2.0s in the W1 excerpt",
+    "cost_usd": 0.0,
+    "then": "re-run full set with rules enabled (~$0.19); wire validate_sequence into the graph as a review gate"
+  }
+}

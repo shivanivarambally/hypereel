@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "inference_source": "fresh 038 W2 two-phase classifications",
+  "initial_gate": "approve_clips",
+  "final_gate": "approve_share",
+  "output_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-038/render/reel_two_phase_e2e_038_render.mp4",
+  "selected_clips": [
+    {
+      "start": 0.0,
+      "end": 15.0,
+      "moment_type": "two_point_made",
+      "score": 0.85,
+      "reason": "The blue team steals the ball and passes ahead to a teammate who makes a two-point layup, with the ball passing through the net and the black team taking it out of bounds to inbound.",
+      "subject_present": true
+    }
+  ],
+  "summary": "Here's a short, upbeat highlight-reel summary for the clip:\n\n**\"Count it! \ud83c\udfc0 Quick, sharp execution leads straight to the hoop for a clean two-point finish!\"**",
+  "ffprobe": {
+    "format": {
+      "duration": "15.000000",
+      "size": "8607739"
+    }
+  },
+  "download_visible": true,
+  "shared": false,
+  "notes": [
+    "select: 1 clip(s) chosen, 15.0s of 15.0s budget (ready for review)",
+    "judge[gemini]: verdict=accept score=0.8 llm_action=none -> action=none (clips=1, confirmed=1) \u2014 The reel fully utilizes the 15-second budget with a confirmed, high-scoring transition basket.",
+    "rendered 1 clips with 'hard_cut' transitions.",
+    "render: output at /Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-038/render/reel_two_phase_e2e_038_render.mp4",
+    "summarize: generated with 'gemini' provider"
+  ]
+}

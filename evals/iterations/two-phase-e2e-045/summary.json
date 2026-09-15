@@ -1,0 +1,61 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "045",
+  "kind": "fixed_verifier_full_set",
+  "fps": 8,
+  "windows": "all",
+  "baseline_reused_from": "038",
+  "video_calls": 13,
+  "provider_errors": 0,
+  "spend_before_usd": 9.904063875,
+  "incremental_estimated_spend_usd": 0.2735783,
+  "spend_after_usd": 10.177642175,
+  "remaining_headroom_usd": 1.014653,
+  "session_total_043_044_045_usd": 0.4837898,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "tests": {
+    "passed": 443,
+    "skipped": 4
+  },
+  "scope": "W1-W5, 6 reviewed positive labels",
+  "single_pass": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 4,
+    "f1": 0.5
+  },
+  "discovery": {
+    "tp": 4,
+    "fp": 1,
+    "fn": 2,
+    "precision": 0.8,
+    "recall": 0.667,
+    "f1": 0.727
+  },
+  "confirmed": {
+    "tp": 4,
+    "fp": 1,
+    "fn": 2,
+    "precision": 0.8,
+    "recall": 0.667,
+    "f1": 0.727
+  },
+  "selected": {
+    "tp": 4,
+    "fp": 1,
+    "fn": 2,
+    "f1": 0.727
+  },
+  "beats_single_pass_baseline": true,
+  "verifier_independent_reasons": 0,
+  "verifier_echoed": 11,
+  "CONFOUND": "Discovery output changed between runs although discovery was not modified. W4 flipped free_throw_made (040/041/043/044) -> free_throw_miss (045); W1 shot type two_point_miss -> three_point_miss; W5 second event offensive_rebound -> defensive_rebound. Run-to-run variance is at least one event on 3 of 5 scored windows, comparable in size to the measured gain. 0.545->0.727 cannot be cleanly attributed to the verifier fix.",
+  "attribution_evidence": "The only direct demonstration that the fixed verifier can reject a false proposal is 044 (W4 routed to potential_event with independent reasoning). In 045 the verifier echoed all 11 classifications because discovery left nothing to catch.",
+  "next_action": {
+    "step": "repeat 045 with no changes to estimate variance before any further comparison",
+    "estimated_cost_usd": "0.27 per repeat; ~0.35 if restricted to W1/W4/W5",
+    "rationale": "variance is now the binding constraint, not any model change"
+  }
+}

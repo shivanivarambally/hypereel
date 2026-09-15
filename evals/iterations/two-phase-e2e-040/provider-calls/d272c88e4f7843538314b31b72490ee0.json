@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-09-15T14:17:40.454675+00:00",
+  "status": "completed",
+  "reserved_usd": 0.031920625,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 11.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "604ee4424f2c01f27acf94298d3604a920a58fe2eac2c4adec1d4cd725d10313",
+    "source_start": 0,
+    "duration": 13.0,
+    "fps": 4,
+    "contract": "temporal_events_v1",
+    "kind": "temporal_verification",
+    "iteration": "040",
+    "window_id": "W6",
+    "arm": "two_phase"
+  },
+  "prompt": [
+    "PHASE 2: Independently inspect the continuous video to verify EVERY proposed event ID. Proposals are fallible hypotheses, not evidence. Follow ball and team possession in order. Confirm only when the defining action/outcome is visible. Correct the label if this SAME action is visibly another rubric event (e.g. free throw rather than field goal). Never replace a proposal with an unrelated event; keep its ID, adjust time by at most 2 seconds. Reject only on visible contradiction. Missing, off-camera, occluded or ambiguous evidence means potential_event, NOT rejected. Unknown point value may use a generic field-goal label. An unclear foul/referee/statistical ruling means potential_event for expert review. Do not add proposals or drop IDs. Explain concrete video evidence, not agreement with proposal. Rubric: {\"two_point_made\": \"A two-point field-goal attempt visibly scores.\", \"two_point_miss\": \"A two-point field-goal attempt visibly misses.\", \"three_point_made\": \"A shot from beyond the three-point arc visibly scores.\", \"three_point_miss\": \"A shot from beyond the three-point arc visibly misses.\", \"free_throw_made\": \"A free-throw attempt visibly scores.\", \"free_throw_miss\": \"A free-throw attempt visibly misses.\", \"offensive_rebound\": \"The shooting team gains control after its missed shot.\", \"defensive_rebound\": \"The defending team gains control after an opponent missed shot.\", \"steal\": \"A defender intercepts or disrupts opponent possession and gains team control.\", \"turnover\": \"A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\", \"block\": \"A defender visibly deflects an opponent shot attempt.\", \"assist\": \"A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\", \"made_field_goal\": \"A visibly made field goal with unknown point value.\", \"missed_field_goal\": \"A visibly missed field goal with unknown point value.\"}. Subject: {\"type\":\"none\",\"value\":null,\"team_color\":null,\"audience\":\"team\",\"description\":\"Both teams; Campus wears yellow, Unlimited white.\"}. Event times must be clip-relative seconds between 2.0 and 11.0. Proposals: [{\"event_id\": \"w0e0\", \"moment_type\": \"turnover\", \"time_seconds\": 3.8, \"team\": \"away\"}, {\"event_id\": \"w0e1\", \"moment_type\": \"steal\", \"time_seconds\": 4.2, \"team\": \"home\"}, {\"event_id\": \"w0e2\", \"moment_type\": \"two_point_miss\", \"time_seconds\": 6.2, \"team\": \"home\"}, {\"event_id\": \"w0e3\", \"moment_type\": \"offensive_rebound\", \"time_seconds\": 7.5, \"team\": \"home\"}, {\"event_id\": \"w0e4\", \"moment_type\": \"two_point_miss\", \"time_seconds\": 8.8, \"team\": \"home\"}, {\"event_id\": \"w0e5\", \"moment_type\": \"defensive_rebound\", \"time_seconds\": 10.5, \"team\": \"away\"}]. JSON only: {\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed|corrected|potential_event|rejected\",\"moment_type\":\"rubric_label\",\"time_seconds\":1.2,\"team\":null,\"subject_present\":true,\"confidence\":0.8,\"reason\":\"visible action and outcome evidence\"}]}"
+  ],
+  "token_preflight": {
+    "totalTokens": 15190,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 786
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13988
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 416
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"turnover\",\"time_seconds\":3.8,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"The Campus ball handler loses control when intercepted/stripped around 00:03.8.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"steal\",\"time_seconds\":4.2,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited player steals the loose ball and breaks forward in transition around 00:04.2.\"},{\"event_id\":\"w0e2\",\"status\":\"confirmed\",\"moment_type\":\"two_point_miss\",\"time_seconds\":6.2,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.9,\"reason\":\"Unlimited player in white shoots a contested layup around 00:06.0 - 00:06.5 that misses off the rim.\"},{\"event_id\":\"w0e3\",\"status\":\"confirmed\",\"moment_type\":\"offensive_rebound\",\"time_seconds\":7.5,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited team player grabs the offensive rebound around 00:07.5 under the hoop.\"},{\"event_id\":\"w0e4\",\"status\":\"confirmed\",\"moment_type\":\"two_point_miss\",\"time_seconds\":8.8,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Unlimited player puts up a second shot attempt in the paint that misses off the rim around 00:08.8.\"},{\"event_id\":\"w0e5\",\"status\":\"confirmed\",\"moment_type\":\"defensive_rebound\",\"time_seconds\":10.5,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.85,\"reason\":\"Campus player secures the defensive rebound and clears it upcourt around 00:10.5.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPbT9ZsC5eFvbRuIQcJZE4dowRA9ZKp37BQkYMYK5YJOqCnOfRn1VLr8IMAZYkI0869sP+mhH0b2409Iwxfjca5XDlM41QHJCFKAlOnipvBYXH1vq7Y2c6qxAIqip3smhI"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 14514,
+      "candidatesTokenCount": 441,
+      "totalTokenCount": 14955,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 13728
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 786
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "hlOpaob3OOvEg8UPnp3rKA"
+  },
+  "estimated_cost_usd": 0.01253925,
+  "elapsed_seconds": 8.166405291005503
+}

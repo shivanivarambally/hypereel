@@ -1,0 +1,39 @@
+{
+  "adjudicated_by": "human review (project owner)",
+  "date": "2026-09-15",
+  "W4": {
+    "reference": "free_throw_miss",
+    "verdict": "REFERENCE CORRECT",
+    "finding": "free throw does not go through the hoop",
+    "model_said": "free_throw_made in 040/041/043/044; free_throw_miss in 045/046/047; free_throw_made in 048",
+    "implication": "model correct in 3 of 4 post-fix runs; consensus resolves it correctly"
+  },
+  "W1": {
+    "reference": "free_throw_made",
+    "verdict": "REFERENCE CORRECT",
+    "finding": "free throw WAS made, roughly the middle of the 4.5s excerpt (~source 228.5-228.8s)",
+    "model_said": "missed field goal + defensive rebound in ALL 8 runs (038,040,041,043,045,046,047,048)",
+    "error_type": "SYSTEMATIC, not sampling variance",
+    "both_attributes_wrong": [
+      "shot type: field goal vs free throw",
+      "outcome: missed vs made"
+    ],
+    "model_event_time_file_relative": 1.875,
+    "human_event_time_file_relative": "~2.0-2.3",
+    "note": "model examines the correct moment and misreads both attributes",
+    "hypothesis": "rim plausibly occluded from this camera (cf. W4 verifier); model may read a player collecting the ball from under the net as a defensive rebound, then back-infer a miss",
+    "open_questions": [
+      "free-throw setup visible?",
+      "rim visible at ball-through?",
+      "player collecting ball from under basket after the make?"
+    ]
+  },
+  "consequence": {
+    "consensus_f1": 0.727,
+    "sensitivity_case_0.909": "RULED OUT - W1 reference stands",
+    "remaining_errors": [
+      "W1 systematic misread",
+      "W5 block never detected"
+    ]
+  }
+}

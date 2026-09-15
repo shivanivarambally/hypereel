@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-09-15T13:55:07.738504+00:00",
+  "status": "completed",
+  "reserved_usd": 0.013898125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 0.0s were selected:\n- two_point_miss (2.0-11.0s, score 0.20)"
+  ],
+  "token_preflight": {
+    "totalTokens": 62,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 62
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is an upbeat highlight-reel summary for the clip:\n\n**Game-Time Hustle!** \ud83c\udfc0\ud83d\udd25  \nThe pressure is on as the offense attacks the paint! From 2.0s to 11.0s, we see an aggressive drive and a hard-fought attempt inside. Even though the two-pointer rattles out, the relentless energy, defensive contest, and sheer hustle on the floor set an electric tone!",
+              "thoughtSignature": "ErkDCrYDARFNMg/C1eQf7oPvBDuSkNbSTNu5Xk9z3q1PEXdnWqFMBGSqYqOx8hjRziyqZDpqiFHdrkdCRHpTWzlKzvU24LKHihbDCCWMZ/DsJY+t0BXi+4lbhkPh6CjhxSFEtZvcv3RpJGlkA0vyQn0Ddpyy4oyuMcJxcMhtiF56qNabOnebhntENTD7zNi+vgEdgzzF94dvKY9Jq0yhG1KzfS5Fbk+u3+6HjkmW840SXkpXYfZZR9rjW/U4HEmx7oeimOyGfhC2T4Os9avn31nnJvrwlAiEb/MB8A8jeeIIqCX9sCfdfW/uSyyrVeQF8wWzm0xkRaFGnR7S/iLogzuGjJWd1YbSkqiOlFM2jC9w5jj93YDlNfrVliQ+HtkEvfoz1vxhrSwGs4nTvi4X16UDMf/tjbuybLVF0ch43/89MsTJYyCGuUPjULXorLB06uglurJHpqahyUo2VBTrBovTlBxHn85mmzFX78hFEqOv61Pot7gecl7I8RnBcopZC9IGrW8oSB27cS5YXcivWPIA4uTnpHXitpxm/wsBeRSrY9N6S0edLE71q7QA45/5w6edHPhSkLZGCGjx"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 62,
+      "candidatesTokenCount": 91,
+      "totalTokenCount": 261,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 62
+        }
+      ],
+      "thoughtsTokenCount": 108,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "PE6papKWCM6NjuMPxZ_KgQM"
+  },
+  "estimated_cost_usd": 0.00079275,
+  "elapsed_seconds": 4.465609832957853
+}

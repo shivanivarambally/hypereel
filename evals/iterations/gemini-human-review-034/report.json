@@ -1,0 +1,254 @@
+{
+  "name": "gemini-human-review-034",
+  "status": "completed",
+  "started_at": "2026-09-15T17:45:34.918734+05:30",
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingLevel": "LOW",
+    "mediaResolution": "HIGH",
+    "fps": 4
+  },
+  "annotation_revision": "evals/golden/revisions/development-human-review-v1.json",
+  "spend_before_usd": 8.992221375000051,
+  "holdout_used": false,
+  "calls": [
+    {
+      "index": 1,
+      "game": "east-bay-elite-vs-spartans",
+      "clip": "evals/iterations/gemini-development-media/w1-continuous.mp4",
+      "source_start": 221,
+      "core": [
+        221,
+        231
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "started_at": "2026-09-15T17:45:34.921463+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 221 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [221,231], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:45:44.624874+05:30",
+      "raw_text": "{\n \"events\": [\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"A player in a blue jersey (#3) shoots a free throw which misses the rim/board or rim bounce.\",\n   \"label\": \"free_throw_miss\",\n   \"time_seconds\": 228.25\n  },\n  {\n   \"confidence\": 0.85,\n   \"evidence\": \"A player in a black jersey (#24) secures the defensive rebound off the missed free throw.\",\n   \"label\": \"defensive_rebound\",\n   \"time_seconds\": 229.25\n  }\n ]\n}",
+      "events": [
+        {
+          "confidence": 0.8,
+          "evidence": "A player in a blue jersey (#3) shoots a free throw which misses the rim/board or rim bounce.",
+          "label": "free_throw_miss",
+          "time_seconds": 228.25,
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": "A player in a black jersey (#24) secures the defensive rebound off the missed free throw.",
+          "label": "defensive_rebound",
+          "time_seconds": 229.25,
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "game": "east-bay-elite-vs-spartans",
+      "clip": "evals/iterations/gemini-human-review-034/media/w2-action-complete.mp4",
+      "source_start": 754,
+      "source_end": 769,
+      "core": [
+        756,
+        767
+      ],
+      "input": "revised_action_complete",
+      "status": "completed",
+      "started_at": "2026-09-15T17:45:44.632637+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 754 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [756,767], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:45:52.970738+05:30",
+      "raw_text": "{\"events\":[{\"label\":\"steal\",\"time_seconds\":760.75,\"confidence\":0.85,\"evidence\":\"Player in light blue jersey strips the ball away from the ball-handler leading to a fast break.\"},{\"label\":\"turnover\",\"time_seconds\":760.75,\"confidence\":0.85,\"evidence\":\"Ball-handler loses possession due to a steal by the defender in light blue.\"},{\"label\":\"assist\",\"time_seconds\":763.5,\"confidence\":0.8,\"evidence\":\"Player passes ahead on fast break leading to a layup.\"},{\"label\":\"two_point_made\",\"time_seconds\":766.0,\"confidence\":0.9,\"evidence\":\"Player in light blue makes a layup at the basket.\"}]}",
+      "events": [
+        {
+          "label": "steal",
+          "time_seconds": 760.75,
+          "confidence": 0.85,
+          "evidence": "Player in light blue jersey strips the ball away from the ball-handler leading to a fast break.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "turnover",
+          "time_seconds": 760.75,
+          "confidence": 0.85,
+          "evidence": "Ball-handler loses possession due to a steal by the defender in light blue.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "assist",
+          "time_seconds": 763.5,
+          "confidence": 0.8,
+          "evidence": "Player passes ahead on fast break leading to a layup.",
+          "game_id": "east-bay-elite-vs-spartans"
+        },
+        {
+          "label": "two_point_made",
+          "time_seconds": 766.0,
+          "confidence": 0.9,
+          "evidence": "Player in light blue makes a layup at the basket.",
+          "game_id": "east-bay-elite-vs-spartans"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w3-continuous.mp4",
+      "source_start": 18,
+      "core": [
+        20,
+        28
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "started_at": "2026-09-15T17:45:52.973577+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 18 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [20,28], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:46:11.660392+05:30",
+      "raw_text": "{\n  \"events\": []\n}",
+      "events": []
+    },
+    {
+      "index": 4,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w4-continuous.mp4",
+      "source_start": 92,
+      "core": [
+        94,
+        102
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "started_at": "2026-09-15T17:46:11.663571+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 92 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [94,102], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:46:21.706052+05:30",
+      "raw_text": "{\"events\":[{\"label\":\"free_throw_miss\",\"time_seconds\":99.0,\"confidence\":0.8,\"evidence\":\"player in white #11 shoots a free throw and it does not result in a score (subsequent play/rebound setup follows or missed free throw)\"}]}",
+      "events": [
+        {
+          "label": "free_throw_miss",
+          "time_seconds": 99.0,
+          "confidence": 0.8,
+          "evidence": "player in white #11 shoots a free throw and it does not result in a score (subsequent play/rebound setup follows or missed free throw)",
+          "game_id": "unlimited-vs-campus"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w5-continuous.mp4",
+      "source_start": 974,
+      "core": [
+        976,
+        984
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "started_at": "2026-09-15T17:46:21.710053+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 974 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [976,984], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:46:29.932611+05:30",
+      "raw_text": "{\n  \"events\": [\n    {\"label\": \"two_point_miss\", \"time_seconds\": 978.75, \"confidence\": 0.85, \"evidence\": \"Player in white driving into the paint takes a contested shot near the rim that misses.\"},\n    {\"label\": \"offensive_rebound\", \"time_seconds\": 980.25, \"confidence\": 0.8, \"evidence\": \"Player in white grabs the offensive rebound under the basket.\"}\n  ]\n}",
+      "events": [
+        {
+          "label": "two_point_miss",
+          "time_seconds": 978.75,
+          "confidence": 0.85,
+          "evidence": "Player in white driving into the paint takes a contested shot near the rim that misses.",
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "label": "offensive_rebound",
+          "time_seconds": 980.25,
+          "confidence": 0.8,
+          "evidence": "Player in white grabs the offensive rebound under the basket.",
+          "game_id": "unlimited-vs-campus"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-human-review-034/media/w6-action-complete.mp4",
+      "source_start": 1314,
+      "source_end": 1327,
+      "core": [
+        1316,
+        1325
+      ],
+      "input": "revised_action_complete",
+      "status": "completed",
+      "started_at": "2026-09-15T17:46:29.935972+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 1314 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [1316,1325], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:46:39.824178+05:30",
+      "raw_text": "{\n \"events\": [\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"Yellow jersey player drives in, white jersey defender steals or deflects the ball leading to turnover around 00:03.500 (1317.500s).\",\n   \"label\": \"turnover\",\n   \"time_seconds\": 1317.5\n  },\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"White jersey player fast breaks and attempts a layup at 00:05.500 - 00:06.000 (1319.75s).\",\n   \"label\": \"two_point_miss\",\n   \"time_seconds\": 1319.75\n  },\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"Yellow player rebounds the missed layup around 00:07.500 (1321.5s).\",\n   \"label\": \"defensive_rebound\",\n   \"time_seconds\": 1321.5\n  },\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"Yellow player #5 attempts a contested shot near rim at 00:08.500 (1322.5s).\",\n   \"label\": \"two_point_miss\",\n   \"time_seconds\": 1322.5\n  },\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"Yellow player attempts putback/offensive rebound battle around 00:09.000 (1323.0s).\",\n   \"label\": \"offensive_rebound\",\n   \"time_seconds\": 1323.0\n  }\n ]\n}",
+      "events": [
+        {
+          "confidence": 0.8,
+          "evidence": "Yellow jersey player drives in, white jersey defender steals or deflects the ball leading to turnover around 00:03.500 (1317.500s).",
+          "label": "turnover",
+          "time_seconds": 1317.5,
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": "White jersey player fast breaks and attempts a layup at 00:05.500 - 00:06.000 (1319.75s).",
+          "label": "two_point_miss",
+          "time_seconds": 1319.75,
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": "Yellow player rebounds the missed layup around 00:07.500 (1321.5s).",
+          "label": "defensive_rebound",
+          "time_seconds": 1321.5,
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": "Yellow player #5 attempts a contested shot near rim at 00:08.500 (1322.5s).",
+          "label": "two_point_miss",
+          "time_seconds": 1322.5,
+          "game_id": "unlimited-vs-campus"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": "Yellow player attempts putback/offensive rebound battle around 00:09.000 (1323.0s).",
+          "label": "offensive_rebound",
+          "time_seconds": 1323.0,
+          "game_id": "unlimited-vs-campus"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w7-continuous.mp4",
+      "source_start": 2376,
+      "core": [
+        2378,
+        2386
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "started_at": "2026-09-15T17:46:39.827438+05:30",
+      "prompt": "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 2376 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [2378,2386], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed.",
+      "ended_at": "2026-09-15T17:46:45.850335+05:30",
+      "raw_text": "{\"events\":[{\"label\":\"made_field_goal\",\"time_seconds\":2385.75,\"confidence\":0.85,\"evidence\":\"The ball drops through the basket on the right court, scoring two points (indicated by scoreboard update to 38-30).\"}]}",
+      "events": [
+        {
+          "label": "made_field_goal",
+          "time_seconds": 2385.75,
+          "confidence": 0.85,
+          "evidence": "The ball drops through the basket on the right court, scoring two points (indicated by scoreboard update to 38-30).",
+          "game_id": "unlimited-vs-campus"
+        }
+      ]
+    }
+  ],
+  "ended_at": "2026-09-15T17:46:45.850888+05:30",
+  "elapsed_seconds": 70.8991335829487,
+  "spend_after_usd": 9.067744875000049,
+  "incremental_estimated_spend_usd": 0.07552349999999741
+}

@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "051",
+  "kind": "offline_diagnosis_and_per_class",
+  "inference_calls": 0,
+  "incremental_estimated_spend_usd": 0.0,
+  "ledger_unchanged_usd": 10.983116625,
+  "remaining_headroom_usd": 0.209178,
+  "tests": {
+    "passed": 459,
+    "skipped": 4
+  },
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "w2_assist_diagnosis": {
+    "verdict": "spec gap, not a model failure",
+    "phase1_anchor": "resulting basket, t=12.1",
+    "phase2_anchor": "the pass, t=8.7",
+    "gap_seconds": 3.4,
+    "guard": "parse_verification rejects shift >2s as 'Verifier substituted a different action time'",
+    "raw_json": "well-formed and marked confirmed; discarded on timestamp convention",
+    "tell": "phase 1 contradicted itself - reason described the pass at 08.7 while time_seconds said 12.1",
+    "root_cause": "discovery prompt names anchors for shots, possession changes and blocks but not assists, the one event spanning two separated moments",
+    "fix": "both prompts now state 'for an ASSIST anchor the moment of the PASS, not the resulting basket'; phase 2 told to use phase 1 anchors; regression test added",
+    "verified_live": false,
+    "scope": "assist is not in W2's reference set so cost no F1 in 050; generalises to any event spanning two moments; only visible because of the transition log"
+  },
+  "per_event_type": {
+    "note": "summed over 045/046/047/048/050; single-pass control is frozen 038 reused, zero variance by construction",
+    "two_phase_wins": {
+      "steal": "0/5 -> 5/5",
+      "missed_field_goal": "0/5 -> 5/5",
+      "mechanism": "windows containing more than one scorable event; single-pass emits one label per window so the second event was structurally unreachable"
+    },
+    "two_phase_loses": {
+      "free_throw_miss": "5/5 -> 3/5",
+      "mechanism": "W4 run-to-run instability; control is one fixed answer, two-phase re-samples and inverts twice in five"
+    },
+    "tie": {
+      "two_point_made": "5/5 both"
+    },
+    "neither_solves": {
+      "block": "0/5 both, never detected by any arm at any fps",
+      "free_throw_made": "0/5 both, W1 systematic misread against an unoccluded rim"
+    },
+    "two_phase_only_false_positives": {
+      "two_point_miss": 3,
+      "three_point_miss": 2,
+      "free_throw_made": 2,
+      "note": "all are W1's wrong shot labels"
+    },
+    "decomposition": "aggregate 0.500 -> 0.655 is +2 classes recovered, -1 degraded, 3 unchanged; a multi-event capability win offset by a single-event stability loss",
+    "recommendation": "prefer two-phase for windows expected to hold multiple events; consensus over repeats (0.727 deterministic) is the remedy for the stability loss at 4x inference"
+  },
+  "next_action": {
+    "step": "verify assist anchor live when budget allows (~$0.19); block is the only untouched recall failure and is unmeasurable with one reference instance",
+    "cost_usd": 0.19
+  }
+}

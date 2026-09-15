@@ -8,6 +8,19 @@ Added / Changed / Fixed / Verified bullets and the files touched.
 
 ---
 
+### 2026-09-16 00:39 IST — Publish temporal detection experiments and current evaluation evidence
+
+- Added multi-event discovery, optional verification, rules-assisted review, event provenance and overlapping-clip event metadata, plus regression tests and experiment records through 055.
+- Preserved source gold and separate human adjudications; added full-source detection scoring and offline audit 056.
+- Fixed scorer game identity, optional half-open boundaries and overwrite protection; reproduced 055's TP41/FP89/FN57 without paid calls.
+- Updated README, evaluation guides, handoff and run index; qualified broad accuracy and hallucination claims. Documented unresolved issues in [publication review](docs/REVIEW_2026-09-16.md).
+- Verified 461 passing tests, 4 skipped, 1 holdout test deselected; credentials and local runtime media excluded from publication. No extra model spend.
+
+### 2026-09-13T12:33:30+05:30 — Documentation currency audit
+
+Corrected README live-demo and capability descriptions; marked older project/design/evaluation notes as historical where appropriate. Added current submission and ledger pointers. No runtime changes or new accuracy claims. Detailed audit in evals/IMPLEMENTATION_NOTES.md.
+
+
 ### 2026-08-30 20:55 IST — Design doc: one-page overview infographic
 
 **Added** `design/overview.png` as an "at a glance" figure at the top of

@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "042",
+  "kind": "offline_rescore",
+  "inference_calls": 0,
+  "spend_incremental_usd": 0.0,
+  "ledger_unchanged_usd": 9.693852375000045,
+  "remaining_headroom_usd": 1.4984425,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "tests": {
+    "passed": 443,
+    "skipped": 4
+  },
+  "family_matcher_delta": "none; all stages scored identically to exact matching",
+  "findings": [
+    "Family/alias matching produced zero change: the index==5 hack already covered W5 and turnover was dropped as unadjudicated, not counted FP.",
+    "041 multi-label-per-clip closed the selection regression: selected F1 0.222 (040) -> 0.400 (041); selected now equals confirmed.",
+    "confirmed is the wrong headline: W5 is the only discovery/confirmed delta and it was correctly routed to human review at 0.49 confidence.",
+    "All remaining errors except block are made-versus-missed. W4 inverts a free-throw outcome at 0.95 confidence where single-pass was correct.",
+    "W1 needs re-adjudication: three independent runs describe missed FG + rebound against a free_throw_made reference."
+  ],
+  "next_experiment": {
+    "hypothesis": "4 fps (250ms interval) cannot resolve ball-through-net (~200ms); shot type survives, outcome inverts",
+    "design": "discovery-only re-run of W1/W4/W5 at higher fps, all else fixed",
+    "enabled_by": "gemini_video_fps setting added in 042",
+    "estimated_cost_usd": "0.08-0.12",
+    "authorized": false
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-09-15T18:35:27.456209+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0473303125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 12.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "4155ed5a1d015a928c520d3fef667e526af9e0b1681089005a4897c5ada7b092",
+    "source_start": 0,
+    "duration": 14.0,
+    "fps": 8,
+    "contract": "temporal_events_v1",
+    "kind": "temporal_discovery"
+  },
+  "prompt": [
+    "PHASE 1: Enumerate distinct basketball events in temporal order from continuous video. Optimize candidate recall: include visually plausible uncertain events; do not invent events merely because they usually follow another. Several labels may describe one possession (e.g. steal then shot, missed shot then rebound). Repeated attempts are separate events. Do not force one label per clip. Return an empty events array for no plausible event. Follow ball possession, release, flight, rim/net interaction, and next control across time. A rebound is not a steal. Shot outcome and point value are separate; use generic field-goal labels when available and value cannot be seen. Use null team when attribution is unclear. Do not infer a score from a delayed scoreboard or invent jersey identities. \nBasketball rules that constrain valid answers:\n- A rebound requires a shot that visibly MISSED and left the ball live. If you did not see the ball fail to go through the net, do not report a rebound.\n- After a MADE field goal or a MADE free throw the ball is dead. A player collecting the ball is inbounding it, NOT rebounding. Never report a rebound after a made shot.\n- A missed free throw is only reboundable if it was the final attempt of its set.\n- Offensive rebound means the rebounder is on the SAME team as the shooter; defensive rebound means the OPPOSING team. Decide by team, not by which end of the floor.\n- If neither team clearly controls the ball, report no rebound rather than guessing.\n- An assist requires a made field goal. Free throws are never assisted.\n- A steal and a turnover are one possession change seen from two sides; report one.\nSubject selection: {\"type\":\"none\",\"value\":null,\"team_color\":null,\"audience\":\"team\",\"description\":\"Both teams; East Bay Elite wears blue, Spartans black.\"}. Rubric: {\"two_point_made\": \"A two-point field-goal attempt visibly scores.\", \"two_point_miss\": \"A two-point field-goal attempt visibly misses.\", \"three_point_made\": \"A shot from beyond the three-point arc visibly scores.\", \"three_point_miss\": \"A shot from beyond the three-point arc visibly misses.\", \"free_throw_made\": \"A free-throw attempt visibly scores.\", \"free_throw_miss\": \"A free-throw attempt visibly misses.\", \"offensive_rebound\": \"The shooting team gains control after its missed shot.\", \"defensive_rebound\": \"The defending team gains control after an opponent missed shot.\", \"steal\": \"A defender intercepts or disrupts opponent possession and gains team control.\", \"turnover\": \"A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\", \"block\": \"A defender visibly deflects an opponent shot attempt.\", \"assist\": \"A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\", \"made_field_goal\": \"A visibly made field goal with unknown point value.\", \"missed_field_goal\": \"A visibly missed field goal with unknown point value.\"}. Only event anchors between 2.0 and 12.0 seconds relative to THIS supplied clip (00:00=0), not game clock. For shots anchor outcome; for possession changes anchor control; for blocks anchor contact; for an ASSIST anchor the moment of the PASS, not the resulting basket. Surrounding footage is context. Return at most 12 events. JSON only: {\"events\":[{\"moment_type\":\"rubric_label\",\"time_seconds\":1.2,\"team\":null,\"subject_present\":true,\"confidence\":0.7,\"reason\":\"visible evidence and any uncertainty\"}]}"
+  ],
+  "token_preflight": {
+    "totalTokens": 31627,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 781
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 30397
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 449
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"events\": [\n    {\"moment_type\": \"two_point_miss\", \"time_seconds\": 2.1, \"team\": \"Spartan\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Spartans player shoots from inside the arc and misses off the rim around 2.1s\"},\n    {\"moment_type\": \"defensive_rebound\", \"time_seconds\": 3.7, \"team\": \"EBE\", \"subject_present\": true, \"confidence\": 0.75, \"reason\": \"Blue team (EBE) gathers the loose ball rebound in the paint\"},\n    {\"moment_type\": \"turnover\", \"time_seconds\": 7.5, \"team\": \"EBE\", \"subject_present\": true, \"confidence\": 0.8, \"reason\": \"Loose ball in paint ends up tipped/passed straight to Spartan #44 who secures it\"},\n    {\"moment_type\": \"steal\", \"time_seconds\": 7.6, \"team\": \"Spartan\", \"subject_present\": true, \"confidence\": 0.8, \"reason\": \"Spartan #44 takes possession of the loose ball resulting from the turnover\"},\n    {\"moment_type\": \"turnover\", \"time_seconds\": 12.0, \"team\": \"Spartan\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"Spartans player throws an overhead outlet pass directly to the opposing player (EBE) downcourt around 11.5-12.0s\"},\n    {\"moment_type\": \"steal\", \"time_seconds\": 12.0, \"team\": \"EBE\", \"subject_present\": true, \"confidence\": 0.85, \"reason\": \"EBE player cleanly intercepts the long outlet pass\"}\n  ]\n}",
+              "thoughtSignature": "EmcKZQERTTIPaezpyaFhsLLcOmiu/KqGUIbSIP5DRNB2Q1jAcCJmSl75bL6fgqL3wBFPVD93ZgeCtxU7ysheFkOA7qatbSh1Y8yfnjcJqaSsQv29Bqxs1I+xA/oDkjBQS3qRykbeuetV"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 30349,
+      "candidatesTokenCount": 416,
+      "totalTokenCount": 30765,
+      "promptTokensDetails": [
+        {
+          "modality": "VIDEO",
+          "tokenCount": 29568
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 781
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "8I-papX-OL6P4-EPj9yc-AI"
+  },
+  "estimated_cost_usd": 0.02432175,
+  "elapsed_seconds": 10.62446345796343
+}

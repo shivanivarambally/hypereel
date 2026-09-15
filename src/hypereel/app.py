@@ -45,7 +45,8 @@ from hypereel.config import get_settings
 from hypereel.graph.build import build_graph
 from hypereel.graph.state import GATE_UNDERFILLED, new_state
 from hypereel.ingest.source_resolver import parse_video_quality
-from hypereel.models import Clip, Recipe
+from hypereel.models import Clip, PotentialEvent, Recipe
+from hypereel.review import apply_review_action
 from hypereel.observability import with_tracing
 from hypereel.providers.factory import get_llm_provider, get_vision_provider
 from hypereel.recipe import RecipeError, load_recipe
@@ -1173,6 +1174,9 @@ def _render_gate1(st, diagram_ph=None) -> None:
         cols[2].write(f"{clip.start:.1f}s – {clip.end:.1f}s ({clip.duration:.1f}s)")
         cols[3].write(f"score {clip.score:.2f}")
         cols[4].caption(clip.reason)
+        if clip.events:
+            st.caption("Detected events: " + "; ".join(
+                f"{e.moment_type} at {e.event_time:.1f}s" for e in clip.events))
         if preview_available:
             try:
                 preview = _clip_preview(str(source), clip.start, clip.end)
@@ -1182,14 +1186,61 @@ def _render_gate1(st, diagram_ph=None) -> None:
                 st.warning("Could not prepare a small preview; showing the source at this clip’s time range instead.")
                 st.video(str(source), start_time=math.floor(clip.start), end_time=math.ceil(clip.end))
 
+    queue = [PotentialEvent.model_validate(item) for item in current.get("review_queue", [])]
+    reviewed_queue: list[PotentialEvent] = []
+    accepted_potential: list[Clip] = []
+    if queue:
+        st.markdown("### Potential events — quick review")
+        st.caption(
+            "These plausible events were not automatically included. Watch the clip, then confirm, "
+            "correct, reject, or leave it pending. Expert review is suggested only for statistical edge cases."
+        )
+        for item in queue:
+            label = item.proposed_label.replace("_", " ").title()
+            badge = " · Basketball expert suggested" if item.expert_review_required else ""
+            st.write(f"**{label}** · {item.start:.1f}s–{item.end:.1f}s{badge}")
+            st.caption(item.uncertainty_reason)
+            if item.event_time is not None:
+                st.caption(f"Proposed action at {item.event_time:.1f}s in the source video"
+                           + (f" · Model-attributed team: {item.team}" if item.team else ""))
+            if preview_available:
+                st.video(str(source), start_time=math.floor(item.start), end_time=math.ceil(item.end))
+            choice = st.selectbox(
+                "Decision", ["Review later", "Confirm", "Correct label", "Reject"],
+                key=f"potential_decision_{item.candidate_index}",
+            )
+            corrected = ""
+            if choice == "Correct label":
+                corrected = st.text_input(
+                    "Correct event label", value=item.proposed_label,
+                    key=f"potential_label_{item.candidate_index}",
+                ).strip()
+            updated = item
+            if choice == "Confirm":
+                updated = apply_review_action(item, "confirm")
+            elif choice == "Correct label" and corrected:
+                updated = apply_review_action(item, "correct", corrected_label=corrected)
+            elif choice == "Reject":
+                updated = apply_review_action(item, "reject")
+            reviewed_queue.append(updated)
+            if updated.review_status in {"confirmed", "corrected"}:
+                accepted_potential.append(Clip(
+                    start=updated.start, end=updated.end,
+                    moment_type=updated.proposed_label, score=updated.confidence,
+                    reason="human-confirmed potential event", subject_present=True,
+                ))
+
     col_a, col_b = st.columns(2)
-    if clips and not any(keep_flags):
+    any_selected = any(keep_flags) or bool(accepted_potential)
+    if (clips or queue) and not any_selected:
         st.info("Keep at least one clip to build a reel.")
-    if col_a.button("Approve & Render", type="primary", disabled=not any(keep_flags) or not preview_available):
-        edited = [c for c, keep in zip(clips, keep_flags) if keep]
+    if col_a.button("Approve & Render", type="primary", disabled=not any_selected or not preview_available):
+        edited = [c for c, keep in zip(clips, keep_flags) if keep] + accepted_potential
         app = st.session_state.app
         config = st.session_state.config
-        app.update_state(config, {"selected_clips": edited, "approved": True, "needs_human": False})
+        app.update_state(config, {"selected_clips": edited, "review_queue": reviewed_queue,
+                                  "proposed_duration": sum(c.duration for c in edited),
+                                  "approved": True, "needs_human": False})
         with st.spinner("Approval received — stitching your clips and preparing the finished reel. Please wait…"):
             if diagram_ph is not None:
                 st.session_state.current = _stream_pipeline(st, app, config, None, diagram_ph)

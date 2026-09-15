@@ -1,9 +1,8 @@
-# Offline selection evaluation
+# Evaluation quickstart
 
-This first increment replays frozen candidate windows and classifications through
-`score_candidates()` and `select_clips()`. It does not invoke the graph, models,
-media processing, the quality judge, rendering, feedback storage, or LangSmith.
-Existing production code is unchanged.
+**Latest evidence (16 September 2026):** [iteration 055](iterations/proposer-sweep-055/results.md) covers 100 contiguous development windows, 98 source-reference events: precision .315, recall .418, F1 .360. [Offline reproduction](iterations/publication-audit-056.json) uses half-open windows and explicit game IDs. This broader discovery-only result does not establish a two-phase advantage or full-game accuracy. The golden set has 462 externally labeled rows; use source event type/outcome for detection, not the highlight-selection eligibility field. [Current guide](../docs/EVALUATION_TESTING.md).
+
+Selection mode replays frozen candidate windows and classifications through scoring and selection without model calls. Pipeline mode runs the graph through the first approval gate, optionally with an advisory evaluation judge. Neither mode renders or shares. See [package documentation](../src/hypereel/evaluation/README.md) for current modes/options, [STATUS.md](STATUS.md) for measured results, and [AGENT_HANDOFF.md](AGENT_HANDOFF.md) before any live run.
 
 ## Run
 
@@ -23,7 +22,7 @@ python -m hypereel.evaluation.cli run --dataset evals/datasets/smoke.jsonl --out
 An existing nonempty directory is never overwritten. Exit codes: 0 means all
 cases executed, 1 means one or more cases failed, and 2 means invalid input or
 report-output failure. Metric values do not yet trigger regression exit codes.
-`classification`, `pipeline`, `render`, `compare`, and `--config` are not implemented.
+Pipeline mode is implemented; the selection examples below remain valid. Consult the package documentation for other supported options.
 
 ## Dataset
 

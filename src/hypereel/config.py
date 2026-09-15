@@ -46,6 +46,11 @@ class Settings:
     gemini_native_video: bool = False
     gemini_api_key: str = ""
     gemini_model: str = "gemini-2.0-flash"
+    # Frame rate handed to Gemini's videoMetadata. Shot outcome (ball through
+    # the net) lasts roughly 200ms, so at the historical value of 4 the decisive
+    # frames can fall between samples; raising this is the outcome-accuracy
+    # experiment. Cost scales with sampled frames, so leave it at 4 by default.
+    gemini_video_fps: int = 4
 
     groq_api_key: str = ""
     groq_vision_model: str = "meta-llama/llama-4-scout-17b-16e-instruct"
@@ -69,6 +74,7 @@ class Settings:
     frames_per_candidate: int = 3
     classification_context_seconds: float = 0.0
     verify_with_core_frames: bool = False
+    two_phase_verification: bool = False
     motion_sample_fps: int = 2
     max_provider_calls: int = 0
     max_provider_spend_usd: float = 0.0
@@ -130,6 +136,9 @@ def get_settings() -> Settings:
         ),
         verify_with_core_frames=_get(
             "HYPEREEL_VERIFY_WITH_CORE_FRAMES", "false"
+        ).lower() in {"true", "1", "yes"},
+        two_phase_verification=_get(
+            "HYPEREEL_TWO_PHASE_VERIFICATION", "false"
         ).lower() in {"true", "1", "yes"},
         motion_sample_fps=_get_int("HYPEREEL_MOTION_SAMPLE_FPS", 2),
         max_provider_calls=_get_int("HYPEREEL_MAX_PROVIDER_CALLS", 0),

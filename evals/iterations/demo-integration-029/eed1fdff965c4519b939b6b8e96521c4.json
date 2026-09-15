@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-09-15T13:59:36.814789+00:00",
+  "status": "completed",
+  "reserved_usd": 0.013898125,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+  },
+  "metadata": {
+    "kind": "text"
+  },
+  "prompt": [
+    "\n\nWrite a short, upbeat highlight-reel summary for the recipe 'All basketball events' (basketball). 1 clip(s) totaling 8.0s were selected:\n- missed_field_goal (2.0-10.0s, score 0.49)"
+  ],
+  "token_preflight": {
+    "totalTokens": 62,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 62
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Feel the court intensity as a quick shot goes up in this high-energy sequence! The defense holds strong to contest the attempt, showcasing the relentless pace and competitive spirit of the game.",
+              "thoughtSignature": "EtkJCtYJARFNMg9vNqWtoBlfNNw1PrK0XSN1yKIBngFn6/lUmKVSqWh546XVrx5aJo7X4DbqwfYHw0/V3+45LajyFZM8czaRoR5SXMwK6tqVN/wvLaZFgP+vmJ98sFZyDddGI66UC1LoD0tT5wNpvVUSneogHuWeAZiEygObhi5KfMHyoJA7Wd0i9u7itI5tcmw4wHqFF0t4eHeiwBHU8TXwzIxzSfwUPawX8ozBbqwMj9tv2DnAg6UFiJjY/qVoRX4B2NUB++oniZtrvDX5RTLukB2BniFmL9/3PCd/BYGokRcjk4e+89Sbhc9EmFhqzxYWVNW8uUb10da1scWbzpBI7pdDUNDImQ/8Go3MkdWmJEedMYnfTUo5r0Ku0KJ1Ia5eGe6MuXU5VFoQ3Qksnkng/76STcHNZ0zN4CMBsS8fsxVJ4k77ulk+4nH2WuKiSeSJXSJ/QBE296ImlvHQzTTawL9uSAsVwbGUm9XvaIRTbiIlcDguS4D7MhtlWzlg3X64N9sI9lmsClt+zZhiNVHUaSFOoumErMFsQ9L+9z4o+RaJ3PSKixPMpDk0jVN0W0aK4+t6JuRvrH4R/znaU2nx5yAN00/st8eUYoQFa+XkWOcZWcuzV1qqaFlx49zN1DQAqnOa9xT15LPkI24ZfymVrRHvEDcJoKe3XQiaMnQ6ZQwVmIRY9K7tZrL7MkdNBFurX/BaJkrcFbvfmc8K5c9YWZGiijj54ht1cSPpxiMwrALvwFJI0qsF8L3yxZTxFQiQM2IM9qt4GeZTCMKJUM9T5X85t3l9w53BY8nvR301S6az/rRkRYIxrwReFQO/FvVPwNwi7KlAaF4c+jDc0FbkSbUU39stRtThNQqeuDqz5UvulpdGd23XSgU+MdqZ23wqf/GK7CLgfrV+6xY+8OKztMFLUGz0kJr36TXjmumZp8cWweocAeHH3MPi15qRvCV4DHq/whWktxo8YmJsWGBBuGgI93UIMVHd6+ahca8tsBLUuSQM+ShcjZnqenQUJre6VUiJgHbGcZiPGtoFIBkwXnNPSyFS+lxDqsO8mX0EHl1fgJyg3FcBeCR3FxzSjiXzkAqDb61tDBwINAkX6rYZQ3odn6ireSHg/R4K4J10XlFEcyfNAHvh3qki8GywS2IEJ+yq8EHFVDU2gwFsNF9aQqhYiZ6xwfxSnaV83zOXm34Kw9ZHt+7xg6O9+JFWcOzJ/jgQORs2sAHmzLvEx+sNxMoFNxI4KBbHH59tdbZlgqcFObKY5iX83Y5xMT82X1cUvC/t1mLG5U2aPniH2WeQnSR3R3uhBL04q0TVbE+q9z3RR+npnfJegfQkni9hVKUrzjJRh04EyFlsmiQ1oPluq3whA2yvoi7hgetRQgqV3s+2yU120rRMkGlU7YrcJIlP/h8pHCHQXFQfC+eZgVe32CWJk/IRinlXWbVVaveDy4pmqGr5+Tb7OAKg8DO1XIP7VUi5J+sdMV9N2IBwh2pVQaBkNdQyQ2Tu/4bgmFjNx3TMDUQSP2DvOpA6WE6FD/kymWKBQKrXWHP2GinTY81pVtBtMyVRmZDgHlLMXLH1eQbIEIi/rXPeWiGUog+Td1pSFAPeQJWWLt+5x0fhW1Rh97pEzezxxrnyEvNf9kvwWWp0pbT1igl57mI="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 62,
+      "candidatesTokenCount": 37,
+      "totalTokenCount": 403,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 62
+        }
+      ],
+      "thoughtsTokenCount": 304,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "SU-pavrOEJO54-EP9-qAgQM"
+  },
+  "estimated_cost_usd": 0.00132525,
+  "elapsed_seconds": 5.6709871659986675
+}

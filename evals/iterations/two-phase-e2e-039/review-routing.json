@@ -1,0 +1,185 @@
+{
+  "inference_calls": 0,
+  "source": "captured provider responses",
+  "cases": [
+    {
+      "index": 1,
+      "classification": {
+        "moment_type": "defensive_rebound",
+        "subject_present": true,
+        "confidence": 0.85,
+        "reason": "Blue team player #3 takes a shot and misses off the rim; black team player #24 secures control of the rebound under the rim.",
+        "decision": "confirmed",
+        "phase1_moment_type": "defensive_rebound",
+        "verification_reason": "Blue team player #3 takes a shot and misses off the rim; black team player #24 secures control of the rebound under the rim.",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": "defensive_rebound",
+        "subject_present": true,
+        "confidence": 0.85,
+        "reason": "Blue team player #3 takes a shot and misses off the rim; black team player #24 secures control of the rebound under the rim.",
+        "decision": "confirmed",
+        "phase1_moment_type": "defensive_rebound",
+        "verification_reason": "Blue team player #3 takes a shot and misses off the rim; black team player #24 secures control of the rebound under the rim.",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 2,
+      "classification": {
+        "moment_type": "two_point_made",
+        "subject_present": true,
+        "confidence": 0.85,
+        "reason": "The player in blue jersey #25 drives in transition, shoots a layup around 00:11.250-00:11.750, and the ball goes through the net for a two-point field goal made.",
+        "decision": "confirmed",
+        "phase1_moment_type": "two_point_made",
+        "verification_reason": "The player in blue jersey #25 drives in transition, shoots a layup around 00:11.250-00:11.750, and the ball goes through the net for a two-point field goal made.",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": "two_point_made",
+        "subject_present": true,
+        "confidence": 0.85,
+        "reason": "The player in blue jersey #25 drives in transition, shoots a layup around 00:11.250-00:11.750, and the ball goes through the net for a two-point field goal made.",
+        "decision": "confirmed",
+        "phase1_moment_type": "two_point_made",
+        "verification_reason": "The player in blue jersey #25 drives in transition, shoots a layup around 00:11.250-00:11.750, and the ball goes through the net for a two-point field goal made.",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 3,
+      "classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.05,
+        "reason": "Dead ball / pre-game sequence with referee holding ball and players standing around",
+        "decision": null,
+        "phase1_moment_type": null,
+        "verification_reason": "",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": null,
+        "subject_present": false,
+        "confidence": 0.05,
+        "reason": "Dead ball / pre-game sequence with referee holding ball and players standing around",
+        "decision": null,
+        "phase1_moment_type": null,
+        "verification_reason": "",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 4,
+      "classification": {
+        "moment_type": null,
+        "subject_present": true,
+        "confidence": 0.49,
+        "reason": "Player #11 in white shoots a mid-range field goal around 00:06-00:07 which misses the basket off-screen/no score update.",
+        "decision": "rejected",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "REJECTED: The action shown is a free throw attempt by the player in white (#11), not a two-point field goal attempt.",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": null,
+        "subject_present": true,
+        "confidence": 0.49,
+        "reason": "Player #11 in white shoots a mid-range field goal around 00:06-00:07 which misses the basket off-screen/no score update.",
+        "decision": "rejected",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "REJECTED: The action shown is a free throw attempt by the player in white (#11), not a two-point field goal attempt.",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 5,
+      "classification": {
+        "moment_type": "two_point_miss",
+        "subject_present": true,
+        "confidence": 0.49,
+        "reason": "Campus yellow player drives and takes a shot inside that misses, ball caught/defended, leading to dead ball/foul",
+        "decision": "potential_event",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "UNCERTAIN: A two-point shot is attempted near 00:05.000, but a whistle/foul occurs and the exact outcome (whether the ball entered the basket or was waved off/fouled before the act) cannot be definitively confirmed from the distance and court clutter.",
+        "expert_review_required": true
+      },
+      "review_queue": [
+        {
+          "candidate_index": 0,
+          "start": 2.0,
+          "end": 10.0,
+          "proposed_label": "two_point_miss",
+          "confidence": 0.49,
+          "uncertainty_reason": "UNCERTAIN: A two-point shot is attempted near 00:05.000, but a whistle/foul occurs and the exact outcome (whether the ball entered the basket or was waved off/fouled before the act) cannot be definitively confirmed from the distance and court clutter.",
+          "review_status": "pending",
+          "expert_review_required": true
+        }
+      ],
+      "original_classification": {
+        "moment_type": "two_point_miss",
+        "subject_present": true,
+        "confidence": 0.49,
+        "reason": "Campus yellow player drives and takes a shot inside that misses, ball caught/defended, leading to dead ball/foul",
+        "decision": "potential_event",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "UNCERTAIN: A two-point shot is attempted near 00:05.000, but a whistle/foul occurs and the exact outcome (whether the ball entered the basket or was waved off/fouled before the act) cannot be definitively confirmed from the distance and court clutter.",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 6,
+      "classification": {
+        "moment_type": null,
+        "subject_present": true,
+        "confidence": 0.1,
+        "reason": "Unlimited player shoots a two-pointer at the basket around 00:05-00:08 which misses.",
+        "decision": "rejected",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "REJECTED: The clip shows yellow driving, kicking the ball out to white player #11 on the right wing who shoots a 3-pointer around 00:05.5-00:06.0, which misses at 00:08.5; this is a three-point attempt, not a two-point attempt.",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": null,
+        "subject_present": true,
+        "confidence": 0.1,
+        "reason": "Unlimited player shoots a two-pointer at the basket around 00:05-00:08 which misses.",
+        "decision": "rejected",
+        "phase1_moment_type": "two_point_miss",
+        "verification_reason": "REJECTED: The clip shows yellow driving, kicking the ball out to white player #11 on the right wing who shoots a 3-pointer around 00:05.5-00:06.0, which misses at 00:08.5; this is a three-point attempt, not a two-point attempt.",
+        "expert_review_required": false
+      }
+    },
+    {
+      "index": 7,
+      "classification": {
+        "moment_type": "two_point_made",
+        "subject_present": true,
+        "confidence": 0.9,
+        "reason": "The player drives to the basket, attempts a two-point layup, and the ball goes through the hoop cleanly around 00:08 - 00:10.",
+        "decision": "confirmed",
+        "phase1_moment_type": "two_point_made",
+        "verification_reason": "The player drives to the basket, attempts a two-point layup, and the ball goes through the hoop cleanly around 00:08 - 00:10.",
+        "expert_review_required": false
+      },
+      "review_queue": [],
+      "original_classification": {
+        "moment_type": "two_point_made",
+        "subject_present": true,
+        "confidence": 0.9,
+        "reason": "The player drives to the basket, attempts a two-point layup, and the ball goes through the hoop cleanly around 00:08 - 00:10.",
+        "decision": "confirmed",
+        "phase1_moment_type": "two_point_made",
+        "verification_reason": "The player drives to the basket, attempts a two-point layup, and the ball goes through the hoop cleanly around 00:08 - 00:10.",
+        "expert_review_required": false
+      }
+    }
+  ]
+}

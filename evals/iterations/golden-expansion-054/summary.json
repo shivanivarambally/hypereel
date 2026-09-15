@@ -1,0 +1,91 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "054",
+  "kind": "golden_expansion_and_uncurated_baseline",
+  "fps": 8,
+  "discovery_only": true,
+  "video_calls": 4,
+  "incremental_estimated_spend_usd": 0.0710678,
+  "spend_after_usd": 11.1590719,
+  "remaining_headroom_usd": 0.033223,
+  "session_total_043_to_054_usd": 1.5652197,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "correction": "I asserted throughout the session that six positive labels were the binding constraint and that block was unmeasurable. Both were wrong: evals/golden/golden_events.jsonl holds 462 source-annotated events covering both games end to end, including 5 BLK.",
+  "why_bypassed": "expected_moment_type is populated for only 100/462 rows because the golden set was built for highlight SELECTION, where misses/turnovers/rebounds are explicit negatives. For all-event DETECTION the signal is in source_event_type + source_outcome, which map onto the 14-label taxonomy exactly. The wrong field was being read.",
+  "refs_in_existing_windows": {
+    "before": 6,
+    "after": 14,
+    "newly_scorable_windows": [
+      "W6 (5 events)",
+      "W7 (1 event)"
+    ]
+  },
+  "conclusions_overturned": [
+    "W2 turnover was never a false positive - it is a genuine golden TOV event",
+    "W2 assist is a real golden event, so the 051 anchoring bug cost a true positive",
+    "W6, excluded everywhere as qualitative, holds 5 golden events and the model recovers 2",
+    "block has 5 references, not 1, and is measurable"
+  ],
+  "headline": {
+    "reviewed_windows_curated": {
+      "tp": 6,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.67,
+      "recall": 0.75,
+      "f1": 0.706,
+      "refs": 8
+    },
+    "new_dense_windows_unseen": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 18,
+      "precision": 0.44,
+      "recall": 0.18,
+      "f1": 0.258,
+      "refs": 22
+    },
+    "combined_11_windows": {
+      "tp": 10,
+      "fp": 8,
+      "fn": 20,
+      "precision": 0.56,
+      "recall": 0.33,
+      "f1": 0.417,
+      "refs": 30
+    },
+    "interpretation": "Every number reported before this was measured on seven windows selected because they contained human-reviewed events - a curated favourable sample that flattered the system by roughly 0.45 F1."
+  },
+  "root_cause": {
+    "finding": "the model under-proposes: 9 predictions for 22 events across the new windows",
+    "per_window": {
+      "[808,818]": {
+        "refs": 6,
+        "preds": 2
+      },
+      "[658,668]": {
+        "refs": 6,
+        "preds": 5
+      },
+      "[2736,2746]": {
+        "refs": 5,
+        "preds": 2
+      },
+      "[1888,1898]": {
+        "refs": 5,
+        "preds": 0
+      }
+    },
+    "implication": "The recall ceiling is at DISCOVERY, not classification. The verifier fix (044), rules gate (050), anchoring fix (051) and routing analysis (052) all operate downstream of a stage that is not proposing most of what happens."
+  },
+  "still_standing": [
+    "044 verifier fix and 051 anchoring bug - both diagnosed from mechanism, not from the curated metric"
+  ],
+  "next_action": {
+    "step": "fix proposer recall, then re-baseline every comparison on uncurated windows",
+    "cost_note": "full game-1 video is local; discovery-only is ~$0.018/window, so ~$2 covers ~100 windows and several hundred references"
+  },
+  "limitations": "the four new windows are game 1 only and deliberately the densest available, so 0.258 is a hard-case estimate; a random sample would likely fall between 0.258 and 0.706"
+}

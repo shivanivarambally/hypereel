@@ -1,9 +1,11 @@
 # All-event development evaluation
 
+> **Historical local-model protocol.** For the latest Gemini development comparison and live-demo results, start with [evaluation status](../evals/STATUS.md). The commands below describe the earlier local-model experiments.
+
 The event detector in `src/hypereel/evaluation/basketball_events.py` scores detection
 before highlight selection. It preserves multiple events per sequence, including
 steal/turnover and missed-shot/rebound pairs. It does not change the production
-highlight pipeline's single-label contract.
+legacy single-label API. The opt-in native Gemini graph now also supports multiple timestamped events per window; see [the current workflow](TWO_PHASE_REVIEW.md). This document's local-model run descriptions below remain historical.
 
 Only the two allowlisted development games are loaded. Never use the third golden
 or holdout game during development. Source exports are approximately720p; actual

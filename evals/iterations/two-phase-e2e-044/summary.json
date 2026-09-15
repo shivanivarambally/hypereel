@@ -1,0 +1,53 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "044",
+  "kind": "verifier_fix",
+  "fps": 8,
+  "windows": [
+    2,
+    4
+  ],
+  "baseline_reused_from": "038",
+  "video_calls": 4,
+  "provider_errors": 0,
+  "spend_before_usd": 9.814099875,
+  "incremental_estimated_spend_usd": 0.089964,
+  "spend_after_usd": 9.904063875,
+  "remaining_headroom_usd": 1.288231,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "tests": {
+    "passed": 443,
+    "skipped": 4
+  },
+  "w4_adjudication": "human confirmed reference free_throw_miss is CORRECT; model free_throw_made was WRONG",
+  "root_cause": [
+    "Verifier echoed discovery reason byte-identically in 32 of 33 classifications across 040/041/043.",
+    "Contrastive reject-criteria keyed to retired 4-label taxonomy (made_basket/three_pointer/steal); only steal matched the 14-label recipe, so 13/14 labels used the generic fallback."
+  ],
+  "fix": [
+    "Re-keyed shot-family criteria to the taxonomy in use; explicit ball-through-net test for makes, carom/rebound test for misses, hidden outcome is UNCERTAIN.",
+    "De-anchored prompt: verifier must write an independent `observed` field before judging the proposal."
+  ],
+  "scope": "3 reviewed positive labels in W2+W4",
+  "confirmed_before": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 1,
+    "precision": 0.667,
+    "f1": 0.667
+  },
+  "confirmed_after": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1.0,
+    "f1": 0.8
+  },
+  "discovery_unchanged": true,
+  "next_action": {
+    "step": "re-run all 7 windows with fixed verifier, then re-adjudicate W1",
+    "estimated_cost_usd": "0.20-0.30"
+  }
+}

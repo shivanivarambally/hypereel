@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-09-15T15:06:33.965489+00:00",
+  "status": "completed",
+  "reserved_usd": 0.049282187500000005,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 13.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "d6036041bb5284777eaa7dfb2d88a65e8b4c56e42b3f55e3291d94ba95044171",
+    "source_start": 0,
+    "duration": 15.0,
+    "fps": 8,
+    "contract": "temporal_events_v1",
+    "kind": "temporal_verification",
+    "iteration": "045",
+    "window_id": "W2",
+    "arm": "two_phase"
+  },
+  "prompt": [
+    "PHASE 2: Independently inspect the continuous video to verify EVERY proposed event ID. Proposals are fallible hypotheses, not evidence. Follow ball and team possession in order. Confirm only when the defining action/outcome is visible. Correct the label if this SAME action is visibly another rubric event (e.g. free throw rather than field goal). Never replace a proposal with an unrelated event; keep its ID, adjust time by at most 2 seconds. Reject only on visible contradiction. Missing, off-camera, occluded or ambiguous evidence means potential_event, NOT rejected. Unknown point value may use a generic field-goal label. An unclear foul/referee/statistical ruling means potential_event for expert review. Do not add proposals or drop IDs. Explain concrete video evidence, not agreement with proposal. Rubric: {\"two_point_made\": \"A two-point field-goal attempt visibly scores.\", \"two_point_miss\": \"A two-point field-goal attempt visibly misses.\", \"three_point_made\": \"A shot from beyond the three-point arc visibly scores.\", \"three_point_miss\": \"A shot from beyond the three-point arc visibly misses.\", \"free_throw_made\": \"A free-throw attempt visibly scores.\", \"free_throw_miss\": \"A free-throw attempt visibly misses.\", \"offensive_rebound\": \"The shooting team gains control after its missed shot.\", \"defensive_rebound\": \"The defending team gains control after an opponent missed shot.\", \"steal\": \"A defender intercepts or disrupts opponent possession and gains team control.\", \"turnover\": \"A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\", \"block\": \"A defender visibly deflects an opponent shot attempt.\", \"assist\": \"A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\", \"made_field_goal\": \"A visibly made field goal with unknown point value.\", \"missed_field_goal\": \"A visibly missed field goal with unknown point value.\"}. Subject: {\"type\":\"none\",\"value\":null,\"team_color\":null,\"audience\":\"team\",\"description\":\"Both teams; East Bay Elite wears blue, Spartans black.\"}. Event times must be clip-relative seconds between 2.0 and 13.0. Proposals: [{\"event_id\": \"w0e0\", \"moment_type\": \"turnover\", \"time_seconds\": 6.875, \"team\": \"Spartan\"}, {\"event_id\": \"w0e1\", \"moment_type\": \"steal\", \"time_seconds\": 8.0, \"team\": \"EBE\"}, {\"event_id\": \"w0e2\", \"moment_type\": \"two_point_made\", \"time_seconds\": 12.375, \"team\": \"EBE\"}]. JSON only: {\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed|corrected|potential_event|rejected\",\"moment_type\":\"rubric_label\",\"time_seconds\":1.2,\"team\":null,\"subject_present\":true,\"confidence\":0.8,\"reason\":\"visible action and outcome evidence\"}]}"
+  ],
+  "token_preflight": {
+    "totalTokens": 33709,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 679
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 32549
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 481
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"turnover\",\"time_seconds\":6.625,\"team\":\"Spartan\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Spartan player attempts a cross-court pass around 00:05.75, which is dropped/deflected and Spartan loses possession to East Bay Elite around 00:06.62-00:07.75.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"steal\",\"time_seconds\":8.0,\"team\":\"EBE\",\"subject_present\":true,\"confidence\":0.9,\"reason\":\"EBE player #0 gathers the loose ball resulting from the bad pass/fumble, establishing possession for EBE at 00:08.00.\"},{\"event_id\":\"w0e2\",\"status\":\"confirmed\",\"moment_type\":\"two_point_made\",\"time_seconds\":12.375,\"team\":\"EBE\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"EBE player runs in and makes a layup/two-point shot that goes through the basket around 00:12.37.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIPN2wL2GvBLNgu1nF4fl5O0RGZZRoLX8zBz2KpvR3vI7AlKnTr2eoVZg949R90bLEIedVFfuF80Zl1cLMusBp9C79t+vdcDB33bFd461MALBBTAKV0spcHn8yYHKDTTO7s"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 32359,
+      "candidatesTokenCount": 274,
+      "totalTokenCount": 32633,
+      "cachedContentTokenCount": 27467,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 679
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 31680
+        }
+      ],
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 576
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 26891
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "-16paornKuiMjuMPtf6FoAU"
+  },
+  "estimated_cost_usd": 0.02529675,
+  "elapsed_seconds": 8.111466041009407
+}

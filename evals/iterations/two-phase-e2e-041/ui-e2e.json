@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "inference_source": "fresh 041 W2 two-phase classifications",
+  "simulated_review": false,
+  "review_is_ground_truth": false,
+  "simulated_corrected_label": null,
+  "review_queue": [],
+  "initial_gate": "approve_clips",
+  "final_gate": "approve_share",
+  "output_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-041/render/reel_two_phase_e2e_041_w2_render.mp4",
+  "selected_clips": [
+    {
+      "start": 0.0,
+      "end": 15.0,
+      "moment_type": "steal",
+      "score": 0.95,
+      "reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+      "subject_present": true,
+      "events": [
+        {
+          "moment_type": "steal",
+          "subject_present": true,
+          "confidence": 0.95,
+          "reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+          "decision": "confirmed",
+          "phase1_moment_type": "steal",
+          "verification_reason": "A player in blue intercepts the pass thrown by the Spartan player, taking control of the ball.",
+          "expert_review_required": false,
+          "event_time": 7.5,
+          "phase1_event_time": 7.5,
+          "team": "home",
+          "event_id": "w0e0",
+          "source_window_index": 0
+        },
+        {
+          "moment_type": "turnover",
+          "subject_present": true,
+          "confidence": 0.95,
+          "reason": "The Spartan player turns the ball over via an intercepted pass.",
+          "decision": "confirmed",
+          "phase1_moment_type": "turnover",
+          "verification_reason": "The Spartan player turns the ball over via an intercepted pass.",
+          "expert_review_required": true,
+          "event_time": 7.5,
+          "phase1_event_time": 7.5,
+          "team": "away",
+          "event_id": "w0e1",
+          "source_window_index": 0
+        },
+        {
+          "moment_type": "two_point_made",
+          "subject_present": true,
+          "confidence": 0.9,
+          "reason": "The blue player takes a layup/shot close to the basket and scores two points (score changes from 7 to 9).",
+          "decision": "confirmed",
+          "phase1_moment_type": "two_point_made",
+          "verification_reason": "The blue player takes a layup/shot close to the basket and scores two points (score changes from 7 to 9).",
+          "expert_review_required": false,
+          "event_time": 12.0,
+          "phase1_event_time": 12.0,
+          "team": "home",
+          "event_id": "w0e2",
+          "source_window_index": 0
+        }
+      ]
+    }
+  ],
+  "proposed_duration": 15.0,
+  "summary": "Talk about lightning-fast hands! Clocking in at an electric 15 seconds, this highlight delivers pure defensive hustle with a game-changing steal that completely flips the momentum on the court. Big-time defense at its finest!",
+  "ffprobe": {
+    "format": {
+      "duration": "15.000000",
+      "size": "8607739"
+    }
+  },
+  "download_visible": true,
+  "shared": false,
+  "notes": [
+    "select: 1 clip(s) chosen, 15.0s of 15.0s budget (ready for review)",
+    "judge[gemini]: verdict=accept score=0.8 llm_action=none -> action=none (clips=1, confirmed=1) \u2014 Single high-scoring steal clip completely fills the 15-second budget with confirmed action.",
+    "rendered 1 clips with 'hard_cut' transitions.",
+    "render: output at /Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-041/render/reel_two_phase_e2e_041_w2_render.mp4",
+    "summarize: generated with 'gemini' provider"
+  ]
+}

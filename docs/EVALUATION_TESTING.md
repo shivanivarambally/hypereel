@@ -1,8 +1,17 @@
-## Current funded checkpoint
-
-All12category development comparison and transcript test complete. See ../evals/iterations/gemini-funded-summary/results.md. New evaluation cap$2fromfixedbaseline$7.192294875;demo reserve$3. Currentcap policy supersedes historical$8andquota-blockednotes below.400tests pass,4skipped,1holdoutexcluded.
-
 # Evaluation testing and continuation
+
+**Current checkpoint — 16 September 2026:** Iteration 055 tested 100 contiguous windows over 10:00–26:40 of game 1, discovery-only at 8 fps: TP41/FP89/FN57, precision .315, recall .418, F1 .360 against 98 externally labeled events. This is window-label matching on one development segment, not exact timestamp or full-game accuracy. The 462-row golden set covers both development games; the older six-label tests were a limited adjudicated subset. Third-game holdout remains sealed. [Current status](../evals/STATUS.md) and [publication review](REVIEW_2026-09-16.md) supersede older continuation instructions below.
+
+Reproduce the broader result offline (use a new output filename; existing reports are not overwritten):
+
+```sh
+.venv/bin/python scripts/score_against_golden.py \
+  --report evals/iterations/proposer-sweep-055/report.json \
+  --boundary half-open --out my-055-replay.json
+```
+
+Half-open `[start, end)` windows prevent duplicate reference counts at tile boundaries. Explicit game IDs avoid interpreting sweep window numbers as legacy W1–W7 cases. The saved publication replay is `evals/iterations/publication-audit-056.json`; no provider calls are needed. Source labels and later human adjudications are distinct evidence tracks: do not silently replace either or compare their metrics without stating the reference policy.
+
 
 Start with `../evals/AGENT_HANDOFF.md`. Timestamped observations are in
 `../evals/IMPLEMENTATION_NOTES.md`; `../evals/iterations/CATALOGUE.md` indexes runs.
@@ -22,7 +31,7 @@ error is terminal even when RetryInfo suggests a short delay; minute-level rate
 limits and transient503errors permit bounded backoff. The Gemini diagnostic
 adapters use standard-library HTTP, not the legacy production Gemini SDK.
 
-## Current live evidence
+## Historical partial live evidence (superseded)
 
 Gemini023confirmation was interrupted by503capacity failures.024and027provide
 strict-valid direct-video outputs for development windows0–5. Their immutable

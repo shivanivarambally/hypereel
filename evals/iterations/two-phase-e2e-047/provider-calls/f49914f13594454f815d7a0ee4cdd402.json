@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-09-15T15:18:33.793849+00:00",
+  "status": "completed",
+  "reserved_usd": 0.0493084375,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 13.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "d6036041bb5284777eaa7dfb2d88a65e8b4c56e42b3f55e3291d94ba95044171",
+    "source_start": 0,
+    "duration": 15.0,
+    "fps": 8,
+    "contract": "temporal_events_v1",
+    "kind": "temporal_verification",
+    "iteration": "047",
+    "window_id": "W2",
+    "arm": "two_phase"
+  },
+  "prompt": [
+    "PHASE 2: Independently inspect the continuous video to verify EVERY proposed event ID. Proposals are fallible hypotheses, not evidence. Follow ball and team possession in order. Confirm only when the defining action/outcome is visible. Correct the label if this SAME action is visibly another rubric event (e.g. free throw rather than field goal). Never replace a proposal with an unrelated event; keep its ID, adjust time by at most 2 seconds. Reject only on visible contradiction. Missing, off-camera, occluded or ambiguous evidence means potential_event, NOT rejected. Unknown point value may use a generic field-goal label. An unclear foul/referee/statistical ruling means potential_event for expert review. Do not add proposals or drop IDs. Explain concrete video evidence, not agreement with proposal. Rubric: {\"two_point_made\": \"A two-point field-goal attempt visibly scores.\", \"two_point_miss\": \"A two-point field-goal attempt visibly misses.\", \"three_point_made\": \"A shot from beyond the three-point arc visibly scores.\", \"three_point_miss\": \"A shot from beyond the three-point arc visibly misses.\", \"free_throw_made\": \"A free-throw attempt visibly scores.\", \"free_throw_miss\": \"A free-throw attempt visibly misses.\", \"offensive_rebound\": \"The shooting team gains control after its missed shot.\", \"defensive_rebound\": \"The defending team gains control after an opponent missed shot.\", \"steal\": \"A defender intercepts or disrupts opponent possession and gains team control.\", \"turnover\": \"A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\", \"block\": \"A defender visibly deflects an opponent shot attempt.\", \"assist\": \"A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\", \"made_field_goal\": \"A visibly made field goal with unknown point value.\", \"missed_field_goal\": \"A visibly missed field goal with unknown point value.\"}. Subject: {\"type\":\"none\",\"value\":null,\"team_color\":null,\"audience\":\"team\",\"description\":\"Both teams; East Bay Elite wears blue, Spartans black.\"}. Event times must be clip-relative seconds between 2.0 and 13.0. Proposals: [{\"event_id\": \"w0e0\", \"moment_type\": \"steal\", \"time_seconds\": 7.6, \"team\": \"home\"}, {\"event_id\": \"w0e1\", \"moment_type\": \"turnover\", \"time_seconds\": 7.6, \"team\": \"away\"}, {\"event_id\": \"w0e2\", \"moment_type\": \"assist\", \"time_seconds\": 9.0, \"team\": \"home\"}, {\"event_id\": \"w0e3\", \"moment_type\": \"two_point_made\", \"time_seconds\": 12.3, \"team\": \"home\"}]. JSON only: {\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed|corrected|potential_event|rejected\",\"moment_type\":\"rubric_label\",\"time_seconds\":1.2,\"team\":null,\"subject_present\":true,\"confidence\":0.8,\"reason\":\"visible action and outcome evidence\"}]}"
+  ],
+  "token_preflight": {
+    "totalTokens": 33737,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 707
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 32549
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 481
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"events\":[{\"event_id\":\"w0e0\",\"status\":\"confirmed\",\"moment_type\":\"steal\",\"time_seconds\":7.6,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Around 00:07.625, player #0 in blue picks up the loose ball disrupted from the black team's possession, securing team control for East Bay Elite.\"},{\"event_id\":\"w0e1\",\"status\":\"confirmed\",\"moment_type\":\"turnover\",\"time_seconds\":7.6,\"team\":\"away\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"The Spartans lose possession around 00:07.625 as the pass/dribble is intercepted/lost to East Bay Elite.\"},{\"event_id\":\"w0e2\",\"status\":\"confirmed\",\"moment_type\":\"assist\",\"time_seconds\":8.8,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.9,\"reason\":\"Player #0 in blue throws an outlet pass up ahead at 00:08.750 directly to teammate #23 in blue, who drives in and scores.\"},{\"event_id\":\"w0e3\",\"status\":\"confirmed\",\"moment_type\":\"two_point_made\",\"time_seconds\":12.3,\"team\":\"home\",\"subject_present\":true,\"confidence\":0.95,\"reason\":\"Player #23 in blue makes a layup at 00:12.250-00:12.375 from inside the arc, confirmed by the scoreboard update to 9.\"}]}",
+              "thoughtSignature": "EmcKZQERTTIP95rWyPQrQR3eVMHmG2mfah47EK0iit/ZjXi2Mka9ggGL0n1E0iODS0Yb8QfCDVVlFJI4iI/unsErtSXJO99/j/9KdWdETe9wZD/qSJ2/EVrWXlEL6+Rh/NvDlMJWJIgP"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 32387,
+      "candidatesTokenCount": 347,
+      "totalTokenCount": 32734,
+      "cachedContentTokenCount": 27467,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 707
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 31680
+        }
+      ],
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 599
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 26868
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "y2Gpaui5IfHNjuMPtdzmgQQ"
+  },
+  "estimated_cost_usd": 0.0255915,
+  "elapsed_seconds": 9.476229207997676
+}

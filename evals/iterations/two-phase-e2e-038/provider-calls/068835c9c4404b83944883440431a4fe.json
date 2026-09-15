@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-09-15T13:50:40.945103+00:00",
+  "status": "completed",
+  "reserved_usd": 0.031149999999999997,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "kind": "native_video",
+    "window_index": 0,
+    "window": {
+      "start": 2.0,
+      "end": 10.0,
+      "signal_scores": {}
+    },
+    "video_sha256": "3638de9b0cd33f189ba39e755bba47542f766658fe4a1bddd7d358a2339adf2d",
+    "source_start": 0,
+    "duration": 12.0,
+    "fps": 4,
+    "iteration": "038",
+    "window_id": "W3",
+    "arm": "single_pass"
+  },
+  "prompt": [
+    "You are judging a short video clip (sampled frames shown in order) for a highlight-reel agent.\n\nMoment types (the rubric):\n- two_point_made: A two-point field-goal attempt visibly scores.\n- two_point_miss: A two-point field-goal attempt visibly misses.\n- three_point_made: A shot from beyond the three-point arc visibly scores.\n- three_point_miss: A shot from beyond the three-point arc visibly misses.\n- free_throw_made: A free-throw attempt visibly scores.\n- free_throw_miss: A free-throw attempt visibly misses.\n- offensive_rebound: The shooting team gains control after its missed shot.\n- defensive_rebound: The defending team gains control after an opponent missed shot.\n- steal: A defender intercepts or disrupts opponent possession and gains team control.\n- turnover: A team loses possession through an error, violation, or opponent steal; not a normal shot/rebound.\n- block: A defender visibly deflects an opponent shot attempt.\n- assist: A pass directly leads to a teammate made field goal; both pass and made shot must be supported.\n- made_field_goal: A visibly made field goal with unknown point value.\n- missed_field_goal: A visibly missed field goal with unknown point value.\n\nWho/what to look for: Both teams; Campus wears yellow, Unlimited white.\nSet subject_present=true only when the subject described above is the one making the play in the foreground game; false otherwise.\n\nRejection rules (apply these first):\n- Judge ONLY the primary game in the foreground \u2014 the court with the referees and the two teams playing in formation. IGNORE any action on adjacent or background courts and anyone shooting on a side basket.\n- Return moment_type=null (low confidence) if the frames show a timeout, huddle, or players standing around during a dead ball; warm-ups or shoot-around; substitutions or walking to the bench; or a camera pan/zoom with motion blur and no clear play.\n- When you are not confident a real play from the rubric is happening, return null rather than guessing \u2014 a padded reel is worse than a short one.\n\nLook at the frames and decide whether this window contains one of the moment types above and whether the subject is visible.\n\nBasketball temporal checks:\n- The first and last images provide before/after context. The middle images densely sample the candidate action. Classify the central action; do not label an unrelated event visible only in the outer context.\n- Treat the images as an ordered sequence, not independent pictures. Compare who controls the ball in the first and last frames.\n- A steal requires visible evidence that the defending team gains or deflects possession; a rebound after a shot is not a steal.\n- Only select event types explicitly listed in this recipe. Rebounds are allowed when the rubric includes them; do not substitute a steal or basket for a rebound.\n- Do not call a rebound a steal merely because possession changes teams. A steal requires a defender disrupting a live dribble or pass before control.\n- A made basket requires visible outcome evidence (ball through the rim/net or unmistakable immediate aftermath). A ball in the air is only an attempt.\n- A three_pointer additionally requires clear evidence that the shooter was behind the three-point line. If distance or make is unclear, do not guess.\n- Prefer null when the ordered frames do not establish the complete event.\n\nRespond with STRICT JSON only, no prose, no markdown fences, matching exactly this shape:\n{\"moment_type\": <string or null>, \"subject_present\": <true|false>, \"confidence\": <number 0..1>, \"reason\": <short string>}\nYou are receiving continuous video, not sparse still images. Clip00:00 is source0s. The candidate action interval is [2.0,10.0] source seconds. Use surrounding video to verify the complete action. Classify the central action, not every frame. For rebounds determine shooting and controlling teams; a rebound is permitted when present in the rubric.\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\n"
+  ],
+  "token_preflight": {
+    "totalTokens": 14368,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1072
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 12912
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 384
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\"moment_type\": null, \"subject_present\": false, \"confidence\": 0.95, \"reason\": \"Dead ball period; players are standing near the sideline and referees are waiting at center court.\"}",
+              "thoughtSignature": "EmcKZQERTTIP5AWzvA3tJLMhKkcbKKCj4A2KtHjc2qcmfjpjw4DYqv8rEDKvyXFTQQ9a7NdibdrQ6fwZYEaCTEOJ3epYCGqdpImH21LUnSiaVFDom//TLF0rc1G01OZEw4ZkEYRii1Rn"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 13744,
+      "candidatesTokenCount": 46,
+      "totalTokenCount": 13790,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1072
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "Mk2paryGNq3_juMP6PPWsQE"
+  },
+  "estimated_cost_usd": 0.0104805,
+  "elapsed_seconds": 17.845117957971524
+}

@@ -1,0 +1,954 @@
+{
+  "scope": "W1-W5; 6 reviewed positive labels and confirmed-negative W3; fixed window label coverage",
+  "stages": {
+    "single_pass": {
+      "overall": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5
+      },
+      "per_class": {
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missed_field_goal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "steal": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "windows": [
+        {
+          "index": 1,
+          "predictions": [
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [
+            "free_throw_made"
+          ],
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "index": 2,
+          "predictions": [
+            "two_point_made"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "two_point_made",
+              "predicted": "two_point_made"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [
+            "steal"
+          ],
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "index": 3,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        {
+          "index": 4,
+          "predictions": [
+            "free_throw_miss"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "free_throw_miss",
+              "predicted": "free_throw_miss"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 5,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [
+            "block",
+            "missed_field_goal"
+          ],
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      ]
+    },
+    "discovery": {
+      "overall": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "f1": 0.7272727272727273
+      },
+      "per_class": {
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missed_field_goal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "steal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "windows": [
+        {
+          "index": 1,
+          "predictions": [
+            "three_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [
+            "three_point_miss"
+          ],
+          "false_negatives": [
+            "free_throw_made"
+          ],
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "index": 2,
+          "predictions": [
+            "turnover",
+            "steal",
+            "two_point_made"
+          ],
+          "unadjudicated_predictions": [
+            "turnover"
+          ],
+          "matched": [
+            {
+              "reference": "steal",
+              "predicted": "steal"
+            },
+            {
+              "reference": "two_point_made",
+              "predicted": "two_point_made"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 3,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        {
+          "index": 4,
+          "predictions": [
+            "free_throw_miss"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "free_throw_miss",
+              "predicted": "free_throw_miss"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 5,
+          "predictions": [
+            "two_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "inexact": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "false_positives": [],
+          "false_negatives": [
+            "block"
+          ],
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        }
+      ]
+    },
+    "confirmed": {
+      "overall": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "f1": 0.7272727272727273
+      },
+      "per_class": {
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missed_field_goal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "steal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "windows": [
+        {
+          "index": 1,
+          "predictions": [
+            "three_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [
+            "three_point_miss"
+          ],
+          "false_negatives": [
+            "free_throw_made"
+          ],
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "index": 2,
+          "predictions": [
+            "turnover",
+            "steal",
+            "two_point_made"
+          ],
+          "unadjudicated_predictions": [
+            "turnover"
+          ],
+          "matched": [
+            {
+              "reference": "steal",
+              "predicted": "steal"
+            },
+            {
+              "reference": "two_point_made",
+              "predicted": "two_point_made"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 3,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        {
+          "index": 4,
+          "predictions": [
+            "free_throw_miss"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "free_throw_miss",
+              "predicted": "free_throw_miss"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 5,
+          "predictions": [
+            "two_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "inexact": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "false_positives": [],
+          "false_negatives": [
+            "block"
+          ],
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        }
+      ]
+    },
+    "confirmed_plus_potential": {
+      "overall": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "f1": 0.7272727272727273
+      },
+      "per_class": {
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missed_field_goal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "steal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "windows": [
+        {
+          "index": 1,
+          "predictions": [
+            "three_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [
+            "three_point_miss"
+          ],
+          "false_negatives": [
+            "free_throw_made"
+          ],
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "index": 2,
+          "predictions": [
+            "turnover",
+            "steal",
+            "two_point_made"
+          ],
+          "unadjudicated_predictions": [
+            "turnover"
+          ],
+          "matched": [
+            {
+              "reference": "steal",
+              "predicted": "steal"
+            },
+            {
+              "reference": "two_point_made",
+              "predicted": "two_point_made"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 3,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        {
+          "index": 4,
+          "predictions": [
+            "free_throw_miss"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "free_throw_miss",
+              "predicted": "free_throw_miss"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 5,
+          "predictions": [
+            "two_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "inexact": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "false_positives": [],
+          "false_negatives": [
+            "block"
+          ],
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        }
+      ]
+    },
+    "selected": {
+      "overall": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "f1": 0.7272727272727273
+      },
+      "per_class": {
+        "block": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_made": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "free_throw_miss": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "missed_field_goal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "steal": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "three_point_miss": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "two_point_made": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "windows": [
+        {
+          "index": 1,
+          "predictions": [
+            "three_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [
+            "three_point_miss"
+          ],
+          "false_negatives": [
+            "free_throw_made"
+          ],
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "index": 2,
+          "predictions": [
+            "turnover",
+            "two_point_made",
+            "steal"
+          ],
+          "unadjudicated_predictions": [
+            "turnover"
+          ],
+          "matched": [
+            {
+              "reference": "two_point_made",
+              "predicted": "two_point_made"
+            },
+            {
+              "reference": "steal",
+              "predicted": "steal"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 3,
+          "predictions": [],
+          "unadjudicated_predictions": [],
+          "matched": [],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        {
+          "index": 4,
+          "predictions": [
+            "free_throw_miss"
+          ],
+          "unadjudicated_predictions": [],
+          "matched": [
+            {
+              "reference": "free_throw_miss",
+              "predicted": "free_throw_miss"
+            }
+          ],
+          "inexact": [],
+          "false_positives": [],
+          "false_negatives": [],
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "index": 5,
+          "predictions": [
+            "two_point_miss",
+            "defensive_rebound"
+          ],
+          "unadjudicated_predictions": [
+            "defensive_rebound"
+          ],
+          "matched": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "inexact": [
+            {
+              "reference": "missed_field_goal",
+              "predicted": "two_point_miss"
+            }
+          ],
+          "false_positives": [],
+          "false_negatives": [
+            "block"
+          ],
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        }
+      ]
+    }
+  },
+  "decisions": {
+    "confirmed": 11
+  },
+  "new_provider_calls": 13,
+  "provider_errors": [],
+  "limitations": [
+    "Single-pass control is the frozen single-label production baseline, not a multi-event single-pass ablation.",
+    "These metrics measure window label coverage only; timestamp/team correctness requires separate scoring.",
+    "W6 overlapping shot events and W7 unaudited timestamp are qualitative, outside primary score.",
+    "Unadjudicated extra predictions ignored for both arms, so precision is conditional.",
+    "Confirmed-plus-potential measures retained candidate coverage, not final human-reviewed accuracy.",
+    "Six positive labels across two development games is too small for generalized claims.",
+    "Labels are matched by family, not string equality: generic/specific shot labels credit each other and steal/turnover are treated as one event. Per-window \"inexact\" lists every match that was not exact, so family credit can be audited.",
+    "The \"confirmed\" stage excludes items routed to human review, so a correctly flagged uncertain event scores as a miss. \"confirmed_plus_potential\" is the honest measure of what the system produced; \"confirmed\" measures only what it was willing to auto-accept."
+  ]
+}

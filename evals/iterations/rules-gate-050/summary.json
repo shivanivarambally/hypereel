@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "date": "2026-09-15",
+  "iteration": "050",
+  "kind": "rules_gate_and_phase_observability",
+  "fps": 8,
+  "windows": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "video_calls": 9,
+  "incremental_estimated_spend_usd": 0.1908487,
+  "spend_after_usd": 10.983116625,
+  "remaining_headroom_usd": 0.209178,
+  "session_total_043_to_050_usd": 1.3892644,
+  "tests": {
+    "passed": 458,
+    "skipped": 4
+  },
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "w1_occlusion_hypothesis": "REFUTED by human screenshot at ~2s: rim and net clearly visible, ball at net. Model has a clean view and reports the opposite outcome. Perception failure, not a data limitation. No prompt/rule/fps change addresses it.",
+  "built": [
+    "apply_rules_gate: per-window deterministic legality gate; illegal -> potential_event + expert flag; never deletes",
+    "Transition records + transition_metrics: phase1 label, phase2 verdict, reason, rule violations, survival rate, relabels, rules fired",
+    "runner writes phase_transitions and transition_metrics per arm into report.json"
+  ],
+  "taxonomy_bug_fixed": "validate_sequence knew only the 14-label set; legacy made_basket/three_pointer recipes were unrecognised as shots, firing R5 spuriously. Same class as the 044 verification-prompt bug. Both taxonomies now covered with a regression test.",
+  "confirmed": {
+    "tp": 3,
+    "fp": 2,
+    "fn": 3,
+    "precision": 0.6,
+    "recall": 0.5,
+    "f1": 0.545
+  },
+  "distribution_post_fix": {
+    "runs": [
+      "045",
+      "046",
+      "047",
+      "048",
+      "050"
+    ],
+    "f1": [
+      0.727,
+      0.727,
+      0.727,
+      0.545,
+      0.545
+    ],
+    "mean": 0.655,
+    "sd": 0.1,
+    "min": 0.545,
+    "max": 0.727,
+    "single_pass_control": 0.5,
+    "consensus_045_048": 0.727
+  },
+  "rules_gate_fired": 0,
+  "rules_gate_assessment": "no-op on this run; not shown to help, shown not to harm; needs a run containing an illegal sequence",
+  "observability_first_find": {
+    "window": 2,
+    "label": "assist",
+    "outcome": "routed_to_review",
+    "reason": "UNCERTAIN: invalid verification event; ... full-court forward pass directly to teammate #23 who makes the layup",
+    "diagnosis": "verifier prose describes a textbook assist but the event was discarded via parse_verification's exception path - a schema/parse failure, not a judgement. Silent recall loss, invisible before the transition log."
+  },
+  "next_action": {
+    "step": "diagnose the W2 assist parse failure from raw provider-calls (free)",
+    "cost_usd": 0.0,
+    "note": "do not pursue W1 by prompt or rules; grow the reference set past six labels"
+  }
+}

@@ -16,9 +16,13 @@ import urllib.request
 import uuid
 from datetime import datetime, timezone
 from ..evaluation.gemini_budget import check_reservation
+from ..evaluation.possession_sequence import rebound_sequence_guidance
 from ..models import Classification
+from ..analyze.temporal_events import (
+    discovery_prompt, verification_prompt, parse_discovery, parse_verification, potential,
+)
 from .base import VisionProvider, LLMProvider
-from ._util import build_classification_prompt, parse_classification_json
+from ._util import build_classification_prompt, build_verification_prompt, parse_classification_json
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -106,6 +110,9 @@ class GeminiVideoVisionProvider(VisionProvider):
     name = 'gemini'
     def __init__(self, settings):
         self.client = BudgetClient(settings)
+        # Sampled frame rate for native-video calls. Recorded in every call's
+        # metadata so a run's temporal resolution is auditable after the fact.
+        self._fps = int(getattr(settings, 'gemini_video_fps', 4) or 4)
 
     def classify_window(self, frame_paths, recipe, window_index=0):
         try:
@@ -115,34 +122,102 @@ class GeminiVideoVisionProvider(VisionProvider):
         except Exception as error:
             return Classification(confidence=0, reason=f'gemini error: {type(error).__name__}')
 
+    def _video_payload(self, video_path, window, recipe):
+        start = max(0, window.start-2)
+        duration = min(20, window.end-start+2)
+        minimum = min(20, max(0, float(next((s.params.get('min_video_seconds', 0)
+                      for s in recipe.scorer_signals() if s.type == 'vision_classify' and s.params), 0))))
+        if duration < minimum:
+            start = max(0, (window.start + window.end - minimum) / 2)
+            duration = minimum
+        with tempfile.TemporaryDirectory(prefix='hypereel-video-') as tmp:
+            target = Path(tmp)/'clip.mp4'
+            subprocess.run(['ffmpeg','-v','error','-nostdin','-ss',str(start),'-i',str(video_path),
+                            '-t',str(duration),'-an','-c:v','libx264','-preset','ultrafast','-crf','20',str(target)],
+                           check=True, capture_output=True, timeout=60)
+            data = target.read_bytes()
+        if len(data)>19_000_000:
+            raise ValueError('Candidate exceeds inline media limit')
+        return data, start, duration
+
     def classify_video_window(self, video_path, window, recipe, window_index=0):
         try:
-            start = max(0, window.start-2)
-            duration = min(20, window.end-start+2)
-            minimum = min(20, max(0, float(next((s.params.get('min_video_seconds', 0)
-                          for s in recipe.scorer_signals() if s.type == 'vision_classify' and s.params), 0))))
-            if duration < minimum:
-                start = max(0, (window.start + window.end - minimum) / 2)
-                duration = minimum
-            with tempfile.TemporaryDirectory(prefix='hypereel-video-') as tmp:
-                target = Path(tmp)/'clip.mp4'
-                subprocess.run(['ffmpeg','-v','error','-nostdin','-ss',str(start),'-i',str(video_path),
-                                '-t',str(duration),'-an','-c:v','libx264','-preset','ultrafast','-crf','20',str(target)],
-                               check=True, capture_output=True, timeout=60)
-                data = target.read_bytes()
-            if len(data)>19_000_000:
-                raise ValueError('Candidate exceeds inline media limit')
+            data, start, duration = self._video_payload(video_path, window, recipe)
             prompt = build_classification_prompt(recipe)
             prompt += (f'\nYou are receiving continuous video, not sparse still images. Clip00:00 is source{start}s. '
                        f'The candidate action interval is [{window.start},{window.end}] source seconds. '
                        'Use surrounding video to verify the complete action. Classify the central action, not every frame. '
-                       'For rebounds determine shooting and controlling teams; a rebound is permitted when present in the rubric.')
-            parts = [{'inlineData': {'mimeType':'video/mp4','data':base64.b64encode(data).decode()}, 'videoMetadata':{'fps':4}}, {'text':prompt}]
+                       'For rebounds determine shooting and controlling teams; a rebound is permitted when present in the rubric.'
+                       + rebound_sequence_guidance())
+            if self.client.settings.two_phase_verification:
+                prompt += (
+                    '\nPHASE 1 DISCOVERY: optimize for recall. If a rubric event is visually plausible, '
+                    'return the best candidate label even when some outcome evidence is incomplete; express '
+                    'uncertainty through confidence and reason. Return null only when no rubric event is plausible. '
+                    'This candidate will be checked by a separate strict verification pass.'
+                )
+            parts = [{'inlineData': {'mimeType':'video/mp4','data':base64.b64encode(data).decode()}, 'videoMetadata':{'fps':self._fps}}, {'text':prompt}]
             raw = self.client.generate(parts, json_output=True, metadata={'kind':'native_video', 'window_index':window_index,
-                          'window':window.model_dump(), 'video_sha256':hashlib.sha256(data).hexdigest(), 'source_start':start,'duration':duration,'fps':4})
-            return parse_classification_json(raw, recipe)
+                          'window':window.model_dump(), 'video_sha256':hashlib.sha256(data).hexdigest(), 'source_start':start,'duration':duration,'fps':self._fps})
+            return parse_classification_json(
+                raw, recipe, permissive=self.client.settings.two_phase_verification
+            )
         except Exception as error:
             return Classification(confidence=0, reason=f'gemini error: {type(error).__name__}')
+
+    def classify_video_events(self, video_path, window, recipe, window_index=0):
+        """Two calls/window, multiple anchored events; failed verification retains proposals."""
+        data, start, duration = self._video_payload(video_path, window, recipe)
+        video = {'inlineData': {'mimeType': 'video/mp4',
+                               'data': base64.b64encode(data).decode()}, 'videoMetadata': {'fps': self._fps}}
+        metadata = dict(window_index=window_index, window=window.model_dump(),
+                        video_sha256=hashlib.sha256(data).hexdigest(), source_start=start,
+                        duration=duration, fps=self._fps, contract='temporal_events_v1')
+        raw = self.client.generate([video, {'text': discovery_prompt(recipe, window, start)}],
+            json_output=True, metadata=dict(metadata, kind='temporal_discovery'))
+        proposals = parse_discovery(raw, recipe, window, start, window_index)
+        if not proposals:
+            return []
+        # Explicit discovery-only ablation: keep the temporal contract without
+        # another paid call. `confirmed` is a legacy selection-eligibility status,
+        # not evidence of independent verification. The rules gate and human clip
+        # approval still apply; 055 does not establish a two-phase quality advantage.
+        if getattr(recipe, 'verify_events', None) is False:
+            return [p.model_copy(update={'decision': 'confirmed'}) for p in proposals]
+        try:
+            raw = self.client.generate([video, {'text': verification_prompt(recipe, window, start, proposals)}],
+                json_output=True, metadata=dict(metadata, kind='temporal_verification'))
+            return parse_verification(raw, proposals, recipe, window, start)
+        except Exception as error:
+            return [potential(p, f'UNCERTAIN: verification error: {type(error).__name__}') for p in proposals]
+
+    def verify_video_window(self, video_path, window, recipe, proposed, window_index=0):
+        """Strict Phase 2 check of one permissive Phase 1 candidate."""
+        try:
+            data, start, duration = self._video_payload(video_path, window, recipe)
+            prompt = build_verification_prompt(recipe, proposed)
+            prompt += (
+                f'\nYou are receiving continuous video. Clip00:00 is source{start}s; the candidate '
+                f'interval is [{window.start},{window.end}] source seconds. Follow the complete action.'
+                + rebound_sequence_guidance()
+                + '\nIf visible evidence contradicts the proposal, return moment_type=null and begin reason '
+                  'with REJECTED:. If the proposal remains plausible but evidence is incomplete or occluded, '
+                  'return moment_type=null and begin reason with UNCERTAIN:. Confirm only the proposed label; '
+                  'do not substitute another event. An off-camera basket or hidden ball outcome is UNCERTAIN, '
+                  'not a visible contradiction. Explain the observed opposite outcome when rejecting. '
+                  'If a statistical rule depends on an unclear foul or referee call, use UNCERTAIN '
+                  'so a basketball expert can review it.'
+            )
+            parts = [{'inlineData': {'mimeType':'video/mp4','data':base64.b64encode(data).decode()},
+                      'videoMetadata':{'fps':self._fps}}, {'text':prompt}]
+            raw = self.client.generate(parts, json_output=True,
+                metadata={'kind':'native_video_verification','window_index':window_index,
+                          'proposed_label':proposed.moment_type,'window':window.model_dump(),
+                          'video_sha256':hashlib.sha256(data).hexdigest(),'source_start':start,
+                          'duration':duration,'fps':self._fps})
+            return parse_classification_json(raw, recipe)
+        except Exception as error:
+            return Classification(confidence=0, reason=f'UNCERTAIN: gemini error: {type(error).__name__}')
 
 class GeminiVideoLLMProvider(LLMProvider):
     name = 'gemini'

@@ -1,0 +1,56 @@
+{
+  "name": "human-annotation-rescore-033",
+  "created_at": "2026-09-15T17:33:41+05:30",
+  "status": "completed_offline_partial_adjudication",
+  "inference_calls": 0,
+  "paid_cost_usd": 0,
+  "holdout_used": false,
+  "model_predictions": "cached gemini-3.8-flash direct-video predictions",
+  "prediction_source": "../gemini-development-summary/full-control.json",
+  "annotation_revision": "../../golden/revisions/development-human-review-v1.json",
+  "metric_policy": {
+    "tolerance_seconds": 5,
+    "matching": "one-to-one same-label point matching on human-supported labels with preserved original anchors",
+    "false_positive_policy": "count only predictions whose label/event family was adjudicated for that window; ignore unresolved event families",
+    "duplicate_policy": "unmatched duplicate predictions count as false positives",
+    "generic_label_policy": "unknown point-value made/missed field goals are coverage gaps, not forced into two/three-point labels",
+    "boundary_policy": "events whose reviewed action extends beyond original scored input are excluded from cached-input comparison"
+  },
+  "historical_full_original": {
+    "windows": 8,
+    "references": 14,
+    "tp": 5,
+    "fp": 8,
+    "fn": 9,
+    "precision": 0.38461538461538464,
+    "recall": 0.35714285714285715,
+    "micro_f1": 0.37037037037037035
+  },
+  "adjudicated_point_comparable_slice": {
+    "included_windows": ["W1", "W2", "W3", "W4", "W5", "W6"],
+    "positive_references": 5,
+    "confirmed_negative_windows": 1,
+    "tp": 2,
+    "fp": 5,
+    "fn": 3,
+    "precision": 0.2857142857142857,
+    "recall": 0.4,
+    "micro_f1": 0.3333333333333333,
+    "per_window": [
+      {"window_id": "W1", "tp": 0, "fp": 1, "fn": 1, "note": "predicted free_throw_miss; human supports free_throw_made"},
+      {"window_id": "W2", "tp": 1, "fp": 0, "fn": 0, "note": "steal only; assist/turnover unresolved and made basket input incomplete"},
+      {"window_id": "W3", "tp": 0, "fp": 0, "fn": 0, "note": "human-confirmed negative; model emitted none"},
+      {"window_id": "W4", "tp": 0, "fp": 1, "fn": 1, "note": "predicted free_throw_made; human supports free_throw_miss"},
+      {"window_id": "W5", "tp": 0, "fp": 0, "fn": 1, "note": "block missed; predicted two_point_miss is a generic-miss taxonomy coverage case, not scored here"},
+      {"window_id": "W6", "tp": 1, "fp": 3, "fn": 0, "note": "first two_point_miss matched; rejected steal and turnover plus unmatched duplicate two_point_miss count false positive"}
+    ]
+  },
+  "coverage_gaps": {
+    "input_incomplete_or_core_changed": ["W2 made basket 12:43-12:47", "W6 defensive rebound 22:03-22:05"],
+    "generic_unknown_point_value": ["W5 missed_field_goal", "W7 made_field_goal"],
+    "unresolved_exact_timing": ["W6 second two_point_miss", "W6 offensive_rebound"],
+    "unresolved_original_labels": ["W2 assist", "W2 turnover"],
+    "excluded_unreviewed_window": ["W0"]
+  },
+  "interpretation": "No model gain or regression is inferred. The full-original and adjudicated-slice metrics have different denominators. Changes are due to annotation/evaluator coverage, while cached model outputs are unchanged."
+}

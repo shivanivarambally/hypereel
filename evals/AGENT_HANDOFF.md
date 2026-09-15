@@ -1,3 +1,43 @@
+## Current handoff — 2026-09-16T00:39:02+05:30
+
+Latest live run is 055, not 041. Read [current STATUS](STATUS.md), [055 results](iterations/proposer-sweep-055/results.md), and [publication review](../docs/REVIEW_2026-09-16.md). The user asked to review and commit relevant local work, update documentation and push main. No paid calls are authorized by this publication task; preserve the $13.165006125 ledger and $13.192294875 ceiling (only $0.02728875 left). Do not open or evaluate the third-game holdout.
+
+043–055 add denser sampling, contrastive prompts, rules/phase-transition instrumentation, assist anchors, per-recipe discovery-only mode, source-golden scoring and broader evaluation. The 055 span is 600–1600s of game 1: 100 windows, 98 source references, TP41/FP89/FN57 (P .3154, R .4184, F1 .3596). 056 is an offline publication replay, not another model iteration. `score_against_golden.py --report ... --boundary half-open --out NEW.json` now supports explicit report/game identity and refuses overwriting existing outputs. Default inclusive matching is retained for historical isolated-window replay.
+
+Six human-reviewed references were a subset; all 462 externally labeled source events were available. Do not silently substitute source gold for human adjudications or compare their metrics without specifying the policy. Do not describe every unmatched output as hallucinated or infer a two-phase advantage from the discovery-only sweep. Remaining engineering issues and the no-new-live-test limitation are recorded in the publication review. Main README/guide are current; dated submission HTML remains an archive.
+
+---
+
+## Historical handoff — 2026-09-15T19:54:00+05:30
+
+Read [040–041 results](iterations/two-phase-e2e-041/results.md) first. Latest user asked for a rough one-phase/two-phase comparison and to proceed. Implemented native multi-event discovery and batch verification (same clip, at most two calls/window), event-ID/time provenance, supported corrections, safe missing-verification review routing, graph expansion, and multi-event selected-clip metadata. Legacy one-label API remains intact; new graph dispatch is `classify_moments`. Two-phase stays opt-in.
+
+040 made 13 successful video calls; 041 replayed frozen outputs with no vision calls after fixing selection metadata loss. Five live judge/summary calls exercised actual Streamlit approval/render/download: 15-second W2 with multiple events; 8-second W5 simulated correction. No publish. 442 tests passed, 4 skipped, 1 holdout deselected. Incremental estimated spend $0.14822775; ledger $9.693852375; remaining $1.4984425 under unchanged $11.192294875 ceiling. Preserve every iteration, golden reference and usage record. No commit/push.
+
+Primary W1–W5 six-reference conditional metrics: original one-phase F1 .50; previous two-phase .286; new discovery TP3/FP2/FN3 (P .60, R .50, F1 .545); new verified/selected TP2/FP2/FN4 (P .50, R .333, F1 .40). Confirmed+pending retains the discovery coverage but is not human-finalized accuracy. Verification found no corrections and moved one reviewed true positive to review while confirming two reference-conflicting predictions. No superiority claim. Interval support at 0/2/5-second slack agrees with these counts, but references are approximate and do not establish exact timestamp error.
+
+Next: independently audit cached media/reference alignment in W1/W4 and team/possession narration in W6. Do not alter gold to agree with predictions. Then test evidence-first independent verification and normalize team identities; cross-window event dedup and summary propagation of all clip events are still needed. Full-game run remains unperformed; third-game holdout sealed. W2 UI artifact wording “fresh 041” is historical shorthand corrected in results.md: inference was live 040, selection/render replay 041. No inference repeat needed for metadata-only fixes.
+
+---
+
+## Historical handoff — 2026-09-15T19:32:14+05:30
+
+Read [038–039 results](iterations/two-phase-e2e-039/results.md) first. User authorized a $2 ceiling increase and end-to-end retest; both are complete. Ceiling $11.192294875; final ledger $9.545624625; available $1.64667025. Preserve the ledger and all dated reports. No holdout access, commit or push in this work.
+
+33 successful video calls and 11 graph judge/summary calls tested the actual production adapter. The current two-phase feature is still **one label per window**, not multi-event discovery. On the common six-positive W1–W5 subset, automatic two-phase recall is 16.7% and F1 28.6%; retained confirmed+potential coverage is 33.3% and F1 50.0%. Precision is conditional on adjudicated families; do not claim 100% overall precision or compare these window-label scores directly with 034–037 event-level F1. W6/W7 require qualitative review. No generalized gain demonstrated.
+
+Fixes: incomplete/off-camera verifier evidence always retained as potential; unclear foul/referee rules flagged for expert review; approved duration recomputed after adding human-reviewed clips. `review-routing.json` replays only deterministic routing over captured 039 responses. Actual UI checks include confirming and correcting potential events, graph render and download, with simulated review excluded from golden labels/metrics. Full suite 431 passed/4 skipped/1 holdout deselected. Two-phase remains opt-in; do not silently enable it for full-game calls. Next engineering work is multi-event timestamped discovery and a verifier correction path.
+
+---
+
+## Current documentation checkpoint — 2026-09-13T12:33:30+05:30
+
+Latest submission: [single-file HTML under 10 MB](../HypeReel-Breakout-Submission-under-10MB.html); the [README](../README.md) links both initial and evaluation/testing recordings. Run 032 remains the latest documented six-clip live-demo result: 87 seconds from a ten-minute both-teams excerpt, 469.46 seconds to complete. Development micro-F1: Gemini 0.370, MiniCPM 0.125, Gemini + transcript 0.348 (eight windows, fourteen references). Full-game accuracy remains unproven; final holdout unused. Last recorded full-suite checkpoint: 411 passed, 4 skipped, 1 holdout test deselected; not rerun for this documentation audit.
+
+Ledger read at this timestamp: $8.992221; remaining local funded cap $0.200073. This is local accounting, not a verified Google balance. Older dated statuses below are historical; do not use their remaining budgets or launch-state claims as current observations.
+
+---
+
 ## Commit/push checkpoint — 2026-09-13T00:56:24.665196+05:30
 
 User authorized committing and pushing all pending project changes. Full pre-push suite:411 passed,4 skipped,1 final-holdout test deselected; one legacy Gemini SDK warning. Demo integration029, live UI030, failed three-clip031, successful six-clip032 and subsequent user render/approval feedback fixes included. User's own later render output verified89.5seconds; no claim its Chrome gate2 was visually inspected. Provider spend ledger $8.982478125; funded use $1.790183 of$2, remaining $0.209817. This is insufficient for another similar ~$0.53 full inference run within the current cap. No paid calls made for commit validation; do not reset ledger.

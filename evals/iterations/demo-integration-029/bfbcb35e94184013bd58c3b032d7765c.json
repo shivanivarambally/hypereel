@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-09-15T12:15:36.609972+00:00",
+  "status": "completed",
+  "reserved_usd": 0.030629687500000002,
+  "model": "gemini-3.8-flash",
+  "config": {
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "responseMimeType": "application/json"
+  },
+  "metadata": {
+    "iteration": "034",
+    "window_id": "W1",
+    "input": "unchanged"
+  },
+  "prompt": [
+    "Analyze every supported basketball event in this continuous video. Clip 00:00 is source time 221 seconds; return SOURCE time_seconds. Score only events whose decisive action occurs in [221,231], using surrounding footage as context.\nAllowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss.\nmade_field_goal and missed_field_goal mean the outcome is visible but two-versus-three point value is not visually established. Prefer those generic labels rather than guessing shot value. A block also implies a missed field-goal attempt. A defensive rebound after an opponent miss is not a turnover. Preserve multiple compatible events. Do not infer shot value from trajectory or a scoreboard. Do not invent hidden events. Return only JSON {\"events\":[{\"label\":\"label\",\"time_seconds\":0.0,\"confidence\":0.8,\"evidence\":\"visible evidence\"}]}; empty events is allowed."
+  ],
+  "token_preflight": {
+    "totalTokens": 13813,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 247
+      },
+      {
+        "modality": "VIDEO",
+        "tokenCount": 13181
+      },
+      {
+        "modality": "AUDIO",
+        "tokenCount": 385
+      }
+    ]
+  },
+  "raw_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n \"events\": [\n  {\n   \"confidence\": 0.8,\n   \"evidence\": \"A player in a blue jersey (#3) shoots a free throw which misses the rim/board or rim bounce.\",\n   \"label\": \"free_throw_miss\",\n   \"time_seconds\": 228.25\n  },\n  {\n   \"confidence\": 0.85,\n   \"evidence\": \"A player in a black jersey (#24) secures the defensive rebound off the missed free throw.\",\n   \"label\": \"defensive_rebound\",\n   \"time_seconds\": 229.25\n  }\n ]\n}",
+              "thoughtSignature": "EmcKZQERTTIP0fCOvjkRopITX1xVMfT3AMzRG3NDASu/iVxptGlA1j/NnYLhwJmCbp1E+D6FCaZbvkZErGMys7nRPtFxECXMEg2UP4CxGoa2xgnu1uBXASQ+8WdT3QMrfSPe98VMi1qJ"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 12919,
+      "candidatesTokenCount": 150,
+      "totalTokenCount": 13069,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 247
+        },
+        {
+          "modality": "VIDEO",
+          "tokenCount": 12672
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "6japaqjPAZqzjuMPwPvagQE"
+  },
+  "estimated_cost_usd": 0.01025175,
+  "elapsed_seconds": 8.01425270800246
+}

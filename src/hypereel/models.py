@@ -127,6 +127,11 @@ class Recipe(BaseModel):
     moment_types: list[MomentType] = Field(default_factory=list)
     scoring_rubric: Optional[list[RubricDimension]] = None
     signals: list[SignalConfig] = Field(default_factory=list)
+    # Per-recipe override for the second verification pass. None defers to the
+    # global setting. False preserves multi-event discovery but skips verification.
+    # Curated-run cost/quality observations do not establish the best production
+    # setting; the broader 055 sweep has no paired verifier comparison.
+    verify_events: Optional[bool] = None
     subject_selector: SubjectSelector = Field(default_factory=SubjectSelector)
     selection: SelectionPolicy = Field(default_factory=SelectionPolicy)
     style: StyleConfig = Field(default_factory=StyleConfig)
@@ -175,6 +180,33 @@ class Classification(BaseModel):
     subject_present: bool = False        # is the recipe's subject in frame?
     confidence: float = 0.0              # 0..1
     reason: str = ""                     # short grounded explanation
+    decision: Optional[Literal["confirmed", "potential_event", "rejected"]] = None
+    phase1_moment_type: Optional[str] = None
+    verification_reason: str = ""
+    expert_review_required: bool = False
+
+    # Native temporal output; seconds in the input video's timeline, never game clock.
+    event_time: Optional[float] = None
+    phase1_event_time: Optional[float] = None
+    team: Optional[str] = None
+    event_id: Optional[str] = None
+    source_window_index: Optional[int] = None
+
+
+class PotentialEvent(BaseModel):
+    """A plausible event retained for simple end-of-run human review."""
+
+    candidate_index: int
+    start: float
+    end: float
+    proposed_label: str
+    confidence: float
+    uncertainty_reason: str
+    review_status: Literal["pending", "confirmed", "corrected", "rejected"] = "pending"
+    expert_review_required: bool = False
+    event_time: Optional[float] = None
+    event_id: Optional[str] = None
+    team: Optional[str] = None
 
 
 class Clip(BaseModel):
@@ -186,6 +218,7 @@ class Clip(BaseModel):
     score: float = 0.0
     reason: str = ""
     subject_present: bool = False
+    events: list[Classification] = Field(default_factory=list)
 
     @property
     def duration(self) -> float:

@@ -12,43 +12,49 @@ A recipe-driven, agentic highlight-reel builder built on LangGraph.
 
 > Local Qwen vision setup (Ollama, no paid API): [instructions](docs/OLLAMA.md). Current measured quality and limitations: [evaluation status](evals/STATUS.md).
 
-**The one-liner:** My agent helps a player or coach turn a full 60-minute game recording into a share-ready highlight reel matching a plain-language brief (one player, a whole team, only threes, no steals) in a Streamlit web app, replacing the 3–4 hours of manual scrubbing and clip-cutting in a video editor it takes today. It ingests the video, detects and scoreboard-confirms the right plays, and critiques and re-cuts its own reel on its own using ~6 tools (yt-dlp, frame sampling, scoreboard CV, a vision model, an LLM judge, and ffmpeg), hands off to a human to approve the clip list before it renders and again before it shares, and I'll know it works when a user gets a watchable, single-team reel in under 30 minutes that they'd actually post 8 times out of 10.
+**The one-liner:** HypeReel helps players and coaches turn game footage into a highlight reel matching a plain-language brief, reducing the 3–4 hours of manual scrubbing and clip-cutting. The prototype proposes and classifies plays, selects clips, and pauses for human video review before final rendering. A second gate records delivery approval; external upload is not implemented. A full-game reel in under 30 minutes that users would post 8 times out of 10 remains a product target.
 
 ## What it does
 
-The flagship demo is an AAU basketball game: point the agent at a full game recording and a recipe describing one player (jersey number + team color), and it comes back with a ≤5-minute reel of that player's made baskets, threes, blocks, and steal-to-fast-break sequences — spread across all four quarters, not clustered in one segment.
+The latest live demo uses Gemini native video on a continuous ten-minute East Bay game excerpt (12:30–22:30), covering both light-blue and black teams. Run 032 selected six non-overlapping clips and rendered an 87-second reel in 469.46 seconds. The app previews each proposed clip for human review and offers the final reel for download. This demonstrates the workflow; reliable full-game event recognition and player identification remain unproven.
 
-The core abstraction is the **recipe** — a declarative YAML policy that describes what counts as a highlight in a given domain, so the same pipeline generalizes well beyond basketball:
+**Latest evaluation — 16 September 2026:** discovery-only Gemini at 8 fps was tested on 100 consecutive 10-second windows from game 1 (10:00–26:40), against 98 externally labeled reference events. Precision **31.5%**, recall **41.8%**, F1 **36.0%** (41 correct, 89 unmatched predictions, 57 misses). This is one segment of one development game, using window-level label matching—not exact event timing, full-game accuracy, or a paired one-phase/two-phase comparison. Unmatched predictions require video adjudication before being called hallucinations. [Results](evals/iterations/proposer-sweep-055/results.md) · [offline reproduction](evals/iterations/publication-audit-056.json).
+
+The development golden set contains **462 externally labeled events across two games**. Earlier six-label tests used only a small human-reviewed subset, not the whole available reference set. For all-event detection, use `source_event_type` and `source_outcome`; `expected_moment_type` encodes highlight-selection eligibility. Historical curated scores are not directly comparable with the broader sweep. Release criteria remain unmet; the third dataset remains sealed. See [current status](evals/STATUS.md) and [evaluation guide](docs/EVALUATION_TESTING.md).
+
+**Single-file submission:** [HTML with embedded images, under 10 MB](HypeReel-Breakout-Submission-under-10MB.html). The regular HTML uses separate assets.
+
+The core abstraction is the **recipe** — a declarative YAML policy that describes what counts as a highlight in a given domain, so the pipeline can be configured for other domains; new-domain quality still requires validation:
 
 - **`event_based`** recipes (e.g. basketball) look for discrete events — a vision model classifies each candidate window against a short list of named `moment_types` (`made_basket`, `three_pointer`, `block`, `steal_break`, ...), each with a natural-language rubric.
 - **`quality_based`** recipes (e.g. a real-estate walkthrough, see `recipes/architecture_walkthrough.yaml`) have no discrete events to detect — instead the vision model scores sliding windows against a composition/lighting/clarity rubric, and the sustained highest-scoring segments become clips.
 
-Everything else — which signals propose candidates, how clips are scored and budget-fitted, transitions, aspect ratio, guardrails, acceptance criteria — is also part of the recipe, not hardcoded.
+Recipes configure signals, selection, output settings and acceptance criteria; domain-specific perception and some behavior remain implemented in code.
 
 ## Architecture
 
 HypeReel is a LangGraph state machine, not a one-shot LLM call: cheap local signals **propose** candidate windows, a vision model **confirms/scores** them, deterministic code **selects** the final budget-fitted clip set, and a human **gates** the two write-ish actions (render and share).
 
 ```
-plan → ingest → propose → classify → select
-                                        │
-                                        ▼
-                         [ HITL Gate 1: approve clips ] ──▶ render → summarize
-                                                                        │
-                                                                        ▼
-                                                  [ HITL Gate 2: approve & share ] ──▶ deliver
+plan → ingest → propose → scoreboard (optional) → classify → select → judge
+                                                           ↑          │
+                                                           └─ revise ─┘ (at most once)
+judge → accept → approve_clips [Gate 1] → render → summarize
+      → approve_share [Gate 2] → deliver
 ```
 
 - **plan** — picks a strategy (`event_based` / `quality_based`) and the active proposer signals from the recipe.
 - **ingest** — resolves the source (YouTube via `yt-dlp`, or a local path), with graceful fallback if it fails.
 - **propose** — cheap, local signals (audio-peak, motion-intensity, scene-stability) generate candidate time windows.
+- **scoreboard** — optional recipe-controlled processing; inactive in the current demo.
 - **classify** — a vision provider judges each candidate against the recipe's moment types / rubric.
 - **select** — scores and greedily budget-fits candidates into a final clip list, ordered per the recipe.
-- **approve_clips** *(HITL Gate 1)* — a human reviews/edits the proposed clip list before anything is rendered.
+- **judge** — reviews clip metadata against recipe criteria; may request at most one re-selection. It does not inspect rendered footage.
+- **approve_clips** *(HITL Gate 1)* — a human watches local previews and keeps/drops clips before the final reel is rendered.
 - **render** — cuts and concatenates the approved clips (or writes a manifest if media libs/ffmpeg aren't available).
 - **summarize** — an LLM writes a short natural-language recap of the reel.
 - **approve_share** *(HITL Gate 2)* — a human approves before any share/publish step runs.
-- **deliver** — terminal node; marks the reel as shared (or ready-but-unshared).
+- **deliver** — terminal bookkeeping node; records approval status in notes, without uploading or publishing.
 
 See the flow diagram and full rationale in [`design/HypeReel-Design.html`](design/HypeReel-Design.html) (sections 2–3).
 
@@ -97,8 +103,8 @@ streamlit run src/hypereel/app.py
 By default everything runs against deterministic **mock** providers — no API key, no network call, fully reproducible. To use a real vision/LLM provider, set in `.env`:
 
 ```
-HYPEREEL_VISION_PROVIDER=mock|gemini|groq|nebius|fireworks
-HYPEREEL_LLM_PROVIDER=mock|gemini|groq|nebius|fireworks
+HYPEREEL_VISION_PROVIDER=mock|gemini|groq|nebius|fireworks|ollama
+HYPEREEL_LLM_PROVIDER=mock|gemini|groq|nebius|fireworks|ollama
 ```
 
 along with the matching API key (`GEMINI_API_KEY`, `GROQ_API_KEY`, `NEBIUS_API_KEY`, or `FIREWORKS_API_KEY`) and the provider extra (`pip install -e ".[providers]"`). Nebius and Fireworks use OpenAI-compatible endpoints; see `.env.example` for the full list of knobs (base URLs, model names, sampling settings).
@@ -114,9 +120,13 @@ For the evaluation's optional LLM-as-a-Judge, choose one text provider in `.env`
 Set the matching key and a model available to your account. Vision selection is
 independent; real pipeline evaluation also needs a configured vision provider.
 
-**The graded submission routes at least one model call through Nebius Token Factory** — set both `HYPEREEL_VISION_PROVIDER=nebius` and `HYPEREEL_LLM_PROVIDER=nebius` with `NEBIUS_API_KEY` filled in.
+The initial demo used Nebius Token Factory. The latest evaluated live demo uses Gemini for vision and text with `GEMINI_NATIVE_VIDEO=true`; `/?demo=full-flow` is the full workflow preset and requires the local demo excerpt. See [demo setup](HypeReel-Demo-Script.md). Ollama configuration is documented separately in [docs/OLLAMA.md](docs/OLLAMA.md).
 
-Every provider path degrades gracefully: if an SDK isn't installed or a key is missing/invalid, HypeReel falls back to the mock provider rather than crashing the pipeline.
+For the optional multi-event basketball workflow, set `HYPEREEL_TWO_PHASE_VERIFICATION=true`. Discovery returns multiple timestamped events; verification can confirm, correct, reject, or retain uncertain events for human review. The recipe's `verify_events: true` enables verification, `false` keeps multi-event discovery but skips the second call, and omission uses the global setting. A rules gate flags suspect sequences. Human reviewers can confirm, correct, reject, or leave potential events pending; overlapping selected footage retains multiple event labels. [Configuration and limitations](docs/TWO_PHASE_REVIEW.md).
+
+Neither mode has established reliable basketball recognition. Discovery-only events currently carry the compatibility status `confirmed` to permit selection; that **does not mean independently verified**. Two-phase inference can approximately double calls. The shared cumulative ledger and ceiling are in `evals/iterations/`; as of the latest audit only about **$0.027** remains. No further paid run is recommended without new budget authorization. Local accounting is not a provider account-wide limit.
+
+Missing cloud keys or provider initialization failures can fall back to mock. Runtime API failures may instead produce empty or low-confidence results; inspect provider status and notes rather than assuming live inference succeeded. Ollama has its own local error handling.
 
 > **Note:** `.env` is only read if `python-dotenv` is installed (it's in the core deps, so a normal `pip install -e .` covers it). If you install by some other means and skip it, export the variables in your shell instead — otherwise a missing `.env` is silently ignored and everything falls back to `mock`.
 
@@ -203,7 +213,7 @@ src/hypereel/
   analyze/        Frame sampling + vision-model classification of candidate windows
   select/         Scoring and knapsack-style selection to the time budget, with ordering + coverage
   render/         Clip cut/concat/overlay (moviepy/ffmpeg), with a manifest fallback when unavailable
-  memory/         Persistent user profile + learned accept/reject preferences
+  memory/         Profile/feedback storage primitives; automatic UI personalization is not integrated
   graph/          LangGraph state (state.py), node functions (nodes.py), and graph assembly + runner (build.py)
   evaluation/     Deterministic metrics, optional LLM-as-a-Judge, runners, and local reports
   app.py          Streamlit UI
@@ -215,10 +225,10 @@ design/           HypeReel-Design.html — the full design document
 
 ## Human-in-the-loop
 
-HypeReel treats **reads as autonomous and writes as gated**:
+HypeReel gates final rendering and delivery approval. Preparation also writes local downloads, caches and preview clips:
 
-- **Gate 1 — approve the clip list.** Everything up to this point (ingest, propose, classify, select) is read-only analysis of the source video. Before anything is rendered, a human reviews the proposed clips and can drop any that don't belong.
-- **Gate 2 — approve & share.** Rendering produces a local file — still not a write to anywhere external. Before any share/publish step runs, a human explicitly approves it. This is the one gate that guards an outward-facing action.
+- **Gate 1 — approve the clip list.** A human watches proposed clip previews and drops unwanted clips before final rendering.
+- **Gate 2 — approve & share.** The rendered reel can be watched and downloaded before this approval. Approval updates local state; external sharing/publishing is not implemented.
 
 There is also a self-correction path: if the selected clips underfill the recipe's time budget, the pipeline still surfaces the (shorter) proposed list at Gate 1 with a clear warning, rather than silently shipping an incomplete reel or failing outright.
 

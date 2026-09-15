@@ -1,0 +1,247 @@
+{
+  "name": "gemini-broader-fix-eval-037",
+  "status": "completed",
+  "started_at": "2026-09-15T18:29:22.216182+05:30",
+  "model": "gemini-3.8-flash",
+  "holdout_used": false,
+  "spend_before_usd": 9.101359875000048,
+  "calls": [
+    {
+      "index": 1,
+      "game": "east-bay-elite-vs-spartans",
+      "clip": "evals/iterations/gemini-development-media/w1-continuous.mp4",
+      "source_start": 221,
+      "source_end": 233,
+      "core": [
+        223,
+        231
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [223,231]. Clip 00:00 is source 221 seconds. Reviewed game setup supplies team identity only: East Bay Elite wears blue; Spartans wears black. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\n  \"events\": [\n    {\n      \"sequence_index\": 1,\n      \"label\": \"free_throw_miss\",\n      \"time_seconds\": 228.0,\n      \"team\": \"East Bay Elite\",\n      \"shooting_team\": \"East Bay Elite\",\n      \"confidence\": 0.95,\n      \"evidence\": \"Blue #3 shoots a free throw at 00:06.000, hits the rim/backboard and misses.\"\n    },\n    {\n      \"sequence_index\": 2,\n      \"label\": \"defensive_rebound\",\n      \"time_seconds\": 229.25,\n      \"team\": \"Spartans\",\n      \"shooting_team\": \"East Bay Elite\",\n      \"confidence\": 0.9,\n      \"evidence\": \"Following the missed free throw by East Bay Elite, Spartans player #24 secures the defensive rebound around 00:08.250.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "sequence_index": 1,
+          "label": "free_throw_miss",
+          "time_seconds": 228.0,
+          "team": "East Bay Elite",
+          "shooting_team": "East Bay Elite",
+          "confidence": 0.95,
+          "evidence": "Blue #3 shoots a free throw at 00:06.000, hits the rim/backboard and misses.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        },
+        {
+          "sequence_index": 2,
+          "label": "defensive_rebound",
+          "time_seconds": 229.25,
+          "team": "Spartans",
+          "shooting_team": "East Bay Elite",
+          "confidence": 0.9,
+          "evidence": "Following the missed free throw by East Bay Elite, Spartans player #24 secures the defensive rebound around 00:08.250.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "internally consistent"
+          }
+        }
+      ],
+      "ended_at": "2026-09-15T18:29:29.119848+05:30"
+    },
+    {
+      "index": 2,
+      "game": "east-bay-elite-vs-spartans",
+      "clip": "evals/iterations/gemini-human-review-034/media/w2-action-complete.mp4",
+      "source_start": 754,
+      "source_end": 769,
+      "core": [
+        756,
+        767
+      ],
+      "input": "revised_action_complete",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [756,767]. Clip 00:00 is source 754 seconds. Reviewed game setup supplies team identity only: East Bay Elite wears blue; Spartans wears black. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\n  \"events\": [\n    {\n      \"sequence_index\": 1,\n      \"label\": \"steal\",\n      \"time_seconds\": 761.5,\n      \"team\": \"East Bay Elite\",\n      \"shooting_team\": \"unknown\",\n      \"confidence\": 0.85,\n      \"evidence\": \"East Bay Elite defender (number 0) deflects and intercepts the pass from the Spartans ball-handler, securing control of the ball.\"\n    },\n    {\n      \"sequence_index\": 2,\n      \"label\": \"turnover\",\n      \"time_seconds\": 761.5,\n      \"team\": \"Spartans\",\n      \"shooting_team\": \"unknown\",\n      \"confidence\": 0.85,\n      \"evidence\": \"Spartans player turns the ball over on the pass intercepted by East Bay Elite.\"\n    },\n    {\n      \"sequence_index\": 3,\n      \"label\": \"two_point_made\",\n      \"time_seconds\": 766.0,\n      \"team\": \"East Bay Elite\",\n      \"shooting_team\": \"East Bay Elite\",\n      \"confidence\": 0.9,\n      \"evidence\": \"East Bay Elite player drives to the basket and makes a layup from within the two-point area.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "sequence_index": 1,
+          "label": "steal",
+          "time_seconds": 761.5,
+          "team": "East Bay Elite",
+          "shooting_team": "unknown",
+          "confidence": 0.85,
+          "evidence": "East Bay Elite defender (number 0) deflects and intercepts the pass from the Spartans ball-handler, securing control of the ball.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        },
+        {
+          "sequence_index": 2,
+          "label": "turnover",
+          "time_seconds": 761.5,
+          "team": "Spartans",
+          "shooting_team": "unknown",
+          "confidence": 0.85,
+          "evidence": "Spartans player turns the ball over on the pass intercepted by East Bay Elite.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        },
+        {
+          "sequence_index": 3,
+          "label": "two_point_made",
+          "time_seconds": 766.0,
+          "team": "East Bay Elite",
+          "shooting_team": "East Bay Elite",
+          "confidence": 0.9,
+          "evidence": "East Bay Elite player drives to the basket and makes a layup from within the two-point area.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        }
+      ],
+      "ended_at": "2026-09-15T18:29:37.915552+05:30"
+    },
+    {
+      "index": 3,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w3-continuous.mp4",
+      "source_start": 18,
+      "source_end": 30,
+      "core": [
+        20,
+        28
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [20,28]. Clip 00:00 is source 18 seconds. Reviewed game setup supplies team identity only: Campus wears yellow; Unlimited wears white. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\n  \"events\": []\n}",
+      "events": [],
+      "ended_at": "2026-09-15T18:29:44.226119+05:30"
+    },
+    {
+      "index": 4,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w4-continuous.mp4",
+      "source_start": 92,
+      "source_end": 104,
+      "core": [
+        94,
+        102
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [94,102]. Clip 00:00 is source 92 seconds. Reviewed game setup supplies team identity only: Campus wears yellow; Unlimited wears white. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\n  \"events\": [\n    {\n      \"sequence_index\": 1,\n      \"label\": \"free_throw_made\",\n      \"time_seconds\": 98.8,\n      \"team\": \"Unlimited\",\n      \"shooting_team\": \"Unlimited\",\n      \"confidence\": 0.8,\n      \"evidence\": \"Player #11 of Unlimited shoots a free throw at the line around 00:06.5 - 00:07.5 and makes it.\"\n    }\n  ]\n}",
+      "events": [
+        {
+          "sequence_index": 1,
+          "label": "free_throw_made",
+          "time_seconds": 98.8,
+          "team": "Unlimited",
+          "shooting_team": "Unlimited",
+          "confidence": 0.8,
+          "evidence": "Player #11 of Unlimited shoots a free throw at the line around 00:06.5 - 00:07.5 and makes it.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        }
+      ],
+      "ended_at": "2026-09-15T18:29:50.203251+05:30"
+    },
+    {
+      "index": 5,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w5-continuous.mp4",
+      "source_start": 974,
+      "source_end": 986,
+      "core": [
+        976,
+        984
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [976,984]. Clip 00:00 is source 974 seconds. Reviewed game setup supplies team identity only: Campus wears yellow; Unlimited wears white. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\"events\": [{\"sequence_index\": 1, \"label\": \"two_point_miss\", \"time_seconds\": 978.2, \"team\": \"Campus\", \"shooting_team\": \"Campus\", \"confidence\": 0.85, \"evidence\": \"Campus player in yellow (#25) drives towards the basket and attempts a layup which misses the rim/backboard around 00:04.250.\"}, {\"sequence_index\": 2, \"label\": \"offensive_rebound\", \"time_seconds\": 979.5, \"team\": \"Campus\", \"shooting_team\": \"Campus\", \"confidence\": 0.8, \"evidence\": \"Following the missed layup by Campus, Campus recovers the ball near the baseline/basket at 00:05.500.\"}]}",
+      "events": [
+        {
+          "sequence_index": 1,
+          "label": "two_point_miss",
+          "time_seconds": 978.2,
+          "team": "Campus",
+          "shooting_team": "Campus",
+          "confidence": 0.85,
+          "evidence": "Campus player in yellow (#25) drives towards the basket and attempts a layup which misses the rim/backboard around 00:04.250.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        },
+        {
+          "sequence_index": 2,
+          "label": "offensive_rebound",
+          "time_seconds": 979.5,
+          "team": "Campus",
+          "shooting_team": "Campus",
+          "confidence": 0.8,
+          "evidence": "Following the missed layup by Campus, Campus recovers the ball near the baseline/basket at 00:05.500.",
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "internally consistent"
+          }
+        }
+      ],
+      "ended_at": "2026-09-15T18:29:57.659092+05:30"
+    },
+    {
+      "index": 7,
+      "game": "unlimited-vs-campus",
+      "clip": "evals/iterations/gemini-development-media/w7-continuous.mp4",
+      "source_start": 2376,
+      "source_end": 2388,
+      "core": [
+        2378,
+        2386
+      ],
+      "input": "unchanged",
+      "status": "completed",
+      "prompt": "Analyze all supported basketball events in source interval [2378,2386]. Clip 00:00 is source 2376 seconds. Reviewed game setup supplies team identity only: Campus wears yellow; Unlimited wears white. Do not treat that mapping as evidence that an event occurred.\n\nBasketball possession-sequence procedure:\n1. Follow the same live ball chronologically; do not classify isolated frames.\n2. For every shot, record the shooting team, visible outcome, and next team with clear control.\n3. After a confirmed miss, compare the next controlling team with the shooting team: same team means offensive_rebound; opponent means defensive_rebound.\n4. If the shooting team gets an offensive rebound, keep the possession open and separately analyze any putback shot and its later rebound. Do not attach the later rebound to the first shot.\n5. A possession change following a missed shot and rebound is not, by itself, a turnover or steal.\n6. Never decide rebound type from jersey color alone. First identify which team took the relevant shot.\nIn the reason/evidence, explicitly name the shooting team and rebound-controlling team. Use unknown rather than guessing when either team or the event order is unclear.\nReturn supported events chronologically. Allowed labels: assist, block, defensive_rebound, free_throw_made, free_throw_miss, made_field_goal, missed_field_goal, offensive_rebound, steal, three_point_made, three_point_miss, turnover, two_point_made, two_point_miss. Use made_field_goal or missed_field_goal when the outcome is visible but two-versus-three point value is not. A block also implies a missed field-goal attempt. For shots, team and shooting_team are the shooting team. For rebounds, team is the controller and shooting_team is the immediately preceding missed-shot team. Use unknown rather than guess. Return strict JSON only: {\"events\":[{\"sequence_index\":1,\"label\":\"label\",\"time_seconds\":0.0,\"team\":\"team name|unknown\",\"shooting_team\":\"team name|unknown\",\"confidence\":0.8,\"evidence\":\"visible ordered evidence\"}]}. Return an empty list for no event. Do not infer from scoreboard, trajectory, or hidden action.",
+      "raw_text": "{\n \"events\": [\n  {\n   \"confidence\": 0.85,\n   \"evidence\": \"Unlimited player drives and attempts a close-range shot, ball bounces off rim / basket area and falls in around 00:10, made shot by Unlimited.\",\n   \"label\": \"two_point_made\",\n   \"sequence_index\": 1,\n   \"shooting_team\": \"Unlimited\",\n   \"team\": \"Unlimited\",\n   \"time_seconds\": 2386.0\n  }\n ]\n}",
+      "events": [
+        {
+          "confidence": 0.85,
+          "evidence": "Unlimited player drives and attempts a close-range shot, ball bounces off rim / basket area and falls in around 00:10, made shot by Unlimited.",
+          "label": "two_point_made",
+          "sequence_index": 1,
+          "shooting_team": "Unlimited",
+          "team": "Unlimited",
+          "time_seconds": 2386.0,
+          "time_basis": "source",
+          "internal_consistency": {
+            "valid": true,
+            "reason": "not a rebound"
+          }
+        }
+      ],
+      "ended_at": "2026-09-15T18:30:04.932449+05:30"
+    }
+  ],
+  "ended_at": "2026-09-15T18:30:04.933093+05:30",
+  "elapsed_seconds": 42.715861583012156,
+  "spend_after_usd": 9.166582125000046,
+  "incremental_estimated_spend_usd": 0.06522224999999793
+}

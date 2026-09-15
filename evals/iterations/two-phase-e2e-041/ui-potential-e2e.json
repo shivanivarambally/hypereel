@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "inference_source": "live 040 W5 classifications; pipeline replay 041",
+  "simulated_review": true,
+  "review_is_ground_truth": false,
+  "simulated_corrected_label": "missed_field_goal",
+  "review_queue": [
+    {
+      "candidate_index": 0,
+      "start": 2.0,
+      "end": 10.0,
+      "proposed_label": "missed_field_goal",
+      "confidence": 0.49,
+      "uncertainty_reason": "Around 00:04 - 00:06 a shot attempt occurs near the basket by a player driving in, but the ball/rim interaction is heavily occluded by defenders and people in the background, making it ambiguous whether a two-point miss, foul, or other outcome occurred without clear referee signals.",
+      "review_status": "corrected",
+      "expert_review_required": true,
+      "event_time": 6.2,
+      "event_id": "w0e0",
+      "team": null
+    }
+  ],
+  "initial_gate": "approve_clips",
+  "final_gate": "approve_share",
+  "output_path": "/Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-041/render/reel_two_phase_e2e_041_w5_render.mp4",
+  "selected_clips": [
+    {
+      "start": 2.0,
+      "end": 10.0,
+      "moment_type": "missed_field_goal",
+      "score": 0.49,
+      "reason": "human-confirmed potential event",
+      "subject_present": true,
+      "events": []
+    }
+  ],
+  "proposed_duration": 8.0,
+  "summary": "Get ready for non-stop action on the court! In this quick burst of high-stakes hoops, the offense attacks the rim and puts up a bold shot, bringing pure energy and intensity to the floor!",
+  "ffprobe": {
+    "format": {
+      "duration": "8.000000",
+      "size": "4720799"
+    }
+  },
+  "download_visible": true,
+  "shared": false,
+  "notes": [
+    "select: 0 clip(s) chosen, 0.0s of 15.0s budget (underfilled)",
+    "judge[gemini]: verdict=revise score=0.0 llm_action=broaden -> action=broaden (clips=0, confirmed=0) \u2014 Select basketball event clips to populate the empty reel within the budget.",
+    "judge: requesting revision #1 (broaden) with overrides={'require_moment': False, 'broadened': True, 'min_score': 0.4}",
+    "select: 0 clip(s) chosen, 0.0s of 15.0s budget (underfilled) [judge overrides applied: {'require_moment': False, 'broadened': True, 'min_score': 0.4}]",
+    "judge[gemini]: verdict=revise score=0.0 llm_action=broaden -> action=none (clips=0, confirmed=0) \u2014 Select basketball event clips to fill the requested reel budget.",
+    "rendered 1 clips with 'hard_cut' transitions.",
+    "render: output at /Users/shivani/code/AgentAICourse/week3/hypereel/evals/iterations/two-phase-e2e-041/render/reel_two_phase_e2e_041_w5_render.mp4",
+    "summarize: generated with 'gemini' provider"
+  ]
+}

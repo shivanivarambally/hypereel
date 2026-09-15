@@ -1,0 +1,136 @@
+{
+  "status": "completed",
+  "date": "2026-09-16",
+  "iteration": "055",
+  "kind": "unbiased_contiguous_sweep",
+  "fps": 8,
+  "discovery_only": true,
+  "span": [
+    600,
+    1600
+  ],
+  "step": 10,
+  "windows": 100,
+  "game_id": "east-bay-elite-vs-spartans",
+  "sampling": "contiguous uniform tiling, chosen without reference to the golden set",
+  "video_calls": 100,
+  "incremental_estimated_spend_usd": 2.005934,
+  "ceiling_raised": {
+    "from": 11.192294875,
+    "to": 13.192294875,
+    "authorization": "user: ok go ahead"
+  },
+  "spend_after_usd": 13.165006,
+  "remaining_headroom_usd": 0.027289,
+  "session_total_043_to_055_usd": 3.5711537,
+  "holdout_used": false,
+  "golden_labels_modified": false,
+  "headline": {
+    "tp": 41,
+    "fp": 89,
+    "fn": 57,
+    "precision": 0.315,
+    "recall": 0.418,
+    "f1": 0.36,
+    "references": 98,
+    "predictions": 130
+  },
+  "comparison": {
+    "curated_7_windows_f1": 0.706,
+    "density_picked_4_windows_f1": 0.258,
+    "unbiased_100_windows_f1": 0.36,
+    "inflation_from_curation": "~0.35 F1"
+  },
+  "empty_window_behaviour": {
+    "empty_windows": 53,
+    "correctly_silent": 23,
+    "hallucinated": 30,
+    "hallucination_rate": 0.57,
+    "note": "first true-negative coverage in the project; dominant source of the 0.315 precision; for a highlight product a padded reel is worse than a sparse one"
+  },
+  "corrects_054": {
+    "claim": "model under-proposes; recall ceiling at discovery",
+    "reality": "over-proposes 130 predictions for 98 references overall",
+    "reconciliation": "under-enumerates on dense sequences, over-generates on sparse/empty ones; 054 was itself an artefact of density-picked sampling"
+  },
+  "per_class": {
+    "two_point_miss": {
+      "tp": 17,
+      "fp": 21,
+      "fn": 9,
+      "f1": 0.531
+    },
+    "assist": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 2,
+      "f1": 0.4
+    },
+    "offensive_rebound": {
+      "tp": 5,
+      "fp": 10,
+      "fn": 6,
+      "f1": 0.385
+    },
+    "turnover": {
+      "tp": 9,
+      "fp": 16,
+      "fn": 14,
+      "f1": 0.375
+    },
+    "steal": {
+      "tp": 6,
+      "fp": 20,
+      "fn": 4,
+      "precision": 0.23,
+      "recall": 0.6,
+      "f1": 0.333
+    },
+    "free_throw_miss": {
+      "tp": 1,
+      "fp": 2,
+      "fn": 5,
+      "f1": 0.222
+    },
+    "two_point_made": {
+      "tp": 1,
+      "fp": 2,
+      "fn": 9,
+      "recall": 0.1,
+      "f1": 0.154,
+      "note": "PRODUCT-CRITICAL: one made basket found in ten; the most reel-worthy event in the taxonomy"
+    },
+    "defensive_rebound": {
+      "tp": 1,
+      "fp": 11,
+      "fn": 6,
+      "f1": 0.105,
+      "note": "near-random; rebound team attribution is a major noise source"
+    },
+    "free_throw_made": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "f1": 0.0
+    },
+    "block": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.0
+    },
+    "three_point_miss": {
+      "tp": 0,
+      "fp": 5,
+      "fn": 0,
+      "f1": 0.0
+    }
+  },
+  "reopens_052": "Phase 2 was measured as worth 0.000, but on curated windows containing real events where there was little to reject. A 57% hallucination rate on empty windows is exactly what a rejecting second pass is for. Re-test verification on empty windows.",
+  "next_priority": [
+    "empty-window precision (57% hallucination)",
+    "two_point_made recall 0.10 (product-critical)",
+    "rebound attribution (defensive_rebound F1 0.105); rules gate can finally be tested against real violations",
+    "re-baseline all earlier comparisons on uncurated windows"
+  ]
+}
